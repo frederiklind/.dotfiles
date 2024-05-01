@@ -1,0 +1,29 @@
+window {
+  font-family: "FiraCode Nerd Font";
+  font-weight: bolder;
+  color: #8aadf4;
+  background-color: #1e2030;
+  border: 2px solid #494d64;
+  border-radius: 10px;
+  width: 300px;
+}
+
+#input {
+  margin: 10px 20px 20px 20px;
+  background-color: #24273a;
+  padding: 10px 10px 10px 10px;
+  border: 0px solid transparent;
+  color: #eed49f;
+}
+
+#inner-box {
+  margin: 10px 20px 20px 20px;
+}
+
+#outer-box {
+  margin: 20px;
+}
+
+#entry {
+  padding: 10px;
+}
