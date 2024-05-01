@@ -26,9 +26,9 @@ alias ft="thunar"
 alias nv="nvim"
 
 # dotfiles shortcuts
-alias dot="cd ~/source/dotfiles"
-alias vdot="cd ~/source/dotfiles && nvim"
-alias cdot="code ~/source/dotfiles"
+alias dot="cd ~/.dotfiles"
+alias vdot="cd ~/.dotfiles && nvim"
+alias cdot="code ~/.dotfiles"
 
 # cd to repositories
 alias src="cd ~/source/repos"
@@ -40,14 +40,14 @@ alias yt="firefox https://www.youtube.com"
 # update grub config    
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
-alias zathura="~/source/dotfiles/scripts/zathura.sh"
+alias zathura="~/.dotfiles/scripts/zathura.sh"
 
 # lang
 alias py="python3"
 
 # git
-alias ngrp="~/source/dotfiles/scripts/ngrp.sh"
-alias gqp="~/source/dotfiles/scripts/quickpush.sh"
+alias ngrp="~/.dotfiles/scripts/ngrp.sh"
+alias gqp="~/.dotfiles/scripts/quickpush.sh"
 
 neofetch
 

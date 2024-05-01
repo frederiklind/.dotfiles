@@ -39,6 +39,7 @@ source "${INSTALL_DIR}/ranger.sh"           # additional ranger plugins installa
 source "${INSTALL_DIR}/browser.sh"          # install browsers
 source "${INSTALL_DIR}/hypr.sh"             # install hyprland (WM)
 source "${INSTALL_DIR}/editors.sh"          # nstall editors
-source "${INSTALL_DIR}/dev-pkgs.sh"         # install dev stuff
+# source "${INSTALL_DIR}/dev-pkgs.sh"         # install dev stuff
 source "${INSTALL_DIR}/dm.sh"               # install display manager
+source "${INSTALL_DIR}/symlinks.sh"
 source "${INSTALL_DIR}/reboot.sh"           # system reboot
