@@ -3,17 +3,21 @@
  *  ▀▄▀▄▀ █▀█ ░█░ █▄█ █▀█ █▀▄   ▄█ ░█░ ░█░ █▄▄ █ █░▀█ █▄█
  *
  *  Frederik Lind (2024)
- * 
+ *
  */
 
-/* ---------------------------- global ----------------------------- */
+@define-color catppuccin-bck #1e1e2e;
+@define-color catppuccin-blue #8aadf4;
+@define-color catppuccin-red #ed8796;
+@define-color catppuccin-teal #8bd5ca;
+
 * {
     font-family: FiraCode Nerd Font, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 13px;
 }
 
 window#waybar {
-    background-color: rgba(30, 32, 48, 0.75);
+    background-color: rgba(30, 32, 48, 0.7);
     border-bottom: 0;
     transition-property: background-color;
     transition-duration: .5s;
@@ -45,26 +49,24 @@ button:hover {
 
 /* ------------------------ workspaces ------------------------ */
 #workspaces {
-    margin: 3px 5px 4px 5px;
+    margin: 3px 2px 4px 2px;
     border: 0px;
     font-size: 19px;
-    color: #ffffff;
-    background-color: #1e1e2e;
-    padding-left: 12px;
-    padding-right: 5px;
-    border-radius: 10px;
+    background-color: rgba(30, 32, 48, 0.6);
+    padding: 0px 5px 0px 5px;
+    border-radius: 20px;
 }
 
 #workspaces button {
     border: 0px;
-    margin:5px 8px 5px 0px;
-    padding:0px 4px 0px 4px;
-    color: #8aadf4;
+    margin: 0px 2px 0px 0px;
+    padding: 0px 4px 0px 0px;
+    color: @catppuccin-blue;
     transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-    color: #c6a0f6;
+    color: @catppuccin-teal;
     font-weight: bolder;
 }
 
@@ -80,36 +82,31 @@ button:hover {
 }
 
 #custom-ranger {
-    font-size: 22px;
-    color: #8aadf4;
-    /* background-color: #1e1e2e; */
-    margin-left: 8px;
-    /* border-radius: 10px; */
-    /* padding-right: 8px; */
-    /* padding-left: 5px; */
+    font-size: 16px;
+    color: @catppuccin-blue;
+    margin-left: 5px;
 }
 
 #quicklinks {
-    background-color: #1e1e2e;
-    margin: 3px 5px 4px 0px;
-    border-radius: 10px;
-    padding-right: 10px;
-    padding-left: 3px;
+    background-color: rgba(30, 32, 48, 0.6);
+    margin: 3px 2.5px 4px 0px;
+    border-radius: 20px;
+    padding-right: 5px;
+    padding-left: 1px;
 }
 
 #audio-light-batt {
-    background-color: #1e1e2e;
-    margin: 3px 5px 4px 0px;
-    border-radius: 10px;
-    padding-right: 10px;
-    padding-left: 3px;
+    background-color: rgba(30, 32, 48, 0.6);
+    margin: 3px 2.5px 4px 0px;
+    border-radius: 20px;
+    padding: 5px 7px 5px 3px;
 }
 
 #systemgroup {
-    background-color: #1e1e2e;
-    margin: 3px 5px 4px 0px;
+    background-color: rgba(30, 32, 48, 0.6);
+    margin: 3px 2.5px 4px 0px;
     border-radius: 10px;
-    padding-right: 3px;
+    padding-right: 0px;
     padding-left: 3px;
 }
 
@@ -122,60 +119,52 @@ button:hover {
 }
 
 #custom-apps {
-    font-size: 35px;
-    margin: 3px 0px 4px 7px;
-    color: #8aadf4;
-    background-color: #1e1e2e;
-    padding: 0px 15px 2px 8px;
-    border-radius: 10px;
+    font-size: 22px;
+    margin: 3px 0px 4px 0px;
+    color: @catppuccin-blue;
+    padding: 0px 15px 0px 10px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgba(30, 32, 48, 0.6);
 }
 
 #custom-firefox,
 #custom-github,
 #custom-vscode,
-#custom-spotify
-#custom-postgres,
-#custom-terminal {
-    font-size: 22px;
+#custom-spotify #custom-terminal {
+    font-size: 17px;
     margin: 0px 5px 0px 5px;
-    color: #8aadf4;
+    color: @catppuccin-blue;
+}
+
+#custom-github,
+#custom-vscode {
+    margin-left: 0px;
 }
 
 #custom-spotify {
-    font-size: 22px;
-    color: #8aadf4;
+    font-size: 16px;
+    color: @catppuccin-blue;
 }
 
 #custom-discord {
-    font-size: 22px;
-    margin-left: 3px;
-    color: #8aadf4;
-}
-
-#custom-messenger {
-    font-size: 25px;
-    color: #8aadf4;
-}
-
-#custom-youtube {
-    font-size: 28px;
-    color: #8aadf4;
+    font-size: 16px;
     margin-left: 5px;
+    color: @catppuccin-blue;
 }
 
 #custom-neovim {
-    font-size: 20px;
-    color: #8aadf4;
+    font-size: 14px;
+    color: @catppuccin-blue;
     margin: 0px 3px 0px 3px;
 }
 
 #custom-shutdown {
-    font-size: 18px;
+    font-size: 14px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 3px 8px 4px 0px;
-    color: #8aadf4;
-    background-color: #1e1e2e;
+    margin: 0px 8px 0px 0px;
+    color: @catppuccin-blue;
+    /* background-color: #1e1e2e; */
     border-radius: 10px;
 }
 
@@ -201,44 +190,41 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
+    padding: 0 7px;
 }
 
 #window {
     margin: 0 0px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 10px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 15px;
 }
 
 #clock {
-    background-color: transparent;
-    color: #8aadf4;
-    margin: 3px 0px 4px 0px;
+    color: @catppuccin-blue;
+    margin: 3px 10px 4px 0px;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: #1e1e2e;
-    border-radius: 10px;
-    font-size: 17px;
+    background-color: rgba(30, 32, 48, 0.6);
+    border-radius: 20px;
+    font-size: 13px;
 }
 
 #battery {
-    color: #8aadf4;
+    color: @catppuccin-blue;
+    margin-right: 5px;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #81c8be;
 }
 
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     color: #ed8796;
 }
@@ -266,40 +252,28 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    color: #8aadf4;
-}
-
-#memory {
-    color: #8aadf4;
-}
-
+#cpu,
+#memory,
+#temperature,
+#memory,
 #backlight {
-    background-color: #90b1b1;
+    color: #8aadf4;
 }
 
 #network {
     color: #8bd5ca;
-    margin: 0px 10px 0px 0px;
+    margin: 0px 7px 0px 3px;
 }
 
 #custom-vpn {
-    color: #8aadf4;
+    color: @catppuccin-blue;
     margin: 0px 0px 0px 0px;
-    font-size: 20px;
-}
-
-#custom-vpn.disconnected {
-    color: #8aadf4;
-}
-
-#custom-vpn.connected {
-    color: #8bd5ca;
+    font-size: 14px;
 }
 
 #pulseaudio {
-    color: #8aadf4;
-    margin-right: 10px;
+    color: @catppuccin-blue;
+    margin-right: 3px;
 }
 
 #pulseaudio.muted {
@@ -330,102 +304,6 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
-    color: #8aadf4;
-}
-
 #temperature.critical {
     background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
 }

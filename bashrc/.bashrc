@@ -31,7 +31,7 @@ alias vdot="cd ~/.dotfiles && nvim"
 alias cdot="code ~/.dotfiles"
 
 # cd to repositories
-alias src="cd ~/source/repos"
+alias src="cd ~/Source/repos"
 
 # web shortcuts 
 alias gw="firefox https://www.github.com"

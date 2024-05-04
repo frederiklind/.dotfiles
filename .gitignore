@@ -1,2 +1,5 @@
 ranger/plugins/
 spotify-tui
+
+
+*.log
