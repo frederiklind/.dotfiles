@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Initialize an empty array
 BOOKS=()
 

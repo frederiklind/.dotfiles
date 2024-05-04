@@ -9,14 +9,13 @@
 {
     "layer": "top",     // Waybar at top layer
     "position": "top",  // Waybar position (top|bottom|left|right)
-    "height": 30,       // Waybar height (to be removed for auto height)
+    // "height": 30,       // Waybar height (to be removed for auto height)
     "spacing": 4,       // Gaps between modules (4px)
-
+    "margin": "10 17 0 17",
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
         "group/quicklinks",
-        "group/devapps",
         "hyprland/window"
     ],
 
@@ -25,8 +24,6 @@
     ],
 
     "modules-right": [
-        "keyboard-state",
-        "sway/language",
         "group/systemgroup",
         "group/audio-light-batt",
         "custom/shutdown"
@@ -36,14 +33,14 @@
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
-        "format": "{}",
+        "format": "{icon}",
         "format-icons": {
 			"urgent": "",
-			"active": "",
-			"default": ""
+			"active": "",
+			"default": ""
         },
         "persistent-workspaces": {
-            "*": 3
+            "*": 4
         }       
     },
 
@@ -88,6 +85,15 @@
         }
     },
 
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""] 
+    },
+
     "clock": {
         // "timezone": "America/New_York",
         "format": "  {:%H:%M    %a %d %h}",
@@ -111,6 +117,13 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C "
     },
+
+    "disk": {
+        "interval": 30,
+        "format": "D {percentage_used}% ",
+        "path": "/",
+        "on-click": "alacritty -e htop"
+    }, 
 
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -154,73 +167,73 @@
 
     "custom/firefox": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/firefox.sh",
+        "on-click": "~/.dotfiles/scripts/firefox.sh",
         "tooltip": false
     },
 
     "custom/discord": {
         "format": "   ",
-        "on-click": "~/source/dotfiles/scripts/discord.sh",
+        "on-click": "~/.dotfiles/scripts/discord.sh",
         "tooltip": false
     },
 
     "custom/github": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/github.sh",
+        "on-click": "~/.dotfiles/scripts/github.sh",
         "tooltip": false
     },
 
     "custom/vscode": {
         "format": " 󰨞 ",
-        "on-click": "~/source/dotfiles/scripts/vscode.sh",
+        "on-click": "~/.dotfiles/scripts/vscode.sh",
         "tooltip": false
     },
 
     "custom/terminal": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/terminal.sh",
+        "on-click": "~/.dotfiles/scripts/terminal.sh",
         "tooltip": false
     },
 
     "custom/neovim": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/neovim.sh",
+        "on-click": "~/.dotfiles/scripts/neovim.sh",
         "tooltip": false
     },
 
     "custom/shutdown": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/terminal.sh",
+        "on-click": "~/.dotfiles/scripts/terminal.sh",
         "tooltip": false
     },
 
     "custom/spotify": {
         "format": "  ",
-        "on-click": "~/source/dotfiles/scripts/spotify.sh",
+        "on-click": "~/.dotfiles/scripts/spotify.sh",
         "tooltip": false
     },
 
     "custom/youtube": {
         "format": " 󰗃 ",
-        "on-click": "~/source/dotfiles/scripts/youtube.sh",
+        "on-click": "~/.dotfiles/scripts/youtube.sh",
         "tooltip": false
     },
 
     "custom/messenger": {
         "format": " 󰈎 ",
-        "on-click": "~/source/dotfiles/scripts/caprine.sh",
+        "on-click": "~/.dotfiles/scripts/caprine.sh",
         "tooltip": false
     },
 
     "custom/ranger": {
         "format": " 󰉋 ",
-        "on-click": "~/source/dotfiles/scripts/ranger.sh",
+        "on-click": "~/.dotfiles/scripts/ranger.sh",
         "tooltip": false
     },
 
     "custom/apps": {
         "format": "󰣇",
-        "on-click": "~/source/dotfiles/scripts/wofi.sh",
+        "on-click": "~/.dotfiles/scripts/wofi.sh",
         "tooltip": false    
     },
 
@@ -232,20 +245,20 @@
         "format": " {} ",
         "format-connected": " {} ",
         "format-disconnected": " {} ",
-        "exec": "~/source/dotfiles/scripts/nvpn-status.sh",
+        "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
         "tooltip": false
     },
-
+  
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
             "custom/ranger",
             "custom/firefox",
             "custom/spotify",
-            "custom/youtube",
             "custom/discord",
-            "custom/messenger"
+            "custom/github",
+            "custom/vscode"
         ]
     },
 
@@ -262,6 +275,7 @@
     "group/audio-light-batt": {
         "orientation": "horizontal",
         "modules": [
+            "battery",
             "pulseaudio",
             "network",
             "custom/vpn"
