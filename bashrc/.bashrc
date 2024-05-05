@@ -29,11 +29,12 @@ alias nv="nvim"
 alias dot="cd ~/.dotfiles"
 alias vdot="cd ~/.dotfiles && nvim"
 alias cdot="code ~/.dotfiles"
+alias settings="~/.dotfiles/.settings/settings.sh"
 
 # cd to repositories
 alias src="cd ~/Source/repos"
 
-# web shortcuts 
+# web shortcuts     
 alias gw="firefox https://www.github.com"
 alias yt="firefox https://www.youtube.com"
 
