@@ -120,10 +120,10 @@ button:hover {
 
 #custom-apps {
     font-size: 22px;
-    margin: 3px 0px 4px 0px;
+    margin: 3px 0px 4px 10px;
     color: @catppuccin-blue;
     padding: 0px 15px 0px 10px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 20px;
     background-color: rgba(30, 32, 48, 0.6);
 }
 
@@ -162,10 +162,10 @@ button:hover {
     font-size: 14px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 0px 8px 0px 0px;
+    margin: 3px 8px 4px 0px;
     color: @catppuccin-blue;
-    /* background-color: #1e1e2e; */
-    border-radius: 10px;
+    background-color: rgba(30, 32, 48, 0.6);
+    border-radius: 20px;
 }
 
 #mode {
