@@ -50,6 +50,9 @@ alias py="python3"
 alias ngrp="~/.dotfiles/scripts/ngrp.sh"
 alias gqp="~/.dotfiles/scripts/quickpush.sh"
 
+alias gs="git status"
+alias gp="git pull"
+
 neofetch
 
 eval "$(starship init bash)"

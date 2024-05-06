@@ -6,6 +6,8 @@
  *
  */
 
+@define-color waybar-background rgba(30, 32, 48, 0.7);
+@define-color module-background rgba(30, 32, 48, 0.6);
 @define-color catppuccin-bck #1e1e2e;
 @define-color catppuccin-blue #8aadf4;
 @define-color catppuccin-red #ed8796;
@@ -17,11 +19,12 @@
 }
 
 window#waybar {
-    background-color: rgba(30, 32, 48, 0.7);
+    background-color: @waybar-background;
     border-bottom: 0;
     transition-property: background-color;
     transition-duration: .5s;
     opacity: 1;
+    border-radius: 10px;
 }
 
 window#waybar.hidden {
@@ -49,10 +52,10 @@ button:hover {
 
 /* ------------------------ workspaces ------------------------ */
 #workspaces {
-    margin: 3px 2px 4px 2px;
+    margin: 4px 2px 4px 2px;
     border: 0px;
     font-size: 19px;
-    background-color: rgba(30, 32, 48, 0.6);
+    background-color: @module-background;
     padding: 0px 5px 0px 5px;
     border-radius: 20px;
 }
@@ -88,31 +91,31 @@ button:hover {
 }
 
 #quicklinks {
-    background-color: rgba(30, 32, 48, 0.6);
-    margin: 3px 2.5px 4px 0px;
+    background-color: @module-background;
+    margin: 4px 2.5px 4px 0px;
     border-radius: 20px;
     padding-right: 5px;
     padding-left: 1px;
 }
 
 #audio-light-batt {
-    background-color: rgba(30, 32, 48, 0.6);
-    margin: 3px 2.5px 4px 0px;
+    background-color: @module-background;
+    margin: 4px 2.5px 4px 0px;
     border-radius: 20px;
     padding: 5px 7px 5px 3px;
 }
 
 #systemgroup {
-    background-color: rgba(30, 32, 48, 0.6);
-    margin: 3px 2.5px 4px 0px;
+    background-color: @module-background;
+    margin: 4px 2.5px 4px 0px;
     border-radius: 10px;
     padding-right: 0px;
     padding-left: 3px;
 }
 
 #devapps {
-    background-color: #1e1e2e;
-    margin: 3px 5px 4px 0px;
+    background-color: @module-background;
+    margin: 4px 5px 4px 0px;
     border-radius: 10px;
     padding-right: 10px;
     padding-left: 3px;
@@ -120,11 +123,11 @@ button:hover {
 
 #custom-apps {
     font-size: 22px;
-    margin: 3px 0px 4px 10px;
+    margin: 4px 0px 4px 10px;
     color: @catppuccin-blue;
     padding: 0px 15px 0px 10px;
     border-radius: 20px;
-    background-color: rgba(30, 32, 48, 0.6);
+    background-color: @module-background;
 }
 
 #custom-firefox,
@@ -162,9 +165,9 @@ button:hover {
     font-size: 14px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 3px 8px 4px 0px;
+    margin: 4px 8px 4px 0px;
     color: @catppuccin-blue;
-    background-color: rgba(30, 32, 48, 0.6);
+    background-color: @module-background;
     border-radius: 20px;
 }
 
@@ -207,10 +210,10 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 3px 10px 4px 0px;
+    margin: 4px 10px 4px 0px;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: rgba(30, 32, 48, 0.6);
+    background-color: @module-background;
     border-radius: 20px;
     font-size: 13px;
 }
