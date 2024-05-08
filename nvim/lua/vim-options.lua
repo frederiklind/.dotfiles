@@ -25,3 +25,7 @@ vim.keymap.set('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, si
 
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
+
+-- neo-tree
+vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = false })
