@@ -3,7 +3,7 @@ return {
   config = function()
     require('lualine').setup({
       options = {
-        theme = 'catppuccin-macchiato'
+        theme = 'catppuccin'
         --theme = 'nord'
       }
     })
