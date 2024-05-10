@@ -54,6 +54,7 @@ alias gs="git status"
 alias gp="git pull"
 
 alias tmux="tmux -2"
+alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 
 neofetch
 
