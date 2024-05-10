@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SETTINGS_DIR="${HOME}/.dotfiles/.settings"
-opts=("Wallpaper" "Waybar" "Other" "Exit")
+opts=("Theme" "Wallpaper" "Waybar" "Other" "Exit")
 
 while true; do
 
@@ -21,17 +21,19 @@ EOF
 
     opt=$(gum choose --limit 1 ${opts[@]})
     case "$opt" in
+        "Theme")
+            "${SETTINGS_DIR}/theme/theme.sh"
+            ;;
         "Wallpaper")
-            "${SETTINGS_DIR}/wallpaper/wallpaper.sh"
+            "${SETTINGS_DIR}/wallpaper.sh"
             ;;
         "Waybar")
-            "${SETTINGS_DIR}/waybar"
+            "${SETTINGS_DIR}/waybar_settings.sh" 
             ;;
         "Exit")
             break
             ;;
     esac
-
 done
 clear
 

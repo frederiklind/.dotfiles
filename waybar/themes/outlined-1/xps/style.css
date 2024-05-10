@@ -8,7 +8,7 @@
 
 @define-color waybar-background rgba(0,0,0,0);
 @define-color module-background rgba(30, 32, 48, 1);
-@define-color module-border rgba(138, 173, 244, 0.8);
+@define-color module-border #313244;
 @define-color catppuccin-bck #1e1e2e;
 @define-color catppuccin-blue #8aadf4;
 @define-color catppuccin-red #ed8796;
@@ -58,7 +58,7 @@ button:hover {
     font-size: 19px;
     background-color: @module-background;
     padding: 0px 5px 0px 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid @module-border;
 }
 
@@ -77,7 +77,6 @@ button:hover {
 
 #workspaces button:hover {
     color: #8bd5ca;
-    /* border-radius: 10px; */
 }
 
 #window {
@@ -95,16 +94,15 @@ button:hover {
 #quicklinks {
     background-color: @module-background;
     margin: 4px 2.5px 4px 0px;
-    border-radius: 20px;
-    padding-right: 5px;
-    padding-left: 1px;
+    border-radius: 10px;
     border: 1px solid @module-border;
+    padding: 5px 0px; 
 }
 
 #audio-light-batt {
     background-color: @module-background;
     margin: 4px 2.5px 4px 0px;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px 7px 5px 3px;
     border: 1px solid @module-border;
 }
@@ -145,20 +143,51 @@ button:hover {
     color: @catppuccin-blue;
 }
 
-#custom-github,
+#custom-firefox {
+    margin-left: 5px;
+    color: @module-background;
+    background: linear-gradient(45deg, #ef9f76, #e78284); 
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 11px;
+}
+
+
+#custom-github {
+    margin-left: 5px;
+    color: @module-background;
+    background: linear-gradient(45deg, #8087a2, #b8c0e0); 
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
 #custom-vscode {
     margin-left: 0px;
+    color: @module-background;
+    background: linear-gradient(45deg, #8caaee, #85c1dc); 
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 10px;
 }
+
 
 #custom-spotify {
     font-size: 16px;
-    color: @catppuccin-blue;
+    color: @module-background;
+    background: linear-gradient(45deg, #a6da95, #7dc4e4); 
+    border-radius: 7px;
+    padding-left: 5px;
 }
 
 #custom-discord {
-    font-size: 16px;
+    font-size: 15px;
     margin-left: 5px;
-    color: @catppuccin-blue;
+    color: @module-background;
+    background: linear-gradient(45deg, #c6a0f6, #8caaee); 
+    border-radius: 7px;
+    padding: 0px 5px;
+    padding-right: 13px;
 }
 
 #custom-neovim {
@@ -171,10 +200,11 @@ button:hover {
     font-size: 14px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 4px 8px 4px 0px;
+    margin: 4px 0px 4px 0px;
     color: @catppuccin-blue;
     background-color: @module-background;
-    border-radius: 20px;
+    border-radius: 10px;
+    border: 1px solid @module-border;
 }
 
 #mode {
@@ -202,8 +232,20 @@ button:hover {
     padding: 0 7px;
 }
 
+#cpu {
+    color: #74c7ec;
+    margin-right: 5px;
+}
+
+#memory {
+    color: #b7bdf8;
+}
+
 #window {
-    margin: 0 0px;
+    background-color: @module-background;
+    margin: 4 0px;
+    border-radius: 10px;
+    border: 1px solid @module-border;
 }
 
 .modules-left>widget:first-child>#workspaces {
@@ -216,7 +258,7 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 4px 10px 4px 0px;
+    margin: 4px 2.5px 4px 0px;
     padding-left: 10px;
     padding-right: 12px;
     background-color: @module-background;
@@ -262,10 +304,7 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu,
-#memory,
 #temperature,
-#memory,
 #backlight {
     color: #8aadf4;
 }

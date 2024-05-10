@@ -1,7 +1,7 @@
 # Catppuccin macchiato theme for alacritty
 
 [font]
-size = 10.5
+size = 11
 
 [font.normal]
 family = "FiraCode Nerd Font"
@@ -26,7 +26,7 @@ cyan = "#7dc4e4"
 white = "#eed49f"
 
 [colors.primary]
-background = "#1e1e2e"
+background = "#1e2030"
 foreground = "#8aadf4"
 
 [colors.cursor]
