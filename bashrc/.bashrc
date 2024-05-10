@@ -53,6 +53,9 @@ alias gqp="~/.dotfiles/scripts/quickpush.sh"
 alias gs="git status"
 alias gp="git pull"
 
+alias tmux="tmux -2"
+
 neofetch
 
+export XDG_CONFIG_HOME="$HOME/.config"
 eval "$(starship init bash)"

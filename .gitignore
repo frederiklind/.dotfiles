@@ -1,5 +1,6 @@
 ranger/plugins/
-spotify-tui
-pkglist
+tmux/plugins
+nvim/lazy-lock.json
+cava/shaders
 
 *.log

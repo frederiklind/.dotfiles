@@ -1,5 +1,8 @@
 # Catppuccin macchiato theme for alacritty
 
+[env]
+TERM = "xterm-256color"
+
 [font]
 size = 11
 

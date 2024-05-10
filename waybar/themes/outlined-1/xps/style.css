@@ -6,8 +6,8 @@
  *
  */
 
-@define-color waybar-background rgba(0,0,0,0);
-@define-color module-background rgba(30, 32, 48, 1);
+@define-color waybar-background #1e2030;
+@define-color module-background #24273a;
 @define-color module-border #313244;
 @define-color catppuccin-bck #1e1e2e;
 @define-color catppuccin-blue #8aadf4;
@@ -20,12 +20,13 @@
 }
 
 window#waybar {
-    background-color: @waybar-background;
+    background-color: #181926;
     border-bottom: 0;
     transition-property: background-color;
     transition-duration: .5s;
     opacity: 1;
     border-radius: 10px;
+    border: 1px solid @module-border;
 }
 
 window#waybar.hidden {
@@ -53,12 +54,12 @@ button:hover {
 
 /* ------------------------ workspaces ------------------------ */
 #workspaces {
-    margin: 4px 2px 4px 2px;
+    margin: 5px 2px 5px 2px;
     border: 0px;
     font-size: 19px;
     background-color: @module-background;
     padding: 0px 5px 0px 5px;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid @module-border;
 }
 
@@ -92,25 +93,25 @@ button:hover {
 }
 
 #quicklinks {
-    background-color: @module-background;
-    margin: 4px 2.5px 4px 0px;
-    border-radius: 10px;
-    border: 1px solid @module-border;
-    padding: 5px 0px; 
+    /* background-color: @module-background; */
+    margin: 5px 2.5px 5px 0px;
+    border-radius: 7px;
+    /* border: 1px solid @module-border; */
+    padding: 2px 0px; 
 }
 
 #audio-light-batt {
     background-color: @module-background;
-    margin: 4px 2.5px 4px 0px;
-    border-radius: 10px;
+    margin: 5px 2.5px 5px 0px;
+    border-radius: 7px;
     padding: 5px 7px 5px 3px;
     border: 1px solid @module-border;
 }
 
 #systemgroup {
     background-color: @module-background;
-    margin: 4px 2.5px 4px 0px;
-    border-radius: 10px;
+    margin: 5px 2.5px 5px 0px;
+    border-radius: 7px;
     padding-right: 0px;
     padding-left: 3px;
     border: 1px solid @module-border;
@@ -125,11 +126,11 @@ button:hover {
 }
 
 #custom-apps {
-    font-size: 22px;
-    margin: 4px 0px 4px 0px;
+    font-size: 18px;
+    margin: 5px 0px 5px 5px;
     color: @catppuccin-blue;
     padding: 0px 15px 0px 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     background-color: @module-background;
     border: 1px solid @module-border;
 }
@@ -200,10 +201,10 @@ button:hover {
     font-size: 14px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 4px 0px 4px 0px;
+    margin: 5px 5px 5px 0px;
     color: @catppuccin-blue;
     background-color: @module-background;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid @module-border;
 }
 
@@ -258,11 +259,11 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 4px 2.5px 4px 0px;
+    margin: 5px 2.5px 5px 0px;
     padding-left: 10px;
     padding-right: 12px;
     background-color: @module-background;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 13px;
     border: 1px solid @module-border;
 }
