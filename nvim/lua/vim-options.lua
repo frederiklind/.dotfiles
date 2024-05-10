@@ -43,3 +43,6 @@ vim.keymap.set('n', '<leader>df', ':DiffviewFileHistory %<CR>', { noremap = true
 --lazy/mason
 vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>mn', ':Mason<CR>', { noremap = true, silent = true })
+
+--home-screen
+vim.keymap.set('n', '<leader>hm', ':Alpha<CR>', { noremap = true, silent = true })

@@ -5,6 +5,9 @@ To start tmux session, simply run the `tmux` command.
 ```bash
 # start tmux session
 $ tmux
+
+# start new named tmux session
+$ tmux new -s "<session_name>"
 ```
 
 ## Keybindings

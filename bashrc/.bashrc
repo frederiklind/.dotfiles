@@ -53,9 +53,11 @@ alias gqp="~/.dotfiles/scripts/quickpush.sh"
 alias gs="git status"
 alias gp="git pull"
 
+# tmux
 alias tmux="tmux -2"
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 
+echo
 neofetch
 
 export XDG_CONFIG_HOME="$HOME/.config"
