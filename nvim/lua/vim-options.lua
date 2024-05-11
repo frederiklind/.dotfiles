@@ -5,7 +5,12 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
+
 vim.opt.wrap = false
+vim.o.pumheight = 15
+
+-- =============================== keymappings ==============================
+
 
 vim.g.mapleader = " "
 
@@ -17,6 +22,12 @@ vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h', ':split<CR>', { noremap = true, silent = true })
+
+-- ============================ buffers and tabs ===========================
+--tabline
+vim.keymap.set('n', '<F2>', ':set showtabline=2<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<F3>', ':set showtabline=0<CR>', { noremap = true, silent = true })
+
 
 -- buffer resize command's
 vim.keymap.set('n', '<S-Up', ':resize +2<CR>', { noremap = true, silent = true })
