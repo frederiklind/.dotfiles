@@ -2,11 +2,6 @@
 <div align="center">
     <img height="110px" src="../.assets/nvim/neovim-logo.png" alt="Image Description">
 </div>
-<br/>
-
-#
-
-Neovim configuration using the Lazy.nvim plugin manager.
 
 <br/>
 
