@@ -7,14 +7,14 @@
 
 [username]
 show_always = true
-style_user = "fg:#8bd5ca"
+style_user = "fg:bold red"
 format = '[󰚌 $user ]($style)'
 
 
-[character]
-success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
-vimcmd_symbol = "[<](bold green)"
+#[character]
+#success_symbol = "[](bold red)"
+#error_symbol = "[x](bold red)"
+#vimcmd_symbol = "[<](bold green)"
 
 [git_commit]
 tag_symbol = " tag "

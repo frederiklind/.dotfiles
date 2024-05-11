@@ -31,7 +31,7 @@ vim.keymap.set('n', '<F3>', ':set showtabline=0<CR>', { noremap = true, silent =
 --tabs
 vim.keymap.set('n', '<S-Tab>', ':tabnext<CR>', { noremap = true, silent = true })
 --vim.keymap.set('n', '<S-Tab>', ':tabprev<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tn', ':tabnew | Alpha<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { noremap = true, silent = true })
 
 -- buffer resize command's

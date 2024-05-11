@@ -1,0 +1,46 @@
+# Catppuccin v2
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 1
+
+[window.padding]
+x = 15
+y = 15
+
+[colors.normal]
+black = "#24273a"
+red = "#ed8796"
+green = "#8aadf4"
+yellow = "#8aadf4"
+blue = "#8aadf4"
+magenta = "#b7bdf8"
+cyan = "#8aadf4"
+white = "#8aadf4"
+
+[colors.primary]
+background = "#1e2030"
+foreground = "#b7bdf8"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+
+[colors.search.matches]
+foreground = "#24273A"
+background = "#A5ADCB"
+
+[colors.footer_bar]
+foreground = "#24273A"
+background = "#A5ADCB"
+
+
