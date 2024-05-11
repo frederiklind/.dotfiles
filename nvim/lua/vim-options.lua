@@ -28,6 +28,11 @@ vim.keymap.set('n', '<leader>h', ':split<CR>', { noremap = true, silent = true }
 vim.keymap.set('n', '<F2>', ':set showtabline=2<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<F3>', ':set showtabline=0<CR>', { noremap = true, silent = true })
 
+--tabs
+vim.keymap.set('n', '<S-Tab>', ':tabnext<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<S-Tab>', ':tabprev<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { noremap = true, silent = true })
 
 -- buffer resize command's
 vim.keymap.set('n', '<S-Up', ':resize +2<CR>', { noremap = true, silent = true })
@@ -36,7 +41,7 @@ vim.keymap.set('n', '<S-Left>', ':vertical resize +2<CR>', { noremap = true, sil
 vim.keymap.set('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 
 -- switch buffer
-vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
 
 -- neo-tree

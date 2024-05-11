@@ -6,7 +6,7 @@
  *
  */
 
-@define-color waybar-background #1e2030;
+@define-color waybar-background rgba(24, 25, 38, 0.85);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 @define-color catppuccin-bck #1e1e2e;
@@ -20,13 +20,13 @@
 }
 
 window#waybar {
-    background-color: #181926;
+    background-color: @waybar-background;
     border-bottom: 0;
     transition-property: background-color;
     transition-duration: .5s;
     opacity: 1;
-    border-radius: 10px;
-    border: 1px solid @module-border;
+    border-radius: 0px;
+    border-bottom: 1px solid @module-border;
 }
 
 window#waybar.hidden {
