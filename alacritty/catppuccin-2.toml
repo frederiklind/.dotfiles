@@ -21,26 +21,26 @@ y = 15
 black = "#24273a"
 red = "#ed8796"
 green = "#8aadf4"
-yellow = "#8aadf4"
+yellow = "#c6a0f6"
 blue = "#8aadf4"
-magenta = "#b7bdf8"
+magenta = "#c6a0f6"
 cyan = "#8aadf4"
 white = "#8aadf4"
 
 [colors.primary]
 background = "#1e2030"
-foreground = "#b7bdf8"
+foreground = "#8aadf4"
 
 [colors.cursor]
 text = "CellBackground"
 cursor = "CellForeground"
-
-[colors.search.matches]
-foreground = "#24273A"
-background = "#A5ADCB"
-
-[colors.footer_bar]
-foreground = "#24273A"
-background = "#A5ADCB"
-
+#
+# [colors.search.matches]
+# foreground = "#24273A"
+# background = "#A5ADCB"
+#
+# [colors.footer_bar]
+# foreground = "#24273A"
+# background = "#A5ADCB"
+#
 
