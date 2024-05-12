@@ -20,11 +20,11 @@ y = 15
 [colors.normal]
 black = "#24273a"
 red = "#ed8796"
-green = "#8aadf4"
+green = "#91d7e3"
 yellow = "#c6a0f6"
 blue = "#8aadf4"
 magenta = "#c6a0f6"
-cyan = "#8aadf4"
+cyan = "#91d7e3"
 white = "#8aadf4"
 
 [colors.primary]
