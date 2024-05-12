@@ -4,26 +4,26 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
         local theme = {
-            fill = "TabLineFill",
-            -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
-            head = "TabLine",
-            current_tab = "TabLineSel",
-            tab = "TabLine",
-            win = "TabLine",
-            tail = "TabLine",
+            --fill = "TabLineFill",
+            fill = { fg='#1e2030', bg='#24273a' },
+            head = { fg='#11111b', bg='#89b4fa', style='bold' },
+            current_tab = { fg='#7dc4e4', bg='#1e2030' },
+            tab = { fg='#6e738d', bg='#1e2030' },
+            win = { fg='#6e738d', bg='#1e2030' },
+            tail = { fg='#11111b', bg='#89b4fa', style='bold' },
         }
 
         require("tabby.tabline").set(function(line)
             return {
                 {
-                    { '  ', hl = theme.head },
+                    { '   NEOVIM ', hl = theme.head },
                     line.sep("", theme.head, theme.fill),
                 },
                 line.tabs().foreach(function(tab)
                     local hl = tab.is_current() and theme.current_tab or theme.tab
                     return {
                         line.sep("", hl, theme.fill),
-                        tab.is_current() and "" or "󰆣",
+                        tab.is_current() and " " or "󰆣 ",
                         tab.number(),
                         --tab.name(),
                         --tab.close_btn(""),
@@ -36,7 +36,7 @@ return {
                 line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
                     return {
                         line.sep("", theme.win, theme.fill),
-                        win.is_current() and "" or "",
+                        win.is_current() and " " or " ",
                         win.buf_name(),
                         line.sep("", theme.win, theme.fill),
                         hl = theme.win,

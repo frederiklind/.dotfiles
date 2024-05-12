@@ -6,6 +6,9 @@ return {
         "onsails/lspkind.nvim",
     },
     {
+        "roobert/tailwindcss-colorizer-cmp.nvim"
+    },
+    {
         "L3MON4D3/LuaSnip",
         dependencies = {
             "saadparwaiz1/cmp_luasnip",
@@ -44,18 +47,24 @@ return {
                     { name = "buffer" },
                 }),
 
-
-                format = lspkind.cmp_format({
-                    mode = 'symbol',
-                    --maxwidth = 50,
-                    maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-                    ellipsis_char = '...',
-                    show_labelDetails = true,
-
-                    before = function (entry, vim_item)
-                        return vim_item
-                    end
-                }),
+                formatting = {
+                    format = lspkind.cmp_format({
+                        mode = "symbol_text",
+                        maxwidth = 50,
+                        ellipsis_char = "...",
+                        menu = {
+                            buffer = "[Buffer]",
+                            nvim_lsp = "[LSP]",
+                            nvim_lua = "[Lua]",
+                            luasnip = "[LuaSnip]",
+                            latex_symbols = "[Latex]",
+                        },
+                        before = function(entry, vim_item)
+                            vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+                            return vim_item
+                        end,
+                    }),
+                },
             })
         end,
     },
