@@ -2,7 +2,7 @@ vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=4")
+vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
@@ -20,8 +20,8 @@ vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<C-u>', ':u<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>h', ':split<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
 
 -- ============================ windows, buffers and tabs ===========================
 --tabline
@@ -84,6 +84,3 @@ vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document
 vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
-
--- ================================== debugging ===================================
-vim.keymap.set('n', '<leader>b', function() require('dap').toggle_breakpoint() end, { noremap = true, silent = true, desc = "Toggles breakpoint for current line" })
