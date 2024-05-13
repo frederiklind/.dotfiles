@@ -1,3 +1,8 @@
 return {
-    "adelarsq/neofsharp.vim"
+    {
+        "adelarsq/neofsharp.vim",
+        --lazy = true,
+        --ft = { "fs", "fsx" },
+    },
+    --{ "ionide/Ionide-vim" }
 }

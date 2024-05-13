@@ -7,7 +7,7 @@ return {
             --fill = "TabLineFill",
             fill = { fg='#1e2030', bg='#24273a' },
             head = { fg='#11111b', bg='#89b4fa', style='bold' },
-            current_tab = { fg='#7dc4e4', bg='#363a4f' },
+            current_tab = { fg='#7dc4e4', bg='#1e2030' },
             tab = { fg='#6e738d', bg='#1e2030' },
             win = { fg='#6e738d', bg='#1e2030' },
             tail = { fg='#11111b', bg='#89b4fa', style='bold' },
@@ -45,7 +45,7 @@ return {
                 end),
                 {
                     line.sep("", theme.tail, theme.fill),
-                    { "   BUF ", hl = theme.tail },
+                    { "  ", hl = theme.tail },
                 },
                 hl = theme.fill,
             }
