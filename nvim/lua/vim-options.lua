@@ -5,6 +5,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
+vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
@@ -45,6 +46,7 @@ vim.keymap.set('n', '<leader>n', ':bnext<CR>', { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>bp', ':bp<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-f>', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true, silent = true, desc = "Fuzzy finder within current buffer."})
 
 
 -- ==================================== Telescope ===================================
@@ -55,8 +57,14 @@ vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = t
 vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
 
 --git (neogit)
-vim.keymap.set('n', '<leader>gs', ':Neogit<CR>', { noremap = true, silent = true, desc = ":Neogit<CR> - Opens Neogit, for managing git changes and commits." })
+--vim.keymap.set('n', '<leader>gs', ':Neogit | Neotree git_status<CR>', { noremap = true, silent = true, desc = ":Neogit<CR> - Opens Neogit, for managing git changes and commits." })
 --vim.keymap.set('n', '<leader>gc', ':Neogit commit<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>gs', function()
+  vim.cmd('Neogit')
+  vim.cmd('Neotree git_status')
+end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
+
 
 --git (diffview)
 vim.keymap.set('n', '<leader>fh', ':DiffviewFileHistory<CR>', { noremap = true, silent = true })
@@ -76,3 +84,6 @@ vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document
 vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
+-- ================================== debugging ===================================
+vim.keymap.set('n', '<leader>b', function() require('dap').toggle_breakpoint() end, { noremap = true, silent = true, desc = "Toggles breakpoint for current line" })
