@@ -4,6 +4,7 @@ return {
         dependencies = {
             "rcarriga/nvim-dap-ui",
             "nvim-neotest/nvim-nio",
+            "mfussenegger/nvim-dap-python",
         },
         config = function()
             local dap = require("dap")
@@ -27,6 +28,13 @@ return {
                         return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
                     end,
                 },
+            }
+
+            require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+            dap.adapters.python = {
+                type = "executable",
+                command = os.getenv("HOME") .. "/.virtualenvs/tools/bin/python",
+                args = { "-m", "debugpy.adapter" },
             }
 
             dap.listeners.before.attach.dapui_config = function()
@@ -85,8 +93,12 @@ return {
                 load_breakpoints_event = { "BufReadPost" },
                 perf_record = false,
             })
-            vim.keymap.set('n', '<leader>sd', function() require("persistent-breakpoints.api").toggle_breakpoint() end, { noremap = true, silent = true })
-            vim.keymap.set('n', '<leader>tr', function() require("persistent-breakpoints.api").clear_all_breakpoints() end, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>sd", function()
+                require("persistent-breakpoints.api").toggle_breakpoint()
+            end, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>tr", function()
+                require("persistent-breakpoints.api").clear_all_breakpoints()
+            end, { noremap = true, silent = true })
         end,
     },
 }

@@ -9,16 +9,16 @@ return {
             local TelescopeColor = {
                 TelescopeMatching = { fg = colors.green },
                 TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-                TelescopePromptPrefix = { bg = colors.surface0 },
+                TelescopePromptPrefix = { bg = colors.surface0, fg = colors.blue },
                 TelescopePromptNormal = { bg = colors.surface0 },
                 TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.mantle },
                 TelescopePreviewNormal = { bg = colors.mantle },
                 TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
                 TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
                 TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-                TelescopePromptTitle = { bg = colors.mauve, fg = colors.mantle },
-                TelescopeResultsTitle = { fg = colors.mantle },
-                TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
+                TelescopePromptTitle = { bg = colors.blue, fg = colors.crust },
+                TelescopeResultsTitle = { fg = colors.surface0 },
+                TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
             }
 
             for hl, col in pairs(TelescopeColor) do
@@ -35,7 +35,7 @@ return {
             require("telescope").setup({
                 defaults = {
                     prompt_prefix = "   ",
-                    layout_strategy = "center",
+                    layout_strategy = "vertical",
                     results_title = false,
                     sorting_strategy = "ascending",
                     layout_config = {
@@ -52,6 +52,7 @@ return {
                 pickers = {
                     find_files = {
                         previewer = false,
+                        height = 0.5,
                     },
                     live_grep = {
                         layout_strategy = "horizontal",
