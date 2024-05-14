@@ -7,14 +7,20 @@
 
 [username]
 show_always = true
-style_user = "fg:bold red"
+style_user = "fg:bold blue"
 format = '[󰚌 $user ]($style)'
 
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " "
+style = "fg:bold blue"
+format = "[$path]($style)"
 
-#[character]
-#success_symbol = "[](bold red)"
-#error_symbol = "[x](bold red)"
-#vimcmd_symbol = "[<](bold green)"
+[character]
+success_symbol = "[>](bold red)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
 
 [git_commit]
 tag_symbol = " tag "
@@ -59,8 +65,6 @@ symbol = "deno "
 [dotnet]
 symbol = "󰪮 "
 
-[directory]
-read_only = " "
 
 [docker_context]
 symbol = "󰡨 "

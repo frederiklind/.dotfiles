@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SETTINGS_DIR="${HOME}/.dotfiles/.settings"
-opts=("Theme" "Wallpaper" "Waybar" "Other" "Exit")
+opts=("Alacritty" "Theme" "Wallpaper" "Waybar" "Other" "Exit")
 
 while true; do
 
@@ -21,6 +21,9 @@ EOF
 
     opt=$(gum choose --limit 1 ${opts[@]})
     case "$opt" in
+        "Alacritty")
+            "${SETTINGS_DIR}/alacritty.sh"
+            ;;
         "Theme")
             "${SETTINGS_DIR}/theme/theme.sh"
             ;;

@@ -1,5 +1,6 @@
 vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
+vim.cmd("let g:python3_host_prog = \'/usr/bin/python3\'")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -34,6 +35,13 @@ vim.keymap.set('n', '<leader>tn', ':tabnew | Alpha<CR>', { noremap = true, silen
 vim.keymap.set('n', '<leader>tq', ':tabclose<CR>', { noremap = true, silent = true, desc = ":tabclose<CR> - Closes the current active tab." })
 
 -- windows
+--nav
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', { silent = true })
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', { silent = true })
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', { silent = true })
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', { silent = true })
+
+
 vim.keymap.set('n', '<S-Up', ':resize +2<CR>', { noremap = true, silent = true, desc = ":resize +2<CR> - Vertical resize current window." })
 vim.keymap.set('n', '<S-Down>', ':resize -2<CR>', { noremap = true, silent = true, desc = ":resize -2<CR> - Vertical resize current window." })
 vim.keymap.set('n', '<S-Left>', ':vertical resize +2<CR>', { noremap = true, silent = true, desc = ":vertical resize +2<CR> - Horizontal resize current window." })

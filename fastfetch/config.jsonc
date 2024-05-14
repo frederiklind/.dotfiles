@@ -1,8 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.dotfiles/fastfetch/ascii-spaceman.txt"
-    // "height": 18
+    "source": "~/.dotfiles/fastfetch/ascii-spaceman.txt",
+    "color": {
+        "1": "cyan",
+        "2": "blue",
+        "3": "magenta"
+    }
   },
   "display": {
     "separator": " ➜  "
@@ -10,35 +14,34 @@
   "modules": [
     {
       "type": "custom",
-      "format": "┌─────────────────────  System Information  ────────────────────┐",
-      "outputColor": "red"
+      "format": "┌─────────────────────  System Information  ────────────────────┐"
     },
     "break",
     {
       "type": "cpu",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "blue"
     },
     {
       "type": "board",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "blue"
     },
     {
       "type": "gpu",
       "key": "  󰛇  ",
-      "keyColor": "red"
+      "keyColor": "yellow"
     },
     {
       "type": "gpu",
       "format": "{3}",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "magenta"
     },
     {
       "type": "memory",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "green"
     },
     // {
     //   "type": "display",
@@ -50,22 +53,22 @@
     {
       "type": "os",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "blue"
     },
     {
       "type": "kernel",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "yellow"
     },
     {
       "type": "shell",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "magenta"
     },
     {
       "type": "wm",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "green"
     },
     // {
     //   "type": "terminal",
@@ -75,7 +78,7 @@
     {
       "type": "packages",
       "key": "    ",
-      "keyColor": "red"
+      "keyColor": "black"
     },
     "break",
     {
