@@ -1,16 +1,9 @@
 return {
-    {
-        "hrsh7th/cmp-nvim-lsp",
-    },
-    {
-        "onsails/lspkind.nvim",
-    },
-    {
-        "roobert/tailwindcss-colorizer-cmp.nvim"
-    },
-    {
-        "micangl/cmp-vimtex"
-    },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "onsails/lspkind.nvim" },
+    { "roobert/tailwindcss-colorizer-cmp.nvim" },
+    { "micangl/cmp-vimtex" },
+    { "github/copilot.vim" },
     {
         "L3MON4D3/LuaSnip",
         dependencies = {

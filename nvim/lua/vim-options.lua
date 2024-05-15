@@ -15,7 +15,6 @@ vim.o.pumheight = 15
 -- =============================== keymappings ==============================
 
 vim.g.mapleader = " "
-
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<C-u>', ':u<CR>', { noremap = true, silent = false })

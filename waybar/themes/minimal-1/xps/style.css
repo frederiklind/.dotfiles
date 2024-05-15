@@ -26,7 +26,7 @@ window#waybar {
     transition-duration: .5s;
     opacity: 1;
     border-radius: 0px;
-    border-bottom: 1px solid @module-border;
+    /* border-bottom: 1px solid @module-border; */
 }
 
 window#waybar.hidden {
@@ -98,12 +98,11 @@ button:hover {
     padding: 2px 0px; 
 }
 
-#audio-light-batt {
+#networkgroup {
     background-color: @module-background;
     margin: 5px 2.5px 5px 0px;
     border-radius: 7px;
-    padding: 3px 7px 3px 3px;
-    /* border: 1px solid @module-border; */
+    padding: 3px 7px 3px 0px;
 }
 
 #systemgroup {
@@ -112,7 +111,6 @@ button:hover {
     border-radius: 7px;
     padding-right: 0px;
     padding-left: 3px;
-    /* border: 1px solid @module-border; */
 }
 
 #devapps {
@@ -130,7 +128,6 @@ button:hover {
     padding: 0px 15px 0px 10px;
     border-radius: 7px;
     background-color: @module-background;
-    /* border: 1px solid @module-border; */
 }
 
 #custom-firefox,
@@ -177,7 +174,7 @@ button:hover {
 
 #custom-discord {
     font-size: 15px;
-    margin-left: 5px;
+    margin-left: 0px;
     color: @catppuccin-blue; 
     border-radius: 7px;
     padding: 0px 5px;
@@ -251,18 +248,24 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 5px 2.5px 5px 0px;
+    margin: 5px 0px 5px 2.5px;
     padding-left: 10px;
     padding-right: 12px;
     background-color: @module-background;
     border-radius: 7px;
     font-size: 13px;
+    font-weight: bolder;
     /* border: 1px solid @module-border; */
 }
 
 #battery {
+    margin: 5px 2.5px 5px 0px;
+    padding: 0px 10px;
+    padding-right: 15px;
     color: @catppuccin-blue;
-    margin-right: 5px;
+    margin-right: 2.5px;
+    background-color: @module-background;
+    border-radius: 7px;
 }
 
 #battery.charging,
@@ -303,14 +306,14 @@ label:focus {
 }
 
 #network {
-    color: #8bd5ca;
-    margin: 0px 7px 0px 3px;
+    color: @catppuccin-blue;
+    margin: 0px 3px 0px 3px;
 }
 
 #custom-vpn {
     color: @catppuccin-blue;
     margin: 0px 0px 0px 0px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 #pulseaudio {

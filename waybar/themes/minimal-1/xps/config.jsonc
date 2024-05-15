@@ -14,18 +14,20 @@
 
     "modules-left": [
         "custom/apps",
+        "clock",
         "hyprland/workspaces",
         "group/quicklinks"
     ],
 
     "modules-center": [
-        "clock"
+        "group/systemgroup"
     ],
 
     "modules-right": [
-        "group/systemgroup",
+        // "group/systemgroup",
         "pulseaudio",
-        "group/audio-light-batt",
+        "group/networkgroup",
+        "battery",
         "custom/shutdown"
     ],
 
@@ -248,7 +250,7 @@
         "modules": [
             // "custom/ranger",
             "custom/firefox",
-            "custom/spotify",
+            //"custom/spotify",
             "custom/discord",
             "custom/github",
             "custom/vscode"
@@ -265,13 +267,11 @@
          ]
     },
 
-    "group/audio-light-batt": {
+    "group/networkgroup": {
         "orientation": "horizontal",
         "modules": [
-            "battery",
-            // "pulseaudio",
-            "network",
-            "custom/vpn"
+            "custom/vpn",
+            "network"
         ]
     },
 
