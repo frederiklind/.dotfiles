@@ -51,8 +51,9 @@ return {
 
                 pickers = {
                     find_files = {
-                        previewer = false,
+                        -- previewer = false,
                         height = 0.5,
+                        layout_strategy = "horizontal"
                     },
                     live_grep = {
                         layout_strategy = "horizontal",
