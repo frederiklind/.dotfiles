@@ -3,7 +3,7 @@
   "logo": {
     "source": "~/.dotfiles/fastfetch/ascii-spaceman.txt",
     "color": {
-        "1": "cyan",
+        "1": "blue",
         "2": "blue",
         "3": "magenta"
     }
@@ -77,8 +77,8 @@
     // },
     {
       "type": "packages",
-      "key": "    ",
-      "keyColor": "black"
+      "key": "  󰮯  ",
+      "keyColor": "cyan"
     },
     "break",
     {

@@ -16,7 +16,6 @@
         "custom/apps",
         "hyprland/workspaces",
         "group/quicklinks"
-        // "group/systemgroup"
     ],
 
     "modules-center": [
@@ -25,6 +24,7 @@
 
     "modules-right": [
         "group/systemgroup",
+        "pulseaudio",
         "group/audio-light-batt",
         "custom/shutdown"
     ],
@@ -143,9 +143,9 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
-        "format": "{volume}% {icon}", 
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
+        "format": "{volume}% {icon}  {format_source}", 
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
@@ -269,7 +269,7 @@
         "orientation": "horizontal",
         "modules": [
             "battery",
-            "pulseaudio",
+            // "pulseaudio",
             "network",
             "custom/vpn"
         ]
