@@ -14,8 +14,8 @@ format = '[󰚌 $user ]($style)'
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " "
-style = "fg:bold blue"
-format = "[$path]($style)"
+style = "fg:bold yellow"
+format = "[$path ]($style)"
 
 [character]
 success_symbol = "[>](bold red)"
