@@ -140,6 +140,7 @@ button:hover {
 }
 
 #custom-firefox {
+    font-size: 16px;
     margin-left: 5px;
     color: @catppuccin-blue; 
     border-radius: 7px;
