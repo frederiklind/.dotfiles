@@ -5,21 +5,22 @@
 #  Frederik Lind (2024)
 #
 
+
 [username]
 show_always = true
-style_user = "fg:bold blue"
-format = '[󰚌 $user ]($style)'
+style_user = "fg:bold #181926 bg:#8aadf4"
+format = '[](#8aadf4)[󰚌 $user ]($style)[ ](#8aadf4)'
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-read_only = " "
-style = "fg:bold yellow"
-format = "[$path ]($style)"
+home_symbol = "~"
+read_only = "  "
+format = "[$path ](#b7bdf8)[$read_only](#ed8796)"
 
 [character]
-success_symbol = "[>](bold red)"
-error_symbol = "[x](bold red)"
+success_symbol = "[❯](bold #8bd5ca)"
+error_symbol = "[❯](bold #ed8796)"
 vimcmd_symbol = "[<](bold green)"
 
 [git_commit]
@@ -31,6 +32,10 @@ behind = "<"
 diverged = "<>"
 renamed = "r"
 deleted = "󰧧"
+
+[git_branch]
+symbol = "󰘬 "
+format = "[$symbol$branch]($style) "
 
 [aws]
 symbol = "aws "
@@ -75,9 +80,6 @@ symbol = "exs "
 [elm]
 symbol = "elm "
 
-[git_branch]
-symbol = "󰘬 "
-
 [golang]
 symbol = " "
 
@@ -89,6 +91,7 @@ symbol = "hg "
 
 [java]
 symbol = " "
+style = "fg:#f5a97f"
 
 [julia]
 symbol = "jl "
@@ -175,6 +178,7 @@ symbol = "purs "
 
 [python]
 symbol = "󰌠 "
+style = "fg:#eed49f"
 
 [raku]
 symbol = "raku "

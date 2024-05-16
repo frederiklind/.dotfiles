@@ -1,7 +1,7 @@
 vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
 vim.cmd("let g:vimtex_view_method = \'zathura\'")
-vim.cmd("let g:vimtex_compiler_method = \'latexrun\'")
+vim.cmd("let g:vimtex_compiler_method = \'latexmk\'")
 vim.cmd("let g:python3_host_prog = \'/usr/bin/python3\'")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")

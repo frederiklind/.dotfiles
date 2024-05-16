@@ -63,6 +63,7 @@ alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 echo
 #neofetch
 ~/.dotfiles/scripts/fetch.sh
+#~/.dotfiles/fetch/fetch.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"
 eval "$(starship init bash)"
