@@ -14,16 +14,17 @@
 
     "modules-left": [
         "custom/apps",
+        //"clock",
         "hyprland/workspaces",
-        "clock",
         "group/quicklinks"
     ],
 
     "modules-center": [
-        "group/systemgroup"
+        "clock"
     ],
 
     "modules-right": [
+        "group/systemgroup",
         "pulseaudio",
         "group/networkgroup",
         "battery",
@@ -98,7 +99,7 @@
     "clock": {
         "format": "  {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "󰃮  {:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}"
     },
 
     "cpu": {
@@ -145,15 +146,15 @@
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
         "format": "{volume}% {icon}  {format_source}", 
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "󰓃 ",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
@@ -199,14 +200,6 @@
         "format": "  ",
         "on-click": "~/.dotfiles/scripts/terminal.sh",
         "tooltip": false
-    },
-
-    "custom/bluetooth": {
-        "format": "{}",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
-        "tooltip": false,
-        "exec": "~/.dotfiles/scripts/bluetooth-status.sh",
-        "interval": 20
     },
 
     "custom/spotify": {
@@ -257,7 +250,7 @@
         "modules": [
             // "custom/ranger",
             "custom/firefox",
-            "custom/spotify",
+            //"custom/spotify",
             "custom/discord",
             "custom/github",
             "custom/vscode"
@@ -279,16 +272,16 @@
         "modules": [
             "custom/vpn",
             "network"
-            //"custom/bluetooth"
         ]
     },
 
     "group/systemgroup": {
         "orientation": "horizontal",
         "modules": [
-            "cpu"
-            //"memory",
-            //"temperature"
+            "disk",
+            "cpu",        
+            "memory",
+            "temperature"
         ]
     }
 }

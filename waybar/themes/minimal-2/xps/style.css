@@ -6,7 +6,7 @@
  *
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.85);
+@define-color waybar-background rgba(24, 25, 38, 1);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 @define-color catppuccin-bck #1e1e2e;
@@ -40,14 +40,6 @@ window#waybar.termite {
 window#waybar.chromium {
     background-color: rgba(30, 32, 48, 0.75);
     border: none;
-}
-
-tooltip {
-     border-radius: 4px;
-     background-color: #363a4f;
-     color: #b7bdf8;
-     font-size: 20px;
-     padding: 25px;
 }
 
 button {
@@ -147,11 +139,10 @@ button:hover {
     color: @catppuccin-blue;
 }
 
-
 #custom-firefox {
     font-size: 16px;
     margin-left: 5px;
-    color: #f0c6c6; 
+    color: @catppuccin-blue; 
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 11px;
@@ -168,7 +159,7 @@ button:hover {
 
 #custom-vscode {
     margin-left: 0px;
-    color: #7dc4e4; 
+    color: @catppuccin-blue; 
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 10px;
@@ -177,15 +168,15 @@ button:hover {
 
 #custom-spotify {
     font-size: 16px;
-    color: #8bd5ca; 
+    color: @catppuccin-blue; 
     border-radius: 7px;
-    padding-left: 3px;
+    padding-left: 5px;
 }
 
 #custom-discord {
     font-size: 15px;
-    margin-left: 5px;
-    color: #b7bdf8; 
+    margin-left: 0px;
+    color: @catppuccin-blue; 
     border-radius: 7px;
     padding: 0px 5px;
     padding-right: 13px;
@@ -258,7 +249,7 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 5px 2.5px 5px 0px;
+    margin: 5px 0px 5px 2.5px;
     padding-left: 10px;
     padding-right: 12px;
     background-color: @module-background;
@@ -313,12 +304,6 @@ label:focus {
 #temperature,
 #backlight {
     color: #8aadf4;
-}
-
-#custom-bluetooth {
-    color: @catppuccin-blue;
-    margin: 0px 3px 0px 10px;
-    font-size: 16px;
 }
 
 #network {

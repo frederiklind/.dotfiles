@@ -9,24 +9,23 @@
 {
     "layer": "top",     // Waybar at top layer
     "position": "top",  // Waybar position (top|bottom|left|right)
+    // "height": 30,       // Waybar height (to be removed for auto height)
     "spacing": 4,       // Gaps between modules (4px)
-    "margin": "0 8 0 8",
-
+    "margin": "10 17 0 17",
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        "clock",
-        "group/quicklinks"
+        "group/quicklinks",
+        "hyprland/window"
     ],
 
     "modules-center": [
-        "group/systemgroup"
+	    "clock"
     ],
 
     "modules-right": [
-        "pulseaudio",
-        "group/networkgroup",
-        "battery",
+        "group/systemgroup",
+        "group/audio-light-batt",
         "custom/shutdown"
     ],
 
@@ -96,16 +95,19 @@
     },
 
     "clock": {
-        "format": "  {:%H:%M}",
+        // "timezone": "America/New_York",
+        "format": "  {:%H:%M    %a %d %h}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "󰃮  {:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}"
     },
+
 
     "cpu": {
         "interval": 1,
-        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}",
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}  {usage}% ",
+        "tooltip": false,
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },    
+    },
 
     "memory": {
         "format": "{}% 󰘚"
@@ -118,6 +120,13 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C "
     },
+
+    "disk": {
+        "interval": 30,
+        "format": "D {percentage_used}% ",
+        "path": "/",
+        "on-click": "alacritty -e htop"
+    }, 
 
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -144,41 +153,41 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
-        "format": "{volume}% {icon}  {format_source}", 
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format": "{volume}% {icon}", 
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
         "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "󰓃 ",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
 
     "custom/firefox": {
-        "format": "",
+        "format": "  ",
         "on-click": "~/.dotfiles/scripts/firefox.sh",
         "tooltip": false
     },
 
     "custom/discord": {
-        "format": "",
+        "format": "   ",
         "on-click": "~/.dotfiles/scripts/discord.sh",
         "tooltip": false
     },
 
     "custom/github": {
-        "format": "",
+        "format": "  ",
         "on-click": "~/.dotfiles/scripts/github.sh",
         "tooltip": false
     },
 
     "custom/vscode": {
-        "format": "󰨞",
+        "format": " 󰨞 ",
         "on-click": "~/.dotfiles/scripts/vscode.sh",
         "tooltip": false
     },
@@ -201,16 +210,8 @@
         "tooltip": false
     },
 
-    "custom/bluetooth": {
-        "format": "{}",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
-        "tooltip": false,
-        "exec": "~/.dotfiles/scripts/bluetooth-status.sh",
-        "interval": 20
-    },
-
     "custom/spotify": {
-        "format": " ",
+        "format": "  ",
         "on-click": "~/.dotfiles/scripts/spotify.sh",
         "tooltip": false
     },
@@ -251,11 +252,11 @@
         "interval": 20,
         "tooltip": false
     },
-
+  
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            // "custom/ranger",
+            "custom/ranger",
             "custom/firefox",
             "custom/spotify",
             "custom/discord",
@@ -274,21 +275,22 @@
          ]
     },
 
-    "group/networkgroup": {
+    "group/audio-light-batt": {
         "orientation": "horizontal",
         "modules": [
-            "custom/vpn",
-            "network"
-            //"custom/bluetooth"
+            "battery",
+            "pulseaudio",
+            "network",
+            "custom/vpn"
         ]
     },
 
     "group/systemgroup": {
         "orientation": "horizontal",
         "modules": [
-            "cpu"
-            //"memory",
-            //"temperature"
+            "cpu",
+            "memory",
+            "temperature"
         ]
     }
 }
