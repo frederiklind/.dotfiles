@@ -151,7 +151,7 @@ button:hover {
 #custom-firefox {
     font-size: 16px;
     margin-left: 5px;
-    color: #f0c6c6; 
+    color: #89b4fa; 
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 11px;
@@ -160,7 +160,7 @@ button:hover {
 
 #custom-github {
     margin-left: 5px;
-    color: @catppuccin-blue; 
+    color: #89b4fa; 
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 10px;
@@ -168,7 +168,7 @@ button:hover {
 
 #custom-vscode {
     margin-left: 0px;
-    color: #7dc4e4; 
+    color: #89b4fa; 
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 10px;
@@ -177,7 +177,7 @@ button:hover {
 
 #custom-spotify {
     font-size: 16px;
-    color: #8bd5ca; 
+    color: #89b4fa; 
     border-radius: 7px;
     padding-left: 3px;
 }
@@ -185,7 +185,7 @@ button:hover {
 #custom-discord {
     font-size: 15px;
     margin-left: 5px;
-    color: #b7bdf8; 
+    color: #89b4fa; 
     border-radius: 7px;
     padding: 0px 5px;
     padding-right: 13px;
@@ -202,7 +202,7 @@ button:hover {
     padding-right: 8px;
     padding-left: 4px;
     margin: 5px 5px 5px 0px;
-    color: #5b6078;
+    color: #89b4fa;
     background-color: @module-background;
     border-radius: 7px;
 }

@@ -1,7 +1,5 @@
 vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
--- vim.cmd("let g:vimtex_view_method = \'zathura\'")
--- vim.cmd("let g:vimtex_compiler_method = \'latexmk\'")
 vim.cmd("let g:python3_host_prog = \'/usr/bin/python3\'")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
@@ -24,6 +22,7 @@ vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true })
 
 -- =============================== navigation ==============================
 -- vim.keymap.set('n', '<S-p>', ':$<CR>', { noremap = true, silent = true, desc = ":$<CR> - Moves cursor to the end of the line." })
