@@ -12,7 +12,7 @@
     /*  Default: 6px  */
     --NavbarWidth: 43;
     /*  Default values: 36 - 43  */
-    --TabsHeight: 36;
+    --TabsHeight: 30;
     /*  Minimum: 30  */
     /*  Default: 36  */
     --TabsBorder: 8;
@@ -24,6 +24,7 @@
         /*  Default as a number: 44  */
     ;
 }
+
 
 @media screen and (min-width: 1325px)
 /* Only the tabs space will grow from here */
@@ -102,6 +103,8 @@
     }
 }
 
+
+
 #nav-bar,
 #PersonalToolbar {
     background-color: #0000 !important;
@@ -110,16 +113,33 @@
 }
 
 #nav-bar {
-    margin-left: 3px;
+    margin-left: 5px;
 }
 
 #forward-button, #back-button {
     display: none !important;
 }
 
+#save-to-pocket-button {
+    display: none !important;
+}
+
+#fxa-toolbar-menu-button {
+    display: none !important;
+}
+
 .tab-background,
 .tab-stack {
     min-height: calc(var(--TabsHeight) * 1px) !important;
+}
+
+
+.tab-icon-sound-label {
+    display: none !important;
+}
+
+ #tabs-newtab-button {
+    display: none !important;
 }
 
 /* Tabs elements  */
@@ -227,26 +247,4 @@
   box-shadow: none !important;
 }
 
-/* #titlebar {
-  appearance: none !important;
-  height: 0px;
-} */
 
-/* #titlebar>#toolbar-menubar { */
-/*     margin-top: 0px; */
-/* } */
-/**/
-/* #TabsToolbar { */
-/*     min-width: 0 !important; */
-/*     min-height: 0 !important; */
-/* } */
-/**/
-/* #TabsToolbar>.titlebar-buttonbox-container { */
-/*     display: none; */
-/*     /* position: absolute; */
-/*   top: .5px; */
-/*   right: 0px; */ 
-/* } */
-/**/
-/* #sidebar-header { */
-/*     display: none; */

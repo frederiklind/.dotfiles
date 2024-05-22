@@ -13,6 +13,9 @@ case "${THEME}" in
     "Off")
         exit 1
         ;;
+    "Back")
+        exit 1
+        ;;
     *)
         ln -sf "${HOME}/.dotfiles/alacritty/${THEME}" "${HOME}/.config/alacritty/alacritty.toml"
         ;;

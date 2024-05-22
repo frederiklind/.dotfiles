@@ -1,7 +1,8 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		dependencies = {
+		lazy = true,
+    dependencies = {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
 			"mfussenegger/nvim-dap-python",
@@ -89,9 +90,11 @@ return {
 	},
 	{
 		"rcarriga/nvim-dap-ui",
+    lazy = true,
 	},
 	{
 		"nvim-neotest/nvim-nio",
+        lazy = true,
 	},
 	{
 		"Weissle/persistent-breakpoints.nvim",

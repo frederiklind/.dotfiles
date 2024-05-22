@@ -8,6 +8,9 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
+
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.o.pumheight = 15
@@ -17,11 +20,10 @@ vim.o.pumheight = 15
 vim.g.mapleader = " "
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<C-u>', ':u<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true })
 
 -- =============================== navigation ==============================
