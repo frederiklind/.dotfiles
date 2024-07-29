@@ -75,6 +75,9 @@ return {
             lspconfig.pylsp.setup({
                 capabilities = capabilities,
             })
+            lspconfig.texlab.setup({
+                capabilities = capabilities,
+            })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})

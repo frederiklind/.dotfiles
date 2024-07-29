@@ -15,7 +15,12 @@
 @define-color catppuccin-teal #8bd5ca;
 
 * {
-    font-family: FiraCode Nerd Font, Roboto, Helvetica, Arial, sans-serif;
+    font-family:
+        FiraCode Nerd Font,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
     font-size: 13px;
 }
 
@@ -23,7 +28,7 @@ window#waybar {
     background-color: @waybar-background;
     border-bottom: 0;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
     opacity: 1;
     border-radius: 0px;
     /* border-bottom: 1px solid @module-border; */
@@ -34,7 +39,7 @@ window#waybar.hidden {
 }
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 window#waybar.chromium {
@@ -95,7 +100,7 @@ button:hover {
     background-color: @module-background;
     margin: 5px 2.5px 5px 0px;
     border-radius: 7px;
-    padding: 2px 0px; 
+    padding: 2px 0px;
 }
 
 #networkgroup {
@@ -142,16 +147,15 @@ button:hover {
 #custom-firefox {
     font-size: 16px;
     margin-left: 5px;
-    color: @catppuccin-blue; 
+    color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 11px;
 }
 
-
 #custom-github {
     margin-left: 5px;
-    color: @catppuccin-blue; 
+    color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 10px;
@@ -159,16 +163,15 @@ button:hover {
 
 #custom-vscode {
     margin-left: 0px;
-    color: @catppuccin-blue; 
+    color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
     padding-right: 10px;
 }
 
-
 #custom-spotify {
     font-size: 16px;
-    color: @catppuccin-blue; 
+    color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
 }
@@ -176,7 +179,7 @@ button:hover {
 #custom-discord {
     font-size: 15px;
     margin-left: 0px;
-    color: @catppuccin-blue; 
+    color: @catppuccin-blue;
     border-radius: 7px;
     padding: 0px 5px;
     padding-right: 13px;
@@ -199,7 +202,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -356,4 +359,14 @@ label:focus {
 
 #temperature.critical {
     background-color: #eb4d4b;
+}
+
+tooltip {
+    border-radius: 10px;
+    background-color: @module-background;
+    border: 1px solid @catppuccin-blue;
+}
+
+tooltip label {
+  color: @catppuccin-teal;
 }

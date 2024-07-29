@@ -278,7 +278,7 @@
     "group/systemgroup": {
         "orientation": "horizontal",
         "modules": [
-            "disk",
+            //"disk",
             "cpu",        
             "memory",
             "temperature"

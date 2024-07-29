@@ -5,19 +5,29 @@
 *  Frederik Lind (2024)
 * 
 * */
+/**/
+/* @-moz-document url("about:newtab"), url("about:home") { */
+/*     .logo { */
+/*         background-image: url("logo.png") !important; */
+/*         background-size: 256px !important; */
+/*         height: 256px !important; */
+/*         width: 256px !important; */
+/*     } */
+/* } */
 
 #preferences-body {
-  background-color: #1e2030 !important;
+    background-color: #1e2030 !important;
 }
 
 .sticky-container {
-  background-color: #1e2030 !important;
+    background-color: #1e2030 !important;
 }
 
 .search-wrapper .search-handoff-button,
 .search-wrapper input {
-  background-color: #24273a !important;
+    background-color: #24273a !important;
 }
+
 /**/
 /* @-moz-document domain("chatgpt.com") { */
 /*   html, */
