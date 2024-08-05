@@ -3,7 +3,7 @@
 status=$(nordvpn status)
 
 if [[ $status == *"Disconnected"* ]]; then
-    echo "Not Connected"
+    echo ""
 else
-    echo "Connected"
+    echo ""
 fi

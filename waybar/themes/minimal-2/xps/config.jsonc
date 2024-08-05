@@ -10,23 +10,30 @@
     "layer": "top",     // Waybar at top layer
     "position": "top",  // Waybar position (top|bottom|left|right)
     "spacing": 4,       // Gaps between modules (4px)
-    "margin": "0 8 0 8",
+    "margin": "0 0 0 0",
 
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        "group/quicklinks"
+        "group/quicklinks",
+        "group/spotify_controls"
+        // "custom/playerctl"
     ],
 
     "modules-center": [
-        "clock"
+      "group/clock_group"
     ],
 
     "modules-right": [
-        "group/systemgroup",
+        // "cpu#bars",
+        "group/cpu_group",
+        "group/memory_group",
+        "group/temperature_group",
         "pulseaudio",
-        "group/networkgroup",
+        "group/vpn_group",
+        "group/network_group",
         "battery",
+        // "custom/settings",
         "custom/shutdown"
     ],
 
@@ -86,6 +93,71 @@
         }
     },
 
+    "custom/playerctl": {
+        "exec": "playerctl -p spotifyd metadata --format '  {{ artist }} - {{ title }}'",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "custom/next_track": {
+        "format": "󰒭",
+        "on-click": "playerctl -p spotifyd next",
+        "tooltip": false
+    },
+
+    "custom/prev_track": {
+        "format": "󰒮",
+        "on-click": "playerctl -p spotifyd next",
+        "tooltip": false
+    },
+
+    "custom/play_pause": {
+        "exec": "~/.dotfiles/scripts/spotify-controls/status.sh",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "playerctl -p spotifyd play-pause",
+        "tooltip": false
+    },
+
+    // custom icons -----------------------------------------------------------
+
+    "custom/cpu_logo": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "custom/memory_logo": {
+        "format": "󰘚",
+        "tooltip": false
+    },
+
+    "custom/temperature_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/clock_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/calendar_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/network_logo" : {
+        "format": "󰖟",
+        "tooltip": false
+    },
+
+    // ------------------------------------------------------------------------
+
+    "custom/spotify_logo": {
+        "format": " ",
+        "tooltip": false
+    },
+
     "battery": {
         "states": {
             "warning": 30,
@@ -96,19 +168,31 @@
     },
 
     "clock": {
-        "format": "  {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        // "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "custom/calendar": {
+        "exec": "date +\"%a, $(date +%-d)$(date +%-d | sed 's/1$/st/;s/2$/nd/;s/3$/rd/;s/[04-9]$/th/') %b - %Y\"",
+        "interval": 60,
+        "tooltip": false
     },
 
     "cpu": {
+        "interval": 1,
+        "format": "{usage}%",
+        "tooltip": true
+    },
+
+    "cpu#bars": {
         "interval": 1,
         "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },    
 
     "memory": {
-        "format": "{}% 󰘚"
+        "format": "{percentage}%"
     },
 
     "temperature": {
@@ -116,7 +200,7 @@
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C "
+        "format": "{temperatureC}°C"
     },
 
     "power-profiles-daemon": {
@@ -132,7 +216,7 @@
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -208,7 +292,7 @@
     },
 
     "custom/youtube": {
-        "format": " 󰗃 ",
+        "format": "󰗃",
         "on-click": "~/.dotfiles/scripts/youtube.sh",
         "tooltip": false
     },
@@ -231,16 +315,21 @@
         "tooltip": false    
     },
 
+    "custom/settings": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/settings.sh",
+        "tooltip": false
+    },
+
     "custom/vpn": {
-        "states": {
-            "disconnected": "",
-            "connected": ""
-        },
         "format": " {} ",
-        "format-connected": " {} ",
-        "format-disconnected": " {} ",
         "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
+        "tooltip": false
+    },
+
+    "custom/vpn_logo": {
+        "format": "󰞀",
         "tooltip": false
     },
 
@@ -249,28 +338,25 @@
         "modules": [
             // "custom/ranger",
             "custom/firefox",
-            //"custom/spotify",
             "custom/discord",
             "custom/github",
             "custom/vscode"
         ]
     },
 
-    "group/devapps": {
+    "group/clock_group": {
         "orientation": "horizontal",
         "modules": [
-            "custom/github",
-            "custom/vscode",
-            "custom/neovim",
-            "custom/terminal"
-         ]
+            "custom/clock_logo",
+            "clock"
+        ]
     },
 
-    "group/networkgroup": {
+    "group/calendar_group": {
         "orientation": "horizontal",
         "modules": [
-            "custom/vpn",
-            "network"
+            "custom/calendar_logo",
+            "custom/calendar"
         ]
     },
 
@@ -278,9 +364,61 @@
         "orientation": "horizontal",
         "modules": [
             //"disk",
+            "custom/cpu_logo",
             "cpu",        
             "memory",
+            "custom/temperature_logo",
             "temperature"
+        ]
+    },
+
+    "group/cpu_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/cpu_logo",
+            "cpu"
+        ]
+    },
+
+    "group/memory_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/memory_logo",
+            "memory"
+        ]
+    },
+
+    "group/temperature_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/temperature_logo",
+            "temperature"
+        ]
+    },
+
+    "group/spotify_controls": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/spotify_logo",
+            "custom/prev_track",
+            "custom/play_pause",
+            "custom/next_track"
+        ]
+    },
+
+    "group/vpn_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/vpn_logo",
+            "custom/vpn"
+        ]
+    },
+
+    "group/network_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/network_logo",
+            "network"
         ]
     }
 }
