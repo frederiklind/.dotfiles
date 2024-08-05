@@ -61,8 +61,8 @@ alias tmux="tmux -2"
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 
 echo
-#neofetch
-~/.dotfiles/scripts/fetch.sh
+neofetch
+#~/.dotfiles/scripts/fetch.sh
 #~/.dotfiles/fetch/fetch.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"

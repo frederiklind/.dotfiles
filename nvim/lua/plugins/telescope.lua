@@ -24,8 +24,11 @@ return {
             for hl, col in pairs(TelescopeColor) do
                 vim.api.nvim_set_hl(0, hl, col)
             end
-
-            vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+            vim.keymap.set("n", "<leader>ff", function()
+                builtin.find_files({
+                    find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+                })
+            end, {})
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
         end,
     },
@@ -53,7 +56,7 @@ return {
                     find_files = {
                         -- previewer = false,
                         height = 0.5,
-                        layout_strategy = "horizontal"
+                        layout_strategy = "horizontal",
                     },
                     live_grep = {
                         layout_strategy = "horizontal",

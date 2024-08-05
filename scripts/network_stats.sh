@@ -1,6 +1,6 @@
 #!/bin/bash
 
-interface="wlan0"
+interface="eno1"
 
 # Get the number of bytes transmitted and received
 tx_bytes=$(ip -s link show "$interface" | awk '/TX:/{print $2}')

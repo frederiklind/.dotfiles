@@ -1,5 +1,4 @@
 # FLIN .dotfiles
-
 These dotfiles are setup for arch-linux with hyprland WM.
 
 **Note:** The current dotfiles install-script and configuration is setup to work on post to running the archinstall-script with desktop profile and hyprland preinstalled. In the future this will work with minimal arch installations. 
@@ -35,6 +34,30 @@ $ ./install.sh
 ```
 
 The installation consists of multiple steps requiring user input. Most steps use `gum` for wasy selection of available options in the different steps. For steps with multi-selection, use SPACE-key to select each option before proceeding with RETURN-key.
+
+### Paru - AUR Helper
+
+Paru can be installed using the Paru install script, using the following commands:
+
+```bash
+$ ./dotfiles/.install/paru.sh
+```
+
+To manually install Paru, use the following steps:
+
+```bash
+# create directory for paru source code
+$ mkdir <source-dir>
+
+# change current working directory
+$ cd <source-dir>
+
+# clone paru git repo
+$ git clone https://aur.archlinux.org/paru.git
+
+# install from source
+$ cd paru && makepkg -si
+```
 
 
 ### Graphics card driver
@@ -96,6 +119,17 @@ $ git config --global user.email "<EMAIL_ADDRESS>"
 ### Visual Studio Code
 
 Not sure if this is strictly a NVIDIA-GPU issue, however i usually experience blurriness in the VSCode user interface. I Have managed to resolve this by using a `code-flags.conf` file.
+
+
+### Neovim - LaTeX
+
+To use the Latex compiler in Neovim, a pdf is required. Zathura is installed during as part of the installation script, and will be the default pdf viever. This option can be changed in the Neovim configuration, in `.dotfiles/nvim/lua/plugins/vimtex.lua`. Following packages will need to be installed on the system:
+
+```bash
+$ sudo pacman -S zathura
+$ sudo pacman -S zathura-pdf-poppler
+$ sudo pacman -S 
+```
 
 
 ### Firefox CSS
