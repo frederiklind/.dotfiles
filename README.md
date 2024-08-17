@@ -62,7 +62,7 @@ $ cd paru && makepkg -si
 
 ### Graphics card driver
 
-For devices with NVIDIA cards, it might be best to select the Nouveau open source driver, as selecting the porpietary driver might cause instability in hyprland (at least in my experience).
+For devices with NVIDIA cards, it might be best to select the Nouveau open source driver, as selecting the proprietary driver might cause instability in hyprland.
 
 
 ### Hyprland installation
@@ -93,8 +93,6 @@ $ sudo pacman -S nodejs
 
 # install npm package manager
 $ sudo pacman -S npm
-
-...
 ```
 
 
@@ -107,7 +105,6 @@ If you use the provided `.bashrc` file, there are some useful gh-cli aliases set
 Login in to your github account by following these steps:
 
 ```bash
-# run the command and follow instructions
 $ gh auth login
 
 # set global git username and email

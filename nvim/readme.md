@@ -17,6 +17,10 @@
 
 <br/>
 
+<div align="center">
+    <img height="400px" src="../.assets/nvim/dashboard.png" alt="Image Description">
+</div>
+
 ## Completions
 
 ## Bars and lines
