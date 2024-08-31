@@ -29,10 +29,10 @@
         "group/cpu_group",
         "group/memory_group",
         "group/temperature_group",
-        "pulseaudio",
+        "group/audio_group",
         "group/vpn_group",
         "group/network_group",
-        "battery",
+        "group/battery_group",
         // "custom/settings",
         "custom/shutdown"
     ],
@@ -163,7 +163,15 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}%"
+    },
+
+    "battery#icon": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
         "format-icons": ["", "", "", "", ""] 
     },
 
@@ -228,12 +236,22 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
-        "format": "{volume}% {icon}  {format_source}", 
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}%", 
+        "format-bluetooth": "{volume}%",
+        "format-bluetooth-muted": "",
+        "format-muted": "0%",
+        "format-source": "",
+        "format-source-muted": "", 
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#logo": {
+        // "scroll-step": 1, // %, can be a float
+        // {format_source} removed
+        "format": "{icon}", 
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -403,6 +421,22 @@
             "custom/prev_track",
             "custom/play_pause",
             "custom/next_track"
+        ]
+    },
+
+    "group/audio_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#logo",
+            "pulseaudio"
+        ]
+    },
+
+    "group/battery_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery#icon",
+            "battery"
         ]
     },
 

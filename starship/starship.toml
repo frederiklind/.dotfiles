@@ -37,6 +37,9 @@ deleted = "󰧧"
 symbol = "󰘬 "
 format = "[$symbol$branch]($style) "
 
+[gradle]
+symbol = " "
+
 [aws]
 symbol = "aws "
 

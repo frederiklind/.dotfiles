@@ -16,7 +16,7 @@ return {
                     "cssmodules_ls",
                     "fsautocomplete", --f#
                     "html",
-                    "jdtls", --java
+                    --"jdtls", --java
                     "jsonls",
                     "tsserver", --javascript
                     --"pylsp", --python
