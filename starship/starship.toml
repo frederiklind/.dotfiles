@@ -166,6 +166,7 @@ Windows = "win "
 
 [package]
 symbol = "󰏖 "
+style = "fg:bold #f5a97f"
 
 [perl]
 symbol = " "
@@ -191,6 +192,7 @@ symbol = " "
 
 [rust]
 symbol = "󱘗 "
+style = "fg:bold #8bd5ca"
 
 [scala]
 symbol = " "

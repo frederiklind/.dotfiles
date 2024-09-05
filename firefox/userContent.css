@@ -15,6 +15,27 @@
 /*     } */
 /* } */
 
+:root {
+    --catppuccin-mauve: #c6a0f6;
+    --catppuccin-yellow: #eed49f;
+    --catppuccin-green: #a6da95;
+    --catppuccin-teal: #8bd5ca;
+    --catppuccin-sky: #91d7e3;
+    --catppuccin-sappire: #7dc4e4;
+    --catppuccin-blue: #8aadf4;
+    --catppuccin-lavender: #b7bdf8;
+    --catppuccin-text: #cad3f5;
+    --catppuccin-subtext1: #b8c0e0;
+    --catppuccin-subtext0: #a5adcb;
+    --catppuccin-overlay1: #8087a2;
+    --catppuccin-overlay0: #6e738d;
+    --catppuccin-surface1: #494d64;
+    --catppuccin-surface0: #363a4f;
+    --catppuccin-base: #24273a;
+    --catppuccin-mantle: #1e2030;
+    --catppuccin-crust: #181926;
+}
+
 #preferences-body {
     background-color: #1e2030 !important;
 }
@@ -28,39 +49,231 @@
     background-color: #24273a !important;
 }
 
-/**/
-/* @-moz-document domain("chatgpt.com") { */
-/*   html, */
-/*   body { */
-/*     overflow: hidden !important; */
-/*   } */
-/**/
-/*   * { */
-/*     scrollbar-width: none !important; */
-/*     -ms-overflow-style: none !important; */
-/*   } */
-/**/
-/*   ::-webkit-scrollbar { */
-/*     display: none; */
-/*   } */
-/**/
-/*   body { */
-/*     background-color: #1e2030 !important; */
-/*   } */
-/**/
-/*   nav { */
-/*     background-color: #1e2030 !important; */
-/*   } */
-/**/
-/*   .dark .dark\:bg-token-main-surface-secondary { */
-/*     background-color: #24273a; */
-/*   } */
-/**/
-/*   .ZnJ1aXRqdWljZQ .juice\:bg-token-sidebar-surface-primary { */
-/*     background-color: #1e2030 !important; */
-/*   } */
-/**/
-/*   h3 { */
-/*     color: #8aadf4; */
-/*   } */
-/* } */
+.search-wrapper {
+    margin-top: 60px;
+}
+
+
+.search-wrapper .logo-and-wordmark .logo {
+    background: image-set(url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Firefox_Nightly_logo%2C_2019.svg"), url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Firefox_Nightly_logo%2C_2019.svg") 2x) no-repeat center !important;
+    background-size: 100px !important;
+}
+
+.wordmark {
+    height: 90px !important;
+    width: 200px !important;
+    background-size: 180px !important;
+    fill: var(--catppuccin-teal) !important;
+}
+
+.logo {
+    width: 105px !important;
+    height: 105px !important;
+}
+
+.personalize-button {
+    color: var(--catppuccin-blue) !important;
+}
+
+@-moz-document domain("www.google.com") {
+    body {
+        background-color: var(--catppuccin-crust) !important;
+    }
+    
+    /* "nav" */
+    #gb {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    ._6cXYZtr1EqqNxc8PyMrl0Qg_12 {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    /* page footer */
+    .c93Gbe {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    /* main page input */
+    .RNNXgb {
+        background: var(--catppuccin-mantle) !important;
+        border: 0px solid transparent !important;
+    }
+
+    .sfbg {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    .N54PNb {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    #slim_appbar {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    #fbar {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    .b2Rnsc, 
+    .vIifob {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+}
+
+@-moz-document domain("github.com") {
+    body {
+        background: var(--catppuccin-mantle) !important;
+    }
+
+    .d-md-flex {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    /* nav bar */
+    .AppHeader {
+        background-color: var(--catppuccin-crust) !important;
+    }
+    
+    /* main logo nav etc. */
+    .color-fg-default {
+        color: var(--catppuccin-mauve) !important;
+    }
+    
+    /* sidebar items foreground */
+    .color-fg-default.lh-0.mb-2.markdown-title {
+        color: var(--catppuccin-subtext0) !important;
+    }
+
+    .feed-left-sidebar.col-md-4.col-lg-3.color-border-muted.border-bottom.hide-md.hide-sm.border-right.color-bg-default {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    .Button--primary {
+        background-color: var(--catppuccin-teal) !important;
+        color: var(--catppuccin-crust) !important;
+        font-weight: bolder !important;
+    }
+
+    .feed-item-content {
+        background-color: var(--catppuccin-crust) !important;
+    }
+    
+    .dashboard-break-word.comment-body.markdown-body.m-0.p-3.color-bg-subtle.mb-0.rounded-1 {
+        background-color: var(--catppuccin-crust) !important;
+    }
+}
+
+@-moz-document domain("www.youtube.com") {
+    .ytd-app {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    #container.ytd-searchbox {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    #masthead {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    #chips-wrapper {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    #ytd-player {
+        border: 1px solid var(--catppuccin-blue) !important;
+    }
+    
+    #cinematics-container {
+        display: none !important;
+    }
+
+    #description {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    h1 {
+        color: var(--catppuccin-blue) !important;
+    }
+}
+
+@-moz-document domain("chatgpt.com") {
+
+    html,
+    body {
+        overflow: hidden !important;
+    }
+
+    body {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    nav {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    .dark .dark\:bg-token-main-surface-secondary {
+        background-color: #24273a;
+    }
+
+    .text-token-text-secondary {
+        color: var(--catppuccin-blue) !important;
+    }
+
+    /* sidebar top index items background color - remove */
+    .bg-token-sidebar-surface-primary {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    .ZnJ1aXRqdWljZQ .juice\:bg-token-sidebar-surface-primary {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    .flex.h-9.items-center {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    /* remove gradient in sidebar items - right */
+    .ltr\:bg-gradient-to-l:where([dir="ltr"], [dir="ltr"] *) {
+        background-image: none !important;
+    }
+
+    /* main nav bar */
+    .sticky.top-0.p-3.mb-1\.5.flex.items-center.justify-between.z-10.h-14.font-semibold.bg-token-main-surface-primary {
+        background-color: var(--catppuccin-crust) !important;
+    }
+
+    /* code snippet header */
+    .flex.items-center.relative.text-token-text-secondary.bg-token-main-surface-secondary.px-4.py-2.text-xs.font-sans.justify-between.rounded-t-md {
+        background-color: var(--catppuccin-base) !important;
+    }
+
+    /* code snippet content container */
+    .overflow-y-auto.p-4 {
+        border: 0px solid transparent !important;
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    /* prompt input */
+    .flex.w-full.flex-col.gap-1\.5.rounded-\[26px\].p-1\.5.transition-colors.bg-\[\#f4f4f4\].dark\:bg-token-main-surface-secondary {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    .mb-1.me-1.flex.h-8.w-8.items-center.justify-center.rounded-full.bg-black.text-white.transition-colors.hover\:opacity-70.focus-visible\:outline-none.focus-visible\:outline-black.disabled\:text-\[\#f4f4f4\].disabled\:hover\:opacity-100.dark\:bg-white.dark\:text-black.dark\:focus-visible\:outline-white.disabled\:dark\:bg-token-text-quaternary.dark\:disabled\:text-token-main-surface-secondary.disabled\:bg-\[\#D7D7D7\] {
+        background-color: var(--catppuccin-teal) !important;
+    }
+
+    .relative.max-w-\[70\%\].rounded-3xl.px-5.py-2\.5.bg-\[\#f4f4f4\].dark\:bg-token-main-surface-secondary {
+        background-color: var(--catppuccin-mantle) !important;
+    }
+
+    p {
+        color: var(--catppuccin-subtext0) !important;
+    }
+
+    h3 {
+        color: var(--catppuccin-blue) !important;
+    }
+}

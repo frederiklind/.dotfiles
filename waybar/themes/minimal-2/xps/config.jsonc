@@ -286,7 +286,7 @@
     },
 
     "custom/terminal": {
-        "format": "  ",
+        "format": "",
         "on-click": "~/.dotfiles/scripts/terminal.sh",
         "tooltip": false
     },
@@ -312,6 +312,12 @@
     "custom/youtube": {
         "format": "󰗃",
         "on-click": "~/.dotfiles/scripts/youtube.sh",
+        "tooltip": false
+    },
+
+    "custom/google_drive": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/google_drive.sh",
         "tooltip": false
     },
 
@@ -354,8 +360,9 @@
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            // "custom/ranger",
+            // "custom/terminal",
             "custom/firefox",
+            "custom/google_drive",
             "custom/discord",
             "custom/github",
             "custom/vscode"

@@ -103,7 +103,11 @@
     }
 }
 
-
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+  list-style-image: url("./assets/firefox-nightly.svg") !important;
+  /* width: 16px; /* Adjust as needed */ 
+  /* height: 16px; /* Adjust as needed */ 
+}
 
 #nav-bar,
 #PersonalToolbar {

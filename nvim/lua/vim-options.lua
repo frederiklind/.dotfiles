@@ -76,7 +76,7 @@ vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent 
 
 vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neogit')
-  vim.cmd('Neotree git_status')
+  --vim.cmd('Neotree git_status')
 end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
 
 

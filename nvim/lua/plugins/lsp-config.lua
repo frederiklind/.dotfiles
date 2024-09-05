@@ -11,6 +11,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "lua_ls",
+                    "rust_analyzer",
                     "csharp_ls", --c#
                     "cssls",
                     "cssmodules_ls",
@@ -47,6 +48,9 @@ return {
                         },
                     },
                 },
+            })
+            lspconfig.rust_analyzer.setup({
+                capabilities = capabilities,
             })
             lspconfig.csharp_ls.setup({
                 capabilities = capabilities,
