@@ -30,6 +30,7 @@ return {
                 })
             end, {})
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+            vim.keymap.set('n', '<leader>km', builtin.keymaps, {})
         end,
     },
     {

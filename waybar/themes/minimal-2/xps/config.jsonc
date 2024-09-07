@@ -261,6 +261,24 @@
         "on-click": "pavucontrol"
     },
 
+    "alsa": {
+        "format": "{volume}%", 
+        "format-muted": "0%",
+        "on-click": "pavucontrol"
+    },
+
+    "alsa#logo": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰓃 ",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
     "custom/firefox": {
         "format": "",
         "on-click": "~/.dotfiles/scripts/firefox.sh",

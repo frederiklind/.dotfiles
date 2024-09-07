@@ -22,13 +22,7 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = 
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
--- vim.keymap.set('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true })
-
--- =============================== navigation ==============================
--- vim.keymap.set('n', '<S-p>', ':$<CR>', { noremap = true, silent = true, desc = ":$<CR> - Moves cursor to the end of the line." })
--- vim.keymap.set('n', '<S-o>', ':0<CR>', { noremap = true, silent = true, desc = ":0<CR> - Moves cursor to the beginning of the line." })
 
 -- ============================ windows, buffers and tabs ===========================
 --tabline
@@ -41,7 +35,6 @@ vim.keymap.set('n', '<leader>tn', ':tabnew | Alpha<CR>', { noremap = true, silen
 vim.keymap.set('n', '<leader>tq', ':tabclose<CR>', { noremap = true, silent = true, desc = ":tabclose<CR> - Closes the current active tab." })
 
 -- windows
---nav
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', { silent = true })
 vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', { silent = true })
 vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', { silent = true })
@@ -69,10 +62,6 @@ vim.keymap.set('n', '<leader>cf', ':Telescope commands<CR>', { noremap = true, s
 -- neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true, desc = ":Neotree toggle<CR> - Toggles visibility of neo-tree." })
 vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
-
---git (neogit)
---vim.keymap.set('n', '<leader>gs', ':Neogit | Neotree git_status<CR>', { noremap = true, silent = true, desc = ":Neogit<CR> - Opens Neogit, for managing git changes and commits." })
---vim.keymap.set('n', '<leader>gc', ':Neogit commit<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neogit')
