@@ -295,7 +295,7 @@ button:hover {
 
 #window {
     background-color: @module-background;
-    margin: 4 0px;
+    margin: 4px 0px;
     border-radius: 10px;
     border: 1px solid @module-border;
 }

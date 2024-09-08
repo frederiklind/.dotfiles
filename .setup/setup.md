@@ -29,6 +29,20 @@
     - [Firewall]()
     - [VPN]()
 
+
+
+
+==> WARNING: Possibly missing firmware for module: 'xhci_pci'
+  -> Running build hook: [keymap]
+  -> Running build hook: [modconf]
+  -> Running build hook: [block]
+==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'bfa'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+==> WARNING: Possibly missing firmware for module: 'wd719x'
+==> WARNING: Possibly missing firmware for module: 'qla1280'
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+
 # Arch Installation
 
 ### 1. Connecting to wifi
