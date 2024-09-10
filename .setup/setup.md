@@ -263,7 +263,7 @@ eval "$(starship init bash)"
 
 # Developer
 
-## Git
+### Git
 
 
 ## Languages and tools
@@ -272,8 +272,8 @@ eval "$(starship init bash)"
 # install dotnet
 sudo pacman -S dotnet-runtime aspnet-runtime dotnet-sdk
 
-# install java
-sudo pacman -S 
+# install node and npm
+sudo pacman -S nodejs npm
 ```
 
 
@@ -305,6 +305,37 @@ Then open nvim to let Lazy.nvim work its magic. When plugins are installed, a fe
 :TSInstall <lang>
 
 ```
+
+### Etc
+
+Resolve common issues in neovim. run healthcheck with the following command
+
+```
+:checkhealth
+```
+
+```bash
+# - WARNING Configured hg_cmd is not executable: 'hg'
+$ sudo pacman -S mercurial
+
+# - WARNING Lazy won't be able to install plugins that require luarocks.
+$ sudo pacman -S luarocks
+
+# nodejs provider warning
+$ sudo npm install -g neovim
+
+# clipboard warnings
+$ sudo pacman -S wl-clipboard
+```
+
+### VimTex
+
+For VimTex to function properly, install folowing packages:
+
+```bash
+$ sudo pacman -S texlive-binextra
+```
+
 
 ## VisualStudio Code
 

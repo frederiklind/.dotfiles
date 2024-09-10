@@ -4,3 +4,7 @@ nvim/lazy-lock.json
 cava/shaders
 
 *.log
+
+# python
+__init__.py
+__pycache__

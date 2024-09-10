@@ -15,7 +15,7 @@ format = '[](#8aadf4)[󱃋 $user ]($style)[ ](#8aadf4)'
 truncation_length = 3
 truncation_symbol = "…/"
 home_symbol = "~"
-read_only = "  "
+read_only = " "
 format = "[$path ](#b7bdf8)[$read_only](#ed8796)"
 
 [character]

@@ -19,7 +19,7 @@ return {
                     "html",
                     --"jdtls", --java
                     "jsonls",
-                    "tsserver", --javascript
+                    -- "tsserver", --javascript
                     --"pylsp", --python
                 },
             })
@@ -73,9 +73,9 @@ return {
             lspconfig.jsonls.setup({
                 capabilities = capabilities,
             })
-            lspconfig.tsserver.setup({
-                capabilities = capabilities,
-            })
+            -- lspconfig.tsserver.setup({
+            --     capabilities = capabilities,
+            -- })
             lspconfig.pylsp.setup({
                 capabilities = capabilities,
             })
