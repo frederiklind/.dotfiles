@@ -106,7 +106,7 @@
 .tabbrowser-tab[label="New Tab"] .tab-icon-image {
   list-style-image: url("./assets/firefox-nightly.svg") !important;
   /* width: 16px; /* Adjust as needed */ 
-  /* height: 16px; /* Adjust as needed */ 
+  /* height: 16px; /* Adjust as needed */
 }
 
 #nav-bar,
@@ -137,6 +137,21 @@
     min-height: calc(var(--TabsHeight) * 1px) !important;
 }
 
+.tabbrowser-tab .tab-label {
+    margin-left: 3px !important;
+    color: #8aadf4 !important;
+}
+
+/* Change text color of the active tab */
+.tabbrowser-tab[selected="true"] .tab-label {
+    margin-left: 3px !important;
+    color: #8aadf4 !important; 
+}
+
+.tabbrowser-tab:hover .tab-label {
+    margin-left: 3px !important;
+    color: #8aadf4 !important; 
+}
 
 .tab-icon-sound-label {
     display: none !important;

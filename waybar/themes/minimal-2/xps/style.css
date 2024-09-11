@@ -7,7 +7,7 @@
  *  Frederik Lind (2024)
  */
 
-@define-color waybar-background rgba(24, 25, 38, 1);
+@define-color waybar-background rgba(24, 25, 38, 0.93);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 

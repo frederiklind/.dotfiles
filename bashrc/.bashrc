@@ -21,6 +21,9 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 
+# for line numbers and syntax highlighting in cat
+alias cat='bat'
+
 # file managers
 alias fr="ranger"
 alias ft="thunar"
