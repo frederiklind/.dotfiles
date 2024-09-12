@@ -1,6 +1,6 @@
 #!/bin/bash
 
-status=$(playerctl -p spotifyd status 2>/dev/null)
+status=$(playerctl -p spotify status 2>/dev/null)
 
 if [ "$status" = "Playing" ]; then
     echo "󰏤"

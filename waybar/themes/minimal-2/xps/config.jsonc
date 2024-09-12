@@ -101,13 +101,13 @@
 
     "custom/next_track": {
         "format": "󰒭",
-        "on-click": "playerctl -p spotifyd next",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/next.sh",
         "tooltip": false
     },
 
     "custom/prev_track": {
         "format": "󰒮",
-        "on-click": "playerctl -p spotifyd next",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/prev.sh",
         "tooltip": false
     },
 
@@ -115,7 +115,7 @@
         "exec": "~/.dotfiles/scripts/spotify-controls/status.sh",
         "interval": 1,
         "format": "{}",
-        "on-click": "playerctl -p spotifyd play-pause",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/play.sh",
         "tooltip": false
     },
 
@@ -155,7 +155,8 @@
 
     "custom/spotify_logo": {
         "format": " ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "~/.dotfiles/scripts/spotify.sh"
     },
 
     "battery": {

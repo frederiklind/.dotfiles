@@ -16,8 +16,8 @@ italic.family = "FiraCode Nerd Font"
 
 [window]
 opacity = 1
-padding.x = 9
-padding.y = 6
+padding.x = 4
+padding.y = 3
 
 [colors.primary]
 background = "#1e2030"
