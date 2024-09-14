@@ -24,6 +24,9 @@ alias lt='eza -a --tree --level=1 --icons'
 # for line numbers and syntax highlighting in cat
 alias cat='bat'
 
+# mainly because tmux prevents C-l from clearing the screen 
+alias c="clear"
+
 # file managers
 alias fr="ranger"
 alias ft="thunar"
@@ -39,6 +42,7 @@ alias settings="~/.dotfiles/.settings/settings.sh"
 
 # cd to repositories
 alias src="cd ~/Source/repos"
+alias cf="cd ~/.config"
 
 # web shortcuts     
 alias gw="firefox https://www.github.com"

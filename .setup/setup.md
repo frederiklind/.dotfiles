@@ -29,19 +29,7 @@
     - [Firewall]()
     - [VPN]()
 
-
-
-
-==> WARNING: Possibly missing firmware for module: 'xhci_pci'
-  -> Running build hook: [keymap]
-  -> Running build hook: [modconf]
-  -> Running build hook: [block]
-==> WARNING: Possibly missing firmware for module: 'qed'
-==> WARNING: Possibly missing firmware for module: 'bfa'
-==> WARNING: Possibly missing firmware for module: 'qla2xxx'
-==> WARNING: Possibly missing firmware for module: 'wd719x'
-==> WARNING: Possibly missing firmware for module: 'qla1280'
-==> WARNING: Possibly missing firmware for module: 'aic94xx'
+#
 
 # Arch Installation
 
@@ -99,7 +87,7 @@ $ mkfs.fat -F32 /dev/nvme0n1p<n>
 $ mkfs.ext4 /dev/nvme0n1p<n>
 
 # format swap partition (optional)
-$ mkswap...
+$ mkswap /dev/nvme0n1p<n>
 ```
 
 Mount the partitions using the following commands:
@@ -114,8 +102,8 @@ $ mkdir /mnt/boot
 # mount efi partition
 $ /dev/nvme0n1p<n> /mnt/boot
 
-# verify correct mount of partitions
-$ lsblk
+# swapON mf's
+$ swapon /dev/nvme0n1p<n>
 ```
 
 ### 4. Archinstall script
@@ -128,26 +116,41 @@ $ archinstall
 
 My recommended options for these dotfiles:
 
-| | |
-|-|-|
-| Archinstall Language | English (100%) |
-| Display Manager | sddm |
-| Audio Server | pipewire |
-| Network Configuration | NetworkManager |
-| Additional Packages | git, nvim |
-
-**NOTE:** do not forget to use network manager, as you will be stuck without access to internet after installation.
-
-### 5. Bootloader
-
-
+| | | |
+|-|-|-|
+| Disk-Configuration | Pre-mounted configuration | Enter `/mnt` for root dir of mounted devices |
+| Bootloader | Grub | | 
+| Profile | Desktop > Hyprland | Select Nvidia proprietary driver, and polkit |
+| Display Manager | sddm | |
+| Audio Server | pulseaudio | |
+| Network Configuration | NetworkManager | do not forget to use network manager, as you will be stuck without access to internet after installation. |
+| Additional Packages | git, neovim | Especially neovim... who wants to use nano anyway.. |
 
 <br/>
 
+### 5. Bootloader
 
+Not sure if this is still necessary with current version of archinstall script. But just in case execute following, in the post install chroot environment:
+
+```bash
+# install necessary packages
+$ pacman -Sy grub efibootmgr dosfstools mtools
+
+# install grub into the boot partition
+$ grub-install --target=x86_64-efi efi-directory=/boot --bootloader-id=GRUB
+
+# regenerate grub configuration file
+$ grub-mkconfig -o /boot/grub/grub.cfg
+
+# exit the chroot environment
+$ exit
+```
+
+Shutdown the device, remove installation media, and boot into Arch.
+
+<br/>
 
 # Post Install Setup
-
 
 <br/>
 <br/>
@@ -252,7 +255,7 @@ $ curl -sS https://starship.rs/install.sh | sh
 $ ln -sf ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ```
 
-In case of using the default bash profile, add the following line to the end of the `.bashrc` file:
+In case of using the default bashrc, add the following line to the end of the `.bashrc` file:
 
 ```bash
 # ~/.bashrc
@@ -260,6 +263,26 @@ eval "$(starship init bash)"
 ```
 
 ## TMUX - Terminal Multiplexer
+
+Without tmux, life will be more difficult..
+
+```bash
+# install via pacman
+$ sudo pacman -S tmux
+
+# if default tmux config is in .config dir
+$ rm -rf ~/.config/tmux
+
+# create config symlink
+$ ln -s ~/.dotfiles/tmux ~/.config/tmux
+```
+
+To install plugins (which is in the configuration of tmux), tpm (tmux package manager) must be installed.
+
+```bash
+# clone tpm from git
+$ git clone https://github.com/
+```
 
 # Developer
 
@@ -274,6 +297,9 @@ sudo pacman -S dotnet-runtime aspnet-runtime dotnet-sdk
 
 # install node and npm
 sudo pacman -S nodejs npm
+
+# python packages
+sudo pacmam -S python-pip ...
 ```
 
 
@@ -300,6 +326,11 @@ Then open nvim to let Lazy.nvim work its magic. When plugins are installed, a fe
 
 ### Syntax highlighting
 
+```bash
+# make sure tree-sitter is installed
+$ sudo pacmam -Qs tree-sitter
+```
+
 ```
 # Install language in treesitter
 :TSInstall <lang>
@@ -324,7 +355,7 @@ $ sudo pacman -S luarocks
 # nodejs provider warning
 $ sudo npm install -g neovim
 
-# clipboard warnings
+# enable yank to clipboard
 $ sudo pacman -S wl-clipboard
 ```
 
@@ -350,3 +381,9 @@ $ sudo pacman -S texlive-binextra
 ## Firewall
 
 ## VPN
+
+For NordVPN, install `nordvpn-bin` from the AUR via paru.
+
+```bash
+$ paru -S nordvpn-bin
+```

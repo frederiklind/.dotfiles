@@ -8,9 +8,9 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
-
+-- vim.opt.cursorline = true
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.o.pumheight = 15
@@ -19,10 +19,11 @@ vim.o.pumheight = 15
 
 vim.g.mapleader = " "
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
-vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false, desc = ":q<CR> - Quits the current active file" })
+vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false, desc = ":wa<CR> - Writes changes to all files." })
+vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false, desc = ":wqa<CR> - Writes changes to all files and quits." })
+vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true, desc = ":set wrap!<CR> - Toggles text wrapping." })
+vim.keymap.set('n', '<leader>ns', ':nohlsearch<CR>', { noremap = true, silent = true, desc = ":nohlsearch<CR> - Clears the search highlight." })
 
 -- ============================ windows, buffers and tabs ===========================
 --tabline
@@ -35,29 +36,26 @@ vim.keymap.set('n', '<leader>tn', ':tabnew | Alpha<CR>', { noremap = true, silen
 vim.keymap.set('n', '<leader>tq', ':tabclose<CR>', { noremap = true, silent = true, desc = ":tabclose<CR> - Closes the current active tab." })
 
 -- windows
-vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', { silent = true })
-vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', { silent = true })
-vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', { silent = true })
-vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', { silent = true })
-
-
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', { silent = true, desc = ":wincmd k<CR> - Move to window above." })
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', { silent = true, desc = ":wincmd j<CR> - Move to window below." })
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', { silent = true, desc = ":wincmd h<CR> - Move to window on the left." })
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', { silent = true, desc = ":wincmd l<CR> - Move to window on the right." })
 vim.keymap.set('n', '<S-Up', ':resize +2<CR>', { noremap = true, silent = true, desc = ":resize +2<CR> - Vertical resize current window." })
 vim.keymap.set('n', '<S-Down>', ':resize -2<CR>', { noremap = true, silent = true, desc = ":resize -2<CR> - Vertical resize current window." })
 vim.keymap.set('n', '<S-Left>', ':vertical resize +2<CR>', { noremap = true, silent = true, desc = ":vertical resize +2<CR> - Horizontal resize current window." })
 vim.keymap.set('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true, desc = ":vertical resize -2<CR> - Horizontal resize current window." })
 
-
 -- buffers
-vim.keymap.set('n', '<leader>p', ':bprev<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>n', ':bnext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>bp', ':bp<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<S-f>', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true, silent = true, desc = "Fuzzy finder within current buffer."})
-
+vim.keymap.set('n', '<leader>p', ':bprev<CR>', { noremap = true, silent = true, desc = ":bprev<CR> - Navigate to previous buffer." })
+vim.keymap.set('n', '<leader>n', ':bnext<CR>', { noremap = true, silent = true, desc = ":bnext<CR> - Navigate to next buffer." })
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = ":bd<CR> - Close current buffer." })
+vim.keymap.set('n', '<leader>bp', ':bp<CR>', { noremap = true, silent = true, desc = ":bp<CR> - Previous buffer." })
 
 -- ==================================== Telescope ===================================
-vim.keymap.set('n', '<leader>cf', ':Telescope commands<CR>', { noremap = true, silent = false,  })
+
+vim.keymap.set('n', '<leader>cf', ':Telescope commands<CR>', { noremap = true, silent = false, desc = ":Telescope commands<CR> - Fuzzy finder for commands." })
+vim.keymap.set('n', '<S-f>', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true, silent = true, desc = "Fuzzy finder within current buffer."})
+vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, silent = true, desc = ":Telescope buffers<CR> - Fuzzy finder for buffers." })
 
 -- neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true, desc = ":Neotree toggle<CR> - Toggles visibility of neo-tree." })
@@ -65,21 +63,18 @@ vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent 
 
 vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neogit')
-  --vim.cmd('Neotree git_status')
 end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
-
+vim.keymap.set('n', '<leader>eg', ':Neotree git_status<CR>', { noremap = true, silent = true, desc = ":Neotree git_status toggle<CR> - Opens git status in neo-tree." })
 
 --git (diffview)
-vim.keymap.set('n', '<leader>fh', ':DiffviewFileHistory<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>df', ':DiffviewFileHistory %<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fh', ':DiffviewFileHistory<CR>', { noremap = true, silent = true, desc = ":DiffviewFileHistory<CR> - Opens file history in diffview." })
+vim.keymap.set('n', '<leader>df', ':DiffviewFileHistory %<CR>', { noremap = true, silent = true, desc = ":DiffviewFileHistory %<CR> - Opens file history in diffview for current file." })
 
 --launch lazy/mason
-vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>mn', ':Mason<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { noremap = true, silent = true, desc = ":Lazy<CR> - Launches lazy." })
+vim.keymap.set('n', '<leader>mn', ':Mason<CR>', { noremap = true, silent = true, desc = ":Mason<CR> - Launches mason." })
 
---home-screen
-vim.keymap.set('n', '<leader>hm', ':Alpha<CR>', { noremap = true, silent = true })
-
+-- =================================== Diagnostics ===================================
 
 vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
 vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)

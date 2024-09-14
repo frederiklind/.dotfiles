@@ -41,7 +41,6 @@ window#waybar {
     transition-duration: 0.5s;
     opacity: 1;
     border-radius: 0px;
-    /* border-bottom: 1px solid @module-border; */
 }
 
 window#waybar.hidden {

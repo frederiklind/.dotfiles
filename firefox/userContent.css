@@ -108,7 +108,8 @@
     background-color: var(--catppuccin-crust) !important;
   }
 
-  .N54PNb {
+  .N54PNb,
+  #tU52Vb {
     background-color: var(--catppuccin-crust) !important;
   }
 
@@ -123,6 +124,29 @@
   .b2Rnsc,
   .vIifob {
     background-color: var(--catppuccin-mantle) !important;
+  }
+
+  #logo path {
+    fill: var(--catppuccin-teal) !important;
+  }
+
+  .appbar {
+    background-color: var(--catppuccin-crust) !important;
+  }
+
+  .srKDX,
+  .cvP2Ce,
+  .xpdopen {
+    background-color: var(--catppuccin-crust) !important;
+  }
+
+  [selected].YmvwI {
+    color: var(--catppuccin-teal) !important;
+    border-bottom: 3px solid var(--catppuccin-teal) !important;
+  }
+
+  .YmvwI {
+    color: var(--catppuccin-blue) !important;
   }
 }
 
@@ -187,7 +211,8 @@
   }
 
   #ytd-player {
-    border: 1px solid var(--catppuccin-blue) !important;
+    /* border: 1px solid var(--catppuccin-blue) !important; */
+    border: 1px solid transparent !important;
   }
 
   #cinematics-container {
@@ -219,7 +244,7 @@
 
   .w-12,
   .h-12 {
-      color: var(--catppuccin-sky) !important;
+    color: var(--catppuccin-sky) !important;
   }
 
   .bg-token-main-surface-primary {
