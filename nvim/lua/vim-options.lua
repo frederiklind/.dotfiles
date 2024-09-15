@@ -8,22 +8,23 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
 vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.o.pumheight = 15
-
--- =============================== keymappings ==============================
-
 vim.g.mapleader = " "
-vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
+
+vim.keymap.set({'n', 'i'}, '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false, desc = ":q<CR> - Quits the current active file" })
-vim.keymap.set('n', '<leader>sa', ':wa<CR>', { noremap = true, silent = false, desc = ":wa<CR> - Writes changes to all files." })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false, desc = ":wqa<CR> - Writes changes to all files and quits." })
 vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true, desc = ":set wrap!<CR> - Toggles text wrapping." })
 vim.keymap.set('n', '<leader>ns', ':nohlsearch<CR>', { noremap = true, silent = true, desc = ":nohlsearch<CR> - Clears the search highlight." })
+
+-- awesomeness right here
+vim.keymap.set('x', '<leader>p', '\"_dP)', { noremap = true, silent = true, desc = "Pastes without yanking." })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Search and replace word under cursor." })
 
 -- ============================ windows, buffers and tabs ===========================
 --tabline
@@ -45,7 +46,7 @@ vim.keymap.set('n', '<S-Down>', ':resize -2<CR>', { noremap = true, silent = tru
 vim.keymap.set('n', '<S-Left>', ':vertical resize +2<CR>', { noremap = true, silent = true, desc = ":vertical resize +2<CR> - Horizontal resize current window." })
 vim.keymap.set('n', '<S-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true, desc = ":vertical resize -2<CR> - Horizontal resize current window." })
 
--- buffers
+-- buffers 
 vim.keymap.set('n', '<leader>p', ':bprev<CR>', { noremap = true, silent = true, desc = ":bprev<CR> - Navigate to previous buffer." })
 vim.keymap.set('n', '<leader>n', ':bnext<CR>', { noremap = true, silent = true, desc = ":bnext<CR> - Navigate to next buffer." })
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = ":bd<CR> - Close current buffer." })

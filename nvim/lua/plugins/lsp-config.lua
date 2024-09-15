@@ -17,10 +17,7 @@ return {
                     "cssmodules_ls",
                     "fsautocomplete", --f#
                     "html",
-                    --"jdtls", --java
                     "jsonls",
-                    -- "tsserver", --javascript
-                    --"pylsp", --python
                 },
             })
         end,
@@ -73,9 +70,6 @@ return {
             lspconfig.jsonls.setup({
                 capabilities = capabilities,
             })
-            -- lspconfig.tsserver.setup({
-            --     capabilities = capabilities,
-            -- })
             lspconfig.pylsp.setup({
                 capabilities = capabilities,
             })

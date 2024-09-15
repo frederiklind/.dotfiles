@@ -61,7 +61,7 @@ return {
 					results_title = false,
 					sorting_strategy = "ascending",
 					layout_config = {
-						prompt_position = "top", -- Set prompt position to top
+						prompt_position = "top",
 					},
 
 					extensions = {

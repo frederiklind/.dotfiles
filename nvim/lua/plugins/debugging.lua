@@ -14,7 +14,8 @@ return {
 
 			require("dapui").setup()
 
-			-- dotnet debugging (csharp, fsharp)
+			-- ------------------  dotnet debugging (csharp, fsharp) ---------------------
+
 			dap.adapters.coreclr = {
 				type = "executable",
 				command = "/usr/bin/netcoredbg",
@@ -32,20 +33,18 @@ return {
 				},
 			}
 
-			-- -------------------- Debuf for go ----------------------------
+			-- -------------------- Debug for go ----------------------------
 
 			require("dap-go").setup()
 
-			-- -------------------- Debug for python -------------------------
+      -- -------------------- Debug for python -------------------------
 
-			require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+			require("dap-python").setup("~/.venvs/debugpy/bin/python")
 			dap.adapters.python = {
 				type = "executable",
-				command = os.getenv("HOME") .. "/.virtualenvs/tools/bin/python",
+				command = os.getenv("HOME") .. "/.venvs/debugpy/bin/python",
 				args = { "-m", "debugpy.adapter" },
 			}
-
-			-- ---------------------------------------------------------------
 
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
@@ -79,12 +78,7 @@ return {
 				{ text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
 			)
 
-			-- vim.keymap.set(
-			--     "n",
-			--     "<leader>sd",
-			--     dap.toggle_breakpoint,
-			--     { noremap = true, silent = true, desc = "Toggles breakpoint on/off for current line." }
-			-- )
+      -- use this start dap-ui
 			vim.keymap.set("n", "<leader>dc", dap.continue, { noremap = true, silent = true, desc = "Continue" })
 		end,
 	},
@@ -105,7 +99,7 @@ return {
 				load_breakpoints_event = { "BufReadPost" },
 				perf_record = false,
 			})
-			vim.keymap.set("n", "<leader>sd", function()
+			vim.keymap.set("n", "<leader>bp", function()
 				require("persistent-breakpoints.api").toggle_breakpoint()
 			end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>tr", function()
