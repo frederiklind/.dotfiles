@@ -67,16 +67,16 @@ def print_menu(stdscr, idx: int, opts: [str], max_y: int, max_x: int):
 
 def print_sub_menu(stdscr, idx: int, max_y: int, max_x: int, is_sub: bool, title: str = "Are you sure?"):
     start_y = max_y // 2 + 2
-    start_x = max_x // 2 - 20
+    start_x = max_x // 2 - 22
 
     # Draw a box around the menu options with custom color
-    menu_win = curses.newwin(5, 40, start_y - 1, start_x)
+    menu_win = curses.newwin(5, 44, start_y - 1, start_x)
     menu_win.attron(curses.color_pair(8))  # Set color for box (without background)
     menu_win.box()
     menu_win.attroff(curses.color_pair(8))  # Turn off color after drawing box
 
     # Print the title inside the box
-    menu_win.addstr(1, 20 - len(title) // 2, title, curses.color_pair(2))
+    menu_win.addstr(1, 22 - len(title) // 2, title, curses.color_pair(2))
 
     options = ["Yes", "Cancel"]
 
@@ -84,11 +84,11 @@ def print_sub_menu(stdscr, idx: int, max_y: int, max_x: int, is_sub: bool, title
         opt = options[i]
         if i == idx:
             menu_win.attron(curses.color_pair(1) | curses.A_BOLD)
-            menu_win.addstr(3, 10 + i * 10, f"[ {opt} ]")
+            menu_win.addstr(3, 12 + i * 10, f"[ {opt} ]")
             menu_win.attroff(curses.color_pair(1) | curses.A_BOLD)
         else:
             menu_win.attron(curses.color_pair(2))
-            menu_win.addstr(3, 10 + i * 10, f"  {opt}  ")
+            menu_win.addstr(3, 12 + i * 10, f"  {opt}  ")
             menu_win.attroff(curses.color_pair(2))
 
     menu_win.refresh()
@@ -120,14 +120,6 @@ def main(stdscr):
     TITLE = [
         # "█▀█ █▀█ █░█░█ █▀▀ █▀█",
         # "█▀▀ █▄█ ▀▄▀▄▀ ██▄ █▀▄"
-
-        # "__________________  __      _______________________ ", 
-        # "\\______   \\_____  \\/  \\    /  \\_   _____/\\______   \\",
-        # " |     ___//   |   \\   \\/\\/   /|    __)_  |       _/",
-        # " |    |   /    |    \\        / |        \\ |    |   \\",
-        # " |____|   \\_______  /\\__/\\  / /_______  / |____|_  /",
-        # "                  \\/      \\/          \\/         \\/ " 
-
         "__________________       __________________ ",
         "___  __ \\_  __ \\_ |     / /__  ____/__  __ \\",
         "__  /_/ /  / / /_ | /| / /__  __/  __  /_/ /",

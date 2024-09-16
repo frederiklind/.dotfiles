@@ -24,13 +24,15 @@ window {
 }
 
 #entry {
-  padding: 10px;
+  padding: 5px 10px;
+  color: #8aadf4;
 }
 
 
 #entry:selected {
-  background-color: rgba(54, 58, 79, 0.7);
+  background-color: rgba(54, 58, 79, 0.3);
   outline: none;
+  color: #8bd5ca;
   border-radius: 10px;
   border: 0px solid transparent;
 }
