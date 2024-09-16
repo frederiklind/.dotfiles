@@ -18,6 +18,7 @@ return {
                     "fsautocomplete", --f#
                     "html",
                     "jsonls",
+                    "ts_ls",
                 },
             })
         end,
@@ -74,6 +75,9 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.texlab.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
 

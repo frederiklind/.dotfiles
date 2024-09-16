@@ -17,7 +17,7 @@
         "hyprland/workspaces",
         "group/quicklinks",
         "group/spotify_controls"
-        // "custom/playerctl"
+        // "hyprland/window"
     ],
 
     "modules-center": [
@@ -318,7 +318,7 @@
 
     "custom/shutdown": {
         "format": "  ",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
+        "on-click": "alacritty -e ~/.dotfiles/scripts/power.py",
         "tooltip": false
     },
 

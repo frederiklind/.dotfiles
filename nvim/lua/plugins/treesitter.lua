@@ -1,4 +1,3 @@
---treesitter
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -9,25 +8,14 @@ return {
 				autoinstall = true,
 				highlight = { enable = true },
 				indent = { enable = true },
+        -- autotag = { enable = true },
 			})
 		end,
 	},
-
--- Seems to not really work that well
 	-- {
-	-- 	"HiPhish/nvim-ts-rainbow2",
+	-- 	"windwp/nvim-ts-autotag", -- Install nvim-ts-autotag for auto-closing tags
 	-- 	config = function()
-	-- 		require("nvim-treesitter.configs").setup({
-	-- 			rainbow = {
-	-- 				enable = true,
-	-- 				-- list of languages you want to disable the plugin for
-	-- 				disable = { "jsx", "cpp" },
-	-- 				-- Which query to use for finding delimiters
-	-- 				query = "rainbow-parens",
-	-- 				-- Highlight the entire buffer all at once
-	-- 				strategy = require("ts-rainbow").strategy.global,
-	-- 			},
-	-- 		})
+	-- 		require("nvim-ts-autotag").setup()
 	-- 	end,
 	-- },
 }

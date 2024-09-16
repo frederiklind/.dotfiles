@@ -10,6 +10,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
 
@@ -21,56 +22,30 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 
-# for line numbers and syntax highlighting in cat
 alias cat='bat'
-
-# mainly because tmux prevents C-l from clearing the screen 
 alias c="clear"
-
-# file managers
 alias fr="ranger"
 alias ft="thunar"
-
-# neovim
 alias nv="nvim"
-
-# dotfiles shortcuts
 alias dot="cd ~/.dotfiles"
 alias vdot="cd ~/.dotfiles && nvim"
 alias cdot="code ~/.dotfiles"
 alias settings="~/.dotfiles/.settings/settings.sh"
-
-# cd to repositories
 alias src="cd ~/Source/repos"
 alias cf="cd ~/.config"
-
-# web shortcuts     
 alias gw="firefox https://www.github.com"
 alias yt="firefox https://www.youtube.com"
-
-# update grub config    
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
 alias zathura="~/.dotfiles/scripts/zathura.sh"
-
-# lang
 alias py="python3"
-
-# git
 alias ngrp="~/.dotfiles/scripts/ngrp.sh"
 alias gqp="~/.dotfiles/scripts/quickpush.sh"
-
 alias gs="git status"
 alias gp="git pull"
-
-# tmux
 alias tmux="tmux -2"
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 
 echo
 neofetch
-#~/.dotfiles/scripts/fetch.sh
-#~/.dotfiles/fetch/fetch.sh
 
-export XDG_CONFIG_HOME="$HOME/.config"
 eval "$(starship init bash)"

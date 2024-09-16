@@ -1,1 +1,12 @@
+#
+#  █▄▄ ▄▀█ ▀█▀   █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀ █░█ █▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█
+#  █▄█ █▀█ ░█░   █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
+#
+#  Frederik Lind (2024)
+
+
+--map-syntax='*.conf:INI'
+--map-syntax='.ignore:Git Ignore'
+
 --theme="Catppuccin Macchiato"
+--style="numbers,changes,grid"

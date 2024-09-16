@@ -20,7 +20,6 @@ vim.keymap.set({'n', 'i'}, '<C-s>', ':w<CR>', { noremap = true, silent = false, 
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false, desc = ":q<CR> - Quits the current active file" })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false, desc = ":wqa<CR> - Writes changes to all files and quits." })
 vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true, desc = ":set wrap!<CR> - Toggles text wrapping." })
-vim.keymap.set('n', '<leader>ns', ':nohlsearch<CR>', { noremap = true, silent = true, desc = ":nohlsearch<CR> - Clears the search highlight." })
 
 -- awesomeness right here
 vim.keymap.set('x', '<leader>p', '\"_dP)', { noremap = true, silent = true, desc = "Pastes without yanking." })
@@ -83,3 +82,7 @@ vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document
 vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
