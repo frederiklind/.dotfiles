@@ -1,0 +1,8 @@
+Xft.dpi: 140
+URxvt.font: xft:FiraCode-Nerd-Font:size=12
+Xft.autohint: 0
+Xft.lsdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
