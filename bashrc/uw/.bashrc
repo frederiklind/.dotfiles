@@ -14,6 +14,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
 
+# GTK scaling settings
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+
+# Qt scaling for high DPI monitors
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=1.5
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
