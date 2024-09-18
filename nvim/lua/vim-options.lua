@@ -59,8 +59,9 @@ vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, si
 
 -- neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true, desc = ":Neotree toggle<CR> - Toggles visibility of neo-tree." })
-vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
+-- vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
 
+-- neogit & git tree
 vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neogit')
   vim.cmd('Neotree git_status')
