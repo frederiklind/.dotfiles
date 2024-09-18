@@ -7,7 +7,7 @@
  *  Frederik Lind (2024)
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.93);
+@define-color waybar-background rgba(24, 25, 38, 0.9);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 
@@ -118,9 +118,9 @@ button:hover {
 
 #systemgroup {
     background-color: @module-background;
-    margin: 3px 10px 3px 0px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 7px 0px 3px;
+    padding: 0px 5px 0px 5px;
 }
 
 #custom-apps {
@@ -443,7 +443,7 @@ tooltip label {
 
 #custom-temperature_logo {
     font-size: 12px;
-    margin: 0px 0px 0px 5px;
+    margin: 0px 0px 0px 8px;
     color: @catppuccin-teal;
 }
 

@@ -5,8 +5,6 @@ local function configure()
     vim.api.nvim_set_hl(0, "NeovimDashboardLogo2", { fg = "#7dc4e4" })
     vim.api.nvim_set_hl(0, "NeovimDashboardLogo3", { fg = "#91d7e3" })
     vim.api.nvim_set_hl(0, "NeovimDashboardLogo4", { fg = "#8bd5ca" })
-    -- vim.api.nvim_set_hl(0, "NeovimDashboardLogo5", { fg = "#c6a0f6" })
-    -- vim.api.nvim_set_hl(0, "NeovimDashboardLogo6", { fg = "#c6a0f6" })
 
     dashboard.section.header.type = "group"
     dashboard.section.header.val = {

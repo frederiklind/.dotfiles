@@ -12,13 +12,16 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
-                    "csharp_ls", --c#
+                    "csharp_ls",
                     "cssls",
                     "cssmodules_ls",
-                    "fsautocomplete", --f#
+                    "fsautocomplete",
                     "html",
                     "jsonls",
                     "ts_ls",
+                    "pylsp",
+                    "jdtls",
+                    "texlab",
                 },
             })
         end,
@@ -30,7 +33,12 @@ return {
 
             local lspconfig = require("lspconfig")
 
-            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+            local signs = {
+                Error = " ",
+                Warn = " ",
+                Hint = " ",
+                Info = " ",
+            }
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -78,6 +86,9 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.ts_ls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.jsonls.setup({
                 capabilities = capabilities,
             })
 

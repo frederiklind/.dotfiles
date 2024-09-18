@@ -1,3 +1,5 @@
+-- Uncomment to enable auto-sessions.
+
 return {
 	-- "rmagatti/auto-session",
 	-- config = function()

@@ -15,9 +15,8 @@
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        "group/quicklinks",
-        "group/spotify_controls"
-        // "hyprland/window"
+        "group/quicklinks"
+        // "group/spotify_controls"
     ],
 
     "modules-center": [
@@ -25,15 +24,11 @@
     ],
 
     "modules-right": [
-        // "cpu#bars",
-        "group/cpu_group",
-        "group/memory_group",
-        "group/temperature_group",
+        // "group/systemgroup",
         "group/audio_group",
         "group/vpn_group",
         "group/network_group",
         "group/battery_group",
-        // "custom/settings",
         "custom/shutdown"
     ],
 
@@ -410,6 +405,7 @@
             //"disk",
             "custom/cpu_logo",
             "cpu",        
+            "custom/memory_logo",
             "memory",
             "custom/temperature_logo",
             "temperature"

@@ -1,6 +1,6 @@
 return {
 	"lervag/vimtex",
-	lazy = false, -- we don't want to lazy load VimTeX
+	lazy = false,
 	init = function()
 		vim.api.nvim_set_keymap("n", "<leader>ll", "<Plug>(vimtex-compile)", {})
     vim.g.vimtex_view_method = 'zathura'

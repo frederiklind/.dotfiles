@@ -19,10 +19,10 @@ vim.g.mapleader = " "
 vim.keymap.set({'n', 'i'}, '<C-s>', ':w<CR>', { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { noremap = true, silent = false, desc = ":q<CR> - Quits the current active file" })
 vim.keymap.set('n', '<leader>wq', ':wqa<CR>', { noremap = true, silent = false, desc = ":wqa<CR> - Writes changes to all files and quits." })
-vim.keymap.set('n', '<leader>wr', ':set wrap!<CR>', { noremap = true, silent = true, desc = ":set wrap!<CR> - Toggles text wrapping." })
+vim.keymap.set('n', '<leader>wr', ':set wrap! linebreak!<CR>', { noremap = true, silent = true, desc = ":set wrap!<CR> - Toggles text wrapping." })
 
 -- awesomeness right here
-vim.keymap.set('x', '<leader>p', '\"_dP)', { noremap = true, silent = true, desc = "Pastes without yanking." })
+vim.keymap.set('x', '<leader>p', '\"_dP)', { noremap = true, silent = true, desc = "Pastes without yanking. (when replacing in visual mode)" })
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Search and replace word under cursor." })
 
 -- ============================ windows, buffers and tabs ===========================
@@ -63,8 +63,10 @@ vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent 
 
 vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neogit')
+  vim.cmd('Neotree git_status')
+  vim.cmd('wincmd l')
 end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
-vim.keymap.set('n', '<leader>eg', ':Neotree git_status<CR>', { noremap = true, silent = true, desc = ":Neotree git_status toggle<CR> - Opens git status in neo-tree." })
+vim.keymap.set('n', '<leader>eg', ':Neotree git_status toggle<CR>', { noremap = true, silent = true, desc = ":Neotree git_status toggle<CR> - Opens git status in neo-tree." })
 
 --git (diffview)
 vim.keymap.set('n', '<leader>fh', ':DiffviewFileHistory<CR>', { noremap = true, silent = true, desc = ":DiffviewFileHistory<CR> - Opens file history in diffview." })
