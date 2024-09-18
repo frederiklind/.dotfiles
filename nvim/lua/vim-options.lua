@@ -59,7 +59,7 @@ vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, si
 
 -- neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true, desc = ":Neotree toggle<CR> - Toggles visibility of neo-tree." })
--- vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
+vim.keymap.set('n', '<leader>e', ':Neotree focus<CR>', { noremap = true, silent = true, desc = ":Neotree focus<CR> - Jump cursor to neo-tree." })
 
 -- neogit & git tree
 vim.keymap.set('n', '<leader>gs', function()
@@ -67,7 +67,6 @@ vim.keymap.set('n', '<leader>gs', function()
   vim.cmd('Neotree git_status')
   vim.cmd('wincmd l')
 end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
-vim.keymap.set('n', '<leader>eg', ':Neotree git_status toggle<CR>', { noremap = true, silent = true, desc = ":Neotree git_status toggle<CR> - Opens git status in neo-tree." })
 
 --git (diffview)
 vim.keymap.set('n', '<leader>fh', ':DiffviewFileHistory<CR>', { noremap = true, silent = true, desc = ":DiffviewFileHistory<CR> - Opens file history in diffview." })
