@@ -11,10 +11,65 @@
 
 ## Contents
 
-- [Waybar]()
 - [Neovim]()
 - [Installation](#installation)
 
+
+## Neovim
+
+<br/>
+
+<div align="center">
+  <img src=".assets/nvim/neovim-logo.svg" alt="Your image description" width="300"/>
+</div>
+
+<br/>
+<br/>
+
+
+
+<details>
+    <summary>File Navigation</summary>
+    <br/>
+    <ul>
+        <li><a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> - Fuzzyfinder for files, buffers, and a bunch of other stuff.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neotree</a> - File tree, open buffers or git changes.</li>
+    </ul>
+    <br/>
+    <div align="center">
+        <img src=".assets/nvim/neotree_3.png" alt="Your image description" width="700"/>
+    </div>
+    <div align="center">
+        <img src=".assets/nvim/telescope_ff.png" alt="Your image description" width="700"/>
+    </div>
+    <br/>
+</details>
+
+<details>
+    <summary>Git</summary>
+    <br/>
+    <ul>
+        <li><a href="https://github.com/nvim-telescope/telescope.nvim">Neogit</a> - Git UI for Neovim.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Gitsigns</a> - Displaying git changes in open buffers.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">diffview.nvim</a> - Diffview for current buffer.</li>
+    </ul>
+    <br/>
+</details>
+
+<details>
+    <summary>Stuff for making life easier</summary>
+    <br/>
+    <ul>
+        <li><a href="https://github.com/nvim-telescope/telescope.nvim">auto-session</a> - Jump right back into last sesh.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">comment.nvim</a> - For commenting out stuff.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">nvim-autopairs</a> - Close brace pairs automatically.</li>
+        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">nvim-surround</a> - Easy surround with braces</li>
+    </ul>
+    <br/>
+</details>
+
+
+<br/>
 
 ## Installation
 
@@ -33,5 +88,5 @@ $HOME/.dotfiles/.install/install.sh
 - Find and copy the current active profile on the `about:profiles` page, then run the following command:
 
 ```bash
-$HOME/.dotfiles/firefox/setup.sh <profile_dir>
+$HOME/.dotfiles/firefox/setup.sh $HOME/.mozilla/firefox/$profile_dir
 ```
