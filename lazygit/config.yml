@@ -7,7 +7,6 @@
 #
 #  Frederik Lind (2024)
 
-
 # Config relating to the Lazygit UI
 gui:
   # The number of lines you scroll by when scrolling the main window
