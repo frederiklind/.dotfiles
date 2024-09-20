@@ -72,27 +72,27 @@
 
 | Mode | Keymap | Description | Command |
 |-|-|-|-|
-| NORMAL | `<C-h>` | Move to window left of current | `:wincmd h<CR>` |
-| NORMAL | `<C-j>` | Move to window below current | `:wincmd j<CR>` |
-| NORMAL | `<C-k>` | Move to window above current | `:wincmd k<CR>` |
-| NORMAL | `<C-l>` | Move to window right of current | `:wincmd l<CR>` |
-| NORMAL | `<S-Up>` | Vertical resize current window | `:resize +2<CR>` |
-| NORMAL | `<S-Down>` | Vertical resize current window| `:resize -2<CR>` |
-| NORMAL | `<S-Left>` | Horizontal resize current window | `:vertical resize +2<CR>` |
-| NORMAL | `<S-Right>` | Horizontal resize current window | `:vertical resize -2<CR>` |
-| NORMAL | `<leader>n` | Navigates to next buffer | `:bnext<CR>` |
-| NORMAL | `<leader>p` | Navigates to previous buffer | `:bprev<CR>` |
-| NORMAL | `<C-s>` | Writes changes to current buffer | `:w<CR>` |
-| NORMAL | `<C-q>` | Quits current buffer | `:q<CR>` |
-| NORMAL | `<leader>wq` | Writes changes and quits all buffers | `:wqa<CR>` |
-| NORMAL | `<leader>wr` | Toggles line wrapping | `:set wrap! linebreak!<CR>` |
-| NORMAL | `<leader>s` | Quick find and replace | `:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>` |
-| NORMAL | `<F2>` | Show tabline | `:set showtabline=2<CR>` |
-| NORMAL | `<F3>` | Hide tabline | `:set showtabline=0>` |
-| NORMAL | `<S-Tab>` | Navigate next tab | `:tabnext<CR>` |
-| NORMAL | `<leader>tn` | Create new tab | `:tabnew \| Alpha<CR>` |
-| NORMAL | `<leader>tq` | Navigate next tab | `:tabnext<CR>` |
-| VISUAL-LINE | `<leader>p` |  | `\"_dP` |
+| N | `<C-h>` | Move to window left of current | `:wincmd h<CR>` |
+| N | `<C-j>` | Move to window below current | `:wincmd j<CR>` |
+| N | `<C-k>` | Move to window above current | `:wincmd k<CR>` |
+| N | `<C-l>` | Move to window right of current | `:wincmd l<CR>` |
+| N | `<S-Up>` | Vertical resize current window | `:resize +2<CR>` |
+| N | `<S-Down>` | Vertical resize current window| `:resize -2<CR>` |
+| N | `<S-Left>` | Horizontal resize current window | `:vertical resize +2<CR>` |
+| N | `<S-Right>` | Horizontal resize current window | `:vertical resize -2<CR>` |
+| N | `<leader>n` | Navigates to next buffer | `:bnext<CR>` |
+| N | `<leader>p` | Navigates to previous buffer | `:bprev<CR>` |
+| N | `<C-s>` | Writes changes to current buffer | `:w<CR>` |
+| N | `<C-q>` | Quits current buffer | `:q<CR>` |
+| N | `<leader>wq` | Writes changes and quits all buffers | `:wqa<CR>` |
+| N | `<leader>wr` | Toggles line wrapping | `:set wrap! linebreak!<CR>` |
+| N | `<leader>s` | Quick find and replace | `:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>` |
+| N | `<F2>` | Show tabline | `:set showtabline=2<CR>` |
+| N | `<F3>` | Hide tabline | `:set showtabline=0>` |
+| N | `<S-Tab>` | Navigate next tab | `:tabnext<CR>` |
+| N | `<leader>tn` | Create new tab | `:tabnew \| Alpha<CR>` |
+| N | `<leader>tq` | Navigate next tab | `:tabnext<CR>` |
+| X | `<leader>p` |  | `\"_dP` |
 
 
 
