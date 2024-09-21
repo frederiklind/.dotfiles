@@ -2,6 +2,11 @@ ranger/plugins/
 tmux/plugins
 nvim/lazy-lock.json
 cava/shaders
+spicetify/Backup
+spicetify/CustomApps
+spicetify/Extensions
+spicetify/Extracted
+
 
 *.log
 
