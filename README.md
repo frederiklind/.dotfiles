@@ -2,6 +2,7 @@
 
 [![Hyprland](https://img.shields.io/badge/Hyprland-b7bdf8?style=for-the-badge "Hyprland - A dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks")](https://hyprland.org/)
 [![Hyprlock](https://img.shields.io/badge/Hyprlock-abd6fd?style=for-the-badge "Hyprlock - Hyprland's GPU-accelerated screen locking utility")](https://github.com/hyprwm/hyprlock)
+[![bspwm](https://img.shields.io/badge/bspwm-abd6fd?style=for-the-badge "Hyprlock - Hyprland's GPU-accelerated screen locking utility")](https://github.com/hyprwm/hyprlock)
 [![Waybar](https://img.shields.io/badge/Waybar-7dc4e4?style=for-the-badge "Waybar - Highly customizable Wayland bar for Sway and Wlroots based compositors")](https://github.com/Alexays/Waybar)
 [![Alacritty](https://img.shields.io/badge/Alacritty-91d7e3?style=for-the-badge "Alacritty - A fast, cross-platform, OpenGL terminal emulator")](https://github.com/alacritty/alacritty)
 [![Neovim](https://img.shields.io/badge/Neovim-8bd5ca?style=for-the-badge "Bourne Again SHell")](https://www.gnu.org/software/bash/manual/bash.html)
@@ -26,47 +27,73 @@
 <br/>
 <br/>
 
+### ⚙️ Config
+
+### 🛠️ Plugins
 
 
-<details>
-    <summary>File Navigation</summary>
-    <br/>
-    <ul>
-        <li><a href="https://github.com/nvim-telescope/telescope.nvim">Telescope</a> - Fuzzyfinder for files, buffers, and a bunch of other stuff.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Neotree</a> - File tree, open buffers or git changes.</li>
-    </ul>
-    <br/>
-    <div align="center">
-        <img src=".assets/nvim/neotree_3.png" alt="Your image description" width="700"/>
-    </div>
-    <div align="center">
-        <img src=".assets/nvim/telescope_ff.png" alt="Your image description" width="700"/>
-    </div>
-    <br/>
-</details>
+#### Plugin manager
 
-<details>
-    <summary>Git</summary>
-    <br/>
-    <ul>
-        <li><a href="https://github.com/nvim-telescope/telescope.nvim">Neogit</a> - Git UI for Neovim.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">Gitsigns</a> - Displaying git changes in open buffers.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">diffview.nvim</a> - Diffview for current buffer.</li>
-    </ul>
-    <br/>
-</details>
+- [lazy.nvim](https://github.com/folke/lazy.nvim) - Modern plugin manager for Neovim.
 
-<details>
-    <summary>Stuff for making life easier</summary>
-    <br/>
-    <ul>
-        <li><a href="https://github.com/nvim-telescope/telescope.nvim">auto-session</a> - Jump right back into last sesh.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">comment.nvim</a> - For commenting out stuff.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">nvim-autopairs</a> - Close brace pairs automatically.</li>
-        <li><a href="https://github.com/nvim-neo-tree/neo-tree.nvim">nvim-surround</a> - Easy surround with braces</li>
-    </ul>
-    <br/>
-</details>
+#### File Navigation
+
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim") - Fuzzyfinder for files, buffers, and a bunch of other stuff.
+- [Neotree](https://github.com/nvim-neo-tree/neo-tree.nvim) - File tree, open buffers or git changes.
+
+#### Lsp / syntax highlights / diagnostics
+
+- [nvim-treesitter]() - Syntax highlighting, code navigation, and refactoring based on Treesitter.
+- [mason.nvim]() - Manage LSP servers, linters, and formatters easily.
+- [mason-lspconfig.nvim]() - Bridge between mason and lspconfig for easier LSP setup.
+- [nvim-lspconfig]() - Quick setup for Neovim's built-in LSP client.
+- [trouble.nvim]() - Diagnostics list for quick problem navigation.
+
+#### Completions
+
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Autocompletion plugin for Neovim.
+- [cmp-nvim-lsp]() - LSP source for nvim-cmp completions.
+- [lspkind.nvim]() - Adds pictograms to Neovim completions.
+- [cmp-vimtex]() - VimTeX source for nvim-cmp for LaTeX users.
+- [copilot.vim]() - GitHub Copilot integration for AI-powered autocompletions.
+
+#### Debugging
+
+- [nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client for Neovim.
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - Clean interface for debugging in Neovim.
+
+#### Git
+
+- [neogit](https://github.com/NeogitOrg/neogit) -  Git UI for Neovim.
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Displaying git changes in open buffers.
+- [diffview.nvim](https://github.com/sindrets/diffview.nvim) - Diffview for current buffer.
+
+#### Lines / bars
+
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Status line for Neovim.
+- [tabby.nvim]() - Tab line for Neovim.
+
+#### Stuff for making life easier
+
+- [vim-tmux-navigator]() - Seamlessly navigate between Vim and tmux panes.
+- [auto-session](https://github.com/rmagatti/auto-session) -  Jump right back into last session.
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) - Auto indentation on return.
+- [comment.nvim](https://github.com/numToStr/Comment.nvim) - Easy toggle coments in code.
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Automatic close brace pairs.
+- [nvim-surround](https://github.com/kylechui/nvim-surround) - Surround text with brace pairs.
+
+#### LaTeX
+
+Current setup enables compiling `.tex` files using [vimtex](https://github.com/lervag/vimtex). Configured to compile with `latexmk` and use **zathura** as viewer, when writing changes to file. See installation instructions for required packages to make this work.
+
+- [vimtex](https://github.com/lervag/vimtex) - Support for writing and compiling LaTeX documents in Neovim.
+
+#### .NET F#
+
+Current setup enables sending text to a F# interactive session using [vim-slime](https://github.com/jpalardy/vim-slime) and tmux. By default **slime** is setup to suggest pane right of **nvim**, however this can be changed in the initial prompt when executing `<leader>fs`.
+
+- [neofsharp.vim](https://github.com/adelarsq/neofsharp.vim) - F# development plugin for Neovim with language-specific support.
+- [vim-slime](https://github.com/jpalardy/vim-slime) - Send code from Neovim to a REPL or terminal session easily.
 
 ### Custom Keymaps
 
@@ -86,6 +113,14 @@
 | N | `<C-q>` | Quits current buffer | `:q<CR>` |
 | N | `<leader>wq` | Writes changes and quits all buffers | `:wqa<CR>` |
 | N | `<leader>wr` | Toggles line wrapping | `:set wrap! linebreak!<CR>` |
+| N | `<leader>ff` | Telescope find files |  |
+| N | `<leader>fg` | Telescope grep in current working directory |  |
+| N | `<leader>km` | Telescope show all keymaps |  |
+| N | `<leader>cf` | Telescope show neovim commands | `:Telescope commands<CR>` |
+| N | `<leader>bf` | Telescope show open buffers | `:Telescope buffers<CR>` |
+| N | `<leader>km` | Telescope fuzzyfind in current buffer | `:Telescope current_buffer_fuzzy_find<CR>` |
+| N | `<C-n>` | Show/hide file tree | `:Neotree toggle<CR>` |
+| N | `<leader>e` | Jump to file tree | `:Neotree focus<CR>` |
 | N | `<leader>s` | Quick find and replace | `:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>` |
 | N | `<F2>` | Show tabline | `:set showtabline=2<CR>` |
 | N | `<F3>` | Hide tabline | `:set showtabline=0>` |
@@ -93,8 +128,6 @@
 | N | `<leader>tn` | Create new tab | `:tabnew \| Alpha<CR>` |
 | N | `<leader>tq` | Navigate next tab | `:tabnext<CR>` |
 | X | `<leader>p` |  | `\"_dP` |
-
-
 
 <br/>
 
