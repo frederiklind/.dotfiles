@@ -60,3 +60,5 @@ echo
 neofetch
 
 eval "$(starship init bash)"
+
+export PATH=$PATH:/home/flin/.spicetify

@@ -75,56 +75,80 @@ gui:
   # Config relating to colors and styles.
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
   theme:
-    # Border color of focused window
     activeBorderColor:
-      - green
+      - "#8aadf4"
       - bold
-
-    # Border color of non-focused windows
     inactiveBorderColor:
-      - default
-
-    # Border color of focused window when searching in that window
-    searchingActiveBorderColor:
-      - cyan
-      - bold
-
-    # Color of keybindings help text in the bottom line
+      - "#a5adcb"
     optionsTextColor:
-      - blue
-
-    # Background color of selected line.
-    # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+      - "#8aadf4"
     selectedLineBgColor:
-      - blue
-
-    # Background color of selected line when view doesn't have focus.
-    inactiveViewSelectedLineBgColor:
-      - bold
-
-    # Foreground color of copied commit
-    cherryPickedCommitFgColor:
-      - blue
-
-    # Background color of copied commit
+      - "#363a4f"
     cherryPickedCommitBgColor:
-      - cyan
-
-    # Foreground color of marked base commit (for rebase)
-    markedBaseCommitFgColor:
-      - blue
-
-    # Background color of marked base commit (for rebase)
-    markedBaseCommitBgColor:
-      - yellow
-
-    # Color for file with unstaged changes
+      - "#494d64"
+    cherryPickedCommitFgColor:
+      - "#8aadf4"
     unstagedChangesColor:
-      - red
-
-    # Default text color
+      - "#ed8796"
     defaultFgColor:
-      - default
+      - "#cad3f5"
+    searchingActiveBorderColor:
+      - "#eed49f"
+
+  authorColors:
+    "*": "#b7bdf8"
+
+  # theme:
+  # # Border color of focused window
+  # activeBorderColor:
+  #   - green
+  #   - bold
+  #
+  # # Border color of non-focused windows
+  # inactiveBorderColor:
+  #   - default
+  #
+  # # Border color of focused window when searching in that window
+  # searchingActiveBorderColor:
+  #   - cyan
+  #   - bold
+  #
+  # # Color of keybindings help text in the bottom line
+  # optionsTextColor:
+  #   - blue
+  #
+  # # Background color of selected line.
+  # # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+  # selectedLineBgColor:
+  #   - blue
+  #
+  # # Background color of selected line when view doesn't have focus.
+  # inactiveViewSelectedLineBgColor:
+  #   - bold
+  #
+  # # Foreground color of copied commit
+  # cherryPickedCommitFgColor:
+  #   - blue
+  #
+  # # Background color of copied commit
+  # cherryPickedCommitBgColor:
+  #   - cyan
+  #
+  # # Foreground color of marked base commit (for rebase)
+  # markedBaseCommitFgColor:
+  #   - blue
+  #
+  # # Background color of marked base commit (for rebase)
+  # markedBaseCommitBgColor:
+  #   - yellow
+  #
+  # # Color for file with unstaged changes
+  # unstagedChangesColor:
+  #   - red
+  #
+  # # Default text color
+  # defaultFgColor:
+  #   - default
 
   # Config relating to the commit length indicator
   commitLength:
@@ -208,9 +232,9 @@ gui:
   spinner:
     # The frames of the spinner animation.
     frames:
-      - '|'
+      - "|"
       - /
-      - '-'
+      - "-"
       - \
 
     # The "speed" of the spinner in milliseconds.
@@ -437,12 +461,12 @@ keybinding:
     nextItem: <down>
     prevItem-alt: k
     nextItem-alt: j
-    prevPage: ','
+    prevPage: ","
     nextPage: .
     scrollLeft: H
     scrollRight: L
     gotoTop: <
-    gotoBottom: '>'
+    gotoBottom: ">"
     toggleRangeSelect: v
     rangeSelectDown: <s-down>
     rangeSelectUp: <s-up>
@@ -462,7 +486,7 @@ keybinding:
     prevMatch: "N"
     startSearch: /
     optionMenu: <disabled>
-    optionMenu-alt1: '?'
+    optionMenu-alt1: "?"
     select: <space>
     goInto: <enter>
     confirm: <enter>
@@ -477,7 +501,7 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeShellCommand: ':'
+    executeShellCommand: ":"
     createRebaseOptionsMenu: m
 
     # 'Files' appended for legacy reasons
@@ -487,8 +511,8 @@ keybinding:
     pullFiles: p
     refresh: R
     createPatchOptionsMenu: <c-p>
-    nextTab: ']'
-    prevTab: '['
+    nextTab: "]"
+    prevTab: "["
     nextScreenMode: +
     prevScreenMode: _
     undo: z
@@ -499,10 +523,10 @@ keybinding:
     copyToClipboard: <c-o>
     openRecentRepos: <c-r>
     submitEditorText: <enter>
-    extrasMenu: '@'
+    extrasMenu: "@"
     toggleWhitespaceInDiffView: <c-w>
-    increaseContextInDiffView: '}'
-    decreaseContextInDiffView: '{'
+    increaseContextInDiffView: "}"
+    decreaseContextInDiffView: "{"
     increaseRenameSimilarityThreshold: )
     decreaseRenameSimilarityThreshold: (
     openDiffTool: <c-t>
@@ -524,7 +548,7 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: '`'
+    toggleTreeView: "`"
     openMergeTool: M
     openStatusFilter: <c-b>
     copyFileInfoToClipboard: "y"
