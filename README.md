@@ -10,26 +10,70 @@
 [![Sddm](https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge "Simple Desktop Display Manager")](https://github.com/sddm/sddm)
 
 
-## Contents
+# Contents
 
+- [Hyprland](#hyprland)
+- [bspwm](#bspwm)
+- [Waybar / Polybar](#waybar--polybar)
 - [Neovim]()
 - [Installation](#installation)
 
+# Hyprland
 
-## Neovim
+<br/>
+<div align="center">
+  <img src=".assets/hypr/hyprland_logo.png" alt="Your image description" width="280"/>
+</div>
+
+## Keybindings
+
+
+| Keymap | Description  |
+|-|-|
+| `SUPER + Shift + Left arrow` |  Resize horizontal left |
+| `SUPER + Shift + Right arrow` |  Resize horizontal right |
+| `SUPER + Shift + Up arrow` |  Resize vertically up |
+| `SUPER + Shift + Down arrow` |  Resize vertically down |
+| `SUPER + Arrow keys` |  Move focus |
+| `SUPER + T` | Toggle tile/floating window |
+| `SUPER + F` | Toggle full screen |
+| `SUPER + 1-?` | Move to workspace |
+| `SUPER + Shift + 1-?` | Move active window to workspace |
+| `SUPER + Return` | Launch terminal (Alacritty)  |
+| `SUPER + Shift + B` | Launch browser (Firefox)  |
+| `SUPER + C` | Launch Visual Studio Code |
+| `SUPER + Q` | Kill active window |
+| `SUPER + M` | Exit hyprland session |
+| `SUPER + E` | Launch gui file manager (Thunar) |
+| `SUPER + R` | Open application launcher |
+|  `SUPER + J` | Togglesplit - Check if this works |
+|  `SUPER + Shift + P` | Screenshot (grim & slurp) |
+|  `SUPER + L` | Lock screen (hyprlock) |
 
 <br/>
 
+<!-- # bspwm
+
+# Waybar / Polybar
+
+
+
+# Alacritty -->
+
+# Neovim
+
+<br/>
 <div align="center">
   <img src=".assets/nvim/neovim-logo.svg" alt="Your image description" width="300"/>
 </div>
 
-<br/>
-<br/>
+##  Config
 
-### ⚙️ Config
+- [init.lua](./nvim/init.lua)
+- [vim-options.lua](./nvim/lua/vim-options.lua)
+- [Plugins](./nvim/lua/plugins/)
 
-### 🛠️ Plugins
+## Plugins
 
 
 #### Plugin manager
@@ -95,7 +139,9 @@ Current setup enables sending text to a F# interactive session using [vim-slime]
 - [neofsharp.vim](https://github.com/adelarsq/neofsharp.vim) - F# development plugin for Neovim with language-specific support.
 - [vim-slime](https://github.com/jpalardy/vim-slime) - Send code from Neovim to a REPL or terminal session easily.
 
-### Custom Keymaps
+<br/>
+
+## Custom Keymaps
 
 | Mode | Keymap | Description | Command |
 |-|-|-|-|
@@ -131,7 +177,18 @@ Current setup enables sending text to a F# interactive session using [vim-slime]
 
 <br/>
 
-## Installation
+## Download
+
+To download nvim config only (replace `~/destination-dir` with correct directory name):
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/FLIVLA/.dotfiles.git ~/destination-dir
+
+cd ~/destination-dir
+git sparse-checkout set nvim
+```
+
+# Installation
 
 ```bash
 # clone the repository
