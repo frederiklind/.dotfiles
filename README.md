@@ -13,10 +13,12 @@
 # Contents
 
 - [Hyprland](#hyprland)
-- [bspwm](#bspwm)
+- [BSPWM](#BSPWM)
 - [Waybar / Polybar](#waybar--polybar)
 - [Neovim]()
 - [Installation](#installation)
+
+<br/>
 
 # Hyprland
 
@@ -25,32 +27,18 @@
   <img src=".assets/hypr/hyprland_logo.png" alt="Your image description" width="280"/>
 </div>
 
+## Config
+
+To avoid rewriting config too eften, I have modularized the configuration such that multiple settings-presets exist in [.../hypr/presets](). the presets files simply source  the global settings files and  a combination of  files from the settings directories.  
+
+To change hyprland preset, run `settings` from the terminal if using the provided `.bashrc`, or `~/.dotfiles/scripts/settings.py`. This will open a settigns TUI, where presets can easily be selected. This will replace current symlinks in `~/.config/hypr`.
+
+- [Presets](./hypr/3840x2400/hyprland.conf)
+- [Global Settings](./hypr/global/)
+- [Window Decorations](./hypr/decorations/)
+- [Window Rules](./hypr/windowrules/)
+
 ## Keybindings
-
-
-<!-- | Keymap | Description  |
-|-|-|
-| `SUPER + Shift + Left arrow` |  Resize horizontal left |
-| `SUPER + Shift + Right arrow` |  Resize horizontal right |
-| `SUPER + Shift + Up arrow` |  Resize vertically up |
-| `SUPER + Shift + Down arrow` |  Resize vertically down |
-| `SUPER + Arrow keys` |  Move focus |
-| `SUPER + T` | Toggle tile/floating window |
-| `SUPER + F` | Toggle full screen |
-| `SUPER + 1-?` | Move to workspace |
-| `SUPER + Shift + 1-?` | Move active window to workspace |
-| `SUPER + Return` | Launch terminal (Alacritty)  |
-| `SUPER + Shift + B` | Launch browser (Firefox)  |
-| `SUPER + C` | Launch Visual Studio Code |
-| `SUPER + Q` | Kill active window |
-| `SUPER + M` | Exit hyprland session |
-| `SUPER + E` | Launch gui file manager (Thunar) |
-| `SUPER + R` | Open application launcher |
-|  `SUPER + J` | Togglesplit - Check if this works |
-|  `SUPER + Shift + P` | Screenshot (grim & slurp) |
-|  `SUPER + L` | Lock screen (hyprlock) |
-
-<br/> -->
 
 <div align="center">
 
@@ -79,9 +67,77 @@
 </div>
 <br/>
 
-<!-- # bspwm
+# BSPWM
 
-# Waybar / Polybar
+## Config
+
+- [bspwmrc](./bspwm/bspwmrc)
+- [sxhkdrc](./sxhkd/sxhkdrc)
+- [.Xresources](./xorg/.Xresources)
+
+### Scaling issues for high DPI monitors
+
+Add the following lines to `~/.Xresources`.
+
+```ini
+Xft.dpi: 140
+URxvt.font: xft:<FONT_FACE>:size=12
+Xft.autohint: 0
+Xft.lsdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+```
+To makes changes take effect:
+
+```bash
+xrdb -merge ~/.Xresources
+```
+
+Found that adding the following lines to `.bashrc`, and adjusting the values solves application scaling issues.
+
+```bash
+# GTK scaling settings
+export GDK_SCALE=0.5
+export GDK_DPI_SCALE=0.5
+
+# Qt scaling for high DPI monitors
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCALE_FACTOR=0.5
+export QT_CURSOR_SIZE=24
+```
+
+## Keybindings (sxhkdrc)
+
+<!-- <div align="center">
+
+| Keymap | Description |
+| :--- | :--- |
+| `SUPER + Shift + Left arrow` |  Resize horizontal left |
+| `SUPER + Shift + Right arrow` |  Resize horizontal right |
+| `SUPER + Shift + Up arrow` |  Resize vertically up |
+| `SUPER + Shift + Down arrow` |  Resize vertically down |
+| `SUPER + Arrow keys` |  Move focus |
+| `SUPER + T` | Toggle tile/floating window |
+| `SUPER + F` | Toggle full screen |
+| `SUPER + 1-?` | Move to workspace |
+| `SUPER + Shift + 1-?` | Move active window to workspace |
+| `SUPER + Return` | Launch terminal (Alacritty)  |
+| `SUPER + Shift + B` | Launch browser (Firefox)  |
+| `SUPER + C` | Launch Visual Studio Code |
+| `SUPER + Q` | Kill active window |
+| `SUPER + M` | Exit hyprland session |
+| `SUPER + E` | Launch gui file manager (Thunar) |
+| `SUPER + R` | Open application launcher |
+|  `SUPER + J` | Togglesplit - Check if this works |
+|  `SUPER + Shift + P` | Screenshot (grim & slurp) |
+|  `SUPER + L` | Lock screen (hyprlock) |
+
+</div>
+<br/> -->
+
+<!-- # Waybar / Polybar
 
 
 
