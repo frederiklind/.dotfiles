@@ -28,7 +28,7 @@
 ## Keybindings
 
 
-| Keymap | Description  |
+<!-- | Keymap | Description  |
 |-|-|
 | `SUPER + Shift + Left arrow` |  Resize horizontal left |
 | `SUPER + Shift + Right arrow` |  Resize horizontal right |
@@ -50,6 +50,33 @@
 |  `SUPER + Shift + P` | Screenshot (grim & slurp) |
 |  `SUPER + L` | Lock screen (hyprlock) |
 
+<br/> -->
+
+<div align="center">
+
+| Keymap | Description |
+| :--- | :--- |
+| `SUPER + Shift + Left arrow` |  Resize horizontal left |
+| `SUPER + Shift + Right arrow` |  Resize horizontal right |
+| `SUPER + Shift + Up arrow` |  Resize vertically up |
+| `SUPER + Shift + Down arrow` |  Resize vertically down |
+| `SUPER + Arrow keys` |  Move focus |
+| `SUPER + T` | Toggle tile/floating window |
+| `SUPER + F` | Toggle full screen |
+| `SUPER + 1-?` | Move to workspace |
+| `SUPER + Shift + 1-?` | Move active window to workspace |
+| `SUPER + Return` | Launch terminal (Alacritty)  |
+| `SUPER + Shift + B` | Launch browser (Firefox)  |
+| `SUPER + C` | Launch Visual Studio Code |
+| `SUPER + Q` | Kill active window |
+| `SUPER + M` | Exit hyprland session |
+| `SUPER + E` | Launch gui file manager (Thunar) |
+| `SUPER + R` | Open application launcher |
+|  `SUPER + J` | Togglesplit - Check if this works |
+|  `SUPER + Shift + P` | Screenshot (grim & slurp) |
+|  `SUPER + L` | Lock screen (hyprlock) |
+
+</div>
 <br/>
 
 <!-- # bspwm
