@@ -69,6 +69,8 @@ To change hyprland preset, run `settings` from the terminal if using the provide
 
 # BSPWM
 
+hello
+
 ## Config
 
 - [bspwmrc](./bspwm/bspwmrc)
