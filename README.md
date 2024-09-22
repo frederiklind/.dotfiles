@@ -6,6 +6,7 @@
 [![Waybar](https://img.shields.io/badge/Waybar-7dc4e4?style=for-the-badge "Waybar - Highly customizable Wayland bar for Sway and Wlroots based compositors")](https://github.com/Alexays/Waybar)
 [![Alacritty](https://img.shields.io/badge/Alacritty-91d7e3?style=for-the-badge "Alacritty - A fast, cross-platform, OpenGL terminal emulator")](https://github.com/alacritty/alacritty)
 [![Neovim](https://img.shields.io/badge/Neovim-8bd5ca?style=for-the-badge "Bourne Again SHell")](https://www.gnu.org/software/bash/manual/bash.html)
+[![tmux](https://img.shields.io/badge/tmux-8bd5ca?style=for-the-badge "Bourne Again SHell")](https://www.gnu.org/software/bash/manual/bash.html)
 [![Zathura](https://img.shields.io/badge/Zathura-a6da95?style=for-the-badge "Zathura is a highly customizable and functional document viewer")](https://github.com/pwmt/zathura)
 [![Sddm](https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge "Simple Desktop Display Manager")](https://github.com/sddm/sddm)
 
@@ -139,9 +140,28 @@ export QT_CURSOR_SIZE=24
 </div>
 <br/> -->
 
+<br/>
+
 # Waybar
 
+## Modules
+
+From left:
+
+- Application launcher (wofi)
+- Hyprland workspaces
+- Quicklinks group (launch stuff)
+- Spotify controls (Compatible with [spotify-launcher]())
+- Clock
+- System group (cpu, memory, temperature)
+- VPN status (nordvpn, see [./scripts/nvpn-status.sh](./scripts/nvpn-status.sh))
+- Network status
+- Battery status
+- Power (launch custom power-tui, see [./scripts/power.py](./scripts/power.py))
+
 ## Themes
+
+Available themes located in [./waybar/themes](./waybar/themes/). Themes can easily be switched by using the `settings` command, or by running `~/.dotfiles/.settings/settings.sh`. This will replace current symlink in the `~/.config` directory.
 
 <div align="center">
   <img src=".assets/waybar/waybar_themes.png"/>
