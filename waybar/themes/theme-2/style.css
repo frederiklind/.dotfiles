@@ -7,7 +7,7 @@
  *  Frederik Lind (2024)
  */
 
-@define-color waybar-background rgba(24, 25, 38, 1);
+@define-color waybar-background rgba(24, 25, 38, 0.9);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 
@@ -31,7 +31,7 @@
         Helvetica,
         Arial,
         sans-serif;
-    font-size: 17px;
+    font-size: 11px;
 }
 
 window#waybar {
@@ -41,7 +41,6 @@ window#waybar {
     transition-duration: 0.5s;
     opacity: 1;
     border-radius: 0px;
-    /* border-bottom: 1px solid @module-border; */
 }
 
 window#waybar.hidden {
@@ -69,17 +68,17 @@ button:hover {
 
 /* ------------------------ workspaces ------------------------ */
 #workspaces {
-    margin: 8px 2px 8px 10px;
+    margin: 3px 0px 3px 2.5px;
     border: 0px;
     font-size: 1px;
     background-color: @module-background;
-    padding: 0px 10px 0px 5px;
+    padding: 0px 5px 0px 5px;
     border-radius: 7px;
 }
 
 #workspaces button {
     margin: 0px 2px 0px 0px;
-    padding: 0px 4px 0px 6px;
+    padding: 0px 2px 0px 2px;
     color: @catppuccin-blue;
     transition: all 0.2s ease-in-out;
 }
@@ -99,43 +98,34 @@ button:hover {
 }
 
 #custom-ranger {
-    font-size: 25px;
+    font-size: 20px;
     color: @catppuccin-blue;
     margin-left: -5px;
 }
 
 #quicklinks {
-    /* background-color: @module-background; */
-    margin: 5px 2.5px 5px 10px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
     padding: 2px 0px;
 }
 
 #network_group {
     background-color: @module-background;
-    margin: 8px 10px 8px 0px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 7px 7px 7px 5px;
+    padding: 0px 7px 0px 5px;
 }
 
 #systemgroup {
     background-color: @module-background;
-    margin: 8px 10px 8px 0px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 7px 7px 7px 3px;
-}
-
-#mpris {
-    background-color: @module-background;
-    margin: 8px 10px 8px 20px;
-    border-radius: 7px;
-    padding: 7px 10px 7px 10px;
-    color: @catppuccin-blue;
+    padding: 0px 5px 0px 5px;
 }
 
 #custom-apps {
-    font-size: 27px;
-    margin: 8px 0px 8px 8px;
+    font-size: 16px;
+    margin: 3px 0px 3px 10px;
     color: @catppuccin-blue;
     padding: 0px 15px 0px 10px;
     border-radius: 7px;
@@ -145,10 +135,16 @@ button:hover {
 #custom-firefox,
 #custom-github,
 #custom-vscode,
-#custom-spotify #custom-terminal {
-    font-size: 25px;
+#custom-spotify {
+    font-size: 16px;
     margin: 0px 5px 0px 5px;
     color: @catppuccin-blue;
+}
+
+#custom-terminal {
+    color: @catppuccin-blue;
+    font-size: 16px;
+    padding-right: 7px;
 }
 
 #custom-calendar {
@@ -158,28 +154,37 @@ button:hover {
 
 #calendar_group {
     background-color: @module-background;
-    margin: 8px 5px 8px 0px;
+    margin: 3px 5px 3px 0px;
     border-radius: 7px;
     padding: 0px 15px 0px 15px;
 }
 
 #clock_group {
     background-color: @module-background;
-    margin: 8px 5px 8px 0px;
+    margin: 3px 5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 10px 0px 15px;
+    padding: 0px 5px 0px 10px;
 }
 
 #custom-settings {
-    font-size: 22px;
+    font-size: 15px;
     margin: 0px 13px 0px 5px;
     padding-right: 10px;
     color: @catppuccin-blue;
 }
 
-#custom-firefox {
-    font-size: 23px;
+#custom-google_drive {
+    font-size: 15px;
     margin-left: 5px;
+    color: @catppuccin-blue;
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 11px;
+}
+
+#custom-firefox {
+    font-size: 15px;
+    margin-left: 12px;
     color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
@@ -203,7 +208,7 @@ button:hover {
 }
 
 #custom-youtube {
-    font-size: 28px;
+    font-size: 23px;
     margin: 0px 5px 0px 5px;
     color: @catppuccin-blue;
     border-radius: 7px;
@@ -220,8 +225,8 @@ button:hover {
 }
 
 #custom-discord {
-    margin-left: 8px;
-    font-size: 22px;
+    margin-left: 10px;
+    font-size: 14px;
     color: @catppuccin-blue;
     border-radius: 7px;
     padding: 0px 5px;
@@ -235,12 +240,13 @@ button:hover {
 }
 
 #custom-shutdown {
-    font-size: 17px;
+    font-size: 12px;
     padding-right: 8px;
     padding-left: 4px;
-    margin: 8px 5px 8px 0px;
+    margin: 3px 10px 3px 0px;
     color: #5b6078;
     background-color: @module-background;
+    color: @catppuccin-blue;
     border-radius: 7px;
 }
 
@@ -276,7 +282,7 @@ button:hover {
 #cpu.bars {
     color: @catppuccin-teal;
     margin-right: 5px;
-    margin: 8px 10px 8px 0px;
+    margin: 3px 10px 3px 0px;
     background-color: @module-background;
     border-radius: 7px;
     padding: 0px 10px;
@@ -288,7 +294,7 @@ button:hover {
 
 #window {
     background-color: @module-background;
-    margin: 4 0px;
+    margin: 4px 0px;
     border-radius: 10px;
     border: 1px solid @module-border;
 }
@@ -303,13 +309,12 @@ button:hover {
 
 #clock {
     color: @catppuccin-blue;
-    margin: 8px 0px 8px 5px;
-    font-size: 17px;
+    margin: 3px 0px 3px 0px;
     font-weight: bolder;
 }
 
 #custom-clock_logo {
-    font-size: 18px;
+    font-size: 13px;
     margin: 0px 8px 0px 0px;
     color: @catppuccin-teal;
 }
@@ -344,33 +349,37 @@ label:focus {
 }
 
 #temperature {
-    margin-left: 5px;
+    margin-left: 0px;
     color: #8aadf4;
 }
 
 #network {
-    margin: 0px 10px 0px 5px;
+    margin: 0px 2.5px 0px 0px;
     color: @catppuccin-blue;
 }
 
 #custom-vpn {
     color: @catppuccin-blue;
     margin: 0px 0px 0px 0px;
-    font-size: 18px;
 }
 
 #pulseaudio {
     color: @catppuccin-blue;
-    margin: 8px 10px 8px 0px;
-    background-color: @module-background;
+    margin: 3px 0px 3px 0px;
+    /* background-color: @module-background; */
     border-radius: 7px;
     padding: 0px 10px;
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+#pulseaudio.logo {
+    font-size: 13px;
+    margin: 0px 0px 0px 0px;
+    color: @catppuccin-teal;
 }
+
+/* #pulseaudio.muted {  */
+/*     color: @catppuccin-blue; */
+/* } */
 
 #temperature.critical {
     background-color: #eb4d4b;
@@ -389,66 +398,67 @@ tooltip label {
 /* ----------------- spotify controls */
 #spotify_controls {
     background-color: @module-background;
-    margin: 8px 10px 8px 60px;
-    border-radius: 18px 7px 7px 18px;
-    padding: 0px 7px 0px 7px;
+    margin: 3px 10px 3px 5px;
+    border-radius: 18px 18px 18px 18px;
+    padding: 0px 7px 0px 5px;
 }
 
 #custom-next_track,
 #custom-prev_track,
 #custom-play_pause {
-    font-size: 28px;
-    margin: 0px 5px 0px 5px;
+    font-size: 19px;
+    margin: 0px 3px 0px 3px;
     color: @catppuccin-blue;
 }
 
 #custom-play_pause {
-    margin: 0px 8px 0px 8px;
+    margin: 0px 5px 0px 5px;
 }
 
 #custom-playerctl {
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px 0px 0px;
     color: @catppuccin-teal;
     font-weight: bolder;
 }
 
 #custom-spotify_logo {
-    font-size: 25px;
+    font-size: 16px;
     margin: 0px 5px 0px 2px;
     /* color: #a6da95; */
     color: @catppuccin-teal;
 }
 
 #custom-cpu_logo {
-    font-size: 20px;
-    margin: 0px 0px 0px 10px;
+    font-size: 13px;
+    margin: 0px 0px 0px 5px;
     color: @catppuccin-teal;
 }
 
 #custom-memory_logo {
-    font-size: 23px;
-    margin: 0px 0px 0px 10px;
+    font-size: 14px;
+    margin: 0px 0px 0px 5px;
     color: @catppuccin-teal;
     padding-right: 6px;
 }
 
 #custom-temperature_logo {
-    font-size: 18px;
-    margin: 0px 0px 0px 10px;
+    font-size: 12px;
+    margin: 0px 0px 0px 8px;
     color: @catppuccin-teal;
 }
 
 #cpu_group,
+#audio_group,
 #temperature_group,
 #memory_group {
     background-color: @module-background;
-    margin: 8px 10px 8px 0px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 7px 0px 7px;
+    padding: 0px 3px 0px 3px;
 }
 
 #custom-vpn_logo {
-    font-size: 20px;
+    font-size: 14px;
     margin: 0px 0px 0px 10px;
     color: @catppuccin-teal;
     padding-right: 6px;
@@ -456,16 +466,47 @@ tooltip label {
 
 #vpn_group {
     background-color: @module-background;
-    margin: 8px 10px 8px 0px;
+    margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 7px 0px 7px;
+    padding: 0px 5px 0px 0px;
 }
 
 #custom-network_logo {
-    font-size: 20px;
-    margin: 0px 0px 0px 10px;
+    font-size: 16px;
+    margin: 0px 0px 0px 5px;
     color: @catppuccin-teal;
     padding-right: 6px;
+}
+
+#battery {
+    margin: 3px 0px 3px 0px;
+    padding: 0px 5px;
+    color: @catppuccin-blue;
+    margin-right: 2.5px;
+    border-radius: 7px;
+}
+
+#battery.icon {
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: @catppuccin-teal;
+}
+
+#battery_group {
+    background-color: @module-background;
+    margin: 3px 2.5px 3px 0px;
+    border-radius: 7px;
+    padding: 0px 5px 0px 3px;
+}
+
+#battery.charging,
+#battery.plugged {
+    /* color: #81c8be; */
+}
+
+#battery.critical:not(.charging) {
+    color: #ed8796;
 }
 
 

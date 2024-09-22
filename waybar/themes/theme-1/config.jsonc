@@ -10,22 +10,23 @@
     "layer": "top",     // Waybar at top layer
     "position": "top",  // Waybar position (top|bottom|left|right)
     "spacing": 4,       // Gaps between modules (4px)
-    "margin": "7 12 0 12",
+    "margin": "0 0 0 0",
 
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
         "group/quicklinks"
-        // "group/systemgroup"
     ],
 
     "modules-center": [
-        "clock"
+      "group/clock_group"
     ],
 
     "modules-right": [
-        "group/systemgroup",
-        "group/audio-light-batt",
+        "group/audio_group",
+        "group/vpn_group",
+        "group/network_group",
+        "group/battery_group",
         "custom/shutdown"
     ],
 
@@ -40,7 +41,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-            "*": 4
+            "*": 5
         }       
     },
 
@@ -85,29 +86,115 @@
         }
     },
 
+    "custom/playerctl": {
+        "exec": "playerctl -p spotifyd metadata --format '  {{ artist }} - {{ title }}'",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "custom/next_track": {
+        "format": "󰒭",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/next.sh",
+        "tooltip": false
+    },
+
+    "custom/prev_track": {
+        "format": "󰒮",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/prev.sh",
+        "tooltip": false
+    },
+
+    "custom/play_pause": {
+        "exec": "~/.dotfiles/scripts/spotify-controls/status.sh",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "~/.dotfiles/scripts/spotify-controls/play.sh",
+        "tooltip": false
+    },
+
+    // custom icons -----------------------------------------------------------
+
+    "custom/cpu_logo": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "custom/memory_logo": {
+        "format": "󰘚",
+        "tooltip": false
+    },
+
+    "custom/temperature_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/clock_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/calendar_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/network_logo" : {
+        "format": "󰖟",
+        "tooltip": false
+    },
+
+    // ------------------------------------------------------------------------
+
+    "custom/spotify_logo": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "~/.dotfiles/scripts/spotify.sh"
+    },
+
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}%"
+    },
+
+    "battery#icon": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
         "format-icons": ["", "", "", "", ""] 
     },
 
     "clock": {
-        "format": "  {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        // "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "custom/calendar": {
+        "exec": "date +\"%a, $(date +%-d)$(date +%-d | sed 's/1$/st/;s/2$/nd/;s/3$/rd/;s/[04-9]$/th/') %b - %Y\"",
+        "interval": 60,
+        "tooltip": false
     },
 
     "cpu": {
+        "interval": 1,
+        "format": "{usage}%",
+        "tooltip": true
+    },
+
+    "cpu#bars": {
         "interval": 1,
         "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },    
 
     "memory": {
-        "format": "{}% 󰘚"
+        "format": "{percentage}%"
     },
 
     "temperature": {
@@ -115,7 +202,7 @@
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C "
+        "format": "{temperatureC}°C"
     },
 
     "power-profiles-daemon": {
@@ -131,7 +218,7 @@
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "interval": 1,
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -143,12 +230,40 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
-        "format": "{volume}% {icon}", 
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}%", 
+        "format-bluetooth": "{volume}%",
+        "format-bluetooth-muted": "",
+        "format-muted": "0%",
+        "format-source": "",
+        "format-source-muted": "", 
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#logo": {
+        // "scroll-step": 1, // %, can be a float
+        // {format_source} removed
+        "format": "{icon}", 
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰓃 ",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "alsa": {
+        "format": "{volume}%", 
+        "format-muted": "0%",
+        "on-click": "pavucontrol"
+    },
+
+    "alsa#logo": {
+        "format": "{icon}",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -183,7 +298,7 @@
     },
 
     "custom/terminal": {
-        "format": "  ",
+        "format": "",
         "on-click": "~/.dotfiles/scripts/terminal.sh",
         "tooltip": false
     },
@@ -196,7 +311,7 @@
 
     "custom/shutdown": {
         "format": "  ",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
+        "on-click": "alacritty -e ~/.dotfiles/scripts/power.py",
         "tooltip": false
     },
 
@@ -207,8 +322,14 @@
     },
 
     "custom/youtube": {
-        "format": " 󰗃 ",
+        "format": "󰗃",
         "on-click": "~/.dotfiles/scripts/youtube.sh",
+        "tooltip": false
+    },
+
+    "custom/google_drive": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/google_drive.sh",
         "tooltip": false
     },
 
@@ -230,57 +351,127 @@
         "tooltip": false    
     },
 
+    "custom/settings": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/settings.sh",
+        "tooltip": false
+    },
+
     "custom/vpn": {
-        "states": {
-            "disconnected": "",
-            "connected": ""
-        },
         "format": " {} ",
-        "format-connected": " {} ",
-        "format-disconnected": " {} ",
         "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
+        "tooltip": false
+    },
+
+    "custom/vpn_logo": {
+        "format": "󰞀",
         "tooltip": false
     },
 
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            // "custom/ranger",
+            // "custom/terminal",
             "custom/firefox",
-            "custom/spotify",
+            "custom/google_drive",
             "custom/discord",
             "custom/github",
             "custom/vscode"
         ]
     },
 
-    "group/devapps": {
+    "group/clock_group": {
         "orientation": "horizontal",
         "modules": [
-            "custom/github",
-            "custom/vscode",
-            "custom/neovim",
-            "custom/terminal"
-         ]
+            "custom/clock_logo",
+            "clock"
+        ]
     },
 
-    "group/audio-light-batt": {
+    "group/calendar_group": {
         "orientation": "horizontal",
         "modules": [
-            "battery",
-            "pulseaudio",
-            "network",
-            "custom/vpn"
+            "custom/calendar_logo",
+            "custom/calendar"
         ]
     },
 
     "group/systemgroup": {
         "orientation": "horizontal",
         "modules": [
+            "custom/cpu_logo",
+            "cpu",        
+            "custom/memory_logo",
+            "memory",
+            "custom/temperature_logo",
+            "temperature"
+        ]
+    },
+
+    "group/cpu_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/cpu_logo",
             "cpu"
-            //"memory",
-            //"temperature"
+        ]
+    },
+
+    "group/memory_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/memory_logo",
+            "memory"
+        ]
+    },
+
+    "group/temperature_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/temperature_logo",
+            "temperature"
+        ]
+    },
+
+    "group/spotify_controls": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/spotify_logo",
+            "custom/prev_track",
+            "custom/play_pause",
+            "custom/next_track"
+        ]
+    },
+
+    "group/audio_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#logo",
+            "pulseaudio"
+        ]
+    },
+
+    "group/battery_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery#icon",
+            "battery"
+        ]
+    },
+
+    "group/vpn_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/vpn_logo",
+            "custom/vpn"
+        ]
+    },
+
+    "group/network_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/network_logo",
+            "network"
         ]
     }
 }

@@ -24,7 +24,7 @@
 
 <br/>
 <div align="center">
-  <img src=".assets/hypr/hyprland_logo.png" alt="Your image description" width="280"/>
+  <img src=".assets/hypr/hyprland_logo.png" width="280"/>
 </div>
 
 ## Config
@@ -139,17 +139,23 @@ export QT_CURSOR_SIZE=24
 </div>
 <br/> -->
 
-<!-- # Waybar / Polybar
+# Waybar
 
+## Themes
 
+<div align="center">
+  <img src=".assets/waybar/waybar_themes.png"/>
+</div>
 
-# Alacritty -->
+<br/>
+
+# Alacritty
 
 # Neovim
 
 <br/>
 <div align="center">
-  <img src=".assets/nvim/neovim-logo.svg" alt="Your image description" width="300"/>
+  <img src=".assets/nvim/neovim-logo.svg" width="300"/>
 </div>
 
 ##  Config

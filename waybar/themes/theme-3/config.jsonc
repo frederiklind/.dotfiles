@@ -15,8 +15,8 @@
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        "group/quicklinks"
-        // "group/spotify_controls"
+        "group/quicklinks",
+        "group/spotify_controls"
     ],
 
     "modules-center": [
@@ -24,7 +24,7 @@
     ],
 
     "modules-right": [
-        // "group/systemgroup",
+        "group/systemgroup",
         "group/audio_group",
         "group/vpn_group",
         "group/network_group",
