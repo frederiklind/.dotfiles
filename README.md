@@ -194,9 +194,9 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=3 --icons'
 ```
-
+<br/>
 <div align="center">
-  <img src=".assets/terminal/ls-l.png" height="250"/>
+  <img src=".assets/terminal/ls-l.png"/>
 </div>
 
 ### Config
