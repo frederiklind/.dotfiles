@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".assets/ascii/title.png" height="100"/>
+  <img src=".assets/ascii/title.png" height="120"/>
 </div>
 <br/>
 <br/>
