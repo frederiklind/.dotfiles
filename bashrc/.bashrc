@@ -20,7 +20,7 @@ PS1='[\u@\h \W]\$ '
 
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
+alias lt='eza -a --tree --level=3 --icons'
 
 alias pacman="sudo pacman" 
 

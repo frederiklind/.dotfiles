@@ -36,7 +36,7 @@
 
 # Hyprland
 
-## Config
+### Config
 
 To avoid rewriting config too eften, I have modularized the configuration such that multiple settings-presets exist in [.../hypr/presets](). the presets files simply source  the global settings files and  a combination of  files from the settings directories.  
 
@@ -80,7 +80,7 @@ To change hyprland preset, run `settings` from the terminal if using the provide
 
 hello
 
-## Config
+### Config
 
 - [bspwmrc](./bspwm/bspwmrc)
 - [sxhkdrc](./sxhkd/sxhkdrc)
@@ -152,7 +152,7 @@ export QT_CURSOR_SIZE=24
 
 # Waybar
 
-## Modules
+### Modules
 
 From left:
 
@@ -167,7 +167,7 @@ From left:
 - Battery status
 - Power (launch custom power-tui, see [./scripts/power.py](./scripts/power.py))
 
-## Themes
+### Themes
 
 Available themes located in [./waybar/themes](./waybar/themes/). Themes can easily be switched by using the `settings` command, or by running `~/.dotfiles/.settings/settings.sh`. This will replace current symlink in the `~/.config` directory.
 
@@ -180,13 +180,32 @@ Available themes located in [./waybar/themes](./waybar/themes/). Themes can easi
 
 # Terminal
 
+Neofetch for printing system info. 
+
+<div align="center">
+  <img src=".assets/terminal/fetch-1.png" />
+</div>
+<br/>
+
+Color-ls using `eza` with following aliases in `.bashrc`
+
+```bash
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=3 --icons'
+```
+
+<div align="center">
+  <img src=".assets/terminal/ls-l.png" height="250"/>
+</div>
+
+### Config
+
 - [alacritty.toml](./alacritty/alacritty.toml)
 - [kitty.conf](./kitty/kitty.conf)
-
-
-For prompt styling, using starship
-
-- [starship.toml]()
+- [starship.toml](./starship/starship.toml)
+- [neofetch](./neofetch/config.conf)
+- [fastfetch](./fastfetch/config.jsonc)
 
 <br/>
 <br/>
@@ -199,7 +218,7 @@ Statusbar displays highlighted active tmux window, session name, and host. Leade
   <img src=".assets/tmux/statusbar.png"/>
 </div>
 
-## Config
+### Config
 
 - [tmux.conf](./tmux/tmux.conf)
 
@@ -219,7 +238,7 @@ Statusbar displays highlighted active tmux window, session name, and host. Leade
   <img src=".assets/nvim/nvim-home.png"/>
 </div>
 
-##  Config
+###  Config
 
 - [init.lua](./nvim/init.lua)
 - [vim-options.lua](./nvim/lua/vim-options.lua)
