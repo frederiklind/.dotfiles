@@ -1,3 +1,5 @@
+.backup
+
 ranger/plugins/
 tmux/plugins
 nvim/lazy-lock.json
