@@ -1,4 +1,8 @@
-# .dotfiles
+<div align="center">
+  <img src=".assets/ascii/title-ascii.png" height="100"/>
+</div>
+<br/>
+<br/>
 
 [![Hyprland](https://img.shields.io/badge/Hyprland-b7bdf8?style=for-the-badge "Hyprland - A dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks")](https://hyprland.org/)
 [![Hyprlock](https://img.shields.io/badge/Hyprlock-abd6fd?style=for-the-badge "Hyprlock - Hyprland's GPU-accelerated screen locking utility")](https://github.com/hyprwm/hyprlock)
@@ -24,8 +28,12 @@
 # Hyprland
 
 <br/>
-<div align="center">
+<!-- <div align="center">
   <img src=".assets/hypr/hyprland_logo.png" width="280"/>
+</div> -->
+
+<div align="center">
+  <img src=".assets/hypr/hyprland_ascii.png" height="100"/>
 </div>
 
 ## Config
@@ -163,19 +171,29 @@ From left:
 
 Available themes located in [./waybar/themes](./waybar/themes/). Themes can easily be switched by using the `settings` command, or by running `~/.dotfiles/.settings/settings.sh`. This will replace current symlink in the `~/.config` directory.
 
+<br/>
 <div align="center">
   <img src=".assets/waybar/waybar_themes.png"/>
 </div>
-
+<br/>
 <br/>
 
-# Alacritty
+# Terminal
+
+- [alacritty.toml](./alacritty/alacritty.toml)
+- [kitty.conf](./kitty/kitty.conf)
+
+
+For prompt styling, using starship
+
+- [starship.toml]()
+
 
 # Neovim
 
 <br/>
 <div align="center">
-  <img src=".assets/nvim/neovim-logo.svg" width="300"/>
+  <img src=".assets/nvim/nvim_ascii.png" height="100"/>
 </div>
 
 ##  Config
