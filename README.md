@@ -20,21 +20,21 @@
 - [Hyprland](#hyprland)
 - [BSPWM](#BSPWM)
 - [Waybar / Polybar](#waybar--polybar)
+- [Terminal]()
+- [TMUX]()
 - [Neovim]()
 - [Installation](#installation)
 
 <br/>
 
-# Hyprland
+
 
 <br/>
 <!-- <div align="center">
   <img src=".assets/hypr/hyprland_logo.png" width="280"/>
 </div> -->
 
-<div align="center">
-  <img src=".assets/hypr/hyprland_ascii.png" height="100"/>
-</div>
+# Hyprland
 
 ## Config
 
@@ -69,9 +69,9 @@ To change hyprland preset, run `settings` from the terminal if using the provide
 | `SUPER + M` | Exit hyprland session |
 | `SUPER + E` | Launch gui file manager (Thunar) |
 | `SUPER + R` | Open application launcher |
-|  `SUPER + J` | Togglesplit - Check if this works |
-|  `SUPER + Shift + P` | Screenshot (grim & slurp) |
-|  `SUPER + L` | Lock screen (hyprlock) |
+| `SUPER + J` | Togglesplit - Check if this works |
+| `SUPER + Shift + P` | Screenshot (grim & slurp) |
+| `SUPER + L` | Lock screen (hyprlock) |
 
 </div>
 <br/>
@@ -188,12 +188,35 @@ For prompt styling, using starship
 
 - [starship.toml]()
 
+<br/>
+<br/>
+
+# TMUX
+
+Statusbar displays highlighted active tmux window, session name, and host. Leader key has been remapped to `<C-a>`. Vim-style pane navigation is enabled using `<C-h>`, `<C-j>`, `<C-k>`, and `<C-l>` (powered by vim-tmux-navigator).
+
+<div align="center">
+  <img src=".assets/tmux/statusbar.png"/>
+</div>
+
+## Config
+
+- [tmux.conf](./tmux/tmux.conf)
+
+## Plugins
+
+- [tpm]() - Tmux Plugin Manager
+- [tmux-sensible]() - A set of default, commonly-used Tmux settings for better usability.
+- [tmux-yank]() - Enables easy copying of text from Tmux to system clipboard.
+- [vim-tmux-navigator]() - Seamlessly navigate between Neovim and Tmux panes using Vim-style keybindings.
+
+<br/>
+<br/>
 
 # Neovim
 
-<br/>
 <div align="center">
-  <img src=".assets/nvim/nvim_ascii.png" height="100"/>
+  <img src=".assets/nvim/nvim-home.png"/>
 </div>
 
 ##  Config
@@ -208,6 +231,10 @@ For prompt styling, using starship
 #### Plugin manager
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Modern plugin manager for Neovim.
+
+#### Dashboard
+
+- [alpha-nvim](https://github.com/goolord/alpha-nvim) - greeter for neovim.
 
 #### File Navigation
 
@@ -316,6 +343,8 @@ git clone --depth 1 --filter=blob:none --sparse https://github.com/FLIVLA/.dotfi
 cd ~/destination-dir
 git sparse-checkout set nvim
 ```
+
+<br/>
 
 # Installation
 
