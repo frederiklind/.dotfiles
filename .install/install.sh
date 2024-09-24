@@ -119,6 +119,7 @@ function window_manager() {
                 "xorg-xset"     \
                 "xorg-xsetroot"
             )
+
             echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}bspwm${NONE}"
             for pkg in "${bspwmpkgs[@]}"; do
                 install_package "$pkg"
@@ -199,6 +200,68 @@ function aur_helper() {
     cd "${HOME}"
 }
 
+# =============================================================================
+# ------------------------------- Terminal ------------------------------------
+# =============================================================================
+
+function terminal_emulator() {
+    echo
+    echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Terminal Emulator${NONE}"
+    echo "|"
+    echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
+    echo -e "|--${CYAN}${BOLD} 1. ${GREEN}alacritty${NONE}"
+    echo -e "|--${CYAN}${BOLD} 2. ${GREEN}kitty${NONE}"
+    echo "|"
+    read -p "|--? Choose a terminal emulator: " choice
+    echo "|"
+    case "$choice" in
+        1)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}alacritty${NONE}"
+            install_package "alacritty"
+
+            if [[ -d "${CONFIG}/alacritty" ]]; then
+                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}alacritty${NONE} configuration"
+                mv "${CONFIG}/alacritty" "${DOTFILES}/.backup/alacritty"
+            fi
+
+            ln -s "${DOTFILES}/alacritty" "${CONFIG}/alacritty"
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/alacritty -> ${CYAN}~/.config/alacritty${NONE}"
+            ;;
+        2)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}kitty${NONE}"
+            install_package "kitty"
+
+            if [[ -d "${CONFIG}/kitty" ]]; then
+                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}kitty${NONE} configuration"
+                mv "${CONFIG}/kitty" "${DOTFILES}/.backup/kitty"
+            fi
+
+            ln -s "${DOTFILES}/kitty" "${CONFIG}/kitty"
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/kitty -> ${CYAN}~/.config/kitty${NONE}"
+            ;;
+        *)
+            echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
+            terminal_emulator
+            ;;
+    esac
+    
+    echo "|"
+    cd "${HOME}/.dotfiles/.tmp"
+    
+    # install firacode nerd font
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}FiraCode Nerd Font${NONE}"
+    
+    # download the font via terminal
+    curl -L -o "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip" &>> $INSTALL_LOG
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Downloaded ${BLUE}${BOLD}FiraCode Nerd Font${NONE}"
+    install_package "unzip"
+    
+    unzip -q FiraCode.zip &>> $INSTALL_LOG
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Extracted ${BLUE}${BOLD}FiraCode Nerd Font${NONE}"
+    
+    sudo mv "FiraCode/*" "/usr/share/fonts" &>> $INSTALL_LOG
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Moved ${BLUE}${BOLD}FiraCode Nerd Font${NONE} to /usr/share/fonts"
+}
 
 # =============================================================================
 # ------------------------------- Languages -----------------------------------
@@ -260,16 +323,40 @@ function dev_tools() {
         install_package "docker"    
     fi
 
-    # neovim stuff
+    # neovim stuff -----------------------------------------------------------
+
     local nvimpkgs=(
         "mercurial"     \
         "python-pynvim" \
         "luarocks"      \
-
     )
 
     sudo npm install -g neovim &>> $INSTALL_LOG
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Installed ${BLUE}${BOLD}neovim${NONE} npm package"
+
+    for pkg in "${nvimpkgs[@]}"; do
+        install_package "$pkg"
+    done
     
+    # vscode extensions -------------------------------------------------------
+
+    local vscode_extensions=(
+        "catppuccin.catppuccin-vsc"       \
+        "catppuccin.catppuccin-vsc-icons" \
+        "mads-hartmann.bash-ide-vscode"   \
+        "buncip.better-toml"              \
+        "esbenp.prettier-vscode"          \
+        "vscjava.vscode-java-pack"        
+        # add more extensions here
+    )
+
+    for extension in "${vscode_extensions[@]}"; do
+        code --install-extension "$extension" &>> $INSTALL_LOG
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Installed vscode extension ${BLUE}${BOLD}${extension}${NONE}"
+    done
+    
+    # symbolic links ----------------------------------------------------------
+
     echo "|"
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Setting up symlinks${NONE}"
 
@@ -291,6 +378,52 @@ function dev_tools() {
         ln -s "${DOTFILES}/lsp/pycodestyle" "${CONFIG}/pycodestyle"
         echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}pycodestyle${NONE}"
     fi
+
+    # configure git -----------------------------------------------------------
+
+    echo "|"
+    echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Git Config${NONE}"
+    echo "|"
+    read -p "|--? Do you want to configure git? (Y/n): " choice
+    if [[ "${choice}" == "y" || "${choice}" == "Y" ]]; then
+        read -p "|--? Enter your git username: " username
+        read -p "|--? Enter your git email: " email
+        git config --global user.name "$username"
+        git config --global user.email "$email"
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Successfully configured git"
+    fi
+}
+
+# =============================================================================
+# ------------------------- Virtual Machine (Quemu) ---------------------------
+# =============================================================================
+
+function setup_virt_machine() {
+   echo 
+   echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Virtual Machine${NONE}"
+   echo "|"
+   read -p "|--? Do you want to install qemu? (Y/n): " choice
+   echo "|"
+
+   local qemu_pkgs=(
+       "qemu"          \
+       "virt-manager"  \
+       "ebtables"      \
+       "dnsmasq"       \
+       "bridge-utils"  \
+       "ovmf"          \
+       "vde2"          \
+       "edk2-ovmf"     \
+       "spice"         \
+       "spice-gtk"     \
+       "spice-vdagent" \
+       "seabios"       \
+       "qemu-arch-extra"
+   )
+
+   for pkg in "${qemu_pkgs[@]}"; do
+       install_package "$pkg"
+   done
 }
 
 # =============================================================================
