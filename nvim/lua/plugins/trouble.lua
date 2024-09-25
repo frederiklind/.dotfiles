@@ -3,7 +3,14 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
     config = function()
-        require("trouble").setup({})
+        require("trouble").setup({
+            modes = {
+                diagnostics = {
+                    auto_open = false,
+                    auto_close = true,
+                },
+            },
+        })
         local colors = {
             Normal = { bg = "#1e2030", fg = "#abb2bf" },
             -- Error = { bg = "#282c34", fg = "#e06c75" },
@@ -14,5 +21,18 @@ return {
         for name, color in pairs(colors) do
             vim.api.nvim_set_hl(0, "Trouble" .. name, color)
         end
+
+        vim.keymap.set("n", "<leader>xx", ":Trouble diagnostics toggle<CR>", {
+            noremap = true,
+            silent = true,
+            desc = ":Trouble diagnostics toggle<CR> - Toggles the trouble diagnostics.",
+        })
+        -- vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+
+        vim.keymap.set("n", "<leader>xq", ":Trouble quickfix toggle<CR>", {
+            noremap = true,
+            silent = true,
+            desc = ":Trouble quickfix toggle<CR> - Toggles the trouble quickfix.",
+        })
     end,
 }

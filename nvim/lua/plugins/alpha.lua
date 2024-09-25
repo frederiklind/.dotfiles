@@ -16,6 +16,7 @@ local function configure()
 		{ type = "text", val = "                                                                      ", opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" } },
 		{ type = "text", val = "                                                                      ", opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" } },
 		{ type = "text", val = "                                                                      ", opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" } },
+		{ type = "text", val = "                                                                      ", opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" } },
 
 
 

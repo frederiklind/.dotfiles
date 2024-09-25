@@ -16,6 +16,15 @@ return {
         end,
     },
     -- {
+    --     "Mofiqul/vscode.nvim",
+    --     lazy = false,
+    --     name = "vscode",
+    --     priority = 1000,
+    --     config = function()
+    --         vim.cmd.colorscheme("vscode")
+    --     end,
+    -- }
+    -- {
     --     "folke/tokyonight.nvim",
     --     lazy = false,
     --     name = "tokyonight",
