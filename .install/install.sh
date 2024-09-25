@@ -76,7 +76,8 @@ function window_manager() {
                 "hyprland"    \
                 "hyprlock"    \ 
                 "waybar"      \ 
-                "wofi"
+                "wofi"        \
+                "sddm"        \
             )
             echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}hyprland${NONE}"
             for pkg in "${hyprpkgs[@]}"; do
@@ -117,7 +118,8 @@ function window_manager() {
                 "xorg-server"   \
                 "xorg-xrandr"   \
                 "xorg-xset"     \
-                "xorg-xsetroot"
+                "xorg-xsetroot" \
+                "lightdm"       \
             )
 
             echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}bspwm${NONE}"
@@ -156,9 +158,18 @@ function window_manager() {
 
             ln -s "${DOTFILES}/.Xresources" "${HOME}/.Xresources"
             echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/.Xresources -> ${CYAN}~/.Xresources${NONE}"
+            
+            if [[ -d "${DOTFILES}/picom" ]]; then
+                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}picom${NONE} configuration"
+                mv "${DOTFILES}/picom" "${DOTFILES}/.backup/picom"
+            fi
+
+            ln -s "${DOTFILES}/picom" "${CONFIG}/picom"
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/picom -> ${CYAN}~/.config/picom${NONE}"
             ;;
         *)
             echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
+            window_manager
             ;;
     esac
 }
@@ -266,6 +277,62 @@ function terminal_emulator() {
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Installing ${BLUE}${BOLD}starship${NONE}"
     curl -sS https://starship.rs/install.sh | sh &>> $INSTALL_LOG
 
+}
+
+# =============================================================================
+# ------------------------------- File Manager --------------------------------
+# =============================================================================
+
+function file_manager() {
+    echo
+    echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}File Manager${NONE}"
+    echo "|"
+    echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
+    echo -e "|--${CYAN}${BOLD} 1. ${GREEN}ranger${NONE}"
+    echo -e "|--${CYAN}${BOLD} 2. ${GREEN}thunar${NONE}"
+    echo -e "|--${CYAN}${BOLD} 3. ${GREEN}All${NONE}"
+    echo -e "|--${CYAN}${BOLD} 4. ${GREEN}None${NONE}"
+    echo "|"
+    read -p "|--? Choose a file manager: " choice
+    echo "|"
+
+    case "$choice" in
+        1)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}ranger${NONE}"
+            install_package "ranger"
+            ;;
+        2)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}thunar${NONE}"
+            install_package "thunar"
+            ;;
+        3)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}ranger${NONE}"
+            install_package "ranger"
+            echo "|"
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}thunar${NONE}"
+            install_package "thunar"
+            ;;
+        4)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Skipping file manager installation"
+            return
+            ;;
+        *)
+            echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
+            file_manager
+            ;;
+    esac
+    
+    if [[ -d "${CONFIG}/ranger" ]]; then
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}ranger${NONE} configuration"
+        mv "${CONFIG}/ranger" "${DOTFILES}/.backup/ranger"
+    fi
+
+    ln -s "${DOTFILES}/ranger" "${CONFIG}/ranger"
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/ranger -> ${CYAN}~/.config/ranger${NONE}"
+
+    mkdir "${DOTFILES}/ranger/plugins"
+    git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2 &>> $INSTALL_LOG
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Cloned ${BLUE}${BOLD}ranger-devicons2${NONE} plugin"
 }
 
 # =============================================================================
@@ -458,26 +525,37 @@ function install() {
 
     case "$choice" in
         y|Y )
-            install
+            touch "${INSTALL_LOG}"
+            mkdir "${DOTFILES}/.backup"
+
+            mk_directories
+            window_manager
+            aur_helper
+            terminal_emulator
+            file_manager
+            langs
+            dev_tools
+            setup_firewall
+
+            echo
+            echo -e "${GREEN}> ${NONE}Installation complete."
+            echo
+            read -p "Do you want to reboot now? (Y/n): " choice
+            case "$choice" in
+                y|Y )
+                    sudo reboot
+                    ;;
+                n|N )
+                    echo "> Reboot manually to apply changes."
+                    exit 0
+                    ;;
+            esac
             ;;
         n|N )
             echo "> Aborting..."
             exit 1
             ;;
     esac
-    
-    touch "${INSTALL_LOG}"
-    mkdir "${DOTFILES}/.backup"
-
-    mk_directories
-    window_manager
-    aur_helper
-    terminal_emulator
-    langs
-    dev_tools
-    setup_firewall
-
-    echo -e "${GREEN}> ${NONE}Installation complete."
 }
 
 # require sudo privileges
