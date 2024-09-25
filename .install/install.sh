@@ -251,7 +251,6 @@ function terminal_emulator() {
     # install firacode nerd font
     echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}FiraCode Nerd Font${NONE}"
     
-    # download the font via terminal
     curl -L -o "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip" &>> $INSTALL_LOG
     echo -e "|-${CYAN}${BOLD}> ${NONE}Downloaded ${BLUE}${BOLD}FiraCode Nerd Font${NONE}"
     install_package "unzip"
@@ -261,6 +260,12 @@ function terminal_emulator() {
     
     sudo mv "FiraCode/*" "/usr/share/fonts" &>> $INSTALL_LOG
     echo -e "|-${CYAN}${BOLD}> ${NONE}Moved ${BLUE}${BOLD}FiraCode Nerd Font${NONE} to /usr/share/fonts"
+
+    # install starship prompt
+    echo "|"
+    echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Installing ${BLUE}${BOLD}starship${NONE}"
+    curl -sS https://starship.rs/install.sh | sh &>> $INSTALL_LOG
+
 }
 
 # =============================================================================
@@ -395,38 +400,6 @@ function dev_tools() {
 }
 
 # =============================================================================
-# ------------------------- Virtual Machine (Quemu) ---------------------------
-# =============================================================================
-
-function setup_virt_machine() {
-   echo 
-   echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Virtual Machine${NONE}"
-   echo "|"
-   read -p "|--? Do you want to install qemu? (Y/n): " choice
-   echo "|"
-
-   local qemu_pkgs=(
-       "qemu"          \
-       "virt-manager"  \
-       "ebtables"      \
-       "dnsmasq"       \
-       "bridge-utils"  \
-       "ovmf"          \
-       "vde2"          \
-       "edk2-ovmf"     \
-       "spice"         \
-       "spice-gtk"     \
-       "spice-vdagent" \
-       "seabios"       \
-       "qemu-arch-extra"
-   )
-
-   for pkg in "${qemu_pkgs[@]}"; do
-       install_package "$pkg"
-   done
-}
-
-# =============================================================================
 # --------------------------------- Firewall ----------------------------------
 # =============================================================================
 
@@ -463,27 +436,58 @@ function setup_firewall() {
     fi
 }
 
-function install() {
-    touch "${INSTALL_LOG}"
-    mkdir "${DOTFILES}/.backup"
-    # mk_directories
-    window_manager
-    aur_helper
-    langs
-    dev_tools
-    setup_firewall
-}
 
 # =============================================================================
 # --------------------------------- Main --------------------------------------
 # =============================================================================
 
+function install() {
+    echo "> Checking internet connection"
+    ping -c 1 8.8.8.8 > /dev/null 2>&1
+
+    if [ $? -eq 0 ]; then
+        echo "> Internet is connected."
+    else
+        echo "> No internet connection. Exiting installation..."
+        exit 1
+    fi
+
+    # prompt for installation process confirmation
+    echo "You are about to install the flin dotfiles. Continue at your own risk."
+    read -p "Do you want to proceed with installation? (Y/n): " choice
+
+    case "$choice" in
+        y|Y )
+            install
+            ;;
+        n|N )
+            echo "> Aborting..."
+            exit 1
+            ;;
+    esac
+    
+    touch "${INSTALL_LOG}"
+    mkdir "${DOTFILES}/.backup"
+
+    mk_directories
+    window_manager
+    aur_helper
+    terminal_emulator
+    langs
+    dev_tools
+    setup_firewall
+
+    echo -e "${GREEN}> ${NONE}Installation complete."
+}
+
+# require sudo privileges
+
 if [ "$EUID" -ne 0 ]; then
     echo "This script requires sudo privileges for some operations."
-    sudo -v  # Ask for the sudo password to validate
+    sudo -v
 fi
 
-echo -e "${CYAN}"
+echo -e "${GREEN}"
 cat <<"EOF"
 
 █▀▀ █░░ █ █▄░█  ░ █▀▄ █▀█ ▀█▀ █▀▀ █ █░░ █▀▀ █▀
@@ -492,28 +496,5 @@ cat <<"EOF"
 Arch linux / hyprland WM installation.
 
 EOF
-echo -e "${NONE}"
 
-echo "> Checking internet connection"
-ping -c 1 8.8.8.8 > /dev/null 2>&1
-
-if [ $? -eq 0 ]; then
-  echo "> Internet is connected."
-else
-  echo "> No internet connection. Exiting installation..."
-  exit 1
-fi
-
-# prompt for installation process confirmation
-echo "You are about to install the flin dotfiles. Continue at your own risk."
-read -p "Do you want to proceed with installation? (Y/n): " choice
-
-case "$choice" in
-    y|Y )
-        install
-        ;;
-    n|N )
-        echo "> Aborting..."
-        exit 1
-        ;;
-esac
+install
