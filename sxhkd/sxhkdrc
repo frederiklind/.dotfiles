@@ -16,6 +16,15 @@ super + b
 super + c
     code
 
+super + shift + b
+    ~/.dotfiles/polybar/launch.sh
+
+super + shift + c
+    ~/.dotfiles/picom/launch.sh
+
+super + p
+    alacritty -e ~/.dotfiles/scripts/power.py
+
 super + r
 	dmenu_run
 
@@ -64,7 +73,7 @@ super + ctrl + {m,x,y,z}
 # ======================================================================
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+super + {_,shift i+}{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
@@ -118,11 +127,11 @@ super + ctrl + shift + space
 # ======================================================================
 
 # expand a window by moving one of its side outward
-super + shift + {Left,Down,Up,Right}
+super + shift + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window

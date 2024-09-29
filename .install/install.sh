@@ -276,6 +276,16 @@ function terminal_emulator() {
     echo "|"
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Installing ${BLUE}${BOLD}starship${NONE}"
     curl -sS https://starship.rs/install.sh | sh &>> $INSTALL_LOG
+    
+
+    local additional_pkgs=(
+        "bat"          \
+        "eza"          \
+        "fzf"          \
+        "ripgrep"      \
+
+    )
+    echo "|"
 
 }
 
@@ -339,6 +349,18 @@ function file_manager() {
 # ------------------------------- Languages -----------------------------------
 # =============================================================================
 
+# Installs language packages:
+# - dotnet-sdk
+# - dotnet-runtime
+# - aspnet-runtime
+# - nodejs
+# - npm
+# - go
+# - php
+# - julia
+# - jdk-openjdk
+# - python-pip
+
 function langs() {
     echo
     read -p "Do you want to install a bunch of language packages? (Y/n): " choice
@@ -374,6 +396,20 @@ function langs() {
 # =============================================================================
 # ----------------------------- Development tools -----------------------------
 # =============================================================================
+
+# Installs development tools:
+# - git
+# - github-cli
+# - neovim
+# - vscode
+# - tmux
+# - docker (optional)
+# - neovim plugins
+# - vscode extensions
+# - git configuration (optional), requires user input.
+# - symlinks for nvim, tmux, and 
+# - symlinks pycodestyle (see file for specific supressed warnings for pylsp).
+# - logs all operations to the installation log file.
 
 function dev_tools() {
     echo
@@ -419,7 +455,6 @@ function dev_tools() {
         "buncip.better-toml"              \
         "esbenp.prettier-vscode"          \
         "vscjava.vscode-java-pack"        
-        # add more extensions here
     )
 
     for extension in "${vscode_extensions[@]}"; do
@@ -469,6 +504,13 @@ function dev_tools() {
 # =============================================================================
 # --------------------------------- Firewall ----------------------------------
 # =============================================================================
+
+# Installs ufw and sets up basic rules.
+# - limits port 22 - brute force protection.
+# - allows ports 80 and 443.
+# - sets default rules to deny incoming and allow outgoing (to prevent leaks).
+# - enables ufw service.
+# - logs all operations to the installation log file.
 
 function setup_firewall() {
     echo
