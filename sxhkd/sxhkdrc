@@ -17,7 +17,7 @@ super + c
     code
 
 super + shift + b
-    ~/.dotfiles/polybar/launch.sh
+    ~/.dotfiles/polybar/scripts/launch.sh
 
 super + shift + c
     ~/.dotfiles/picom/launch.sh
