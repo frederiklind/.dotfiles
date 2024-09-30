@@ -1,3 +1,4 @@
+<br/>
 <div align="center">
   <img src=".assets/ascii/title.png" height="120"/>
 </div>
@@ -178,26 +179,35 @@ Available themes located in [./waybar/themes](./waybar/themes/). Themes can easi
 <br/>
 <br/>
 
+# Polybar
+
+### Modules
+
+From left:
+
+- Application launcher (wofi)
+- Hyprland workspaces
+- Quicklinks group (launch stuff)
+- Spotify controls (Compatible with [spotify-launcher]())
+- Clock
+- System group (cpu, memory, temperature)
+- VPN status (nordvpn, see [./scripts/nvpn-status.sh](./scripts/nvpn-status.sh))
+- Network status
+- Battery status
+- Power (launch custom power-tui, see [./scripts/power.py](./scripts/power.py))
+
+### Themes
+
+Available themes located in [./waybar/themes](./waybar/themes/). Themes can easily be switched by using the `settings` command, or by running `~/.dotfiles/.settings/settings.sh`. This will replace current symlink in the `~/.config` directory.
+
+<!-- <br/>
+<div align="center">
+  <img src=".assets/waybar/waybar_themes.png"/>
+</div>
+<br/>
+<br/> -->
+
 # Terminal
-
-Neofetch for printing system info. 
-
-<div align="center">
-  <img src=".assets/terminal/fetch-1.png" />
-</div>
-<br/>
-
-Color-ls using `eza` with following aliases in `.bashrc`
-
-```bash
-alias ls='eza -a --icons'
-alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=3 --icons'
-```
-<br/>
-<div align="center">
-  <img src=".assets/terminal/ls-l.png"/>
-</div>
 
 ### Config
 
@@ -206,6 +216,17 @@ alias lt='eza -a --tree --level=3 --icons'
 - [starship.toml](./starship/starship.toml)
 - [neofetch](./neofetch/config.conf)
 - [fastfetch](./fastfetch/config.jsonc)
+
+
+<br/>
+
+For better `ls` with glyphs , the config uses `eza` with following aliases in `.bashrc`
+
+```bash
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=3 --icons'    # changes level for desired depth of tree
+```
 
 <br/>
 <br/>

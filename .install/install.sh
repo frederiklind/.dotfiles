@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # =============================================================================
-# ------------------------------- Contents ------------------------------------
+# ------------------------- dotfiles install script ---------------------------
 # =============================================================================
-#   
-#   1. Variables ..............................................................
-#   2. Helper Functions .......................................................
-#   |-- 2.1 is_installed ......................................................
-#   |-- 2.2 install_package ...................................................
-#   3 langs ..................................................................
-#   4 dev_tools ..............................................................
-#   5 setup_firewall .........................................................
-#   6 mk_directories .........................................................
-#   7 install ................................................................
-#   8. Main ...................................................................
-
+#
+#   1. Variables ........................................................... 16
+#   2. Helper Functions .................................................... 28
+#   3. Window Manager ...................................................... 51
+#   4. AUR Helper ......................................................... 179
+#   5. Terminal Emulator .................................................. 221
+#   6. Developement Tools .................................................. 44
+#   7. dev_tools ............................................................ 
+#   8. setup_firewall ..................................................... 543
+#   9. Main ............................................................... 589
+#
+# =============================================================================
 
 # =============================================================================
 # ------------------------------- Variables -----------------------------------
@@ -31,6 +31,7 @@ NONE='\033[0m'
 CONFIG="${HOME}/.config"
 DOTFILES="${HOME}/.dotfiles"
 INSTALL_LOG="${HOME}/.dotfiles/.install/install.log"
+AUR_HELPER="yay"
 
 # =============================================================================
 # ----------------------------- Helper Functions ------------------------------
@@ -192,12 +193,14 @@ function aur_helper() {
     cd "${HOME}/Source/aur"
     case "$choice" in
         1)
+            AUR_HELPER="yay"
             echo -e "|-${CYAN}${BOLD}> ${NONE}Cloning ${BLUE}${BOLD}yay${NONE}"
             git clone https://aur.archlinux.org/yay.git &>> $INSTALL_LOG
             echo -e "|-${CYAN}${BOLD}> ${NONE}Building ${BLUE}${BOLD}yay${NONE} package"
             cd yay && makepkg -si &>> $INSTALL_LOG
             ;;
         2)
+            AUR_HELPER="paru"
             echo -e "|-${CYAN}${BOLD}> ${NONE}Cloning ${BLUE}${BOLD}paru${NONE}"
             git clone https://aur.archlinux.org/paru.git &>> $INSTALL_LOG
             echo -e "|-${CYAN}${BOLD}> ${NONE}Building ${BLUE}${BOLD}paru${NONE} package"
@@ -214,6 +217,15 @@ function aur_helper() {
 # =============================================================================
 # ------------------------------- Terminal ------------------------------------
 # =============================================================================
+
+# Optional terminal emulator(s) installation:
+# - alacritty
+# - kitty
+#
+# Installs a nerd font (FiraCode) for the terminal.
+# Installs starship prompt.
+#
+#
 
 function terminal_emulator() {
     echo
@@ -277,21 +289,50 @@ function terminal_emulator() {
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Installing ${BLUE}${BOLD}starship${NONE}"
     curl -sS https://starship.rs/install.sh | sh &>> $INSTALL_LOG
     
+    if [[ -f "${CONFIG}/starship.toml" ]]; then
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}starship${NONE} configuration"
+        mv "${CONFIG}/starship.toml" "${DOTFILES}/.backup/starship.toml"
+    fi
+    
+    ln -s "${DOTFILES}/starship.toml" "${CONFIG}/starship.toml"
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/starship.toml -> ${CYAN}~/.config/starship.toml${NONE}"
 
     local additional_pkgs=(
         "bat"          \
         "eza"          \
         "fzf"          \
         "ripgrep"      \
-
     )
-    echo "|"
 
+    echo "|"
+    for pkg in "${additional_pkgs[@]}"; do
+        install_package "$pkg"
+    done
+
+    if [[ -d "${CONFIG}/bat"  ]]; then
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}bat${NONE} configuration"
+        mv "${CONFIG}/bat" "${DOTFILES}/.backup/bat"
+    fi  
+
+    ln -s "${DOTFILES}/bat" "${CONFIG}/bat"
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/bat -> ${CYAN}~/.config/bat${NONE}"
 }
 
 # =============================================================================
 # ------------------------------- File Manager --------------------------------
 # =============================================================================
+
+# Optional file manager(s) installation:
+# - ranger
+# - thunar
+#
+# 1. ranger
+# 2. thunar
+# 3. All
+#
+# Backsup existing ranger configuration if it exists.
+# Clones ranger-devicons2 plugin, for glyphs.
+# Symlinks ranger configuration to ~/.config/ranger.
 
 function file_manager() {
     echo
@@ -445,6 +486,8 @@ function dev_tools() {
     for pkg in "${nvimpkgs[@]}"; do
         install_package "$pkg"
     done
+
+    
     
     # vscode extensions -------------------------------------------------------
 
@@ -487,6 +530,8 @@ function dev_tools() {
     fi
 
     # configure git -----------------------------------------------------------
+    
+    echo "Git Configuration:" &>> $INSTALL_LOG
 
     echo "|"
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Git Config${NONE}"
@@ -495,8 +540,8 @@ function dev_tools() {
     if [[ "${choice}" == "y" || "${choice}" == "Y" ]]; then
         read -p "|--? Enter your git username: " username
         read -p "|--? Enter your git email: " email
-        git config --global user.name "$username"
-        git config --global user.email "$email"
+        git config --global user.name "$username" &>> $INSTALL_LOG
+        git config --global user.email "$email" &>> $INSTALL_LOG
         echo -e "|-${CYAN}${BOLD}> ${NONE}Successfully configured git"
     fi
 }
