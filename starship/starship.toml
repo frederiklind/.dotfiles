@@ -108,6 +108,7 @@ symbol = "󰢱 "
 
 [nodejs]
 symbol = "󰎙 "
+style = "fg:bold #a6da95"
 
 [memory_usage]
 symbol = "memory "
