@@ -27,7 +27,6 @@ return {
             silent = true,
             desc = ":Trouble diagnostics toggle<CR> - Toggles the trouble diagnostics.",
         })
-        -- vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
 
         vim.keymap.set("n", "<leader>xq", ":Trouble quickfix toggle<CR>", {
             noremap = true,

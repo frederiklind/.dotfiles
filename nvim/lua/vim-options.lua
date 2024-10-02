@@ -6,6 +6,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
+-- vim.cmd("set foldmethod=indent")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
 vim.opt.cursorline = true
@@ -51,8 +52,7 @@ vim.keymap.set('n', '<leader>n', ':bnext<CR>', { noremap = true, silent = true, 
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = ":bd<CR> - Close current buffer." })
 vim.keymap.set('n', '<leader>bp', ':bp<CR>', { noremap = true, silent = true, desc = ":bp<CR> - Previous buffer." })
 
--- ==================================== Telescope ===================================
-
+-- telescope
 vim.keymap.set('n', '<leader>cf', ':Telescope commands<CR>', { noremap = true, silent = false, desc = ":Telescope commands<CR> - Fuzzy finder for commands." })
 vim.keymap.set('n', '<S-f>', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true, silent = true, desc = "Fuzzy finder within current buffer."})
 vim.keymap.set('n', '<leader>bf', ':Telescope buffers<CR>', { noremap = true, silent = true, desc = ":Telescope buffers<CR> - Fuzzy finder for buffers." })
@@ -75,6 +75,9 @@ vim.keymap.set('n', '<leader>df', ':DiffviewFileHistory %<CR>', { noremap = true
 --launch lazy/mason
 vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { noremap = true, silent = true, desc = ":Lazy<CR> - Launches lazy." })
 vim.keymap.set('n', '<leader>mn', ':Mason<CR>', { noremap = true, silent = true, desc = ":Mason<CR> - Launches mason." })
+
+
+vim.keymap.set('n', '<leader>bt', ':Barbecue toggle<CR>', { noremap = true, silent = true, desc = ":Barbecue toggle<CR> - Toggles barbecue." })
 
 -- =================================== Diagnostics ===================================
 
