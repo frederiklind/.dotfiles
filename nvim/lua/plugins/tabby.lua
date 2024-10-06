@@ -5,9 +5,9 @@ return {
     config = function()
         local theme = {
             --fill = "TabLineFill",
-            fill = { fg='#1e2030', bg='#24273a' },
+            fill = { fg='#1e2030', bg='#1e2030' },
             head = { fg='#11111b', bg='#89b4fa', style='bold' },
-            current_tab = { fg='#7dc4e4', bg='#363a4f' },
+            current_tab = { fg='#7dc4e4', bg='#24273a' },
             tab = { fg='#6e738d', bg='#1e2030' },
             win = { fg='#6e738d', bg='#1e2030' },
             tail = { fg='#11111b', bg='#89b4fa', style='bold' },

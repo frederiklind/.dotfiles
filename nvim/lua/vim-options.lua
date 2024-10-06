@@ -6,7 +6,6 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
--- vim.cmd("set foldmethod=indent")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 
 vim.opt.cursorline = true
