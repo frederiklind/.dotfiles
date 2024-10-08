@@ -2,8 +2,6 @@
 //  █░█░█ ▄▀█ █▄█ █▄▄ ▄▀█ █▀█   █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀
 //  ▀▄▀▄▀ █▀█ ░█░ █▄█ █▀█ █▀▄   █▄▄ █▄█ █░▀█ █▀░ █ █▄█
 //  
-//  Frederik Lind (2024)
-//
 // -*- mode: jsonc -*-
 
 {
@@ -24,9 +22,10 @@
     ],
 
     "modules-right": [
+        "group/systemgroup",
         "group/audio_group",
-        "group/vpn_group",
-        "group/network_group",
+        // "group/vpn_group",
+        "network",
         "group/battery_group",
         "custom/shutdown"
     ],
@@ -140,11 +139,6 @@
         "tooltip": false
     },
 
-    "custom/network_logo" : {
-        "format": "󰖟",
-        "tooltip": false
-    },
-
     // ------------------------------------------------------------------------
 
     "custom/spotify_logo": {
@@ -220,14 +214,15 @@
       }
     },
 
+    // Network ----------------------------------------------------------------
+
     "network": {
         "interval": 1,
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "{icon}",
+        "tooltip-format": "SSID: {essid}\n{ifname} via {gwaddr}\n\nSignal strength: {signalStrength}%",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
 
     "pulseaudio": {
@@ -300,12 +295,6 @@
         "tooltip": false
     },
 
-    "custom/terminal": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
-        "tooltip": false
-    },
-
     "custom/shutdown": {
         "format": "  ",
         "on-click": "alacritty -e ~/.dotfiles/scripts/power.py",
@@ -318,54 +307,24 @@
         "tooltip": false
     },
 
-    "custom/youtube": {
-        "format": "󰗃",
-        "on-click": "~/.dotfiles/scripts/youtube.sh",
-        "tooltip": false
-    },
-
-    "custom/google_drive": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/google_drive.sh",
-        "tooltip": false
-    },
-
-    "custom/messenger": {
-        "format": " 󰈎 ",
-        "on-click": "~/.dotfiles/scripts/caprine.sh",
-        "tooltip": false
-    },
-
     "custom/apps": {
         "format": "󰣇",
         "on-click": "~/.dotfiles/scripts/wofi.sh",
         "tooltip": false    
-    },
-
-    "custom/settings": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/settings.sh",
-        "tooltip": false
-    },
+    }, 
 
     "custom/vpn": {
         "format": " {} ",
         "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
         "tooltip": false
-    },
-
-    "custom/vpn_logo": {
-        "format": "󰞀",
-        "tooltip": false
-    },
+    }, 
 
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
             // "custom/terminal",
             "custom/firefox",
-            "custom/google_drive",
             "custom/discord",
             "custom/github",
             "custom/vscode"
@@ -394,9 +353,7 @@
             "custom/cpu_logo",
             "cpu",        
             "custom/memory_logo",
-            "memory",
-            "custom/temperature_logo",
-            "temperature"
+            "memory"
         ]
     },
 

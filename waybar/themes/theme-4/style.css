@@ -2,12 +2,9 @@
  *  █░█░█ ▄▀█ █▄█ █▄▄ ▄▀█ █▀█   █▀ ▀█▀ █▄█ █░░ █ █▄░█ █▀▀
  *  ▀▄▀▄▀ █▀█ ░█░ █▄█ █▀█ █▀▄   ▄█ ░█░ ░█░ █▄▄ █ █░▀█ █▄█
  *
- *  Kraken - Minimal 2
- *
- *  Frederik Lind (2024)
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.8);
+@define-color waybar-background rgba(24, 25, 38, 0.9);
 @define-color module-background #24273a;
 @define-color module-border #313244;
 
@@ -33,7 +30,7 @@
         Helvetica,
         Arial,
         sans-serif;
-    font-size: 11.5px;
+    font-size: 12.0px;
 }
 
 window#waybar {
@@ -111,13 +108,6 @@ button:hover {
     padding: 2px 0px;
 }
 
-#network_group {
-    background-color: @module-background;
-    margin: 3px 1px 3px 0px;
-    /* border-radius: 7px; */
-    padding: 0px 7px 0px 5px;
-}
-
 #systemgroup {
     background-color: @module-background;
     margin: 3px 2.5px 3px 0px;
@@ -126,10 +116,10 @@ button:hover {
 }
 
 #custom-apps {
-    font-size: 16px;
+    font-size: 18px;
     margin: 3px 0px 3px 10px;
     color: @catppuccin-blue;
-    padding: 0px 15px 0px 10px;
+    padding: 0px 10px 0px 6px;
     border-radius: 7px;
     background-color: @module-background;
 }
@@ -227,7 +217,7 @@ button:hover {
 }
 
 #custom-discord {
-    margin-left: 10px;
+    margin-left: 5px;
     font-size: 14px;
     color: @catppuccin-blue;
     border-radius: 7px;
@@ -249,7 +239,7 @@ button:hover {
     color: #5b6078;
     background-color: @module-background;
     color: @catppuccin-blue;
-    border-radius: 0 7px 7px 0;
+    border-radius: 7px;
 }
 
 #mode {
@@ -312,10 +302,11 @@ button:hover {
 #clock {
     color: @catppuccin-blue;
     margin: 3px 0px 3px 0px;
-    /* font-weight: bolder; */
+    font-weight: bolder;
 }
 #custom-date {
     color: @catppuccin-blue;
+    font-weight: bolder;
 
 }
 
@@ -360,13 +351,17 @@ label:focus {
 }
 
 #network {
-    margin: 0px 2.5px 0px 0px;
-    color: @catppuccin-blue;
+    margin: 3px 2.5px 3px 0px;
+    color: @catppuccin-teal;
+    background-color: @module-background;
+    font-size: 15px;
+    padding: 0px 12px 0px 8px;
+    border-radius: 7px;
 }
 
 #custom-vpn {
     color: @catppuccin-sapphire;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0px 0px 0px 0px;
 }
 
@@ -429,10 +424,10 @@ tooltip label {
 }
 
 #custom-spotify_logo {
-    font-size: 16px;
-    margin: 0px 5px 0px 2px;
+    font-size: 14.5px;
+    margin: 0px 0px 0px 12px;
     /* color: #a6da95; */
-    color: @catppuccin-teal;
+    color: @catppuccin-blue;
 }
 
 #custom-cpu_logo {
@@ -466,22 +461,15 @@ tooltip label {
 #audio_group {
     background-color: @module-background;
     margin: 3px 1px 3px 0px;
-    border-radius: 7px 0 0 7px;
+    border-radius: 7px;
     padding: 0px 3px 0px 3px;
 }
 
 #vpn_group {
     background-color: @module-background;
     margin: 3px 1px 3px 0px;
-    border-radius: 0px;
+    border-radius: 7px;
     padding: 0px 3px 0px 0px;
-}
-
-#custom-network_logo {
-    font-size: 16px;
-    margin: 0px 0px 0px 5px;
-    color: @catppuccin-teal;
-    padding-right: 6px;
 }
 
 #battery {
@@ -502,13 +490,8 @@ tooltip label {
 #battery_group {
     background-color: @module-background;
     margin: 3px 1px 3px 0px;
-    /* border-radius: 7px; */
+    border-radius: 7px;
     padding: 0px 5px 0px 3px;
-}
-
-#battery.charging,
-#battery.plugged {
-    /* color: #81c8be; */
 }
 
 #battery.critical:not(.charging) {
