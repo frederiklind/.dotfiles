@@ -57,7 +57,7 @@ alias tmux="tmux -2"
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"
 
 echo
-neofetch
+fastfetch
 
 eval "$(starship init bash)"
 
