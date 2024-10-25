@@ -24,7 +24,7 @@
     "modules-right": [
         "group/systemgroup",
         "group/audio_group",
-        // "group/vpn_group",
+        "group/vpn_group",
         "network",
         "group/battery_group",
         "custom/shutdown"
