@@ -57,6 +57,26 @@ function mk_directories() {
     mkdir -p "${HOME}/Source/repos" "${HOME}/Source/aur"
 }
 
+function print_instl() {
+   echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}${1}${NONE}" 
+}
+
+function print_backup() {
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}${1}${NONE} configuration"
+}
+
+function print_symlink() {
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}${1}${NONE} -> ${CYAN}~/.config/${2}${NONE}"
+}
+
+function new_instl_log_entry() {
+    echo -e "" >> $INSTALL_LOG
+    echo -e "------------------------------------------------------------" >> $INSTALL_LOG
+    echo -e "${1}" >> $INSTALL_LOG
+    echo -e "------------------------------------------------------------" >> $INSTALL_LOG
+    echo -e "" >> $INSTALL_LOG
+}
+
 # =============================================================================
 # ------------------------------- Window Manager ------------------------------
 # =============================================================================
@@ -80,31 +100,31 @@ function window_manager() {
                 "wofi"        \
                 "sddm"        \
             )
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}hyprland${NONE}"
+            print_instl "hyprland"
             for pkg in "${hyprpkgs[@]}"; do
                 install_package "$pkg"
             done
 
             if [[ -d "${CONFIG}/hypr" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}hypr${NONE} configuration"
+                print_backup "hypr"
                 mv "${CONFIG}/hypr" "${DOTFILES}/.backup/hypr"
             fi
 
             mkdir "${CONFIG}/hypr"
 
             ln -s "${DOTFILES}/hypr/.conf/default.conf" "${CONFIG}/hypr/hyprland.conf"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/.conf/default.conf -> ${CYAN}~/.config/hypr/hyprland.conf${NONE}"
+            print_symlink "${DOTFILES}/hypr/.conf/default.conf" "${CONFIG}/hypr/hyprland.conf"
             
             ln -s "${DOTFILES}/hypr/hyprlock.conf" "${CONFIG}/hypr/hyprlock.conf"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/hypr/hyprlock.conf -> ${CYAN}~/.config/hypr/hyprlock.conf${NONE}"
+            print_symlink "${DOTFILES}/hypr/hyprlock.conf" "${CONFIG}/hypr/hyprlock.conf"
 
             if [[ -d "${CONFIG}/waybar" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}waybar${NONE} configuration"
+                print_backup "waybar"
                 mv "${CONFIG}/waybar" "${DOTFILES}/.backup/waybar"
             fi
 
             ln -s "${DOTFILES}/hypr/waybar/themes/theme-1" "${CONFIG}/waybar"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/hypr/waybar/themes/theme-1 -> ${CYAN}~/.config/waybar${NONE}"
+            print_symlink "${DOTFILES}/hypr/waybar/themes/theme-1" "${CONFIG}/waybar"
             ;;
         2)
             local bspwmpkgs=(
@@ -123,50 +143,50 @@ function window_manager() {
                 "lightdm"       \
             )
 
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}bspwm${NONE}"
+            print_instl "bspwm"
             for pkg in "${bspwmpkgs[@]}"; do
                 install_package "$pkg"
             done
 
             if [[ -d "${CONFIG}/bspwm" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}bspwm${NONE} configuration"
+                print_backup "bspwm"
                 mv "${CONFIG}/bspwm" "${DOTFILES}/.backup/bspwm"
             fi
 
             ln -s "${DOTFILES}/bspwm" "${CONFIG}/bspwm"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/bspwm -> ${CYAN}~/.config/bspwm${NONE}"
+            print_symlink "${DOTFILES}/bspwm" "${CONFIG}/bspwm"
 
             if [[ -d "${CONFIG}/sxhkd" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}sxhkd${NONE} configuration"
+                print_backup "sxhkd"
                 mv "${CONFIG}/sxhkd" "${DOTFILES}/.backup/sxhkd"
             fi
 
             ln -s "${DOTFILES}/sxhkd" "${CONFIG}/sxhkd"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/sxhkd -> ${CYAN}~/.config/sxhkd${NONE}"
+            print_symlink "${DOTFILES}/sxhkd" "${CONFIG}/sxhkd"
 
             if [[ -d "${CONFIG}/polybar" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}polybar${NONE} configuration"
+                print_backup "polybar"
                 mv "${CONFIG}/polybar" "${DOTFILES}/.backup/polybar"
             fi
 
             ln -s "${DOTFILES}/polybar" "${CONFIG}/polybar"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/polybar -> ${CYAN}~/.config/polybar${NONE}"
+            print_symlink "${DOTFILES}/polybar" "${CONFIG}/polybar"
 
             if [[ -f "${HOME}/.Xresources" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}.Xresources${NONE}"
+                print_backup ".Xresources"
                 mv "${HOME}/.Xresources" "${DOTFILES}/.backup/.Xresources"
             fi
 
             ln -s "${DOTFILES}/.Xresources" "${HOME}/.Xresources"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/.Xresources -> ${CYAN}~/.Xresources${NONE}"
+            print_symlink "${DOTFILES}/.Xresources" "~/.Xresources"
             
             if [[ -d "${DOTFILES}/picom" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}picom${NONE} configuration"
+                print_backup "picom"
                 mv "${DOTFILES}/picom" "${DOTFILES}/.backup/picom"
             fi
 
             ln -s "${DOTFILES}/picom" "${CONFIG}/picom"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/picom -> ${CYAN}~/.config/picom${NONE}"
+            print_symlink "${DOTFILES}/picom" "${CONFIG}/picom"
             ;;
         *)
             echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
@@ -174,6 +194,7 @@ function window_manager() {
             ;;
     esac
 }
+
 
 # =============================================================================
 # --------------------------------- AUR-Helper  -------------------------------
@@ -234,6 +255,7 @@ function terminal_emulator() {
     echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
     echo -e "|--${CYAN}${BOLD} 1. ${GREEN}alacritty${NONE}"
     echo -e "|--${CYAN}${BOLD} 2. ${GREEN}kitty${NONE}"
+    echo -e "|--${CYAN}${BOLD} 3. ${GREEN}All${NONE}"
     echo "|"
     read -p "|--? Choose a terminal emulator: " choice
     echo "|"
@@ -251,16 +273,37 @@ function terminal_emulator() {
             echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/alacritty -> ${CYAN}~/.config/alacritty${NONE}"
             ;;
         2)
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}kitty${NONE}"
             install_package "kitty"
 
             if [[ -d "${CONFIG}/kitty" ]]; then
-                echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}kitty${NONE} configuration"
+                print_backup "kitty"
                 mv "${CONFIG}/kitty" "${DOTFILES}/.backup/kitty"
             fi
 
             ln -s "${DOTFILES}/kitty" "${CONFIG}/kitty"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/kitty -> ${CYAN}~/.config/kitty${NONE}"
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/kitty -> ${CYAN}~/.config/kitty${NONE}"v
+            ;;
+        3)
+            for opt in "alacritty" "kitty"; do
+                install_package "$opt"
+            done
+ 
+            if [[ -d "${CONFIG}/alacritty" ]]; then
+                print_backup "alacritty"
+                mv "${CONFIG}/alacritty" "${DOTFILES}/.backup/alacritty"
+            fi
+
+            ln -s "${DOTFILES}/alacritty" "${CONFIG}/alacritty"
+            print_symlink "${DOTFILES}/alacritty" "${CONFIG}/alacritty"           
+
+            if [[ -d "${CONFIG}/kitty" ]]; then
+                print_backup "kitty"
+                mv "${CONFIG}/kitty" "${DOTFILES}/.backup/kitty"
+            fi
+
+            ln -s "${DOTFILES}/kitty" "${CONFIG}/kitty"
+            print_symlink "${DOTFILES}/kitty" "${CONFIG}/kitty"
+
             ;;
         *)
             echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
@@ -295,7 +338,7 @@ function terminal_emulator() {
     fi
     
     ln -s "${DOTFILES}/starship.toml" "${CONFIG}/starship.toml"
-    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/starship.toml -> ${CYAN}~/.config/starship.toml${NONE}"
+    print_symlink "${DOTFILES}/starship/starship.toml" "${CONFIG}/starship.toml"
 
     local additional_pkgs=(
         "bat"          \
@@ -310,12 +353,12 @@ function terminal_emulator() {
     done
 
     if [[ -d "${CONFIG}/bat"  ]]; then
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}bat${NONE} configuration"
         mv "${CONFIG}/bat" "${DOTFILES}/.backup/bat"
+        print_backup "bat"
     fi  
 
     ln -s "${DOTFILES}/bat" "${CONFIG}/bat"
-    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/bat -> ${CYAN}~/.config/bat${NONE}"
+    print_symlink "${DOTFILES}/bat" "${CONFIG}/bat"
 }
 
 # =============================================================================
@@ -382,7 +425,7 @@ function file_manager() {
     echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ~/.dotfiles/ranger -> ${CYAN}~/.config/ranger${NONE}"
 
     mkdir "${DOTFILES}/ranger/plugins"
-    git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2 &>> $INSTALL_LOG
+    git clone "https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2" &>> $INSTALL_LOG
     echo -e "|-${CYAN}${BOLD}> ${NONE}Cloned ${BLUE}${BOLD}ranger-devicons2${NONE} plugin"
 }
 
@@ -487,9 +530,7 @@ function dev_tools() {
         install_package "$pkg"
     done
 
-    
-    
-    # vscode extensions -------------------------------------------------------
+    # vscode extensions n stuff ----------------------------------------------
 
     local vscode_extensions=(
         "catppuccin.catppuccin-vsc"       \
@@ -504,6 +545,15 @@ function dev_tools() {
         code --install-extension "$extension" &>> $INSTALL_LOG
         echo -e "|-${CYAN}${BOLD}> ${NONE}Installed vscode extension ${BLUE}${BOLD}${extension}${NONE}"
     done
+
+    # code-flags.conf (very important) 
+    
+    if [[ -f "${CONFIG}/code-flags.conf"]]; then
+        mv "${CONFIG}/code-flags.conf" "${DOTFILES}/.backup/code-flags.conf"
+        print_backup "code-flags"
+    fi
+    ln -s "${DOTFILES}/vscode/code-flags.conf" "${CONFIG}/code-flags.conf"
+    print_symlink "${DOTFILES}/vscode/code-flags.conf" "${CONFIG}/code-flags.conf" 
     
     # symbolic links ----------------------------------------------------------
 
@@ -511,22 +561,22 @@ function dev_tools() {
     echo -e "|-${CYAN}${BOLD}> ${BLUE}${BOLD}Setting up symlinks${NONE}"
 
     if [[ -d "${CONFIG}/nvim" ]]; then
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}nvim${NONE}"
         mv "${CONFIG}/nvim" "${DOTFILES}/.backup/nvim"
+        print_backup "nvim"
     fi
     ln -s "${DOTFILES}/nvim" "${CONFIG}/nvim"
-    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}nvim${NONE}"
+    print_symlink "${DOTFILES}/nvim" "${CONFIG}/nvim"
 
     if [[ -f "${HOME}/.tmux.conf" ]]; then
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}tmux${NONE}"
         mv "${HOME}/.tmux.conf" "${DOTFILES}/.backup/tmux.conf"
+        print_backup "tmux"
     fi
     ln -s "${DOTFILES}/tmux.conf" "${HOME}/.tmux.conf"
-    echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}tmux${NONE}"
+    print_symlink "${DOTFILES}/tmux.conf" "${CONFIG}/.tmux.conf"
 
     if [[ ! -f "${CONFIG}/pycodestyle" ]]; then
         ln -s "${DOTFILES}/lsp/pycodestyle" "${CONFIG}/pycodestyle"
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}pycodestyle${NONE}"
+        print_symlink "${DOTFILES}/lsp/pycodestyle" "${CONFIG}/pycodestyle"
     fi
 
     # configure git -----------------------------------------------------------
@@ -606,7 +656,7 @@ function install() {
     fi
 
     # prompt for installation process confirmation
-    echo "You are about to install the flin dotfiles. Continue at your own risk."
+    echo "You are about to install the flin dotfiles. Herp de derp!"
     read -p "Do you want to proceed with installation? (Y/n): " choice
 
     case "$choice" in
