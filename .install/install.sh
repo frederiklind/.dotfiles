@@ -33,6 +33,9 @@ DOTFILES="${HOME}/.dotfiles"
 INSTALL_LOG="${HOME}/.dotfiles/.install/install.log"
 AUR_HELPER="yay"
 
+PKG_ERR=()  # for storing failed pacman package installations
+AUR_ERR=()  # for storing failed AUR package installations
+
 # =============================================================================
 # ----------------------------- Helper Functions ------------------------------
 # =============================================================================
@@ -48,7 +51,12 @@ function install_package() {
     else
         echo -e "|-${BLUE}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}${1}${NONE}..."
         sudo pacman -S --noconfirm "$1" &>> $INSTALL_LOG
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Successfully installed ${BLUE}${BOLD}${1}${NONE}"
+        if [[ $? -eq 0 ]]; then
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Successfully installed ${BLUE}${BOLD}${1}${NONE}"
+        else
+            echo -e "|-${RED}${BOLD}> ${NONE}Failed to install ${BLUE}${BOLD}${1}${NONE}"
+            PKG_ERR+=("$1")
+        fi
     fi
 }
 
@@ -69,7 +77,7 @@ function print_symlink() {
     echo -e "|-${CYAN}${BOLD}> ${NONE}Symlinked ${BLUE}${BOLD}${1}${NONE} -> ${CYAN}~/.config/${2}${NONE}"
 }
 
-function new_instl_log_entry() {
+function add_log_entry() {
     echo -e "" >> $INSTALL_LOG
     echo -e "------------------------------------------------------------" >> $INSTALL_LOG
     echo -e "${1}" >> $INSTALL_LOG
@@ -78,10 +86,24 @@ function new_instl_log_entry() {
 }
 
 # =============================================================================
+# ------------------------------------ GPU ------------------------------------
+# =============================================================================
+
+function gpu() {
+    add_log_entry "GPU"
+    echo
+    echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}GPU${NONE}"
+    echo "|"
+    echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
+}
+
+
+# =============================================================================
 # ------------------------------- Window Manager ------------------------------
 # =============================================================================
 
 function window_manager() {
+    add_log_entry "Window Manager"
     echo 
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Window Manager${NONE}"
     echo "|"
@@ -201,6 +223,7 @@ function window_manager() {
 # =============================================================================
 
 function aur_helper() {
+    add_log_entry "AUR Helper"
     echo
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}AUR Helper${NONE}"
     echo "|"
@@ -249,6 +272,7 @@ function aur_helper() {
 #
 
 function terminal_emulator() {
+    add_log_entry "Terminal Emulator"
     echo
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Terminal Emulator${NONE}"
     echo "|"
@@ -333,8 +357,8 @@ function terminal_emulator() {
     curl -sS https://starship.rs/install.sh | sh &>> $INSTALL_LOG
     
     if [[ -f "${CONFIG}/starship.toml" ]]; then
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}starship${NONE} configuration"
         mv "${CONFIG}/starship.toml" "${DOTFILES}/.backup/starship.toml"
+        print_backup "starship"
     fi
     
     ln -s "${DOTFILES}/starship.toml" "${CONFIG}/starship.toml"
@@ -378,6 +402,7 @@ function terminal_emulator() {
 # Symlinks ranger configuration to ~/.config/ranger.
 
 function file_manager() {
+    add_log_entry "File Manager"
     echo
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}File Manager${NONE}"
     echo "|"
@@ -392,19 +417,15 @@ function file_manager() {
 
     case "$choice" in
         1)
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}ranger${NONE}"
             install_package "ranger"
             ;;
         2)
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}thunar${NONE}"
             install_package "thunar"
             ;;
         3)
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}ranger${NONE}"
-            install_package "ranger"
-            echo "|"
-            echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}thunar${NONE}"
-            install_package "thunar"
+            for opt in "ranger" "thunar"; do
+                install_package "$opt"
+            done
             ;;
         4)
             echo -e "|-${CYAN}${BOLD}> ${NONE}Skipping file manager installation"
@@ -417,8 +438,8 @@ function file_manager() {
     esac
     
     if [[ -d "${CONFIG}/ranger" ]]; then
-        echo -e "|-${CYAN}${BOLD}> ${NONE}Backing up existing ${BLUE}${BOLD}ranger${NONE} configuration"
         mv "${CONFIG}/ranger" "${DOTFILES}/.backup/ranger"
+        print_backup "ranger"
     fi
 
     ln -s "${DOTFILES}/ranger" "${CONFIG}/ranger"
@@ -427,6 +448,77 @@ function file_manager() {
     mkdir "${DOTFILES}/ranger/plugins"
     git clone "https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2" &>> $INSTALL_LOG
     echo -e "|-${CYAN}${BOLD}> ${NONE}Cloned ${BLUE}${BOLD}ranger-devicons2${NONE} plugin"
+}
+
+
+# =============================================================================
+# ------------------------------- Web Browser ---------------------------------
+# =============================================================================
+
+function setup_firefox_css() {
+    local profile_dir=$(find "${HOME}/.mozilla/firefox/" -maxdepth 1 -type d -name "*.default-release")
+    local dot_usrchrome="${DOTFILES}/firefox/userChrome.css"
+    local dot_usrcont="${DOTFILES}/firefox/userContent.css"
+    local usrchrome="${profile_dir}/chrome/userChrome.css"
+    local usrcont="${profile_dir}/chrome/userContent.css"
+    
+    if [[ -d "${profile_dir}" ]]; then
+        if [[ ! -d "${profile_dir}/chrome" ]]; then
+            mkdir "${profile_dir}/chrome"
+        else
+            if [[ -f "${usrchrome}" ]]; then
+                mv "${usrchrome}" "${DOTFILES}/.backup/"
+                print_backup "userChrome.css"
+            fi
+            if [[ -f "${profile_dir}/chrome/userContent.css" ]]; then
+                mv "${profile_dir}/chrome/userContent.css" "${DOTFILES}/.backup/userContent.css"
+                print_backup "userContent.css"
+            fi
+        fi
+        ln -s "${DOTFILES}/firefox/userContent.css" "${profile_dir}/chrome/userContent.css"
+        print_symlink "${DOTFILES}/firefox/userContent.css" "${profile_dir}/chrome/userContent.css"
+
+        ln -s "${dot_usrchrome}" "${usrchrome}"
+        print_symlink "${dot_usrchrome}" "${usrchrome}"
+    fi
+}
+
+function browser() {
+    add_log_entry "Web Browser"
+    echo
+    echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Web Browser${NONE}"
+    echo "|"
+    echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
+    echo -e "|--${CYAN}${BOLD} 1. ${GREEN}firefox${NONE}"
+    echo -e "|--${CYAN}${BOLD} 2. ${GREEN}chromium${NONE}"
+    echo -e "|--${CYAN}${BOLD} 3. ${GREEN}All${NONE}"
+    echo -e "|--${CYAN}${BOLD} 4. ${GREEN}None${NONE}"
+    echo "|"
+    read -p "|--? Choose a web browser: " choice
+    echo "|"
+    case "$choice" in
+        1)
+            install_package "firefox"
+            setup_firefox_css            
+            ;;
+        2)
+            install_package "chromium"
+            ;;
+        3)
+            for opt in "firefox" "chromium"; do
+                install_package "$opt"
+            done
+            setup_firefox_css
+            ;;
+        4)
+            echo -e "|-${CYAN}${BOLD}> ${NONE}Skipping web browser installation"
+            return
+            ;;
+        *)
+            echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
+            browser
+            ;;
+    esac
 }
 
 # =============================================================================
@@ -446,6 +538,7 @@ function file_manager() {
 # - python-pip
 
 function langs() {
+    add_log_entry "Language packages"
     echo
     read -p "Do you want to install a bunch of language packages? (Y/n): " choice
     
@@ -496,6 +589,7 @@ function langs() {
 # - logs all operations to the installation log file.
 
 function dev_tools() {
+    add_log_entry "Development Tools"
     echo
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Installing development tools${NONE}"
     echo "|"
@@ -522,9 +616,8 @@ function dev_tools() {
         "python-pynvim" \
         "luarocks"      \
     )
-
+    echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}neovim${NONE} npm package"   
     sudo npm install -g neovim &>> $INSTALL_LOG
-    echo -e "|-${CYAN}${BOLD}> ${NONE}Installed ${BLUE}${BOLD}neovim${NONE} npm package"
 
     for pkg in "${nvimpkgs[@]}"; do
         install_package "$pkg"
@@ -538,7 +631,9 @@ function dev_tools() {
         "mads-hartmann.bash-ide-vscode"   \
         "buncip.better-toml"              \
         "esbenp.prettier-vscode"          \
-        "vscjava.vscode-java-pack"        
+        "vscjava.vscode-java-pack"        \
+        "ms-python.python"                \
+        "ms-toolsai.jupyter"              
     )
 
     for extension in "${vscode_extensions[@]}"; do
@@ -574,6 +669,9 @@ function dev_tools() {
     ln -s "${DOTFILES}/tmux.conf" "${HOME}/.tmux.conf"
     print_symlink "${DOTFILES}/tmux.conf" "${CONFIG}/.tmux.conf"
 
+    # check for existing pycodestyle config.
+    # for supressing annoying pylsp warnings.
+
     if [[ ! -f "${CONFIG}/pycodestyle" ]]; then
         ln -s "${DOTFILES}/lsp/pycodestyle" "${CONFIG}/pycodestyle"
         print_symlink "${DOTFILES}/lsp/pycodestyle" "${CONFIG}/pycodestyle"
@@ -597,6 +695,40 @@ function dev_tools() {
 }
 
 # =============================================================================
+# ------------------------------- Hackerman ------------------------------------
+# =============================================================================
+
+function hackerman_stuff() {
+    add_log_entry "Hackerman"
+    echo
+    echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Hackerman Stuff${NONE}"
+    echo "|"
+    read -p "|--? Do you want to install hackerman tools? (Y/n): " choice
+    
+    if [[ "${choice}" == "n" || "${choice}" == "N" ]]; then
+        echo -e "|-${CYAN}${BOLD}> ${NONE}Skipping hackerman tools installation."
+        return
+    fi
+
+    local pkgs=(
+        "nmap"          \
+        "wireshark-qt"  \
+        "hydra"         \
+        "john"          \
+        "aircrack-ng"   \
+        "metasploit"    \
+        "sqlmap"        \
+        "nikto"         \
+        "burpsuite"     \
+    )
+
+    for pkg in "${pkgs[@]}"; do
+        install_package "$pkg"
+    done
+}
+
+
+# =============================================================================
 # --------------------------------- Firewall ----------------------------------
 # =============================================================================
 
@@ -608,6 +740,7 @@ function dev_tools() {
 # - logs all operations to the installation log file.
 
 function setup_firewall() {
+    add_log_entry "Firewall"
     echo
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Firewall${NONE}"
     echo "|"
@@ -639,6 +772,21 @@ function setup_firewall() {
         echo -e "|-${CYAN}${BOLD}> ${NONE}Skipping firewall installation"
     fi
 }
+
+# =============================================================================
+# --------------------------------- Summary -----------------------------------
+# =============================================================================
+
+function summary() {
+    # print summary of failed package installations
+    if [[ ${#PKG_ERR[@]} -gt 0 ]]; then
+        echo -e "${RED}${BOLD}> ${NONE}Failed to install the following packages:"
+        for pkg in "${PKG_ERR[@]}"; do
+            echo -e "|-${RED}${BOLD}> ${BLUE}${BOLD}${pkg}${NONE}"
+        done
+    fi
+}
+
 
 # =============================================================================
 # --------------------------------- Main --------------------------------------
