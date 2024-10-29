@@ -6,6 +6,8 @@
 
 [[ $- != *i* ]] && return
 
+export TERM=xterm-256color
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
@@ -84,6 +86,7 @@ alias zathura="~/.dotfiles/scripts/zathura.sh"      # open zathura
 alias settings="~/.dotfiles/.settings/settings.sh"  # open settings.sh
 
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg" # update grub
+alias vpn="nordvpn"                                    # nordvpn alias
 
 # archived file extraction function easy mode
 # example usage: ex <file>
@@ -110,8 +113,8 @@ ex() {
 
 # -------------------------------------------------------------------------------
 
-fastfetch
+fastfetch                     # run fastfetch
+eval "$(starship init zsh)"   # setup starship prompt
 
-eval "$(starship init zsh)"
-
+# source zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
