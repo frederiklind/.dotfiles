@@ -191,7 +191,7 @@
     },    
 
     "memory": {
-        "format": "{percentage}%"
+        "format": "{percentage}% ({used} Gb)"
     },
 
     "temperature": {

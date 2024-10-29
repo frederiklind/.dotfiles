@@ -14,13 +14,13 @@
 
     "modules-left": [
         "custom/apps",
-        "hyprland/workspaces",
+        "group/clock_group",
+        "group/date_group",
         "group/quicklinks"
     ],
 
     "modules-center": [
-      "group/clock_group",
-      "group/date_group"
+        "hyprland/workspaces"
     ],
 
     "modules-right": [
@@ -43,7 +43,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-            "*": 5
+            "*": 6
         }       
     }, 
 
