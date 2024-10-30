@@ -34,7 +34,7 @@ renamed = "r"
 deleted = "󰧧"
 
 [git_branch]
-style = "fg:#8aadf4"
+style = "fg:#91d7e3"
 symbol = "󰘬 "
 format = "[$symbol$branch]($style) "
 

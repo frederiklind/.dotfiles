@@ -65,6 +65,11 @@ alias fetch="git fetch"                           # git fetch
 alias push="git push"                             # git push
 alias add="git add"                               # git add
 alias commit="git commit"                         # git commit
+alias clone="git clone"                           # git clone
+alias checkout="git checkout"                     # git checkout
+alias branch="git branch"                         # git branch
+alias merge="git merge"                           # git merge
+alias switch="git switch"                         # git switch
 
 alias nv="nvim"                                   # open neovim
 alias vdot="cd ~/.dotfiles && nvim"               # open neovim in dotfiles directory
