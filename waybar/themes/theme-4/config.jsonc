@@ -13,12 +13,13 @@
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
+        // "group/date_group",
         "group/quicklinks"
     ],
 
     "modules-center": [
-      "group/clock_group",
-      "group/date_group"
+        "group/date_group",
+        "group/clock_group"
     ],
 
     "modules-right": [
@@ -26,8 +27,7 @@
         "group/audio_group",
         "group/vpn_group",
         "network",
-        "group/battery_group",
-        "custom/shutdown"
+        "group/battery_group"
     ],
 
     "hyprland/workspaces" : {
@@ -42,7 +42,7 @@
         },
         "persistent-workspaces": {
             "*": 5
-        }       
+        } 
     },
 
     "hyprland/window": {
@@ -148,33 +148,26 @@
     },
 
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
         "format": "{capacity}%"
     },
 
     "battery#icon": {
         "states": {
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
         "format": "{icon}",
         "format-icons": ["", "", "", "", ""] 
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%I:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "clock#date": {
-        "format": "{%b %d}"
     },
 
     "custom/date": {
         "format": "{}",
-        "exec": "date +'%a, %b %d'",  // Executes the `date` command for date
+        "exec": "date +'%d. %B'",  // Executes the `date` command for date
         "interval": 1  // Refresh every hour
     },
 
@@ -191,7 +184,7 @@
     },    
 
     "memory": {
-        "format": "{percentage}% ({used} Gb)"
+        "format": "{percentage}%"
     },
 
     "temperature": {
@@ -317,7 +310,8 @@
         "format": " {} ",
         "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "~/.dotfiles/scripts/notify/nvpn-status-notify.sh"
     }, 
 
     "group/quicklinks": {
@@ -353,7 +347,9 @@
             "custom/cpu_logo",
             "cpu",        
             "custom/memory_logo",
-            "memory"
+            "memory",
+            "custom/temperature_logo",
+            "temperature"
         ]
     },
 
@@ -394,8 +390,8 @@
     "group/audio_group": {
         "orientation": "horizontal",
         "modules": [
-            "pulseaudio#logo",
-            "pulseaudio"
+            "pulseaudio#logo"
+            // "pulseaudio"
         ]
     },
 
