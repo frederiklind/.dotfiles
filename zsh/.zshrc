@@ -70,11 +70,13 @@ alias nv="nvim"                                   # open neovim
 alias vdot="cd ~/.dotfiles && nvim"               # open neovim in dotfiles directory
 alias cdot="cd ~/.dotfiles && code ./"            # open vscode in dotfiles directory
 alias py="python3"                                # python3 alias
+alias .vac="source .venv/bin/activate"            # activate virtual environment
 alias c="clear"                                   # clear terminal (primarily for tmux)
 
 alias tmux="tmux -2"                                        # tmux alias - use 256 colors
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
 alias tma="tmux attach"                                     # attach to tmux session   
+alias sesh="tmux new -s"                                    # create new tmux session
 
 # utilities ---------------------------------------------------------------------
 
