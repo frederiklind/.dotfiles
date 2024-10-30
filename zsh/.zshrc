@@ -11,6 +11,8 @@ export TERM=xterm-256color
 export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
+export PATH=/opt/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 
 export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init --path)"
