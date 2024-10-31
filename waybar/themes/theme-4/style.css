@@ -112,7 +112,7 @@ button:hover {
     background-color: @module-background;
     margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 3px 0px 5px;
 }
 
 #custom-apps {
@@ -249,8 +249,6 @@ button:hover {
 
 #clock,
 #battery,
-#cpu,
-#memory,
 #disk,
 #temperature,
 #backlight,
@@ -268,7 +266,7 @@ button:hover {
 
 #cpu {
     color: @catppuccin-blue;
-    margin-right: 5px;
+    margin: 0px 10px 0px 5px;
 }
 
 #cpu.bars {
@@ -282,6 +280,7 @@ button:hover {
 
 #memory {
     color: @catppuccin-blue;
+    margin: 0px 5px 0px 8px;
 }
 
 #window {
@@ -349,7 +348,7 @@ label:focus {
 
 #network {
     margin: 3px 2.5px 3px 0px;
-    color: @catppuccin-teal;
+    color: @catppuccin-blue;
     background-color: @module-background;
     font-size: 15px;
     padding: 0px 12px 0px 8px;
@@ -357,7 +356,7 @@ label:focus {
 }
 
 #custom-vpn {
-    color: @catppuccin-sapphire;
+    color: @catppuccin-blue;
     font-size: 14px;
     margin: 0px 0px 0px 0px;
 }
@@ -372,7 +371,7 @@ label:focus {
 
 #pulseaudio.logo {
     font-size: 13px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px -2px;
     color: @catppuccin-teal;
 }
 

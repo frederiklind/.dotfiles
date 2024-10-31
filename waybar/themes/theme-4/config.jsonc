@@ -5,15 +5,14 @@
 // -*- mode: jsonc -*-
 
 {
-    "layer": "top",     // Waybar at top layer
-    "position": "top",  // Waybar position (top|bottom|left|right)
-    "spacing": 2,       // Gaps between modules (4px)
+    "layer": "top",     
+    "position": "top",  
+    "spacing": 2,      
     "margin": "0 0 0 0",
 
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        // "group/date_group",
         "group/quicklinks"
     ],
 
@@ -120,7 +119,7 @@
     },
 
     "custom/memory_logo": {
-        "format": "󰘚",
+        "format": "",
         "tooltip": false
     },
 

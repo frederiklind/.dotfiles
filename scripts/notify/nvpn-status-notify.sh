@@ -6,7 +6,7 @@ VPN_STATUS=$(nordvpn status)
 STATUS=$(echo "$VPN_STATUS" | grep -o "Status: [a-zA-Z]*" | cut -d " " -f 2)
 
 if [ "$STATUS" == "Disconnected" ]; then
-    notify-send -a "NordVPN" -i "$ICON" -r 9999 -t 0 "Disconnected"
+    notify-send -a "NordVPN" -i "$ICON" -r 9999 -t 0 "NordVPN" "Disconnected"
 else
     COUNTRY=$(echo "$VPN_STATUS" | grep -o "Country: [a-zA-Z]*" | cut -d " " -f 2)
     CITY=$(echo "$VPN_STATUS" | grep -o "City: [a-zA-Z]*" | cut -d " " -f 2)
