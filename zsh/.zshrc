@@ -14,9 +14,9 @@ export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 
-export PATH="$HOME/.pyenv/shims:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+# export PATH="$HOME/.pyenv/shims:$PATH"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
 
 PS1='[\u@\h \W]\$ '                               # custom prompt     
 

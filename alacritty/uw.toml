@@ -20,13 +20,14 @@ padding.y = 12
 
 [colors.primary]
 background = "#1e2030"
+# background = "#24273a"
 foreground = "#bac2de"
 dim_foreground = "#8087a2"
 bright_foreground = "#cad3f5"
 
 [colors.cursor]
 text = "CellBackground"
-cursor = "#91d7e3"
+cursor = "CellForeground"
 
 [colors.vi_mode_cursor]
 text = "#24273a"
@@ -58,9 +59,9 @@ background = "#303446"
 
 [colors.normal]
 black = "#494d64"
-red = "#cba6f7"
-green = "#f2cdcd"
-yellow = "#b4befe"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
 blue = "#8aadf4"
 magenta = "#cba6f7"
 cyan = "#8bd5ca"
@@ -70,7 +71,7 @@ white = "#b8c0e0"
 black = "#5b6078"
 red = "#cba6f7"
 green = "#a6da95"
-yellow = "#b4befe"
+yellow = "#eed49f"
 blue = "#8aadf4"
 magenta = "#f5bde6"
 cyan = "#8bd5ca"
@@ -82,7 +83,7 @@ red = "#ed8796"
 green = "#a6da95"
 yellow = "#eed49f"
 blue = "#8aadf4"
-magenta = "#f5bde6"
+magenta = "#c6a0f6"
 cyan = "#8bd5ca"
 white = "#b8c0e0"
 
@@ -93,4 +94,3 @@ color = "#f5a97f"
 [[colors.indexed_colors]]
 index = 17
 color = "#f4dbd6"
-
