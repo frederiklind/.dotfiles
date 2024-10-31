@@ -140,6 +140,12 @@
 
     // ------------------------------------------------------------------------
 
+    "custom/ps_2": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "QT_SCALE_FACTOR=2 ~/Games/playstation-2/pcsx2-v2.0.2-linux-appimage-x64-Qt.AppImage"
+    },
+
     "custom/spotify_logo": {
         "format": " ",
         "tooltip": false,
@@ -319,6 +325,7 @@
             // "custom/terminal",
             "custom/firefox",
             "custom/discord",
+            "custom/ps_2",
             "custom/github",
             "custom/vscode"
         ]

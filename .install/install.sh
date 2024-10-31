@@ -38,7 +38,7 @@ NONE='\033[0m'
 CONFIG="${HOME}/.config"
 DOTFILES="${HOME}/.dotfiles"
 INSTALL_LOG="${HOME}/.dotfiles/.install/install.log"
-AUR_HELPER="yay"
+AUR_HELPER="paru"
 
 PKG_ERR=()  # for storing failed pacman package installations
 AUR_ERR=()  # for storing failed AUR package installations
@@ -102,6 +102,27 @@ function gpu() {
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}GPU${NONE}"
     echo "|"
     echo -e "|-${YELLOW}${BOLD}> ${BLUE}Available Options:${NONE}"
+    echo -e "|--${CYAN}${BOLD} 1. ${NONE}nvidia (proprietary)"
+    echo -e "|--${CYAN}${BOLD} 2. ${NONE}nouveau (open source)"
+    echo -e "|--${CYAN}${BOLD} 3. ${NONE}amd (open source)"
+    echo "|"
+    read -p "|--? Choose a GPU driver: " choice
+
+    case "$choice" in
+        1)
+            install_package "nvidia"
+            ;;
+        2)
+            install_package "xf86-video-nouveau"
+            ;;
+        3)
+            install_package "xf86-video-amdgpu"
+            ;;
+        *)
+            echo -e "|-${RED}${BOLD}> ${NONE}Invalid option"
+            gpu
+            ;;
+    esac
 }
 
 
@@ -123,11 +144,12 @@ function window_manager() {
     case "$choice" in
         1)
             local hyprpkgs=(
-                "hyprland"    \
-                "hyprlock"    \ 
-                "waybar"      \ 
-                "wofi"        \
-                "sddm"        \
+                "hyprland"    \     # window manager
+                "hyprlock"    \     # screen locker
+                "waybar"      \     # status bar
+                "wofi"        \     # launcher
+                "sddm"        \     # display manager
+                "dunst"       \     # notification daemon
             )
             print_instl "hyprland"
             for pkg in "${hyprpkgs[@]}"; do
@@ -157,19 +179,19 @@ function window_manager() {
             ;;
         2)
             local bspwmpkgs=(
-                "bspwm"         \
-                "sxhkd"         \
-                "polybar"       \
-                "rofi"          \
-                "picom"         \
-                "dunst"         \
-                "feh"           \
-                "xorg-xinit"    \
-                "xorg-server"   \
-                "xorg-xrandr"   \
-                "xorg-xset"     \
-                "xorg-xsetroot" \
-                "lightdm"       \
+                "bspwm"         \   # window manager
+                "sxhkd"         \   # hotkey daemon
+                "polybar"       \   # status bar
+                "rofi"          \   # launcher
+                "picom"         \   # compositor
+                "dunst"         \   # notification daemon
+                "feh"           \   # wallpaper setter
+                "xorg-xinit"    \   # xorg server
+                "xorg-server"   \   # xorg server
+                "xorg-xrandr"   \   # xorg randr
+                "xorg-xset"     \   # xorg xset
+                "xorg-xsetroot" \   # xorg xsetroot
+                "lightdm"       \   # display manager
             )
 
             print_instl "bspwm"
@@ -557,15 +579,15 @@ function langs() {
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Installing language packages${NONE}"
     echo "|"
     local packages=(
-        "dotnet-sdk"      \
-        "dotnet-runtime"  \
-        "aspnet-runtime"  \
-        "nodejs"          \
-        "npm"             \
-        "go"              \
+        "dotnet-sdk"      \   # .net sdk, C#, F# etc.
+        "dotnet-runtime"  \   # .net runtime, for desktop apps
+        "aspnet-runtime"  \   # asp.net runtime, for web apps
+        "nodejs"          \   # javascript runtime
+        "npm"             \   # node package manager
+        "go"              \   
         "php"             \
         "julia"           \
-        "jdk-openjdk"     \
+        "jdk-openjdk"     \   # java development kit
         "python-pip"
     )
     for package in "${packages[@]}"; do
@@ -601,11 +623,11 @@ function dev_tools() {
     echo -e "${CYAN}${BOLD}> ${BLUE}${BOLD}Installing development tools${NONE}"
     echo "|"
     local packages=(
-        "git"         \
-        "github-cli"  \
-        "neovim"      \
-        "code"        \
-        "tmux"        \
+        "git"         \   # version control
+        "github-cli"  \   # github cli
+        "neovim"      \   # text editor
+        "code"        \   # vscode
+        "tmux"        \   # terminal multiplexer
     )
     for package in "${packages[@]}"; do
         install_package "$package"
@@ -619,10 +641,13 @@ function dev_tools() {
     # neovim stuff -----------------------------------------------------------
 
     local nvimpkgs=(
-        "mercurial"     \
-        "python-pynvim" \
-        "luarocks"      \
+        "mercurial"     \   # for vim-fugitive
+        "python-pynvim" \   # python client for neovim
+        "luarocks"      \   # lua package manager
     )
+
+    # install neovim npm package
+
     echo -e "|-${CYAN}${BOLD}> ${NONE}Installing ${BLUE}${BOLD}neovim${NONE} npm package"   
     sudo npm install -g neovim &>> $INSTALL_LOG
 
@@ -633,14 +658,14 @@ function dev_tools() {
     # vscode extensions n stuff ----------------------------------------------
 
     local vscode_extensions=(
-        "catppuccin.catppuccin-vsc"       \
-        "catppuccin.catppuccin-vsc-icons" \
-        "mads-hartmann.bash-ide-vscode"   \
-        "buncip.better-toml"              \
-        "esbenp.prettier-vscode"          \
-        "vscjava.vscode-java-pack"        \
-        "ms-python.python"                \
-        "ms-toolsai.jupyter"              
+        "catppuccin.catppuccin-vsc"       \   # colorscheme
+        "catppuccin.catppuccin-vsc-icons" \   # icon theme
+        "mads-hartmann.bash-ide-vscode"   \   # bash language support
+        "buncip.better-toml"              \   # toml language support
+        "esbenp.prettier-vscode"          \   # code formatter (js/ts)
+        "vscjava.vscode-java-pack"        \   # java language support
+        "ms-python.python"                \   # python language support
+        "ms-toolsai.jupyter"                  # jupyter notebook support
     )
 
     for extension in "${vscode_extensions[@]}"; do
@@ -718,15 +743,15 @@ function hackerman_stuff() {
     fi
 
     local pkgs=(
-        "nmap"          \
-        "wireshark-qt"  \
-        "hydra"         \
-        "john"          \
-        "aircrack-ng"   \
-        "metasploit"    \
-        "sqlmap"        \
-        "nikto"         \
-        "burpsuite"     \
+        "nmap"          \   # network scanner
+        "wireshark-qt"  \   # network protocol analyzer
+        "hydra"         \   # password cracker
+        "john"          \   # password cracker
+        "aircrack-ng"   \   # wifi security
+        "metasploit"    \   # penetration testing
+        "sqlmap"        \   # sql injection
+        "nikto"         \   # web server scanner
+        "burpsuite"     \   # web application security
     )
 
     for pkg in "${pkgs[@]}"; do
@@ -780,6 +805,18 @@ function setup_firewall() {
     fi
 }
 
+
+function custom_services() {
+    add_log_entry "Custom Services" 
+    
+    # setup low battery notification service 
+
+    ln -sf "${DOTFILES}/services/lowbat/lowbat.service" "${CONFIG}/systemd/user/lowbat.service"
+    ln -sf "${DOTFILES}/services/lowbat/lowbat.timer" "${CONFIG}/systemd/user/lowbat.timer"
+
+    systemctl --user enable lowbat.timer
+}
+
 # =============================================================================
 # --------------------------------- Summary -----------------------------------
 # =============================================================================
@@ -791,6 +828,8 @@ function summary() {
         for pkg in "${PKG_ERR[@]}"; do
             echo -e "|-${RED}${BOLD}> ${BLUE}${BOLD}${pkg}${NONE}"
         done
+    else
+        echo -e "${GREEN}${BOLD}> ${NONE}All packages installed successfully."
     fi
 }
 

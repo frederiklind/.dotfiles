@@ -127,3 +127,10 @@ eval "$(starship init zsh)"   # setup starship prompt
 
 # source zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# bun completions
+[ -s "/home/flin/.bun/_bun" ] && source "/home/flin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

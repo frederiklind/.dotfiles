@@ -192,7 +192,7 @@ button:hover {
 }
 
 #custom-vscode {
-    margin-left: 5px;
+    margin-left: 3px;
     color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
@@ -217,7 +217,7 @@ button:hover {
 }
 
 #custom-discord {
-    margin-left: 5px;
+    margin-left: 2px;
     font-size: 14px;
     color: @catppuccin-blue;
     border-radius: 7px;
@@ -225,10 +225,13 @@ button:hover {
     padding-right: 13px;
 }
 
-#custom-neovim {
-    font-size: 14px;
+
+#custom-ps_2 {
+    margin-left: 10px;
+    font-size: 15px;
     color: @catppuccin-blue;
-    margin: 0px 3px 0px 3px;
+    border-radius: 7px;
+    padding: 0px 0px;
 }
 
 #custom-shutdown {
