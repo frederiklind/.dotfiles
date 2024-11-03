@@ -74,6 +74,7 @@ alias merge="git merge"                           # git merge
 alias switch="git switch"                         # git switch
 
 alias nv="nvim"                                   # open neovim
+alias snv="sudo -E nvim"                          # nvim with sudo priveliges
 alias vdot="cd ~/.dotfiles && nvim"               # open neovim in dotfiles directory
 alias cdot="cd ~/.dotfiles && code ./"            # open vscode in dotfiles directory
 alias py="python3"                                # python3 alias
@@ -85,6 +86,10 @@ alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
 alias tma="tmux attach"                                     # attach to tmux session   
 alias sesh="tmux new -s"                                    # create new tmux session
 
+# network -----------------------------------------------------------------------
+
+alias ports="netstat -tuln"                       # list open ports
+
 # utilities ---------------------------------------------------------------------
 
 alias cp="cp -i"                                    # prompt before overwrite
@@ -93,6 +98,7 @@ alias fr="ranger"                                   # open ranger file manager
 alias ft="thunar"                                   # open thunar file manager
 alias zathura="~/.dotfiles/scripts/zathura.sh"      # open zathura
 alias settings="~/.dotfiles/.settings/settings.sh"  # open settings.sh
+alias ff="fastfetch"                                # fastfetch alias (sys info)
 
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg" # update grub
 alias vpn="nordvpn"                                    # nordvpn alias
@@ -123,6 +129,7 @@ ex() {
 # -------------------------------------------------------------------------------
 
 fastfetch                     # run fastfetch
+echo
 eval "$(starship init zsh)"   # setup starship prompt
 
 # source zsh-syntax-highlighting

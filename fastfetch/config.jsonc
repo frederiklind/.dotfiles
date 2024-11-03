@@ -2,98 +2,93 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "color": {
-      "1": "blue"
+      "1": "blue",
     },
     "type": "small",
     "padding": {
       "top": 3,
-      "left": 3
-    }
+      "left": 3,
+    },
   },
-
-  // "logo": {
-  //   "type": "none"
-  // },
-
   "display": {
     "separator": "    ",
     "color": {
-        "separator": "bright_blue"
-    } 
+      "separator": "bright_blue",
+    },
   },
   "modules": [
-    // {
-    //   "type": "custom",
-    //   "format": "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓",
-    //   "outputColor": "bright_blue"
-    // },
     "break",
     {
       "type": "os",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "kernel",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "packages",
       "key": "  󰮯",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "wm",
       "key": "  󰨇",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
-    // {
+    //{
     //   "type": "terminal",
     //   "key": "  ",
     //   "keyColor": "bright_cyan",
-    //   "outputColor": "white"
+    //   "outputColor": "white",
     // },
     {
       "type": "shell",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
-    // "break",
-    // {
-    //   "type": "custom",
-    //   "format": "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫",
-    //   "outputColor": "bright_blue"
-    // },
+    {
+      "key": "  󰩠",
+      "type": "localip",
+      "showIpv6": true,
+      "showMac": false,
+      "showSpeed": false,
+      "showMtu": false,
+      "showLoop": false,
+      "showFlags": false,
+      "showAllIps": true,
+    },
     "break",
     {
       "type": "host",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "cpu",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "gpu",
       "key": "  󱤓",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
     {
       "type": "disk",
       "key": "  ",
       "keyColor": "bright_cyan",
-      "outputColor": "white"
+      "outputColor": "white",
     },
-  ]
+  ],
 }

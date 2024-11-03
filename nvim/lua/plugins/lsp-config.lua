@@ -22,6 +22,7 @@ return {
                     "pylsp",
                     "jdtls",
                     "texlab",
+                    "clangd",
                 },
             })
         end,
@@ -89,6 +90,9 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.jsonls.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.clangd.setup({
                 capabilities = capabilities,
             })
 
