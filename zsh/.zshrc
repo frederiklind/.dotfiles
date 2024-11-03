@@ -72,6 +72,7 @@ alias checkout="git checkout"                     # git checkout
 alias branch="git branch"                         # git branch
 alias merge="git merge"                           # git merge
 alias switch="git switch"                         # git switch
+alias gcfu="~/.dotfiles/gitconfig/mk-gitconfig.sh"      # update gitconfig
 
 alias nv="nvim"                                   # open neovim
 alias snv="sudo -E nvim"                          # nvim with sudo priveliges
@@ -93,7 +94,6 @@ alias ports="netstat -tuln"                       # list open ports
 # utilities ---------------------------------------------------------------------
 
 alias cp="cp -i"                                    # prompt before overwrite
-alias cat='bat'                                     # syntax highlighting for cat
 alias fr="ranger"                                   # open ranger file manager  
 alias ft="thunar"                                   # open thunar file manager
 alias zathura="~/.dotfiles/scripts/zathura.sh"      # open zathura

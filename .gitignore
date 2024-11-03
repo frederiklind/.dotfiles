@@ -1,5 +1,6 @@
 .backup
 .tmp
+.gitconfig.private
 
 ranger/plugins/
 tmux/plugins
@@ -9,7 +10,6 @@ spicetify/Backup
 spicetify/CustomApps
 spicetify/Extensions
 spicetify/Extracted
-
 
 *.log
 
