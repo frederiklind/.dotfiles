@@ -1,0 +1,21 @@
+CompileFlags:
+  Add:
+    - -I/usr/include/c++/14.2.1
+    - -I/usr/include/c++/14.2.1/x86_64-pc-linux-gnu
+    - -I/usr/include/c++/14.2.1/backward
+    - -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include
+    - -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed
+    - -I/usr/include
+    - -I/usr/local/include
+    - -DLOCAL
+    - -Wall
+    - -O2
+    - -Wextra
+    - -Wshadow
+    - -Wconversion
+    - -Wfloat-equal
+    - -Wno-unused-const-variable
+    - -Wno-sign-conversion
+    - -std=c++17
+Index:
+  Background: Skip

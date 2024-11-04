@@ -297,8 +297,6 @@ function aur_helper() {
 #
 # Installs a nerd font (FiraCode) for the terminal.
 # Installs starship prompt.
-#
-#
 
 function terminal_emulator() {
     add_log_entry "Terminal Emulator"
@@ -723,6 +721,17 @@ function dev_tools() {
         git config --global user.name "$username" &>> $INSTALL_LOG
         git config --global user.email "$email" &>> $INSTALL_LOG
         echo -e "|-${CYAN}${BOLD}> ${NONE}Successfully configured git"
+         
+        local PRIV_CONF="${DOTFILES}/gitconfig/.gitconfig.private"
+
+        if [[ ! -f $PRIV_CONF ]]; then
+            touch "${PRIV_CONF}"
+            cat "${HOME}/.gitconfig" > $PRIV_CONF
+        fi
+
+        > "${HOME}/.gitconfig"
+        cat $PRIV_CONF > "${HOME}/.gitconfig"
+        cat "${DOTFILES}/gitconfig/.gitconfig.public" >> "${HOME}/.gitconfig"
     fi
 }
 

@@ -74,6 +74,8 @@ alias merge="git merge"                           # git merge
 alias switch="git switch"                         # git switch
 alias gcfu="~/.dotfiles/gitconfig/mk-gitconfig.sh"      # update gitconfig
 
+alias ncpp="${HOME}/.dotfiles/templates/cpp-proj.sh"
+
 alias nv="nvim"                                   # open neovim
 alias snv="sudo -E nvim"                          # nvim with sudo priveliges
 alias vdot="cd ~/.dotfiles && nvim"               # open neovim in dotfiles directory
