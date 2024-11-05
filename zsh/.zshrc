@@ -72,9 +72,9 @@ alias checkout="git checkout"                     # git checkout
 alias branch="git branch"                         # git branch
 alias merge="git merge"                           # git merge
 alias switch="git switch"                         # git switch
-alias gcfu="~/.dotfiles/gitconfig/mk-gitconfig.sh"      # update gitconfig
+alias gcfu="~/.dotfiles/gitconfig/mk-gitconfig.sh"  # update gitconfig
 
-alias ncpp="${HOME}/.dotfiles/templates/cpp-proj.sh"
+alias ncpp="~/.dotfiles/templates/cpp-proj.sh"    # run c++ project wizard
 
 alias nv="nvim"                                   # open neovim
 alias snv="sudo -E nvim"                          # nvim with sudo priveliges

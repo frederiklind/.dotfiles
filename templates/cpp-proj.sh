@@ -157,6 +157,10 @@ case $TYPE in
             exit 1
         }
         echo -e "${BLUE}|-${GREEN}${CHK}${NONE} Compilation successful!"
+        echo -e "${BLUE}|-${CYAN}${BOLD}>${NONE} Generating compile commands json."
+        bear -- make all &> /dev/null || {
+            echo -e "${RED}${ERR}${NONE} big bear failed."
+        }
         ;;
     2)
         echo -e "${BLUE}|-${BOLD}${CYAN}>${NONE} Configuring with CMake..."

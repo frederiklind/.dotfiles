@@ -239,36 +239,18 @@
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
         "format": "{icon}", 
-        "format-bluetooth": "{icon} ",
-        "format-bluetooth-muted": " {icon} ",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "  {icon}",
         "format-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "󰓃 ",
+            "hands-free": "",
+            "headset": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
-
-    "alsa": {
-        "format": "{volume}%", 
-        "format-muted": "0%",
-        "on-click": "pavucontrol"
-    },
-
-    "alsa#logo": {
-        "format": "{icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "󰓃 ",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
+ 
     "custom/firefox": {
         "format": "",
         "on-click": "~/.dotfiles/scripts/firefox.sh",

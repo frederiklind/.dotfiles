@@ -238,7 +238,7 @@
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "󰓃 ",
+            "headset": " ",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
