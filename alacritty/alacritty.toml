@@ -13,7 +13,7 @@ bold.family = "FiraCode Nerd Font"
 italic.family = "FiraCode Nerd Font"
 
 [window]
-opacity = 1
+opacity = 0.95
 padding.x = 10
 padding.y = 10
 
