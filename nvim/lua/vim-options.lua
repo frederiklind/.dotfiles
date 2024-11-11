@@ -177,11 +177,9 @@ vim.keymap.set(
 )
 
 -- neogit & git tree
-vim.keymap.set("n", "<leader>gs", function()
-    vim.cmd("Neogit")
-    -- vim.cmd("Neotree git_status")
-    -- vim.cmd("wincmd l")
-end, { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
+vim.keymap.set("n", "<leader>gs",
+    ":Neogit<CR>",
+    { noremap = true, silent = true, desc = "Opens Neogit, for managing git changes and commits." })
 
 --git (diffview)
 vim.keymap.set(

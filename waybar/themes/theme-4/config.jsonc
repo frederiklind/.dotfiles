@@ -166,7 +166,7 @@
 
     "custom/date": {
         "format": "{}",
-        "exec": "date +'%d. %B'",  // Executes the `date` command for date
+        "exec": "date +'%d. %b'",  // Executes the `date` command for date
         "interval": 1  // Refresh every hour
     },
 

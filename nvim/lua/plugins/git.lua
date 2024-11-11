@@ -6,7 +6,9 @@ return {
             "sindrets/diffview.nvim", -- optional - Diff integration
             "nvim-telescope/telescope.nvim",
         },
-        config = true,
+        config = function()
+            require("neogit").setup({})
+        end,
     },
     {
         "lewis6991/gitsigns.nvim",
