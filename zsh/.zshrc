@@ -6,6 +6,11 @@
 
 [[ $- != *i* ]] && return
 
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 export TERM=xterm-256color
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -31,6 +36,7 @@ alias 5.="cd ../../../../.."                      # go up five directories
 alias dot="cd ~/.dotfiles"                        # go to dotfiles directory
 alias cf="cd ~/.config"                           # go to config directory
 alias src="cd ~/Source/repos"                     # go to repos directory
+alias doc="cd ~/Documents"                        # go to documents
 
 # ls commands --------------------------------------------------------------------
 

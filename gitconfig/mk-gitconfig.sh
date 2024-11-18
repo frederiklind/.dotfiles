@@ -37,9 +37,12 @@ read -p "Are you sure you wish to rewrite your gitconfig? (Y/n) " choice
 
 if [[ $choice == "Y" || $choice == "y" ]]; then
     mk_gitconfig
+    unset -f mk_gitconfig
 elif [[ $choice == "N" || $choice == "n" ]]; then
+    unset -f mk_gitconfig
     exit
 else
     echo "Invalid option\n"
+    unset -f mk_gitconfig
     exit 
 fi

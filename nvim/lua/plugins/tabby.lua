@@ -4,7 +4,6 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
         local theme = {
-            --fill = "TabLineFill",
             fill = { fg='#1e2030', bg='#1e2030' },
             head = { fg='#11111b', bg='#89b4fa', style='bold' },
             current_tab = { fg='#7dc4e4', bg='#24273a' },
@@ -26,7 +25,6 @@ return {
                         tab.is_current() and " " or "󰆣 ",
                         tab.number(),
                         --tab.name(),
-                        --tab.close_btn(""),
                         line.sep("", hl, theme.fill),
                         hl = hl,
                         margin = " ",
