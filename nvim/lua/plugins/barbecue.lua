@@ -9,7 +9,7 @@ return {
 	config = function()
 		require("barbecue").setup({
             theme = {
-                normal = { bg = "#24273a" }
+                normal = { bg = "NONE" }
             }
         })
 	end,

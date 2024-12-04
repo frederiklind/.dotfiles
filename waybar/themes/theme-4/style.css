@@ -4,8 +4,8 @@
  *
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.9);
-@define-color module-background #24273a;
+@define-color waybar-background rgba(24, 25, 38, 0.5);
+@define-color module-background rgb(24,25,38);
 @define-color module-border #313244;
 
 @define-color catppuccin-bck #1e1e2e;
@@ -103,9 +103,11 @@ button:hover {
 }
 
 #quicklinks {
-    margin: 3px 2.5px 3px 0px;
+    margin: 3px 0px 3px 0px;
     border-radius: 7px;
     padding: 2px 0px;
+    padding-right: 5px;
+    background-color: @module-background;
 }
 
 #systemgroup {

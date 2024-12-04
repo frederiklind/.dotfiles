@@ -7,18 +7,31 @@ return {
 			local builtin = require("telescope.builtin")
 			local colors = require("catppuccin.palettes").get_palette()
 			local TelescopeColor = {
-				TelescopeMatching = { fg = colors.green },
+				-- TelescopeMatching = { fg = colors.green },
+				-- TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
+				-- TelescopePromptPrefix = { bg = colors.surface0, fg = colors.blue },
+				-- TelescopePromptNormal = { bg = colors.surface0 },
+				-- TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.mantle },
+				-- TelescopePreviewNormal = { bg = colors.mantle },
+				-- TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+				-- TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+				-- TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+				-- TelescopePromptTitle = { bg = colors.blue, fg = colors.crust },
+				-- TelescopeResultsTitle = { fg = colors.surface0 },
+				-- TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
+
+				TelescopeMatching = { fg = colors.green, bold = true },
 				TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-				TelescopePromptPrefix = { bg = colors.surface0, fg = colors.blue },
-				TelescopePromptNormal = { bg = colors.surface0 },
-				TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.mantle },
-				TelescopePreviewNormal = { bg = colors.mantle },
-				TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-				TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
-				TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-				TelescopePromptTitle = { bg = colors.blue, fg = colors.crust },
+				TelescopePromptPrefix = { bg = colors.base, fg = colors.blue },
+				TelescopePromptNormal = { bg = colors.base },
+				TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.crust },
+				TelescopePreviewNormal = { bg = colors.crust },
+				TelescopePromptBorder = { bg = colors.base, fg = colors.base },
+				TelescopeResultsBorder = { bg = colors.crust, fg = colors.crust },
+				TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
+				TelescopePromptTitle = { bg = colors.blue, fg = colors.crust, bold = true },
 				TelescopeResultsTitle = { fg = colors.surface0 },
-				TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
+				TelescopePreviewTitle = { bg = colors.green, fg = colors.crust, bold = true },
 			}
 
 			for hl, col in pairs(TelescopeColor) do

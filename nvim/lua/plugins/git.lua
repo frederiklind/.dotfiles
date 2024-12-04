@@ -7,6 +7,7 @@ return {
             "nvim-telescope/telescope.nvim",
         },
         config = function()
+
             require("neogit").setup({})
         end,
     },

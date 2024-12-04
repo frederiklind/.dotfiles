@@ -13,12 +13,13 @@
     "modules-left": [
         "custom/apps",
         "hyprland/workspaces",
-        "group/quicklinks"
+        "group/date_group",
+        "group/clock_group"
+        // "group/quicklinks"
     ],
 
     "modules-center": [
-        "group/date_group",
-        "group/clock_group"
+        "group/quicklinks"
     ],
 
     "modules-right": [

@@ -9,6 +9,7 @@ vim.cmd("set number")
 vim.cmd("set guicursor=n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff30000-blinkon250-Cursor/lCursor.")
 vim.cmd("set termguicolors")
 
+
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
@@ -16,6 +17,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.o.pumheight = 15
 vim.g.mapleader = " "
+
 
 vim.keymap.set(
     { "n", "i" },
