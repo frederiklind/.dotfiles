@@ -95,6 +95,9 @@ alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
 alias tma="tmux attach"                                     # attach to tmux session   
 alias sesh="tmux new -s"                                    # create new tmux session
 
+alias gpt="~/.dotfiles/scripts/chatgpt.sh"            # open native chatgpt
+alias ugpt="~/.dotfiles/scripts/update-gpt-native.sh" # update native chatgpt
+
 # network -----------------------------------------------------------------------
 
 alias ports="netstat -tuln"                       # list open ports

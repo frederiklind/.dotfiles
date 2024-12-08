@@ -20,6 +20,7 @@
 
     "modules-center": [
         "group/quicklinks"
+        // "group/tmux_group"
     ],
 
     "modules-right": [
@@ -139,12 +140,24 @@
         "tooltip": false
     },
 
+    "custom/tmux_logo": {
+        "format": "",
+        "tooltip": false
+    },
+
     // ------------------------------------------------------------------------
 
     "custom/spotify_logo": {
         "format": " ",
         "tooltip": false,
         "on-click": "~/.dotfiles/scripts/spotify.sh"
+    },
+
+    "custom/tmux_sessions": {
+        "format": "{}",
+        "exec": "tmux list-sessions | wc -l",
+        "interval": 20,
+        "tooltip": false
     },
 
     "battery": {
@@ -246,6 +259,13 @@
         "on-click": "pavucontrol"
     },
  
+    "custom/terminal": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/terminal.sh",
+        "tooltip": false
+    },
+
+
     "custom/firefox": {
         "format": "",
         "on-click": "~/.dotfiles/scripts/firefox.sh",
@@ -261,6 +281,18 @@
     "custom/github": {
         "format": "",
         "on-click": "~/.dotfiles/scripts/github.sh",
+        "tooltip": false
+    },
+
+    "custom/gpt": {
+        "format": "  ",
+        "on-click": "~/.dotfiles/scripts/chatgpt.sh",
+        "tooltip": false
+    },
+
+    "custom/jellyfin": {
+        "format": "  ",
+        "on-click": "~/.dotfiles/scripts/chatgpt.sh",
         "tooltip": false
     },
 
@@ -301,7 +333,10 @@
         "modules": [
             "custom/firefox",
             "custom/discord",
+            "custom/spotify_logo",
+            "custom/jellyfin",
             "custom/github",
+            "custom/gpt",
             "custom/vscode"
         ]
     },
@@ -396,6 +431,14 @@
         "modules": [
             "custom/network_logo",
             "network"
+        ]
+    },
+
+    "group/tmux_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/tmux_logo",
+            "custom/tmux_sessions"
         ]
     }
 }

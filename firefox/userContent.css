@@ -100,7 +100,9 @@
     background-color: var(--catppuccin-mantle) !important;
     border: 0px solid transparent !important;
   }
-  .tV0DEo5a5LUrl8Piw6Ao, ._2iQrmxmcSVuOHpCus2L {
+
+  .tV0DEo5a5LUrl8Piw6Ao,
+  ._2iQrmxmcSVuOHpCus2L {
     background-color: var(--catppuccin-base) !important;
     border: 0px solid transparent !important;
   }
@@ -252,36 +254,6 @@
   }
 }
 
-/* @-moz-document domain("overleaf.com") { */
-/*   .pdfViewer { */
-/*     background-color: var(--catppuccin-crust) !important; */
-/*   } */
-/**/
-/*   .file-tree ul.file-tree-list, */
-/*   .outline-body { */
-/*     background-color: var(--catppuccin-crust) !important; */
-/*   } */
-/**/
-/*   .cm-gutters, */
-/*   .cm-content { */
-/*     background-color: var(--catppuccin-base) !important; */
-/*   } */
-/**/
-/*   .outline-container { */
-/*     background-color: var(--catppuccin-crust) !important; */
-/*   } */
-/*   .toolbar, .toolbar-header, */
-/*   .outline-header{ */
-/*     background-color: var(--catppuccin-mantle) !important; */
-/*   } */
-/**/
-/*   li, */
-/*   .entity, .outline-item, */
-/*   .outline-item-link { */
-/*     color: var(--catppuccin-blue) !important; */
-/*   } */
-/* } */
-
 @-moz-document domain("chatgpt.com") {
   html,
   body {
@@ -366,5 +338,9 @@
 
   h3 {
     color: var(--catppuccin-blue) !important;
+  }
+
+  #composer-background {
+    background-color: var(--catppuccin-crust) !important;
   }
 }

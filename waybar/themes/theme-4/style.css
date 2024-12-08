@@ -4,8 +4,10 @@
  *
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.5);
-@define-color module-background rgb(24,25,38);
+/* @define-color waybar-background rgba(30, 32, 48, 0.6); */
+@define-color waybar-background rgba(24, 25, 38, 1);
+/* @define-color module-background rgba(24, 25, 38, 1.0); */
+@define-color module-background rgba(30, 32, 48, 1.0);
 @define-color module-border #313244;
 
 @define-color catppuccin-bck #1e1e2e;
@@ -138,7 +140,8 @@ button:hover {
 #custom-terminal {
     color: @catppuccin-blue;
     font-size: 16px;
-    padding-right: 7px;
+    padding-right: 5px;
+    margin: 0px 0px 0px 15px;
 }
 
 #custom-calendar {
@@ -227,6 +230,24 @@ button:hover {
     padding-right: 13px;
 }
 
+#custom-gpt {
+    background-image: url('/home/flin/.dotfiles/waybar/assets/gpt-fill.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#custom-jellyfin {
+    background-image: url('/home/flin/.dotfiles/waybar/assets/jellyfin.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin-left: 13px;
+    margin-right: 2px;
+}
+
 
 #custom-ps_2 {
     margin-left: 10px;
@@ -245,6 +266,26 @@ button:hover {
     background-color: @module-background;
     color: @catppuccin-blue;
     border-radius: 7px;
+}
+
+#custom-tmux_logo {
+    font-size: 15px;
+    margin: 0px 0px 0px 5px;
+    color: @catppuccin-teal;
+    padding-right: 5px;
+}
+
+#custom-tmux_sessions {
+    font-size: 12px;
+    margin: 0px 0px 0px 5px;
+    color: @catppuccin-blue;
+}
+
+#tmux_group {
+    background-color: @module-background;
+    margin: 3px 2.5px 3px 3px;
+    border-radius: 7px;
+    padding: 0px 10px 0px 5px;
 }
 
 #mode {
@@ -426,8 +467,8 @@ tooltip label {
 }
 
 #custom-spotify_logo {
-    font-size: 14.5px;
-    margin: 0px 0px 0px 12px;
+    font-size: 14px;
+    margin: 0px -1px 0px 12px;
     color: @catppuccin-blue;
 }
 
