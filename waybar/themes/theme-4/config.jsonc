@@ -11,16 +11,14 @@
     "margin": "0 0 0 0",
 
     "modules-left": [
-        "custom/apps",
-        "hyprland/workspaces",
+        "custom/apps",       
         "group/date_group",
-        "group/clock_group"
-        // "group/quicklinks"
+        "group/clock_group",
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
         "group/quicklinks"
-        // "group/tmux_group"
     ],
 
     "modules-right": [

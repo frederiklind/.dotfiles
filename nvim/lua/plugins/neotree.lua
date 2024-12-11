@@ -9,7 +9,7 @@ return {
   config = function()
     vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#181926" }) -- Crust background
     vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#181926" })
-    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#181926", bg = "#181926" })
+    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#1e2030", bg = "None" })
     vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "#181926", bg = "#181926" })
 
     -- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" }) -- Crust background
