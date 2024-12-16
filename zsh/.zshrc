@@ -91,6 +91,7 @@ alias .vac="source .venv/bin/activate"            # activate virtual environment
 alias c="clear"                                   # clear terminal (primarily for tmux)
 
 alias tmux="tmux -2"                                        # tmux alias - use 256 colors
+alias ts="~/.dotfiles/scripts/tmux-session.sh"              # tmux session (takes name param)
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
 alias tma="tmux attach"                                     # attach to tmux session   
 alias sesh="tmux new -s"                                    # create new tmux session
