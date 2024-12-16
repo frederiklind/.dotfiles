@@ -20,6 +20,10 @@ vim.g.mapleader = " "
 vim.o.showmode = false
 vim.o.showcmd = false
 
+vim.keymap.set('n', '<S-h>', '^', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-l>', '$', { noremap = true, silent = true })
+
+
 vim.keymap.set(
     { "n", "i" },
     "<C-s>",
