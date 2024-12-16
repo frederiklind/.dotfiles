@@ -17,7 +17,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.o.pumheight = 15
 vim.g.mapleader = " "
-
+vim.o.showmode = false
+vim.o.showcmd = false
 
 vim.keymap.set(
     { "n", "i" },
