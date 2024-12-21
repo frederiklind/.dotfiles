@@ -103,6 +103,12 @@ alias ugpt="~/.dotfiles/scripts/update-gpt-native.sh" # update native chatgpt
 
 alias ports="netstat -tuln"                       # list open ports
 
+ # get public ip address
+alias ipp="wget -qO- http://ifconfig.me 2>/dev/null | tr -d '%' | awk 'NF {print $1}'"
+
+# get local ip address
+alias ipl="ip -4 addr show scope global | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -n 1"
+
 # utilities ---------------------------------------------------------------------
 
 alias cp="cp -i"                                    # prompt before overwrite

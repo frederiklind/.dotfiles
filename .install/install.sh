@@ -47,6 +47,10 @@ AUR_ERR=()  # for storing failed AUR package installations
 # ----------------------------- Helper Functions ------------------------------
 # =============================================================================
 
+function echoS() {
+    echo -e "|-${1}${BOLD}${2}> ${NONE}${3}"
+}
+
 function is_installed() {
     pacman -Qi "$1" &> /dev/null
     return $?

@@ -7,38 +7,43 @@ return {
   },
 
   config = function()
-    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#181926" }) -- Crust background
-    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#181926" })
-    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#1e2030", bg = "None" })
-    vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "#181926", bg = "#181926" })
-
-    -- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" }) -- Crust background
-    -- vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
-    -- vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#181926", bg = "NONE" })
-    -- vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "NONE", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#181926", bg = "None" })
+    vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "NONE", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = "#8aadf4", bg = "#181926" })
+    vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "#181926", bg = "#181926" })
+    vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { fg = "#939ab7", bg = "#181926" })
+    vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", { fg = "#363a4f", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#a5adcb", bg = "NONE" })
 
     require("neo-tree").setup({
       window = {
         position = "left",
         width = 35,
       },
+
       enable_git_status = true,
       default_component_configs = {
+        indent = {
+          with_markers = true,
+          indent_marker = "│",
+          last_indent_marker = "╰",
+          indent_size = 2,
+        },
         git_status = {
           symbols = {
-            -- Change type
-            added     = "A",
-            deleted   = "D",
-            modified  = "M",
-            renamed   = "R",
-            -- Status type
+            added = "A",
+            deleted = "D",
+            modified = "M",
+            renamed = "R",
             untracked = "",
-            ignored   = "",
-            unstaged  = "",
-            staged    = "",
-            conflict  = "",
-          }
-        }
+            ignored = "",
+            unstaged = "",
+            staged = "",
+            conflict = "",
+          },
+        },
       },
       filesystem = {
         filtered_items = {

@@ -24,6 +24,7 @@ xrandr --output DP-2 --mode 5120x2160
 # autostart applications
 sxhkd &
 picom --config ~/.config/picom/picom.conf &
-nitrogen --restore &
+feh --bg-fill ~/Pictures/wallpapers/spaceman_uw.png &
 dunst &
 polybar &
+
