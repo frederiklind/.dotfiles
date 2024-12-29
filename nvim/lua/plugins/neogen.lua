@@ -14,11 +14,32 @@ return {
                         ['default'] = 'jsdoc',
                     },
                 },
+                typescriptreact = {
+                    template = {
+                        ['default'] = 'jsdoc',
+                    },
+                },
                 lua = {
                     template = {
                         ['default'] = 'vimdoc',
                     },
                 },
+                java = {
+                    template = {
+                        ['default'] = 'javadoc',
+                    },
+                },
+                python = {
+                    template = {
+                        ['default'] = 'pydoc',
+                    },
+                },
+                go = {
+                    template = {
+                        ['default'] = 'godoc',
+                    },
+                },
+
             },
         })
         vim.keymap.set('n', '<leader>do', function()
