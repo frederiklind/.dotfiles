@@ -25,14 +25,15 @@ vimcmd_symbol = "[<](bold green)"
 tag_symbol = " tag "
 
 [git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "󰧧"
+style = "fg:bold #c6a0f6"
+ahead = ">($style)"
+behind = "<($style)"
+diverged = "<>($style)"
+renamed = "r($style)"
+deleted = "󰧧($style)"
 
 [git_branch]
-style = "fg:#91d7e3"
+style = "fg:bold #8aadf4"
 symbol = "󰘬 "
 format = "[$symbol$branch]($style) "
 
