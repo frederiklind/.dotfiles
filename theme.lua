@@ -1,1 +1,0 @@
-/home/flin/.dotfiles/nvim/lua/plugins/theme.lua

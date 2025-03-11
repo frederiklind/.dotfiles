@@ -1,0 +1,151 @@
+# 
+#  █▀ ▀█▀ ▄▀█ █▀█ █▀ █░█ █ █▀█   █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀
+#  ▄█ ░█░ █▀█ █▀▄ ▄█ █▀█ █ █▀▀   █▄▄ █▄█ █░▀█ █▀░ █ █▄█
+#
+#  gruvbox-dark
+
+
+
+[username]
+show_always = true
+style_user = "fg:bold #32302f bg:#7daea3"
+format = '[](#7daea3)[󱃋 $user ]($style)[ ](#7daea3)'
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "~"
+read_only = " "
+format = "[($style)$path ](bold #6e738d)[$read_only](#ea6962)"
+
+[character]
+success_symbol = "[❯](bold #8bd5ca)"
+error_symbol = "[❯](bold #ed8796)"
+vimcmd_symbol = "[<](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+style = "fg:bold #7daea3"
+ahead = ">($style)"
+behind = "<($style)"
+diverged = "<>($style)"
+renamed = "r($style)"
+deleted = "󰧧($style)"
+
+[git_branch]
+style = "fg:bold #d8a657"
+symbol = "󰘬 "
+format = "[$symbol$branch]($style) "
+
+[gradle]
+symbol = " "
+
+[aws]
+symbol = "aws "
+
+[bun]
+symbol = "bun "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = "conda "
+
+[cmake]
+symbol = "cmake "
+
+[dart]
+symbol = " "
+
+[dotnet]
+symbol = "󰪮 "
+
+[docker_context]
+symbol = "󰡨 "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = "hg "
+
+[java]
+symbol = " "
+style = "fg:#f5a97f"
+
+[julia]
+symbol = "jl "
+
+[kotlin]
+symbol = "󱈙 "
+
+[lua]
+symbol = "󰢱 "
+
+[nodejs]
+symbol = "󰎙 "
+style = "fg:bold #a6da95"
+
+[meson]
+symbol = "meson "
+
+[nim]
+symbol = "nim "
+
+[ocaml]
+symbol = " "
+
+[opa]
+symbol = "opa "
+
+[os.symbols]
+Arch = "rch "
+Linux = "lnx "
+Macos = "mac "
+Unknown = "unk "
+Windows = "win "
+
+[package]
+symbol = "󰏖 "
+style = "fg:bold #f5a97f"
+
+[perl]
+symbol = " "
+
+[php]
+symbol = "󰌟 "
+
+[python]
+symbol = "󰌠 "
+style = "fg:#eed49f"
+
+[raku]
+symbol = "raku "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+style = "fg:bold #8bd5ca"
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "swift "

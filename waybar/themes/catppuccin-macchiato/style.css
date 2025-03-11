@@ -2,19 +2,19 @@
  *  █░█░█ ▄▀█ █▄█ █▄▄ ▄▀█ █▀█   █▀ ▀█▀ █▄█ █░░ █ █▄░█ █▀▀
  *  ▀▄▀▄▀ █▀█ ░█░ █▄█ █▀█ █▀▄   ▄█ ░█░ ░█░ █▄▄ █ █░▀█ █▄█
  *
- *  Kraken - Minimal 2
- *
- *  Frederik Lind (2024)
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.9);
-@define-color module-background #24273a;
+@define-color waybar-background rgba(24, 25, 38, 0.6);
+/* @define-color module-background rgba(24, 25, 38, 1.0); */
+@define-color module-background rgba(30, 32, 48, 1.0);
 @define-color module-border #313244;
 
 @define-color catppuccin-bck #1e1e2e;
 @define-color catppuccin-blue #8aadf4;
 @define-color catppuccin-red #ed8796;
+@define-color catppuccin-surface_0 #8087a2;
 @define-color catppuccin-teal #8bd5ca;
+@define-color catppuccin-sapphire #7dc4e4;
 @define-color catppuccin-mauve #c6a0f6;
 @define-color catppuccin-lavender #b7bdf8;
 @define-color catppuccin-yellow #eed49f;
@@ -104,30 +104,25 @@ button:hover {
 }
 
 #quicklinks {
-    margin: 3px 2.5px 3px 0px;
+    margin: 3px 0px 3px 0px;
     border-radius: 7px;
     padding: 2px 0px;
-}
-
-#network_group {
+    padding-right: 5px;
     background-color: @module-background;
-    margin: 3px 2.5px 3px 0px;
-    border-radius: 7px;
-    padding: 0px 7px 0px 5px;
 }
 
 #systemgroup {
     background-color: @module-background;
     margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 3px 0px 5px;
 }
 
 #custom-apps {
-    font-size: 16px;
+    font-size: 18px;
     margin: 3px 0px 3px 10px;
     color: @catppuccin-blue;
-    padding: 0px 15px 0px 10px;
+    padding: 0px 10px 0px 6px;
     border-radius: 7px;
     background-color: @module-background;
 }
@@ -144,7 +139,8 @@ button:hover {
 #custom-terminal {
     color: @catppuccin-blue;
     font-size: 16px;
-    padding-right: 7px;
+    padding-right: 5px;
+    margin: 0px 0px 0px 15px;
 }
 
 #custom-calendar {
@@ -152,34 +148,18 @@ button:hover {
     font-weight: bolder;
 }
 
-#calendar_group {
+#date_group {
     background-color: @module-background;
-    margin: 3px 5px 3px 0px;
-    border-radius: 7px;
-    padding: 0px 15px 0px 15px;
+    margin: 3px 2.5px 3px 0px;
+    border-radius: 7px 7px;
+    padding: 0px 10px 0px 10px;
 }
 
 #clock_group {
     background-color: @module-background;
-    margin: 3px 5px 3px 0px;
+    margin: 3px 1px 3px 0px;
     border-radius: 7px;
-    padding: 0px 5px 0px 10px;
-}
-
-#custom-settings {
-    font-size: 15px;
-    margin: 0px 13px 0px 5px;
-    padding-right: 10px;
-    color: @catppuccin-blue;
-}
-
-#custom-google_drive {
-    font-size: 15px;
-    margin-left: 5px;
-    color: @catppuccin-blue;
-    border-radius: 7px;
-    padding-left: 5px;
-    padding-right: 11px;
+    padding: 0px 3px 0px 0px;
 }
 
 #custom-firefox {
@@ -200,16 +180,7 @@ button:hover {
 }
 
 #custom-vscode {
-    margin-left: 5px;
-    color: @catppuccin-blue;
-    border-radius: 7px;
-    padding-left: 5px;
-    padding-right: 10px;
-}
-
-#custom-youtube {
-    font-size: 23px;
-    margin: 0px 5px 0px 5px;
+    margin-left: 3px;
     color: @catppuccin-blue;
     border-radius: 7px;
     padding-left: 5px;
@@ -225,7 +196,7 @@ button:hover {
 }
 
 #custom-discord {
-    margin-left: 10px;
+    margin-left: 2px;
     font-size: 14px;
     color: @catppuccin-blue;
     border-radius: 7px;
@@ -233,21 +204,22 @@ button:hover {
     padding-right: 13px;
 }
 
-#custom-neovim {
-    font-size: 14px;
-    color: @catppuccin-blue;
-    margin: 0px 3px 0px 3px;
+#custom-gpt {
+    background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/gpt.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
-#custom-shutdown {
-    font-size: 12px;
-    padding-right: 8px;
-    padding-left: 4px;
-    margin: 3px 10px 3px 0px;
-    color: #5b6078;
-    background-color: @module-background;
-    color: @catppuccin-blue;
-    border-radius: 7px;
+#custom-jellyfin {
+    background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/jellyfin.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin-left: 13px;
+    margin-right: 2px;
 }
 
 #mode {
@@ -257,8 +229,6 @@ button:hover {
 
 #clock,
 #battery,
-#cpu,
-#memory,
 #disk,
 #temperature,
 #backlight,
@@ -276,7 +246,7 @@ button:hover {
 
 #cpu {
     color: @catppuccin-blue;
-    margin-right: 5px;
+    margin: 0px 10px 0px 5px;
 }
 
 #cpu.bars {
@@ -290,6 +260,7 @@ button:hover {
 
 #memory {
     color: @catppuccin-blue;
+    margin: 0px 5px 0px 8px;
 }
 
 #window {
@@ -310,18 +281,20 @@ button:hover {
 #clock {
     color: @catppuccin-blue;
     margin: 3px 0px 3px 0px;
-    font-weight: bolder;
+}
+#custom-date {
+    color: @catppuccin-blue;
 }
 
 #custom-clock_logo {
     font-size: 13px;
-    margin: 0px 8px 0px 0px;
+    margin: 0px 6px 0px 10px;
     color: @catppuccin-teal;
 }
 
 #custom-calendar_logo {
-    font-size: 18px;
-    margin: 0px 20px 0px 0px;
+    font-size: 13px;
+    margin: 0px 15px 0px 0px;
     color: @catppuccin-teal;
 }
 
@@ -354,18 +327,23 @@ label:focus {
 }
 
 #network {
-    margin: 0px 2.5px 0px 0px;
+    margin: 3px 2.5px 3px 0px;
     color: @catppuccin-blue;
+    background-color: @module-background;
+    font-size: 15px;
+    padding: 0px 12px 0px 8px;
+    border-radius: 7px;
 }
 
 #custom-vpn {
     color: @catppuccin-blue;
+    font-size: 14px;
     margin: 0px 0px 0px 0px;
 }
 
 #pulseaudio {
     color: @catppuccin-blue;
-    margin: 3px 0px 3px 0px;
+    margin: 0px 0px 0px -3px;
     /* background-color: @module-background; */
     border-radius: 7px;
     padding: 0px 10px;
@@ -373,7 +351,7 @@ label:focus {
 
 #pulseaudio.logo {
     font-size: 13px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px -2px;
     color: @catppuccin-teal;
 }
 
@@ -389,6 +367,7 @@ tooltip {
     border-radius: 10px;
     background-color: @module-background;
     border: 1px solid @catppuccin-blue;
+    padding: 25px;
 }
 
 tooltip label {
@@ -422,10 +401,9 @@ tooltip label {
 }
 
 #custom-spotify_logo {
-    font-size: 16px;
-    margin: 0px 5px 0px 2px;
-    /* color: #a6da95; */
-    color: @catppuccin-teal;
+    font-size: 14px;
+    margin: 0px -1px 0px 12px;
+    color: @catppuccin-blue;
 }
 
 #custom-cpu_logo {
@@ -448,7 +426,6 @@ tooltip label {
 }
 
 #cpu_group,
-#audio_group,
 #temperature_group,
 #memory_group {
     background-color: @module-background;
@@ -457,25 +434,18 @@ tooltip label {
     padding: 0px 3px 0px 3px;
 }
 
-#custom-vpn_logo {
-    font-size: 14px;
-    margin: 0px 0px 0px 10px;
-    color: @catppuccin-teal;
-    padding-right: 6px;
-}
-
-#vpn_group {
+#audio_group {
     background-color: @module-background;
     margin: 3px 2.5px 3px 0px;
     border-radius: 7px;
     padding: 0px 5px 0px 0px;
 }
 
-#custom-network_logo {
-    font-size: 16px;
-    margin: 0px 0px 0px 5px;
-    color: @catppuccin-teal;
-    padding-right: 6px;
+#vpn_group {
+    background-color: @module-background;
+    margin: 3px 1px 3px 0px;
+    border-radius: 7px;
+    padding: 0px 3px 0px 0px;
 }
 
 #battery {
@@ -495,19 +465,11 @@ tooltip label {
 
 #battery_group {
     background-color: @module-background;
-    margin: 3px 2.5px 3px 0px;
+    margin: 3px 8px 3px 0px;
     border-radius: 7px;
     padding: 0px 5px 0px 3px;
-}
-
-#battery.charging,
-#battery.plugged {
-    /* color: #81c8be; */
 }
 
 #battery.critical:not(.charging) {
     color: #ed8796;
 }
-
-
-

@@ -2,32 +2,31 @@
 //  █░█░█ ▄▀█ █▄█ █▄▄ ▄▀█ █▀█   █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀
 //  ▀▄▀▄▀ █▀█ ░█░ █▄█ █▀█ █▀▄   █▄▄ █▄█ █░▀█ █▀░ █ █▄█
 //  
-//  Frederik Lind (2024)
-//
 // -*- mode: jsonc -*-
 
 {
-    "layer": "top",     // Waybar at top layer
-    "position": "top",  // Waybar position (top|bottom|left|right)
-    "spacing": 4,       // Gaps between modules (4px)
+    "layer": "top",     
+    "position": "top",  
+    "spacing": 2,      
     "margin": "0 0 0 0",
 
     "modules-left": [
-        "custom/apps",
-        "hyprland/workspaces",
-        "group/quicklinks"
+        "custom/apps",       
+        "group/date_group",
+        "group/clock_group",
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
-      "group/clock_group"
+        "group/quicklinks"
     ],
 
     "modules-right": [
+        "group/systemgroup",
         "group/audio_group",
         "group/vpn_group",
-        "group/network_group",
-        "group/battery_group",
-        "custom/shutdown"
+        "network",
+        "group/battery_group"
     ],
 
     "hyprland/workspaces" : {
@@ -42,7 +41,7 @@
         },
         "persistent-workspaces": {
             "*": 5
-        }       
+        } 
     },
 
     "hyprland/window": {
@@ -120,7 +119,7 @@
     },
 
     "custom/memory_logo": {
-        "format": "󰘚",
+        "format": "",
         "tooltip": false
     },
 
@@ -139,8 +138,8 @@
         "tooltip": false
     },
 
-    "custom/network_logo" : {
-        "format": "󰖟",
+    "custom/tmux_logo": {
+        "format": "",
         "tooltip": false
     },
 
@@ -152,33 +151,35 @@
         "on-click": "~/.dotfiles/scripts/spotify.sh"
     },
 
+    "custom/tmux_sessions": {
+        "format": "{}",
+        "exec": "tmux list-sessions | wc -l",
+        "interval": 20,
+        "tooltip": false
+    },
+
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
         "format": "{capacity}%"
     },
 
     "battery#icon": {
         "states": {
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
         "format": "{icon}",
         "format-icons": ["", "", "", "", ""] 
     },
 
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "{:%I:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-        // "format-alt": "{:%Y-%m-%d}"
     },
 
-    "custom/calendar": {
-        "exec": "date +\"%a, $(date +%-d)$(date +%-d | sed 's/1$/st/;s/2$/nd/;s/3$/rd/;s/[04-9]$/th/') %b - %Y\"",
-        "interval": 60,
-        "tooltip": false
+    "custom/date": {
+        "format": "{}",
+        "exec": "date +'%d. %b'",  // Executes the `date` command for date
+        "interval": 1  // Refresh every hour
     },
 
     "cpu": {
@@ -217,14 +218,15 @@
       }
     },
 
+    // Network ----------------------------------------------------------------
+
     "network": {
         "interval": 1,
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "{icon}",
+        "tooltip-format": "SSID: {essid}\n{ifname} via {gwaddr}\n\nSignal strength: {signalStrength}%",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
 
     "pulseaudio": {
@@ -243,35 +245,24 @@
         // "scroll-step": 1, // %, can be a float
         // {format_source} removed
         "format": "{icon}", 
-        "format-bluetooth": "{icon} ",
-        "format-bluetooth-muted": " {icon} ",
-        "format-muted": "",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "  {icon}",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "󰓃 ",
+            "hands-free": "",
+            "headset": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
-
-    "alsa": {
-        "format": "{volume}%", 
-        "format-muted": "0%",
-        "on-click": "pavucontrol"
+ 
+    "custom/terminal": {
+        "format": "",
+        "on-click": "~/.dotfiles/scripts/terminal.sh",
+        "tooltip": false
     },
 
-    "alsa#logo": {
-        "format": "{icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "󰓃 ",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
 
     "custom/firefox": {
         "format": "",
@@ -291,21 +282,21 @@
         "tooltip": false
     },
 
+    "custom/gpt": {
+        "format": "  ",
+        "on-click": "~/.dotfiles/scripts/chatgpt.sh",
+        "tooltip": false
+    },
+
+    "custom/jellyfin": {
+        "format": "  ",
+        "on-click": "~/.dotfiles/scripts/chatgpt.sh",
+        "tooltip": false
+    },
+
     "custom/vscode": {
         "format": "󰨞",
         "on-click": "~/.dotfiles/scripts/vscode.sh",
-        "tooltip": false
-    },
-
-    "custom/terminal": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/terminal.sh",
-        "tooltip": false
-    },
-
-    "custom/neovim": {
-        "format": "  ",
-        "on-click": "~/.dotfiles/scripts/neovim.sh",
         "tooltip": false
     },
 
@@ -321,62 +312,29 @@
         "tooltip": false
     },
 
-    "custom/youtube": {
-        "format": "󰗃",
-        "on-click": "~/.dotfiles/scripts/youtube.sh",
-        "tooltip": false
-    },
-
-    "custom/google_drive": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/google_drive.sh",
-        "tooltip": false
-    },
-
-    "custom/messenger": {
-        "format": " 󰈎 ",
-        "on-click": "~/.dotfiles/scripts/caprine.sh",
-        "tooltip": false
-    },
-
-    "custom/ranger": {
-        "format": " 󰉋 ",
-        "on-click": "~/.dotfiles/scripts/ranger.sh",
-        "tooltip": false
-    },
-
     "custom/apps": {
         "format": "󰣇",
         "on-click": "~/.dotfiles/scripts/wofi.sh",
         "tooltip": false    
-    },
-
-    "custom/settings": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/settings.sh",
-        "tooltip": false
-    },
+    }, 
 
     "custom/vpn": {
         "format": " {} ",
         "exec": "~/.dotfiles/scripts/nvpn-status.sh",
         "interval": 20,
-        "tooltip": false
-    },
-
-    "custom/vpn_logo": {
-        "format": "󰞀",
-        "tooltip": false
-    },
+        "tooltip": false,
+        "on-click": "~/.dotfiles/scripts/notify/nvpn-status-notify.sh"
+    }, 
 
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-            // "custom/terminal",
             "custom/firefox",
-            "custom/google_drive",
             "custom/discord",
+            "custom/spotify_logo",
+            "custom/jellyfin",
             "custom/github",
+            "custom/gpt",
             "custom/vscode"
         ]
     },
@@ -389,11 +347,11 @@
         ]
     },
 
-    "group/calendar_group": {
+    "group/date_group": {
         "orientation": "horizontal",
         "modules": [
             "custom/calendar_logo",
-            "custom/calendar"
+            "custom/date"
         ]
     },
 
@@ -446,8 +404,8 @@
     "group/audio_group": {
         "orientation": "horizontal",
         "modules": [
-            "pulseaudio#logo",
-            "pulseaudio"
+            "pulseaudio#logo"
+            // "pulseaudio"
         ]
     },
 
@@ -462,7 +420,6 @@
     "group/vpn_group": {
         "orientation": "horizontal",
         "modules": [
-            "custom/vpn_logo",
             "custom/vpn"
         ]
     },
@@ -472,6 +429,14 @@
         "modules": [
             "custom/network_logo",
             "network"
+        ]
+    },
+
+    "group/tmux_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/tmux_logo",
+            "custom/tmux_sessions"
         ]
     }
 }

@@ -2,12 +2,13 @@
 #  █▀ ▀█▀ ▄▀█ █▀█ █▀ █░█ █ █▀█   █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀
 #  ▄█ ░█░ █▀█ █▀▄ ▄█ █▀█ █ █▀▀   █▄▄ █▄█ █░▀█ █▀░ █ █▄█
 #
+#  catppuccin macchiato
 
 
 [username]
 show_always = true
 style_user = "fg:bold #181926 bg:#8aadf4"
-format = '[](#8aadf4)[󱃋 $user ]($style)[ ](#8aadf4)'
+format = '[](#8aadf4)[󱃋 $user ]($style)[ ](#8aadf4)'
 
 [directory]
 truncation_length = 3
@@ -49,30 +50,17 @@ symbol = "bun "
 [c]
 symbol = " "
 
-[cobol]
-symbol = "cobol "
-
 [conda]
 symbol = "conda "
-
-[crystal]
-symbol = "cr "
 
 [cmake]
 symbol = "cmake "
 
-[daml]
-symbol = "daml "
-
 [dart]
 symbol = " "
 
-[deno]
-symbol = "deno "
-
 [dotnet]
 symbol = "󰪮 "
-
 
 [docker_context]
 symbol = "󰡨 "
@@ -85,9 +73,6 @@ symbol = "elm "
 
 [golang]
 symbol = " "
-
-[guix_shell]
-symbol = "guix "
 
 [hg_branch]
 symbol = "hg "
@@ -109,17 +94,11 @@ symbol = "󰢱 "
 symbol = "󰎙 "
 style = "fg:bold #a6da95"
 
-[memory_usage]
-symbol = "memory "
-
 [meson]
 symbol = "meson "
 
 [nim]
 symbol = "nim "
-
-[nix_shell]
-symbol = "nix "
 
 [ocaml]
 symbol = " "
@@ -128,40 +107,9 @@ symbol = " "
 symbol = "opa "
 
 [os.symbols]
-Alpine = "alp "
-Amazon = "amz "
-Android = "andr "
 Arch = "rch "
-CentOS = "cent "
-Debian = "deb "
-DragonFly = "dfbsd "
-Emscripten = "emsc "
-EndeavourOS = "ndev "
-Fedora = "fed "
-FreeBSD = "fbsd "
-Garuda = "garu "
-Gentoo = "gent "
-HardenedBSD = "hbsd "
-Illumos = "lum "
 Linux = "lnx "
 Macos = "mac "
-Manjaro = "mjo "
-Mariner = "mrn "
-MidnightBSD = "mid "
-Mint = "mint "
-NetBSD = "nbsd "
-NixOS = "nix "
-OpenBSD = "obsd "
-openSUSE = "osuse "
-OracleLinux = "orac "
-Pop = "pop "
-Raspbian = "rasp "
-Redhat = "rhl "
-RedHatEnterprise = "rhel "
-Redox = "redox "
-Solus = "sol "
-SUSE = "suse "
-Ubuntu = "ubnt "
 Unknown = "unk "
 Windows = "win "
 
@@ -174,12 +122,6 @@ symbol = " "
 
 [php]
 symbol = "󰌟 "
-
-[pulumi]
-symbol = "pulumi "
-
-[purescript]
-symbol = "purs "
 
 [python]
 symbol = "󰌠 "
@@ -206,11 +148,3 @@ symbol = "sudo "
 
 [swift]
 symbol = "swift "
-
-[terraform]
-symbol = "󱁢 "
-
-[zig]
-symbol = "󰵁 "
-
-
