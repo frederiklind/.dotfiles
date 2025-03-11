@@ -1,1 +1,1 @@
-/home/flin/.dotfiles/nvim/lua/themes/catppuccin.lua
+/home/flin/.dotfiles/nvim/lua/themes/catppuccin-macchiato.lua

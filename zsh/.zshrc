@@ -37,6 +37,7 @@ alias dot="cd ~/.dotfiles"                        # go to dotfiles directory
 alias cf="cd ~/.config"                           # go to config directory
 alias src="cd ~/Source/repos"                     # go to repos directory
 alias doc="cd ~/Documents"                        # go to documents
+alias dwn="cd ~/Downloads"                        # go to downloads
 
 # ls commands --------------------------------------------------------------------
 

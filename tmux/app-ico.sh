@@ -42,4 +42,3 @@ case $app in
 esac
 
 echo "#[fg=$color,bg=#181926,bold]$icon #[fg=blue,bg=#181926]$title"
-
