@@ -16,7 +16,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 home_symbol = "~"
 read_only = " "
-format = "[($style)$path ](bold #6e738d)[$read_only](#ea6962)"
+format = "[($style)$path ](bold #7c6f64)[$read_only](#ea6962)"
 
 [character]
 success_symbol = "[❯](bold #8bd5ca)"

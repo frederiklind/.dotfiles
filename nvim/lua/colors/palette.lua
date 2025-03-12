@@ -1,0 +1,1 @@
+/home/flin/.dotfiles/nvim/lua/colors/palettes/gruvbox-dark.lua

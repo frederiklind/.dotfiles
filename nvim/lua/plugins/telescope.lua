@@ -5,33 +5,21 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local builtin = require("telescope.builtin")
-			local colors = require("catppuccin.palettes").get_palette()
+			local colors = require("colors.palette")
 			local TelescopeColor = {
-				-- TelescopeMatching = { fg = colors.green },
-				-- TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-				-- TelescopePromptPrefix = { bg = colors.surface0, fg = colors.blue },
-				-- TelescopePromptNormal = { bg = colors.surface0 },
-				-- TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.mantle },
-				-- TelescopePreviewNormal = { bg = colors.mantle },
-				-- TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-				-- TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
-				-- TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-				-- TelescopePromptTitle = { bg = colors.blue, fg = colors.crust },
-				-- TelescopeResultsTitle = { fg = colors.surface0 },
-				-- TelescopePreviewTitle = { bg = colors.green, fg = colors.crust },
 
-				TelescopeMatching = { fg = colors.green, bold = true },
-				TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-				TelescopePromptPrefix = { bg = colors.base, fg = colors.blue },
-				TelescopePromptNormal = { bg = colors.base },
-				TelescopeResultsNormal = { fg = colors.subtext0, bg = colors.crust },
-				TelescopePreviewNormal = { bg = colors.crust },
-				TelescopePromptBorder = { bg = colors.base, fg = colors.base },
-				TelescopeResultsBorder = { bg = colors.crust, fg = colors.crust },
-				TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
-				TelescopePromptTitle = { bg = colors.blue, fg = colors.crust, bold = true },
-				TelescopeResultsTitle = { fg = colors.surface0 },
-				TelescopePreviewTitle = { bg = colors.green, fg = colors.crust, bold = true },
+				TelescopeMatching = { fg = colors.telescope_matching, bold = true },
+				TelescopeSelection = { fg = colors.telescope_selection_fg, bg = colors.telescope_selection_bg, bold = true },
+				TelescopePromptPrefix = { bg = colors.telescope_prompe_pf_bg, fg = colors.telescope_prompt_pf_fg },
+				TelescopePromptNormal = { bg = colors.telescope_prompt_norm_bg },
+				TelescopeResultsNormal = { fg = colors.telescope_results_norm_fg, bg = colors.telescope_results_norm_bg },
+				TelescopePreviewNormal = { bg = colors.telescope_preview_norm_bg },
+				TelescopePromptBorder = { bg = colors.telescope_prompt_border, fg = colors.telescope_prompt_border },
+				TelescopeResultsBorder = { bg = colors.telescope_results_border, fg = colors.telescope_results_border },
+				TelescopePreviewBorder = { bg = colors.telescope_preview_border, fg = colors.telescope_preview_border },
+				TelescopePromptTitle = { bg = colors.telescope_prompt_title_fg, fg = colors.telescope_prompt_title_bg, bold = true },
+				TelescopeResultsTitle = { fg = colors.telescope_results_title },
+				TelescopePreviewTitle = { bg = colors.telescope_preview_title_bg, fg = colors.telescope_preview_title_fg, bold = true },
 			}
 
 			for hl, col in pairs(TelescopeColor) do

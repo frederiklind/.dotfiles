@@ -51,35 +51,23 @@ function set_eza() {
 # ------------------------------------------------------------------
 
 function set_nvim() {
-    local theme="${DOTFILES}/nvim/lua/themes/${1}/theme.lua"
-    local lualine="${DOTFILES}/nvim/lua/themes/${1}/lualine.lua"
-    local alpha="${DOTFILES}/nvim/lua/themes/${1}/alpha.lua"
+    local theme="${DOTFILES}/nvim/lua/themes/${1}.lua"
+    local palette="${DOTFILES}/nvim/lua/colors/palettes/${1}.lua"
     
     # THEME
 
     if [ -f $theme ]; then
-        ln -sf $theme "${DOTFILES}/nvim/lua/plugins/theme.lua"
-        echo "${OK} Symlink created for ${theme}"
+        ln -sf "${theme}" "${DOTFILES}/nvim/lua/plugins/theme.lua"
+        echo -e "${OK} Symlink created for ${theme}"
     else
         echo -e "${ERR} Neovim theme not found. No changes were made."
     fi
 
-    # LUALINE
-
-    if [ -f $lualine ]; then
-        echo "Symlinking ${lualine}"
-        ln -sf $lualine "${DOTFILES}/nvim/lua/plugins/lualine.lua"
+    if [[ -f "${palette}" ]]; then
+        ln -sf "${palette}" "${DOTFILES}/nvim/lua/colors/palette.lua"
+        echo -e "${OK} Symlink created for ${palette}."
     else
-        echo -e "${ERR} Lualine theme not found. No changes were made."
-    fi
-
-    # ALPHA
-    
-    if [ -f $alpha ]; then
-        echo "Symlinking ${alpha}"
-        ln -sf $alpha "${DOTFILES}/nvim/lua/plugins/alpha.lua"
-    else
-        echo -e "${ERR} Alpha theme not found. No changes were made."
+        echo -e "${ERR} No palette found. No changes have were made."
     fi
 }
 
@@ -129,7 +117,7 @@ if [ ! $1 = "" ]; then
     set_alacritty $1
     set_starship $1
     set_eza $1
-    # set_nvim $v
+    set_nvim $1
     set_statusbar $1
 else
     echo -e "No arguments given. Goodbye."

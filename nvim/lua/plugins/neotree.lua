@@ -7,15 +7,18 @@ return {
   },
 
   config = function()
+
+    local colors = require("colors.palette")
+
     vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" })
     vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = "#181926", bg = "None" })
+    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = colors.neotree_win_sep, bg = "None" })
     vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "NONE", bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = "#8aadf4", bg = "#181926" })
-    vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "#181926", bg = "#181926" })
-    vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { fg = "#939ab7", bg = "#181926" })
-    vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", { fg = "#363a4f", bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#a5adcb", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = colors.neotree_tile_bar_fg, bg = colors.neotree_tile_bar_bg })
+    vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = colors.neotree_float_border, bg = colors_neotree_float_border })
+    vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { fg = colors.neotree_float_title_fg, bg = colors.neotree_float_title_bg })
+    vim.api.nvim_set_hl(0, "NeoTreeIndentMarker", { fg = colors.neotree_indent_marker, bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = colors.neotree_file_name, bg = "NONE" })
 
     require("neo-tree").setup({
       window = {

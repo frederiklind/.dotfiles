@@ -19,10 +19,7 @@ return {
             local lspkind = require("lspkind")
             require("luasnip.loaders.from_vscode").lazy_load()
 
-            -- Load Catppuccin Macchiato palette and set up colors
-            local catppuccin = require("catppuccin.palettes").get_palette("macchiato")
-            local crust = catppuccin.crust
-
+            local colors = require("colors.palette")
 
             cmp.setup({
                 snippet = {
@@ -83,11 +80,11 @@ return {
                 },
             })
 
-            vim.api.nvim_set_hl(0, "CmpPmenu", { bg = crust, fg = catppuccin.text })
-            vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = catppuccin.surface1, fg = catppuccin.text })
-            vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = crust, fg = catppuccin.crust })
-            vim.api.nvim_set_hl(0, "CmpDoc", { bg = crust, fg = catppuccin.text })
-            vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = crust, fg = catppuccin.crust })
+            vim.api.nvim_set_hl(0, "CmpPmenu", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
+            vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = colors.cmp_menu_bg_sel, fg = colors.cmp_menu_fg })
+            vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg })
+            vim.api.nvim_set_hl(0, "CmpDoc", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
+            vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg, })
         end,
     },
 }

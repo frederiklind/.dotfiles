@@ -1,1 +1,1 @@
-/home/flin/.dotfiles/nvim/lua/themes/catppuccin-macchiato/theme.lua
+/home/flin/.dotfiles/nvim/lua/themes/gruvbox-dark.lua
