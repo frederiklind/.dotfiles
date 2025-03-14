@@ -5,6 +5,8 @@
 ranger/plugins/
 tmux/plugins
 nvim/lazy-lock.json
+vim/.vim/plugged/
+vim/.vim/backup
 cava/shaders
 spicetify/Backup
 spicetify/CustomApps

@@ -1,6 +1,0 @@
-Packages (61) aalib-1.4rc5-18  capstone-5.0.3-1  cdparanoia-10.2-9  cpio-2.15-2  dtc-1.7.1-1  edk2-ovmf-202311-1  freeglut-3.6.0-1  glu-9.0.3-2  gst-plugins-base-1.24.8-1  gst-plugins-good-1.24.8-1  gtk-vnc-1.3.1-1
-              gtksourceview4-4.8.4-1  imlib2-1.12.3-2  libaio-0.3.113-3  libburn-1.5.6-1  libcaca-0.99.beta20-4  libcacard-2.8.1-1  libdv-1.0.0-11  libgovirt-2:0.3.9-2  libisoburn-1.5.6-1  libisofs-1.5.6-1  libnbd-1.20.0-3
-              libosinfo-1.11.0-3  librest-0.9.1-2  libshout-1:2.4.6-3  libslirp-4.8.0-1  libtraceevent-1:1.8.3-1  libtracefs-1.8.1-1  liburing-2.7-1  libvirt-1:10.7.0-2  libvirt-glib-5.0.0-1  libvirt-python-1:10.7.0-1  libxdp-1.4.3-1
-              ndctl-79-1  nftables-1:1.1.0-2  numactl-2.0.18-1  osinfo-db-20240701-1  phodav-3.0-3  qemu-common-9.1.0-2  qemu-img-9.1.0-2  qemu-system-x86-9.1.0-2  qemu-system-x86-firmware-9.1.0-2  seabios-1.16.3-1  spice-gtk-0.42-4
-              spice-protocol-0.14.4-2  twolame-0.4.0-4  usbredir-0.13.0-1  virt-install-4.1.0-3  virtiofsd-1.11.1-1  vte-common-0.78.0-1  vte3-0.78.0-1  wavpack-5.7.0-1  wolfssl-5.7.2-1  yajl-2.1.0-6  bridge-utils-1.7.1-2
-              dnsmasq-2.90-1  openbsd-netcat-1.226_1-2  qemu-base-9.1.0-2  vde2-2.3.3-5  virt-manager-4.1.0-3  virt-viewer-11.0-3
