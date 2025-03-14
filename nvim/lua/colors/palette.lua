@@ -1,1 +1,1 @@
-/home/flin/.dotfiles/nvim/lua/colors/palettes/gruvbox-dark.lua
+/home/flin/.dotfiles/nvim/lua/colors/palettes/catppuccin-macchiato.lua

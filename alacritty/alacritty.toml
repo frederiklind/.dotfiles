@@ -18,4 +18,4 @@ padding.x = 11
 padding.y = 10
 
 [general]
-import = ["/home/flin/.dotfiles/alacritty/colors/gruvbox-dark.toml"]
+import = ["/home/flin/.dotfiles/alacritty/colors/catppuccin-macchiato.toml"]

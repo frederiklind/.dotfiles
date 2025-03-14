@@ -122,6 +122,8 @@ alias ff="fastfetch"                                # fastfetch alias (sys info)
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg" # update grub
 alias vpn="nordvpn"                                    # nordvpn alias
 
+alias theme="~/.dotfiles/.settings/change-theme.sh" # switch global theme
+
 # archived file extraction function easy mode
 # example usage: ex <file>
 ex() {
