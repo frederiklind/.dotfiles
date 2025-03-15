@@ -1,3 +1,5 @@
+-- ====================== B A S I C  O P T I O N S ======================
+
 vim.cmd("let g:loaded_perl_provider = 0")
 vim.cmd("let g:loaded_ruby_provider = 0")
 vim.cmd("let g:python3_host_prog = '/usr/bin/python3'")
@@ -11,31 +13,42 @@ vim.cmd("set termguicolors")
 
 
 vim.opt.cursorline = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 15
-vim.opt.clipboard = "unnamedplus"
-vim.opt.wrap = false
-vim.o.pumheight = 15
-vim.g.mapleader = " "
-vim.o.showmode = false
-vim.o.showcmd = false
+vim.opt.relativenumber = true       -- relative line numbers
+vim.opt.scrolloff = 15              -- num lines before scrolling
+vim.opt.clipboard = "unnamedplus"   -- enable system clipboard
+vim.opt.wrap = false                -- disable line wrap
+vim.o.pumheight = 15                -- unknown
+vim.g.mapleader = " "               -- set leader key (spc)
+vim.o.showmode = false              -- hide mode  
+vim.o.showcmd = false               -- hide cmd
 
 vim.keymap.set('n', '<S-h>', '^', { noremap = true, silent = true })
 vim.keymap.set('n', '<S-l>', '$', { noremap = true, silent = true })
 
 
+-- ========================= K E Y  M A P P I N G S ========================= 
+
+-- Write changes to file
 vim.keymap.set(
     { "n", "i" },
     "<C-s>",
     ":w<CR>",
-    { noremap = true, silent = false, desc = ":w<CR> - Writes changes to the current active file" }
+    {
+        noremap = true,
+        silent = false,
+        desc = "Writes changes to the current active file"
+    }
 )
+
+-- Quit
 vim.keymap.set(
     "n",
     "<C-q>",
     ":q<CR>",
     { noremap = true, silent = false, desc = ":q<CR> - Quits the current active file" }
 )
+
+-- 
 vim.keymap.set(
     "n",
     "<leader>wq",

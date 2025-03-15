@@ -20,7 +20,7 @@ filetype plugin on
 filetype indent on
 
 " Syntax highlights
-syntax on
+syntax enable
 
 " Line numbers
 " set number            " normal
@@ -54,6 +54,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 call plug#begin('~/.vim/plugged')
 
     Plug 'preservim/nerdtree'
+    Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -66,11 +67,17 @@ let mapleader = " "
 
 inoremap jj <esc>
 
+nnoremap <C-q> :q<CR>
+nnoremap <C-s> :w<CR>
+
 " Nerdtree mappings
 
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 
 " }}}
 
@@ -84,5 +91,20 @@ augroup END
 " }}}
 
 " ================== S T A T U S   L I N E ================== {{{
+
+" Clear status line when vimrc is reloaded.
+set statusline=
+
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
 
 " }}}
