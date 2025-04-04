@@ -10,9 +10,9 @@ return {
 
     local colors = require("colors.palette")
 
-    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = colors.neotree_win_sep })
     vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = colors.neotree_win_sep, bg = "None" })
+    vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { fg = colors.neotree_win_sep, bg = colors.neotree_win_sep })
     vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { fg = "NONE", bg = "NONE" })
     vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = colors.neotree_tile_bar_fg, bg = colors.neotree_tile_bar_bg })
     vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = colors.neotree_float_border, bg = colors_neotree_float_border })

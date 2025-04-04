@@ -41,7 +41,7 @@ alias dwn="cd ~/Downloads"                        # go to downloads
 
 # ls commands --------------------------------------------------------------------
 
-alias ls='ls --color=auto'                        # color ls
+# alias ls='ls --color=auto'                        # color ls
 alias grep='grep --color=auto'                    # color grep
 alias ls='eza -a --icons'                         # list all files with icons
 alias ll='eza -al --icons'                        # list all files with icons 
@@ -99,6 +99,7 @@ alias sesh="tmux new -s"                                    # create new tmux se
 
 alias gpt="~/.dotfiles/scripts/chatgpt.sh"            # open native chatgpt
 alias ugpt="~/.dotfiles/scripts/update-gpt-native.sh" # update native chatgpt
+alias kbl="~/.dotfiles/scripts/keyboard-layout.sh"    # toggle us/dk layout
 
 # network -----------------------------------------------------------------------
 

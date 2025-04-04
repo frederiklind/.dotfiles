@@ -35,6 +35,8 @@ class UI(object):
         
         self.win_tab.attron(curses.color_pair(1))
         self.win.attron(curses.color_pair(1))
+        self.win_tab.box()
+        self.win.box()
         self.win_tab.attroff(curses.color_pair(1))
         self.win.attroff(curses.color_pair(1))
 
@@ -70,9 +72,10 @@ class UI(object):
         self.win.attroff(curses.color_pair(1))
 
     def render_tabs(self) -> None:
-        x = 1
-        for a, b in enumerate(TABS):
-            self.win_tab.addstr(1, x + 2, b)
+        pass
+        # x = 1
+        # for a, b in enumerate(TABS):
+        #     self.win_tab.addstr(1, x + 2, b)
 
 
 
