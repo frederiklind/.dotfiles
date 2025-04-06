@@ -12,11 +12,11 @@ return {
             },
         })
         local colors = {
-            Normal = { bg = "NONE", fg = "#abb2bf" },
-            -- Error = { bg = "#282c34", fg = "#e06c75" },
-            -- Warning = { bg = "#282c34", fg = "#e5c07b" },
-            -- Information = { bg = "#282c34", fg = "#56b6c2" },
-            -- Hint = { bg = "#282c34", fg = "#c678dd" },
+            Normal = { bg = "#181926", fg = "#abb2bf" },
+            Error = { bg = "#181926", fg = "#e06c75" },
+            Warning = { bg = "#181926", fg = "#e5c07b" },
+            Information = { bg = "#181926", fg = "#56b6c2" },
+            Hint = { bg = "#181926", fg = "#c678dd" },
         }
         for name, color in pairs(colors) do
             vim.api.nvim_set_hl(0, "Trouble" .. name, color)

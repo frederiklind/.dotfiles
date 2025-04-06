@@ -54,6 +54,11 @@
         },
         "separate-outputs": true
     },
+    "hyprland/language": {
+        "format": "{}",
+        "format-uk": "UA",
+        "format-en": "US"
+    }, 
 
     "keyboard-state": {
         "numlock": true,

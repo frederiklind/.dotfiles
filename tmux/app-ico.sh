@@ -21,8 +21,7 @@ case $app in
     "htop")
         icon="󰘓"
         color="red"
-
-        title=""
+        title="Htop"
         ;;
     "python"|"python3")
         icon=""
@@ -41,4 +40,4 @@ case $app in
         ;;
 esac
 
-echo "#[fg=$color,bg=#181926,bold]$icon #[fg=blue,bg=#181926]$title"
+echo "#[fg=$color,bg=#363a4f,bold]$icon #[fg=blue,bg=#363a4f]$title #[fg=#363a4f,bg=#181926]"
