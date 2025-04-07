@@ -151,7 +151,7 @@
     // ------------------------------------------------------------------------
 
     "custom/spotify_logo": {
-        "format": " ",
+        "format": "  ",
         "tooltip": false,
         "on-click": "~/.dotfiles/scripts/spotify.sh"
     },

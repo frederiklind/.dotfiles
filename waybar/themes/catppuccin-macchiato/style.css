@@ -26,7 +26,7 @@
 
 * {
     font-family:
-        FiraCode Nerd Font,
+        JetBrainsMono Nerd Font,
         Roboto,
         Helvetica,
         Arial,
@@ -214,10 +214,10 @@ button:hover {
 }
 
 #custom-jellyfin {
-    background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/jellyfin.png');
+    background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/jellyfin-gradient.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 15px;
+    background-size: 16px;
     margin-left: 13px;
     margin-right: 2px;
 }
@@ -401,8 +401,12 @@ tooltip label {
 }
 
 #custom-spotify_logo {
+    background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/spotify.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px;
     font-size: 14px;
-    margin: 0px -1px 0px 12px;
+    margin: 0px 3px 0px 12px;
     color: @catppuccin-blue;
 }
 

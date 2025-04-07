@@ -90,7 +90,7 @@ return {
             },
             hide_root_node = false,
             retain_hidden_root_indent = true,
-            add_blank_line_at_top = true,
+            -- add_blank_line_at_top = true,
         })
     end,
 }
