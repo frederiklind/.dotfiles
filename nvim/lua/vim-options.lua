@@ -154,12 +154,33 @@ vim.keymap.set(
     ":bnext<CR>",
     { noremap = true, silent = true, desc = ":bnext<CR> - Navigate to next buffer." }
 )
-vim.keymap.set(
-    "n",
-    "<leader>bd",
-    ":bd<CR>",
-    { noremap = true, silent = true, desc = ":bd<CR> - Close current buffer." }
-)
+-- vim.keymap.set(
+--     "n",
+--     "<leader>bd",
+--     ":bd<CR>",
+--     { noremap = true, silent = true, desc = ":bd<CR> - Close current buffer." }
+-- )
+
+vim.keymap.set("n", "<leader>bd", function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  -- Get list of listed buffers
+  local buffers = vim.tbl_filter(function(b)
+    return vim.api.nvim_buf_is_loaded(b) and vim.bo[b].buflisted
+  end, vim.api.nvim_list_bufs())
+
+  -- Find the next buffer (not neo-tree and not current one)
+  for _, b in ipairs(buffers) do
+    local ft = vim.bo[b].filetype
+    if b ~= bufnr and ft ~= "neo-tree" then
+      vim.cmd("buffer " .. b)
+      vim.cmd("bdelete " .. bufnr)
+      return
+    end
+  end
+
+  -- Fallback: just delete if no suitable buffer found
+  vim.cmd("bdelete")
+end, { desc = "Delete buffer and show next" })
 vim.keymap.set("n", "<leader>bp", ":bp<CR>", { noremap = true, silent = true, desc = ":bp<CR> - Previous buffer." })
 
 -- telescope

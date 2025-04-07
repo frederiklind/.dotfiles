@@ -4,7 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d      
 
-bspc config border_width         1
+bspc config border_width         2
 bspc config window_gap          20
 bspc config top_padding         40
 bspc config bottom_padding      5
@@ -25,7 +25,7 @@ xrandr --output DP-2 --mode 5120x2160
 # autostart applications
 sxhkd &
 picom --config ~/.config/picom/picom.conf &
-feh --bg-fill ~/Pictures/wallpapers/spaceman_uw.png &
+feh --bg-fill ~/Pictures/wallpapers/ultrawide/catppuccin-macchiato/spaceman_uw.png &
 dunst &
 polybar &
 
