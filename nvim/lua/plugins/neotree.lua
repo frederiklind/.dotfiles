@@ -41,10 +41,10 @@ return {
                     indent_marker = "│",
                     last_indent_marker = "╰",
                     indent_size = 2,
-                    with_expanders = true, -- ← this is the correct key
-                    expander_collapsed = "", -- Chevron right
-                    expander_expanded = "",  -- Chevron down
-                    expander_highlight = "NeoTreeExpander",
+                    -- with_expanders = true, -- ← this is the correct key
+                    -- expander_collapsed = "", -- Chevron right
+                    -- expander_expanded = "",  -- Chevron down
+                    -- expander_highlight = "NeoTreeExpander",
                 },
                 git_status = {
                     symbols = {

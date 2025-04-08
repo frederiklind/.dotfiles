@@ -269,6 +269,12 @@
     },
 
 
+    // "custom/firefox": {
+    //     "format": "  ",
+    //     "on-click": "~/.dotfiles/scripts/firefox.sh",
+    //     "tooltip": false
+    // },
+
     "custom/firefox": {
         "format": "",
         "on-click": "~/.dotfiles/scripts/firefox.sh",
@@ -336,7 +342,7 @@
         "modules": [
             "custom/firefox",
             "custom/discord",
-            "custom/spotify_logo",
+            "custom/spotify",
             "custom/jellyfin",
             "custom/github",
             "custom/gpt",

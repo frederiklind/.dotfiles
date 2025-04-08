@@ -36,7 +36,7 @@ case $app in
     *)
         icon=""
         color="#cba6f7"
-        title=Tmux
+        title=TMUX
         ;;
 esac
 
