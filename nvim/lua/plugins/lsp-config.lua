@@ -35,10 +35,10 @@ return {
             local lspconfig = require("lspconfig")
 
             local signs = {
-                Error = " ",
-                Warn = " ",
-                Hint = " ",
-                Info = " ",
+                Error = " ",
+                Warn = " ",
+                Hint = " ",
+                Info = " ",
             }
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
@@ -88,6 +88,14 @@ return {
             })
             lspconfig.ts_ls.setup({
                 capabilities = capabilities,
+                settings = {
+                    typescript = {
+                        format = { enable = false },
+                    },
+                    javascript = {
+                        format = { enable = false },
+                    },
+                },
             })
             lspconfig.jsonls.setup({
                 capabilities = capabilities,

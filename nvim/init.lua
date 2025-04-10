@@ -17,4 +17,23 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#181926', bg = 'NONE' })
+vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#181926" })
+
+-- set custom webdevicon colors
+vim.cmd([[highlight DevIconTsx guifg=#3178c6]])
+
+require'nvim-web-devicons'.set_icon {
+  ts = {
+    icon = "",  -- New icon for TS files
+    name = "Ts",
+    color = "#3178c6"
+  },
+  js = {
+    icon = "",  -- New icon for JS files
+    name = "Js",
+    color = "#f5de19"
+  }
+}
+
+
 vim.opt.fillchars = { eob = " " }

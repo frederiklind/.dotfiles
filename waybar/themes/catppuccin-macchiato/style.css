@@ -4,9 +4,9 @@
  *
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.6);
+@define-color waybar-background rgba(24, 25, 38, 0.5);
 /* @define-color module-background rgba(24, 25, 38, 1.0); */
-@define-color module-background rgba(30, 32, 48, 1.0);
+@define-color module-background #181926;
 @define-color module-border #313244;
 
 @define-color catppuccin-bck #1e1e2e;
@@ -67,7 +67,7 @@ button:hover {
 }
 
 /* ------------------------ workspaces ------------------------ */
-#workspaces {
+#workspaces{
     margin: 3px 0px 3px 2.5px;
     border: 0px;
     font-size: 1px;
@@ -195,6 +195,21 @@ button:hover {
     padding-left: 5px;
 }
 
+#custom-kb_logo {
+    margin-left: 7px;
+    font-size: 16px;
+    color: @catppuccin-sapphire;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+
+#language {
+    color: @catppuccin-surface_0;
+    font-weight: bolder;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
 #custom-discord {
     margin-left: 2px;
     font-size: 14px;
@@ -246,7 +261,7 @@ button:hover {
 
 #cpu {
     font-weight: bolder;
-    color: @catppuccin-blue;
+    color: @catppuccin-surface_0;
     margin: 0px 10px 0px 5px;
 }
 
@@ -261,7 +276,7 @@ button:hover {
 
 #memory {
     font-weight: bolder;
-    color: @catppuccin-blue;
+    color: @catppuccin-surface_0;
     margin: 0px 5px 0px 8px;
 }
 
@@ -281,12 +296,12 @@ button:hover {
 }
 
 #clock {
-    color: @catppuccin-blue;
+    color: @catppuccin-surface_0;
     margin: 3px 0px 3px 0px;
     font-weight: bolder;
 }
 #custom-date {
-    color: @catppuccin-blue;
+    color: @catppuccin-surface_0;
     font-weight: bolder;
 }
 
@@ -327,7 +342,7 @@ label:focus {
 
 #temperature {
     margin-left: 0px;
-    color: #8aadf4;
+    color: @catppuccin-surface_0;
     font-weight: bolder;
 }
 
@@ -450,6 +465,13 @@ tooltip label {
     padding: 0px 5px 0px 0px;
 }
 
+#kb_group {
+    background-color: @module-background;
+    margin: 3px 2.5px 3px 0px;
+    border-radius: 7px;
+    padding: 0px 8px 0px 0px;
+}
+
 #vpn_group {
     background-color: @module-background;
     margin: 3px 1px 3px 0px;
@@ -461,7 +483,7 @@ tooltip label {
     margin: 3px 0px 3px 0px;
     font-weight: bolder;
     padding: 0px 5px;
-    color: @catppuccin-blue;
+    color: @catppuccin-surface_0;
     margin-right: 2.5px;
     border-radius: 7px;
 }

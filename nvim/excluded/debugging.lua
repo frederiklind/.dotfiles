@@ -6,7 +6,7 @@ return {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
 			"mfussenegger/nvim-dap-python",
-			"leoluz/nvim-dap-go",
+			-- "leoluz/nvim-dap-go",
 		},
 		config = function()
 			local dap = require("dap")
@@ -16,26 +16,26 @@ return {
 
 			-- ------------------  dotnet debugging (csharp, fsharp) ---------------------
 
-			dap.adapters.coreclr = {
-				type = "executable",
-				command = "/usr/bin/netcoredbg",
-				args = { "--interpreter=vscode" },
-			}
-
-			dap.configurations.cs = {
-				{
-					type = "coreclr",
-					name = "launch - netcoredbg",
-					request = "launch",
-					program = function()
-						return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
-					end,
-				},
-			}
+			-- dap.adapters.coreclr = {
+			-- 	type = "executable",
+			-- 	command = "/usr/bin/netcoredbg",
+			-- 	args = { "--interpreter=vscode" },
+			-- }
+			--
+			-- dap.configurations.cs = {
+			-- 	{
+			-- 		type = "coreclr",
+			-- 		name = "launch - netcoredbg",
+			-- 		request = "launch",
+			-- 		program = function()
+			-- 			return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+			-- 		end,
+			-- 	},
+			-- }
 
 			-- -------------------- Debug for go ----------------------------
 
-			require("dap-go").setup()
+			-- require("dap-go").setup()
 
       -- -------------------- Debug for python -------------------------
 

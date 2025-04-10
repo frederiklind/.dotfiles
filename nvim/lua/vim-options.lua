@@ -262,9 +262,9 @@ vim.diagnostic.config({
     signs = {
         --support diagnostic severity / diagnostic type name
         text = {
-            [1] = "",
-            ["WARN"] = "",
-            ["HINT"] = "",
+            [1] = "",
+            ["WARN"] = "",
+            ["HINT"] = "",
         },
     },
 })

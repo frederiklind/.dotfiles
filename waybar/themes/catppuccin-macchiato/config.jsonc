@@ -23,8 +23,8 @@
 
     "modules-right": [
         "group/systemgroup",
+        "group/kb_group",
         "group/audio_group",
-        "group/vpn_group",
         "network",
         "group/battery_group"
     ],
@@ -56,8 +56,8 @@
     },
     "hyprland/language": {
         "format": "{}",
-        "format-uk": "UA",
-        "format-en": "US"
+        "format-en": "US",
+        "format-dk": "DK"
     }, 
 
     "keyboard-state": {
@@ -145,6 +145,10 @@
 
     "custom/tmux_logo": {
         "format": "",
+        "tooltip": false
+    },
+    "custom/kb_logo": {
+        "format": " ",
         "tooltip": false
     },
 
@@ -432,6 +436,14 @@
         "orientation": "horizontal",
         "modules": [
             "custom/vpn"
+        ]
+    },
+
+    "group/kb_group": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/kb_logo",
+            "hyprland/language"
         ]
     },
 
