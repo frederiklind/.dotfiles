@@ -17,6 +17,8 @@ return {
             Warning = { bg = "#181926", fg = "#e5c07b" },
             Information = { bg = "#181926", fg = "#56b6c2" },
             Hint = { bg = "#181926", fg = "#c678dd" },
+            NormalNC = { bg = "#181926" },
+            TroubleCount = { bg = "#c6a0f6", fg = "#181926" }
         }
         for name, color in pairs(colors) do
             vim.api.nvim_set_hl(0, "Trouble" .. name, color)

@@ -94,7 +94,7 @@ alias c="clear"                                   # clear terminal (primarily fo
 alias tmux="tmux -2"                                        # tmux alias - use 256 colors
 alias ts="~/.dotfiles/scripts/tmux-session.sh"              # tmux session (takes name param)
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
-alias tma="tmux attach"                                     # attach to tmux session   
+alias ta="tmux attach"                                     # attach to tmux session   
 alias sesh="tmux new -s"                                    # create new tmux session
 
 alias gpt="~/.dotfiles/scripts/chatgpt.sh"            # open native chatgpt

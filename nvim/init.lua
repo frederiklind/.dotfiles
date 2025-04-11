@@ -21,6 +21,7 @@ vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#181926" })
 
 -- set custom webdevicon colors
 vim.cmd([[highlight DevIconTsx guifg=#3178c6]])
+vim.cmd([[highlight DevIconJson guifg=#eed49f]])
 
 require'nvim-web-devicons'.set_icon {
   ts = {
@@ -32,7 +33,7 @@ require'nvim-web-devicons'.set_icon {
     icon = "",  -- New icon for JS files
     name = "Js",
     color = "#f5de19"
-  }
+  },
 }
 
 

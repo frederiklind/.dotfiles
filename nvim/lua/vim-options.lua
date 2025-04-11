@@ -207,7 +207,7 @@ vim.keymap.set(
 vim.keymap.set(
     "n",
     "<C-n>",
-    ":Neotree toggle<CR>",
+    ":Neotree toggle<CR>:wincmd =<CR>",
     { noremap = true, silent = true, desc = ":Neotree toggle<CR> - Toggles visibility of neo-tree." }
 )
 vim.keymap.set(
