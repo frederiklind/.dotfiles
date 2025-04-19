@@ -121,7 +121,7 @@ button:hover {
 #custom-apps {
     font-size: 16px;
     margin: 3px 0px 3px 10px;
-    color: @catppuccin-blue;
+    color: @catppuccin-sapphire;
     padding: 0px 10px 0px 6px;
     border-radius: 7px;
     background-color: @module-background;
@@ -372,7 +372,7 @@ label:focus {
 #pulseaudio.logo {
     font-size: 13px;
     margin: 0px 0px 0px -2px;
-    color: @catppuccin-teal;
+    color: @catppuccin-blue;
 }
 
 /* #pulseaudio.muted {  */

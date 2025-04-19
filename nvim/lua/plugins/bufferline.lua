@@ -11,7 +11,7 @@ return {
         vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = "#cad3f5", bg = "#1e2030", bold = true, italic = true })
         -- vim.api.nvim_set_hl(0, "BufferLineBackground", { fg = "#6e738d", bg = "#1e2030" })
         vim.api.nvim_set_hl(0, "BufferLineIndicatorVisible", { fg = "#1e2030", bg = "#1e2030" })
-        vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { fg = "#1e2030", bg = "#1e2030" })
+        vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { fg = "#8aadf4", bg = "#1e2030" })
         vim.api.nvim_set_hl(0, "BufferLineSidebarOffset", { fg = "#494d64", bg = "#181926", bold = true })
 
         require("bufferline").setup {
