@@ -12,12 +12,14 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 export TERM=xterm-256color
-
+export PATH="$HOME/.local/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+
+export SCREENSHOT_COMMAND="grim full $HOME/Pictures/screenshot_$(date +\%Y-\%m-\%d_\%H-\%M-\%S).png"
 
 # export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init --path)"
@@ -153,6 +155,9 @@ ex() {
 alias hypr="~/.dotfiles/hypr/hypr-cli.sh"
 
 # -------------------------------------------------------------------------------
+
+# exam alias!!! remove later
+alias wiseflow-device-manager="${HOME}/Source/wiseflow/usr/bin/wiseflow-device-monitor"
 
 fastfetch                     # run fastfetch
 echo

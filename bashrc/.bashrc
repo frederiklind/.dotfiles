@@ -11,7 +11,9 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export LUA_PATH="/usr/share/lua/5.4/?.lua;/usr/share/lua/5.4/?/init.lua;$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="/usr/lib/lua/5.4/?.so;$HOME/.luarocks/lib/lua/5.4/?.so;;"
+export PATH="$HOME/.local/bin:$PATH"
 
+export SCREENSHOT_COMMAND="grim full $HOME/Pictures/screenshot_$(date +\%Y-\%m-\%d_\%H-\%M-\%S).png"
 export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
@@ -116,3 +118,5 @@ echo
 fastfetch
 
 eval "$(starship init bash)"
+
+export GDK_BACKEND=wayland
