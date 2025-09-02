@@ -4,9 +4,9 @@
  *
  */
 
-@define-color waybar-background rgba(24, 25, 38, 0.7);
+@define-color waybar-background rgba(24, 25, 38, 0.5);
 /* @define-color module-background rgba(24, 25, 38, 1.0); */
-@define-color module-background #1e2030;
+@define-color module-background #181926;
 @define-color module-border #313244;
 
 @define-color catppuccin-bck #1e1e2e;
@@ -31,7 +31,7 @@
         Helvetica,
         Arial,
         sans-serif;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 window#waybar {
@@ -40,7 +40,7 @@ window#waybar {
     transition-property: background-color;
     transition-duration: 0.5s;
     opacity: 1;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 window#waybar.hidden {
@@ -67,16 +67,13 @@ button:hover {
 }
 
 /* ------------------------ workspaces ------------------------ */
-
 #workspaces{
-    margin-left: -5px;
+    margin: 2px 0px 3px 2.5px;
     border: 0px;
     font-size: 1px;
     background-color: @module-background;
-    padding: 0px 15px 0px 15px;
-    border-radius: 0px 0px 0px 0px;
-    border-bottom: 2px solid @module-background;
-    border-right: 2px solid @module-background;
+    padding: 0px 5px 0px 5px;
+    border-radius: 7px;
 }
 
 #workspaces button {
@@ -107,56 +104,36 @@ button:hover {
 }
 
 #quicklinks {
-    padding-right: 8px;
+    margin: 2px 0px 3px 0px;
+    border-radius: 7px;
+    padding: 2px 0px;
+    padding-right: 5px;
     background-color: @module-background;
+    /* border: 1px solid @catppuccin-blue; */
 }
 
-#custom-slant-l,
-#custom-slant-lb,
-#custom-slant-rb,
-#custom-slant-r {
-    color: @module-background;
-    font-size: 20px;
-    margin-top: -1px;
-}
-
-/* #custom-slant-lb { */
-/*     margin-right: -0px; */
-/* } */
-/**/
-#custom-weather {
-    padding: 0px 10px;
-    background-color: @module-background;
-    color: @catppuccin-blue;
-}
 #systemgroup {
     background-color: @module-background;
-    margin: 0px 0px 0px 0px;
+    margin: 2px 2.5px 3px 0px;
+    border-radius: 7px;
     padding: 0px 3px 0px 5px;
 }
 
 #custom-apps {
-
     font-size: 16px;
-    margin: 0px;
+    margin: 2px 0px 3px 10px;
     color: @catppuccin-sapphire;
-    padding: 0px 30px 5px 25px;
-    border-radius: 0px 0px 0px 0px;
-    /* border-bottom: 2px solid @catppuccin-blue; */
-    /* border-left: 2px solid @catppuccin-blue; */
+    padding: 0px 10px 0px 6px;
+    border-radius: 7px;
     background-color: @module-background;
 }
 
 #custom-firefox,
 #custom-github,
-#custom-vscode {
-    font-size: 16px;
-    margin: 0px 5px 0px 5px;
-    color: @catppuccin-blue;
-}
+#custom-vscode,
 #custom-spotify {
     font-size: 16px;
-    margin: 0px 3px 0px 5px;
+    margin: 0px 5px 0px 5px;
     color: @catppuccin-blue;
 }
 
@@ -174,18 +151,16 @@ button:hover {
 
 #date_group {
     background-color: @module-background;
-    margin: 0px;
-    /* border-radius: 7px 7px; */
+    margin: 2px 2.5px 3px 0px;
+    border-radius: 7px 7px;
     padding: 0px 10px 0px 10px;
 }
 
 #clock_group {
     background-color: @module-background;
-    margin: 0px;
-    border-radius: 0px 0px 0px 0px;
-    padding: 0px 10px 0px 5px;
-    /* border-right: 2px solid @catppuccin-blue; */
-    /* border-bottom: 2px solid @catppuccin-blue; */
+    margin: 2px 1px 3px 0px;
+    border-radius: 7px;
+    padding: 0px 3px 0px 0px;
 }
 
 #custom-firefox {
@@ -222,7 +197,7 @@ button:hover {
 }
 
 #custom-kb_logo {
-    margin-left: 5px;
+    margin-left: 7px;
     font-size: 16px;
     color: @catppuccin-sapphire;
     border-radius: 7px;
@@ -232,6 +207,7 @@ button:hover {
 #language {
     color: @catppuccin-surface_0;
     font-weight: bolder;
+    font-size: 11px;
     margin-left: 5px;
 }
 
@@ -291,10 +267,10 @@ button:hover {
 }
 
 #cpu.bars {
-    color: @catppuccin-mauve;
+    color: @catppuccin-teal;
     margin-right: 5px;
     margin: 3px 10px 3px 0px;
-    /* background-color: @module-background; */
+    background-color: @module-background;
     border-radius: 7px;
     padding: 0px 10px;
 }
@@ -320,20 +296,20 @@ button:hover {
     margin-right: 15px;
 }
 
-/* .modules-left { */
-/*     background-color: @module-background; */
-/*     border-radius: 0px 10px 10px 0px; */
-/*     padding-right: 5px; */
-/* } */
-/* .modules-center { */
-/*     background-color: @module-background; */
-/*     border-radius: 0px 0px 10px 10px; */
-/* } */
-/* .modules-right { */
-/*     background-color: @module-background; */
-/*     border-radius: 10px 0px 0px 10px; */
-/*     padding-left: 5px; */
-/* } */
+.modules-left {
+    background-color: @module-background;
+    border-radius: 0px 10px 10px 0px;
+    padding-right: 5px;
+}
+.modules-center {
+    background-color: @module-background;
+    border-radius: 0px 0px 10px 10px;
+}
+.modules-right {
+    background-color: @module-background;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 5px;
+}
 
 #clock {
     color: @catppuccin-surface_0;
@@ -387,12 +363,12 @@ label:focus {
 }
 
 #network {
-    margin: 0px;
+    margin: 2px 2.5px 3px 0px;
     color: @catppuccin-blue;
     background-color: @module-background;
     font-size: 14px;
-    /* border-bottom: 2px solid @catppuccin-blue; */
-    padding: 0px 12px 0px 12px;
+    padding: 0px 12px 0px 8px;
+    border-radius: 7px;
 }
 
 #custom-vpn {
@@ -428,7 +404,6 @@ tooltip {
     background-color: @module-background;
     border: 1px solid @catppuccin-blue;
     padding: 25px;
-    font-size: 20px;
 }
 
 tooltip label {
@@ -465,9 +440,9 @@ tooltip label {
     background-image: url('/home/flin/.dotfiles/waybar/assets/catppuccin-macchiato/spotify.png');
     background-position: center;
     background-repeat: no-repeat;
-background-size: 16px;
+    background-size: 16px;
     font-size: 14px;
-    margin: 0px 0px 0px 12px;
+    margin: 0px 3px 0px 12px;
     color: @catppuccin-blue;
 }
 
@@ -487,7 +462,7 @@ background-size: 16px;
 #custom-temperature_logo {
     font-size: 11px;
     margin: 0px 0px 0px 8px;
-    color: @catppuccin-peach;
+    color: @catppuccin-blue;
 }
 
 #cpu_group,
@@ -501,17 +476,16 @@ background-size: 16px;
 
 #audio_group {
     background-color: @module-background;
-    margin: 0px;
-    /* border-bottom: 2px solid @catppuccin-blue; */
+    margin: 2px 2.5px 3px 0px;
+    border-radius: 7px;
     padding: 0px 5px 0px 0px;
 }
 
 #kb_group {
     background-color: @module-background;
-    margin: 0px;
-    /* border-bottom: 2px solid @catppuccin-blue; */
-    /* border-left: 2px solid @catppuccin-blue; */
-    padding: 0px 10px 0px 5px;
+    margin: 2px 2.5px 3px 0px;
+    border-radius: 7px;
+    padding: 0px 8px 0px 0px;
 }
 
 #vpn_group {
@@ -539,9 +513,9 @@ background-size: 16px;
 
 #battery_group {
     background-color: @module-background;
-    margin: 0px;
+    margin: 2px 8px 3px 0px;
+    border-radius: 7px;
     padding: 0px 5px 0px 3px;
-    /* border-bottom: 2px solid @catppuccin-blue; */
 }
 
 #battery.critical:not(.charging) {

@@ -7,35 +7,26 @@
 {
     "layer": "top",     
     "position": "top",  
-    "spacing": 0,      
+    "spacing": 2,      
     "margin": "0 0 0 0",
 
     "modules-left": [
         "custom/apps",       
-        "hyprland/workspaces",
-        "custom/slant-r",
-        "custom/slant-rb",
         "group/date_group",
-        "custom/weather",
-        "custom/slant-r"
+        "group/clock_group",
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
-        "custom/slant-l",
-        "group/quicklinks",
-        "custom/slant-r"
+        "group/quicklinks"
     ],
 
     "modules-right": [
-        "custom/slant-l",
         "group/systemgroup",
-        "custom/slant-lb",
-        "custom/slant-l",
         "group/kb_group",
         "group/audio_group",
         "network",
-        "group/battery_group",
-        "group/clock_group"
+        "group/battery_group"
     ],
 
     "hyprland/workspaces" : {
@@ -49,7 +40,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-            "*": 6
+            "*": 5
         } 
     },
 
@@ -143,7 +134,7 @@
     },
 
     "custom/clock_logo": {
-        "format": "󰥔",
+        "format": "",
         "tooltip": false
     },
 
@@ -318,13 +309,6 @@
         "tooltip": false
     },
 
-    "custom/weather": {
-        "exec": "~/.dotfiles/scripts/waybar/weather.sh",
-        "interval": 600, // refresh every 10 minutes
-        "return-type": "json",
-        "tooltip": true
-    },
-
     "custom/vscode": {
         "format": "󰨞",
         "on-click": "~/.dotfiles/scripts/vscode.sh",
@@ -344,31 +328,7 @@
     },
 
     "custom/apps": {
-        "format": "󱓞",
-        "on-click": "~/.dotfiles/scripts/wofi.sh",
-        "tooltip": false    
-    }, 
-
-    "custom/slant-l": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/wofi.sh",
-        "tooltip": false    
-    }, 
-
-    "custom/slant-lb": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/wofi.sh",
-        "tooltip": false    
-    }, 
-
-    "custom/slant-r": {
-        "format": "",
-        "on-click": "~/.dotfiles/scripts/wofi.sh",
-        "tooltip": false    
-    },
-
-    "custom/slant-rb": {
-        "format": "",
+        "format": "󰣇",
         "on-click": "~/.dotfiles/scripts/wofi.sh",
         "tooltip": false    
     }, 

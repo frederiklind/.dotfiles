@@ -7,15 +7,15 @@
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 11
 normal.family = "JetBrainsMono Nerd Font"
 bold.family = "JetBrainsMono Nerd Font"
 italic.family = "JetBrainsMono Nerd Font"
 
 [window]
-opacity = 1
-padding.x = 6
-padding.y = 3
+opacity   = 1.0
+padding.x = 7
+padding.y = 2
 
 [general]
 import = ["/home/flin/.dotfiles/alacritty/colors/catppuccin-macchiato.toml"]

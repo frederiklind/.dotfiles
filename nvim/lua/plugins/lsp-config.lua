@@ -58,6 +58,17 @@ return {
             })
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,
+                settings = {
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    checkOnSave = {
+                        command = "clippy",
+                    },
+                    inlayHints = {
+                        enable = true,
+                    }
+                }
             })
             lspconfig.csharp_ls.setup({
                 capabilities = capabilities,

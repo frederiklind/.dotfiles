@@ -19,7 +19,7 @@ local colors = {
     cmp_menu_bg_sel = "#494d64",
 
     neotree_normal = "#181926",
-    neotree_win_sep = "#1e2030",
+    neotree_win_sep = "#24273a",
     neotree_title_bar_fg = "#8aadf4",
     neotree_title_bar_bg = "#181926",
     neotree_float_border = "#181926",
@@ -32,7 +32,7 @@ local colors = {
     telescope_selection_fg = "#cad3f5",
     telescope_selection_bg = "#363a4f",
     telescope_prompt_pf_fg = "#8aadf4", --blue
-    telescope_prompt_pf_bg = "#24273a",
+    telescope_prompt_pf_bg = "#181926",
     telescope_prompt_norm_bg = "#24273a",
     telescope_results_norm_fg = "#a5adcb",
     telescope_results_norm_bg = "#181926",

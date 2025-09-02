@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CRITICAL_LEVEL=20
+CRITICAL_LEVEL=57
 FLAG_FILE="$XDG_RUNTIME_DIR/low_battery_notified"
 BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
 BATTERY_STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
-ICON="${HOME}/.dotfiles/dunst/icons/warning.png"
+ICON="${HOME}/.dotfiles/.assets/dunst/morty.png"
 
 if [ "$BATTERY_LEVEL" -le "$CRITICAL_LEVEL" ] && [ "$BATTERY_STATUS" = "Discharging" ]; then
     if [ ! -f "$FLAG_FILE" ]; then
