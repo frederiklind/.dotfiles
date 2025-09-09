@@ -3,7 +3,7 @@
   "logo": {
     "color": {
       "1": "blue",
-      // "2": "magenta",
+      "2": "magenta"
     },
     "type": "small",
     "padding": {

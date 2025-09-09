@@ -45,7 +45,9 @@ return {
 						"-g",
 						"!*.ico",
             "-g",
-            "!*.mp3"
+            "!*.mp3",
+            "-g",
+            "!target",  -- Rust build dir
 					},
 				})
 			end, {})

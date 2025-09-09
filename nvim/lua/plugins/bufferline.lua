@@ -89,7 +89,7 @@ return {
                 close_icon = "",
                 left_trunc_marker = "",
                 right_trunc_marker = "",
-                separator_style = "thick", -- "slant" | "thick" | "thin" | { 'left', 'right' }
+                separator_style = "thin", -- "slant" | "thick" | "thin" | { 'left', 'right' }
                 show_buffer_close_icons = false,
                 show_close_icon = false,
                 diagnostics = "nvim_lsp",
