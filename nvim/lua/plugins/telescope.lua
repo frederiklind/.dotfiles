@@ -7,18 +7,67 @@ return {
 			local colors = require("colors.palette")
 			local TelescopeColor = {
 
-				TelescopeMatching = { fg = colors.telescope_matching, bold = true },
-				TelescopeSelection = { fg = colors.telescope_selection_fg, bg = colors.telescope_selection_bg, bold = true },
-				TelescopePromptPrefix = { bg = colors.telescope_prompe_pf_bg, fg = colors.telescope_prompt_pf_fg },
-				TelescopePromptNormal = { bg = colors.telescope_prompt_norm_bg },
-				TelescopeResultsNormal = { fg = colors.telescope_results_norm_fg, bg = colors.telescope_results_norm_bg },
-				TelescopePreviewNormal = { bg = colors.telescope_preview_norm_bg },
-				TelescopePromptBorder = { bg = colors.telescope_prompt_border, fg = colors.telescope_prompt_border },
-				TelescopeResultsBorder = { bg = colors.telescope_results_border, fg = colors.telescope_results_border },
-				TelescopePreviewBorder = { bg = colors.telescope_preview_border, fg = colors.telescope_preview_border },
-				TelescopePromptTitle = { bg = colors.telescope_prompt_title_fg, fg = colors.telescope_prompt_title_bg, bold = true },
-				TelescopeResultsTitle = { fg = colors.telescope_results_title },
-				TelescopePreviewTitle = { bg = colors.telescope_preview_title_bg, fg = colors.telescope_preview_title_fg, bold = true },
+        -- match results highlight
+				TelescopeMatching = {
+          fg = colors.telescope_matching,
+          bold = true,
+        },
+
+				TelescopeSelection = {
+          fg = colors.telescope_selection_fg,
+          bg = colors.telescope_selection_bg,
+          bold = true,
+        },
+
+        TelescopePromptPrefix = {
+          bg = colors.telescope_prompe_pf_bg,
+          fg = colors.telescope_prompt_pf_fg,
+        },
+
+        TelescopePromptNormal = {
+          bg = colors.telescope_prompt_norm_bg,
+        },
+
+        TelescopeResultsNormal = {
+          fg = colors.telescope_results_norm_fg,
+          bg = colors.telescope_results_norm_bg,
+        },
+
+        TelescopePreviewNormal = {
+          bg = colors.telescope_preview_norm_bg,
+        },
+
+				TelescopePromptBorder = {
+          bg = colors.telescope_prompt_border,
+          fg = colors.telescope_prompt_border,
+        },
+
+        TelescopeResultsBorder = {
+          bg = colors.telescope_results_border,
+          fg = colors.telescope_results_border,
+        },
+
+        TelescopePreviewBorder = {
+          bg = colors.telescope_preview_border,
+          fg = colors.telescope_preview_border,
+        },
+
+        TelescopePromptTitle = {
+          bg = colors.telescope_prompt_title_fg,
+          fg = colors.telescope_prompt_title_bg,
+          bold = true,
+        },
+
+        TelescopeResultsTitle = {
+          fg = colors.telescope_results_title,
+          bold = true,
+        },
+
+				TelescopePreviewTitle = {
+          bg = colors.telescope_preview_title_bg,
+          fg = colors.telescope_preview_title_fg,
+          bold = true,
+        },
 			}
 
 			for hl, col in pairs(TelescopeColor) do

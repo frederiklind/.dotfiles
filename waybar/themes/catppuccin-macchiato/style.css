@@ -487,7 +487,7 @@ background-size: 16px;
 #custom-temperature_logo {
     font-size: 11px;
     margin: 0px 0px 0px 8px;
-    color: @catppuccin-peach;
+    color: @catppuccin-blue;
 }
 
 #cpu_group,

@@ -5,6 +5,15 @@ import os
 import sys
 import subprocess
 
+BANNER: [str] = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+]
+
 
 def set_window_title(title: str):
     sys.stdout.write(f"\33]0;{title}\a")
@@ -28,7 +37,7 @@ def execute_cmd(idx: int) -> None:
 
 
 def print_figlet(stdscr, max_y: int, max_x: int, title: [str]) -> None:
-    start_y = max_y // 2 - 14
+    start_y = max_y // 2 - 10
     start_x = max_x // 2 - len(title[0]) // 2
     for i, ln in enumerate(title):
         stdscr.addstr(start_y + i, start_x, ln, curses.color_pair(1) | curses.A_BOLD)
@@ -36,7 +45,7 @@ def print_figlet(stdscr, max_y: int, max_x: int, title: [str]) -> None:
 
 
 def print_menu(stdscr, idx: int, opts: [str], max_y: int, max_x: int):
-    start_y = max_y // 2 - len(opts) // 2 - 3
+    start_y = max_y // 2 - len(opts) // 2 + 2
     menu_width = 44
     start_x = max_x // 2 - menu_width // 2
 
@@ -66,7 +75,7 @@ def print_menu(stdscr, idx: int, opts: [str], max_y: int, max_x: int):
 
 
 def print_sub_menu(stdscr, idx: int, max_y: int, max_x: int, is_sub: bool, title: str = "Are you sure?"):
-    start_y = max_y // 2 + 2
+    start_y = max_y // 2 + 7
     start_x = max_x // 2 - 22
 
     # Draw a box around the menu options with custom color
@@ -117,6 +126,7 @@ def main(stdscr):
         "    Lock",
         " 󰜺   Cancel"
     ]
+    
     TITLE = [
         "__________________       __________________ ",
         "___  __ \\_  __ \\_ |     / /__  ____/__  __ \\",
