@@ -215,40 +215,39 @@
     }
 } */
 
-@-moz-document domain("www.youtube.com") {
-    .ytd-app {
-        background-color: var(--catppuccin-crust) !important;
-    }
-
-    #container.ytd-searchbox {
-        background-color: var(--catppuccin-mantle) !important;
-    }
-
-    #masthead {
-        background-color: var(--catppuccin-crust) !important;
-    }
-
-    #chips-wrapper {
-        background-color: var(--catppuccin-crust) !important;
-    }
-
-    #ytd-player {
-        /* border: 1px solid var(--catppuccin-blue) !important; */
-        border: 1px solid transparent !important;
-    }
-
-    #cinematics-container {
-        display: none !important;
-    }
-
-    #description {
-        background-color: var(--catppuccin-mantle) !important;
-    }
-
-    h1 {
-        color: var(--catppuccin-blue) !important;
-    }
-}
+/* @-moz-document domain("www.youtube.com") { */
+/*     .ytd-app { */
+/*         background-color: var(--catppuccin-crust) !important; */
+/*     } */
+/**/
+/*     #container.ytd-searchbox { */
+/*         background-color: var(--catppuccin-mantle) !important; */
+/*     } */
+/**/
+/*     #masthead { */
+/*         background-color: var(--catppuccin-crust) !important; */
+/*     } */
+/**/
+/*     #chips-wrapper { */
+/*         background-color: var(--catppuccin-crust) !important; */
+/*     } */
+/**/
+/*     #ytd-player { */
+/*         border: 1px solid transparent !important; */
+/*     } */
+/**/
+/*     #cinematics-container { */
+/*         display: none !important; */
+/*     } */
+/**/
+/*     #description { */
+/*         background-color: var(--catppuccin-mantle) !important; */
+/*     } */
+/**/
+/*     h1 { */
+/*         color: var(--catppuccin-blue) !important; */
+/*     } */
+/* } */
 
 @-moz-document domain("chatgpt.com") {
     /* html, */
