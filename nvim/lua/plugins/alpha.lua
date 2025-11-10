@@ -92,10 +92,10 @@ return {
                 dashboard.section.buttons,
             },
             opts = applyColors(logo, {
+                ["a"] = { fg = colors.alpha_a, ctermfg = 35 },
                 ["b"] = { fg = colors.alpha_b, ctermfg = 33 },
                 ["d"] = { fg = colors.alpha_d, ctermfg = 33 },
                 ["c"] = { fg = colors.alpha_c, ctermfg = 33 },
-                ["a"] = { fg = colors.alpha_a, ctermfg = 35 },
                 ["g"] = { fg = "#91d7e3", ctermfg = 29 },
                 ["h"] = { fg = "#8bd5ca", ctermfg = 23 },
                 ["i"] = { fg = "#a6da95", bg = "#39ac56", ctermfg = 23, ctermbg = 29 },
