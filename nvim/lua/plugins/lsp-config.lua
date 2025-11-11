@@ -27,12 +27,17 @@ return {
             })
         end,
     },
+
     {
         "neovim/nvim-lspconfig",
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local lspconfig = require("lspconfig")
+            -- Detect which API is available
+            local ok, new_lsp = pcall(function()
+                return vim.lsp.config
+            end)
+            local lsp = ok and new_lsp or require("lspconfig")
 
             local signs = {
                 Error = " ",
@@ -45,75 +50,48 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
             end
 
-            --setup lsp's
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" },
-                        },
-                    },
-                },
-            })
-            lspconfig.rust_analyzer.setup({
-                capabilities = capabilities,
-                settings = {
-                    cargo = {
-                        allFeatures = true,
-                    },
-                    checkOnSave = {
-                        command = "clippy",
-                    },
-                    inlayHints = {
-                        enable = true,
+            -- Setup servers
+            local servers = {
+                "lua_ls",
+                "rust_analyzer",
+                "csharp_ls",
+                "cssls",
+                "cssmodules_ls",
+                "fsautocomplete",
+                "html",
+                "jdtls",
+                "jsonls",
+                "pylsp",
+                "texlab",
+                "ts_ls",
+                "clangd",
+            }
+
+            for _, server in ipairs(servers) do
+                local cfg = { capabilities = capabilities }
+
+                -- special settings
+                if server == "lua_ls" then
+                    cfg.settings = {
+                        Lua = { diagnostics = { globals = { "vim" } } },
                     }
-                }
-            })
-            lspconfig.csharp_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.cssls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.cssmodules_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.fsautocomplete.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.html.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.jdtls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.jsonls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.pylsp.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.texlab.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
-                settings = {
-                    typescript = {
-                        format = { enable = false },
-                    },
-                    javascript = {
-                        format = { enable = false },
-                    },
-                },
-            })
-            lspconfig.jsonls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-            })
+                elseif server == "rust_analyzer" then
+                    cfg.settings = {
+                        cargo = { allFeatures = true },
+                        checkOnSave = { command = "clippy" },
+                        inlayHints = { enable = true },
+                    }
+                elseif server == "ts_ls" then
+                    cfg.settings = {
+                        typescript = { format = { enable = false } },
+                        javascript = { format = { enable = false } },
+                    }
+                end
+
+                if lsp[server] and lsp[server].setup then
+                    lsp[server].setup(cfg)
+                end
+            end
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
