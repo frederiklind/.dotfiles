@@ -49,7 +49,6 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
-                    { name = 'orgmode' }
                 }, {
                     { name = "buffer" },
                 }),
@@ -72,19 +71,19 @@ return {
                             latex_symbols = "",
 
                         },
-                        before = function(entry, vim_item)
-                            vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-                            return vim_item
-                        end,
+                        -- before = function(entry, vim_item)
+                        --     vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+                        --     return vim_item
+                        -- end,
                     }),
                 },
             })
 
-            vim.api.nvim_set_hl(0, "CmpPmenu", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
-            vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = colors.cmp_menu_bg_sel, fg = colors.cmp_menu_fg })
-            vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg })
-            vim.api.nvim_set_hl(0, "CmpDoc", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
-            vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg, })
+            -- vim.api.nvim_set_hl(0, "CmpPmenu", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
+            -- vim.api.nvim_set_hl(0, "CmpPmenuSel", { bg = colors.cmp_menu_bg_sel, fg = colors.cmp_menu_fg })
+            -- vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg })
+            -- vim.api.nvim_set_hl(0, "CmpDoc", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_fg })
+            -- vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = colors.cmp_menu_bg, fg = colors.cmp_menu_bg, })
         end,
     },
 }
