@@ -40,9 +40,9 @@ else
         esac
     fi
 
-    ln -s "$DOT_USR_CHROME" "${PROFILE_DIR}/chrome/userChrome.css" && \
+    ln -sf "$DOT_USR_CHROME" "${PROFILE_DIR}/chrome/userChrome.css" && \
     echo "> Created symlink: userChrome.css -> ${DOT_USR_CHROME}"
-    ln -s "$DOT_USR_CONTENT" "${PROFILE_DIR}/chrome/userContent.css" && \
+    ln -sf "$DOT_USR_CONTENT" "${PROFILE_DIR}/chrome/userContent.css" && \
     echo "> Created symlink: userContent.css -> ${DOT_USR_CONTENT}"
     echo "Firefox css successfully installed in ${PROFILE_DIR}"
 fi

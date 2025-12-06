@@ -100,6 +100,7 @@ alias ta="tmux attach"                                     # attach to tmux sess
 alias sesh="tmux new -s"                                    # create new tmux session
 
 alias gpt="~/.dotfiles/scripts/chatgpt.sh"            # open native chatgpt
+alias jel="~/.dotfiles/scripts/jellyfin.sh"            # open native jellyfin
 alias ugpt="~/.dotfiles/scripts/update-gpt-native.sh" # update native chatgpt
 alias kbl="~/.dotfiles/scripts/keyboard-layout.sh"    # toggle us/dk layout
 
@@ -112,6 +113,9 @@ alias ipp="wget -qO- http://ifconfig.me 2>/dev/null | tr -d '%' | awk 'NF {print
 
 # get local ip address
 alias ipl="ip -4 addr show scope global | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -n 1"
+
+alias wgu="wg-quick up"
+alias wgd="wg-quick down"
 
 # utilities ---------------------------------------------------------------------
 
