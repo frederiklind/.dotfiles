@@ -31,7 +31,7 @@
         Helvetica,
         Arial,
         sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 window#waybar {
@@ -231,7 +231,6 @@ button:hover {
 
 #language {
     color: @catppuccin-surface_0;
-    font-weight: bolder;
     margin-left: 5px;
 }
 
@@ -285,7 +284,6 @@ button:hover {
 }
 
 #cpu {
-    font-weight: bolder;
     color: @catppuccin-surface_0;
     margin: 0px 10px 0px 5px;
 }
@@ -300,7 +298,6 @@ button:hover {
 }
 
 #memory {
-    font-weight: bolder;
     color: @catppuccin-surface_0;
     margin: 0px 5px 0px 8px;
 }
@@ -338,11 +335,9 @@ button:hover {
 #clock {
     color: @catppuccin-surface_0;
     margin: 3px 0px 3px 0px;
-    font-weight: bolder;
 }
 #custom-date {
     color: @catppuccin-surface_0;
-    font-weight: bolder;
 }
 
 #custom-clock_logo {
@@ -383,7 +378,6 @@ label:focus {
 #temperature {
     margin-left: 0px;
     color: @catppuccin-surface_0;
-    font-weight: bolder;
 }
 
 #network {
@@ -523,7 +517,6 @@ background-size: 16px;
 
 #battery {
     margin: 3px 0px 3px 0px;
-    font-weight: bolder;
     padding: 0px 5px;
     color: @catppuccin-surface_0;
     margin-right: 2.5px;

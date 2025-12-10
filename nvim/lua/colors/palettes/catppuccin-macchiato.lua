@@ -1,8 +1,8 @@
 local colors = {
-    alpha_a = "#181926",
-    alpha_b = "#494d64",
-    alpha_c = "#494d64",
-    alpha_d = "#181926",
+    alpha_a = "#9e5cf0",
+    alpha_b = "#f4dbd6",
+    alpha_c = "#c6a0f6",
+    alpha_d = "#da8372",
 
     lualine_a_bg_normal = "#8aadf4",
     lualine_a_bg_insert = "#8bd5ca",

@@ -12,7 +12,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
-                    "csharp_ls",
+                    -- "csharp_ls",
                     "cssls",
                     "cssmodules_ls",
                     -- "fsautocomplete",
@@ -54,7 +54,7 @@ return {
             local servers = {
                 "lua_ls",
                 "rust_analyzer",
-                "csharp_ls",
+                -- "csharp_ls",
                 "cssls",
                 "cssmodules_ls",
                 -- "fsautocomplete",
