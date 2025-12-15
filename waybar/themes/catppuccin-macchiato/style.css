@@ -127,7 +127,7 @@ button:hover {
 #custom-weather {
     padding: 0px 10px;
     background-color: @module-background;
-    color: @catppuccin-blue;
+    color: #b7bdf8;
 }
 #systemgroup {
     background-color: @module-background;
@@ -481,7 +481,7 @@ background-size: 16px;
 #custom-temperature_logo {
     font-size: 11px;
     margin: 0px 0px 0px 8px;
-    color: @catppuccin-blue;
+    color: #f0c6c6;
 }
 
 #cpu_group,
