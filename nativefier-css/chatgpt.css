@@ -59,6 +59,7 @@ nav {
 .dark .dark\:bg-token-main-surface-secondary {
     background-color: #24273a;
 }
+
 .bg-token-message-surface {
     background-color: var(--catppuccin-crust) !important;
 }
@@ -122,7 +123,6 @@ h3 {
     color: var(--catppuccin-blue) !important;
 }
 
-
 #composer-background {
     background-color: var(--catppuccin-crust) !important;
 }
@@ -137,9 +137,8 @@ h3 {
     color: var(--catppuccin-teal) !important;
 }
 
-
 .dark\:bg-white:is(.dark *) {
-  background-color: var(--catppuccin-teal) !important;
+    background-color: var(--catppuccin-teal) !important;
 }
 
 .min-h-4 {
@@ -147,35 +146,42 @@ h3 {
 }
 
 .dark\:prose-invert:is(.dark *) :where(code):not(:where([class~="not-prose"] *)) {
-  background-color: var(--catppuccin-crust) !important;
+    background-color: var(--catppuccin-crust) !important;
 }
 
-
 @media (min-width: 768px) {
-  .md\:dark\:border-transparent:is(.dark *) {
-    padding-top: 10px !important; 
+    .md\:dark\:border-transparent:is(.dark *) {
+        padding-top: 10px !important;
+    }
+}
+
+/* warning */
+@layer utilities {
+  @media (min-width: 48rem) {
+    .md\:px-\[60px\] {
+      display: none !important;
+    }
   }
 }
 
-/* syntax highlights */
-/* .hljs-keyword { */
-/*     color: var(--catppuccin-mauve) !important; */
-/* } */
-/**/
-/* .hljs-title { */
-/*     color: var(--catppuccin-blue) !important; */
-/* } */
-/**/
-/* .hljs-params { */
-/*     color: var(--catppuccin-red) !important; */
-/* } */
-/**/
-/* .hljs-type { */
-/*     color: var(--catppuccin-peach) !important; */
-/* } */
-/**/
-/* .hljs-built_in { */
-/*     color: var(--catppuccin-yellow) !important; */
-/* } */
+@layer utilities {
+  .border-token-border-light {
+    border-color: transparent !important;
+  }
+}
 
+.dark {
+  --bg-primary: #1e2030 !important;
+}
 
+@layer utilities {
+  .dark\:bg-\[\#303030\]:where(.dark, .dark *):not(:where(.dark .light, .dark .light *)) {
+    background-color: #181926 !important;
+  }
+}
+
+@layer utilities {
+  .composer-submit-button-color {
+    color: #c6a0f6;
+  }
+}
