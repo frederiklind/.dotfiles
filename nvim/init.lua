@@ -14,7 +14,15 @@ vim.cmd("set laststatus=3")
 vim.cmd("highlight VertSplit guifg=#181926 guibg=NONE")
 
 require("vim-options")
-require("lazy").setup("plugins")
+
+-- plugin manager setup
+require("lazy").setup("plugins", {
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  git = { hg_cmd = false },
+})
 
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#181926", bg = "NONE" })
 vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#181926" })

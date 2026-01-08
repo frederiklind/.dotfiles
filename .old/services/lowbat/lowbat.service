@@ -1,5 +1,0 @@
-[Unit]
-Description=Low Battery Notification Service
-
-[Service]
-ExecStart=%h/.dotfiles/scripts/notify/low-battery-notify.sh
