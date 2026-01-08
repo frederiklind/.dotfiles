@@ -5,15 +5,6 @@ import os
 import sys
 import subprocess
 
-BANNER: [str] = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-]
-
 
 def set_window_title(title: str):
     sys.stdout.write(f"\33]0;{title}\a")
@@ -30,8 +21,12 @@ def execute_cmd(idx: int) -> None:
     elif idx == 3:
         os.system("pkill -KILL -u $USER")
     elif idx == 4:
-        subprocess.run(['$HOME/.dotfiles/scripts/lockscreen.sh'], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        # curses.exit_curses()
+        subprocess.run(
+            ['$HOME/.dotfiles/scripts/lockscreen.sh'],
+            shell=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
     elif idx == 5:
         curses.exit_curses()
 
