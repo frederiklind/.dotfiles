@@ -16,13 +16,14 @@ set -euo pipefail
 
 API_KEY="eb12a295d37a734826b7c60ee578fd89"
 
-CITY="Elsinore"       # city, e.g. "Copenhagen"
+CITY="Copenhagen"       # city, e.g. "Copenhagen"
 UNITS="metric"
 LANG="en"
 
 # Colors (match your polybar theme)
 TEXT_COLOR="#a5adcb"
 SEP_COLOR="#8aadf4"
+CITY_ICON_COLOR="#91d7e3"
 
 CLR_SUN="#eed49f"
 CLR_MOON="#b7bdf8"
@@ -67,8 +68,13 @@ poly_sep() {
   printf "%%{F%s}%s%%{F-}" "$SEP_COLOR" "$sep"
 }
 
+poly_color_icon() {
+  local icon="$1"
+  local color="$2"
+  printf "%%{F%s}%s%%{F-}" "$color" "$icon"
+}
+
 wind_dir() {
-  # Converts degrees (0-360) to 16-point compass
   local deg="${1:-0}"
   local dirs=(N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW)
   local idx=$(( ((deg + 11) % 360) / 22 ))
@@ -76,7 +82,6 @@ wind_dir() {
 }
 
 wind_arrow() {
-  # 8-way arrow based on degrees
   local deg="${1:-0}"
   local arrows=(↑ ↗ → ↘ ↓ ↙ ← ↖)
   local idx=$(( ((deg + 22) % 360) / 45 ))
@@ -92,7 +97,10 @@ fi
 
 # --------------------- API CALL ---------------------
 
-NOW_JSON="$(curl -sf "https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=${UNITS}&lang=${LANG}")"
+NOW_JSON="$(curl -sf "https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=${UNITS}&lang=${LANG}")" || {
+  echo "$(poly_text "N/A")"
+  exit 1
+}
 
 # -------------------- PARSE JSON --------------------
 
@@ -101,13 +109,14 @@ NOW_ICON_CODE="$(echo "$NOW_JSON" | jq -r '.weather[0].icon')"
 
 WIND_SPEED="$(echo "$NOW_JSON" | jq -r '.wind.speed // 0')"
 WIND_DEG="$(echo "$NOW_JSON" | jq -r '.wind.deg // 0')"
-WIND_COMPASS="$(wind_dir "$WIND_DEG")"
 WIND_ARR="$(wind_arrow "$WIND_DEG")"
+# WIND_COMPASS="$(wind_dir "$WIND_DEG")"  # enable if you want N/NE/E too
 
 # ---------------------- OUTPUT ----------------------
 
+CITY_ICON_FMT="$(poly_color_icon "" "$CITY_ICON_COLOR")"
 NOW_ICON_FMT="$(poly_icon "$NOW_ICON_CODE")"
 WIND_ICON="󰖝"
 
-echo " ${CITY}  ${NOW_ICON_FMT}  $(poly_text "${NOW_TEMP}°C")  $(poly_sep "$WIND_ICON")  $(poly_text "${WIND_SPEED} m/s ${WIND_ARR}")"
-
+# echo "${CITY_ICON_FMT} $(poly_text "${CITY}")  ${NOW_ICON_FMT}  $(poly_text "${NOW_TEMP}°C")  $(poly_sep "$WIND_ICON")  $(poly_text "${WIND_SPEED} m/s ${WIND_ARR}")"
+echo "${NOW_ICON_FMT}  $(poly_text "${NOW_TEMP}°C")  $(poly_sep "$WIND_ICON")  $(poly_text "${WIND_SPEED} m/s ${WIND_ARR}")"
