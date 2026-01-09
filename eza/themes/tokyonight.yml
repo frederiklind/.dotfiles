@@ -1,9 +1,11 @@
+# tokyonight-storm
+
 colourful: true
 
 filekinds:
   normal: {foreground: "#BAC2DE"}
-  directory: {foreground: "#89B4FA"}
-  symlink: {foreground: "#8bd5ca"}
+  directory: {foreground: "#7aa2f7"}
+  symlink: {foreground: "#7dcfff"}
   pipe: {foreground: "#7F849C"}
   block_device: {foreground: "#EBA0AC"}
   char_device: {foreground: "#EBA0AC"}
@@ -14,7 +16,7 @@ filekinds:
 
 perms:
   user_read: {foreground: "#b7bdf8"}
-  user_write: {foreground: "#c6a0f6"}
+  user_write: {foreground: "#bb9af7"}
   user_execute_file: {foreground: "#A6E3A1"}
   user_execute_other: {foreground: "#f0c6c6"}
   group_read: {foreground: "#b7bdf8"}

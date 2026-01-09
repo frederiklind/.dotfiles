@@ -1,19 +1,24 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+# Start settings early
+xrdb -merge ~/.Xresources
+pgrep -x xsettingsd >/dev/null || xsettingsd &
+
+# Hotkeys (only once)
+pgrep -x sxhkd >/dev/null || sxhkd &
 
 bspc monitor -d      
 
-bspc config border_width         4
-bspc config window_gap          20
-bspc config top_padding         50
-bspc config bottom_padding      5
-bspc config left_padding        5
-bspc config right_padding       5
+bspc config border_width         2
+bspc config window_gap           20
+bspc config top_padding          55
+bspc config bottom_padding       0
+bspc config left_padding         0
+bspc config right_padding        0
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config normal_border_color "#363a4f"
+bspc config normal_border_color  "#363a4f"
 bspc config focused_border_color "#8aadf4"
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
@@ -23,8 +28,8 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 # autostart applications
-sxhkd &
 picom --config ~/.config/picom/picom.conf &
-feh --bg-fill ~/Pictures/wallpapers/laptop/catppuccin-macchiato/fuji2.jpg &
+feh --bg-fill ~/Pictures/wallpapers/laptop/catppuccin-macchiato/spaceman.png &
 dunst &
 polybar &
+

@@ -15,8 +15,8 @@ italic.family = "JetBrainsMono Nerd Font"
 
 [window]
 opacity   = 1.0
-padding.x = 3
-padding.y = 1
+padding.x = 4
+padding.y = 0
 
 [general]
 import = ["/home/flin/.dotfiles/alacritty/colors/catppuccin-macchiato.toml"]
