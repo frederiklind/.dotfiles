@@ -27,7 +27,8 @@ CITY_ICON_COLOR="#91d7e3"
 
 CLR_SUN="#eed49f"
 CLR_MOON="#b7bdf8"
-CLR_CLOUD="#91d7e3"
+CLR_CLOUD_SUN="#eed49f"
+CLR_CLOUD="#cad3f5"
 CLR_RAIN="#7dc4e4"
 CLR_THUNDER="#c6a0f6"
 CLR_SNOW="#cad3f5"
@@ -40,7 +41,7 @@ icon_map() {
   case "$1" in
     01d) echo "󰖙|$CLR_SUN" ;;                    # clear day
     01n) echo "󰖔|$CLR_MOON" ;;                   # clear night
-    02d|02n) echo "󰖕|$CLR_CLOUD" ;;              # few clouds
+    02d|02n) echo "󰖕|$CLR_CLOUD_SUN" ;;              # few clouds
     03d|03n|04d|04n) echo "󰖐|$CLR_CLOUD" ;;      # clouds
     09d|09n|10d|10n) echo "󰖗|$CLR_RAIN" ;;       # rain
     11d|11n) echo "󰖓|$CLR_THUNDER" ;;            # thunder
@@ -114,7 +115,7 @@ WIND_ARR="$(wind_arrow "$WIND_DEG")"
 
 # ---------------------- OUTPUT ----------------------
 
-CITY_ICON_FMT="$(poly_color_icon "" "$CITY_ICON_COLOR")"
+# CITY_ICON_FMT="$(poly_color_icon "" "$CITY_ICON_COLOR")"
 NOW_ICON_FMT="$(poly_icon "$NOW_ICON_CODE")"
 WIND_ICON="󰖝"
 

@@ -31,7 +31,7 @@ return {
         require("neo-tree").setup({
             window = {
                 position = "left",
-                width = 32,
+                width = 30,
             },
 
             enable_git_status = true,

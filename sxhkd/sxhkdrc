@@ -14,7 +14,10 @@ super + b
 	firefox
 
 super + c
-    code
+  code
+
+super + e
+  thunar
 
 super + shift + b
     ~/.dotfiles/polybar/scripts/launch.sh
@@ -26,11 +29,18 @@ super + p
     alacritty -e ~/.dotfiles/scripts/power.py
 
 super + r
-	dmenu_run
+	rofi -show drun
 
 # sxhkd reload configuration
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# Brightness
+XF86MonBrightnessUp
+    brightnessctl set 5%+
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-
 
 # ======================================================================
 # ---------------------------- bspwm hotkeys ---------------------------

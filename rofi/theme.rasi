@@ -1,0 +1,47 @@
+* {
+    bg: #1e2030;
+    fg: #cdd6f4;
+    accent: #89b4fa;
+    urgent: #f38ba8;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    background-color: @bg;
+    // border: 2px;
+    // border-color: @accent;
+    // border-radius: 12px;
+    padding: 20px;
+}
+
+mainbox {
+    background-color: transparent;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: transparent;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+listview {
+    background-color: transparent;
+    spacing: 10px;
+}
+
+element {
+    padding: 10px;
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+

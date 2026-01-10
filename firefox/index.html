@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Start</title>
+  <style>
+    @font-face {
+      font-family: "JetBrainsMono Nerd Font";
+      src: url("fonts/JetBrainsMonoNerdFont-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "JetBrainsMono Nerd Font";
+      src: url("fonts/JetBrainsMonoNerdFont-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    :root{
+      --bg: #181926;          /* background */
+      --card: #1e2030;        /* tile background */
+      --card-hover: #1d2340;  /* tile hover */
+      --text: #e7eaf6;        /* main text */
+      --muted: #9aa3c7;       /* subtitle text */
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --gap: 14px;
+      --maxw: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      font-family: "JetBrainsMono Nerd Font", monospace;
+    }
+
+      h1.ascii{
+        margin: 0;
+        white-space: pre;        /* preserves spaces + line breaks */
+        font-size: 16px;         /* tweak */
+        line-height: 1.05;       /* tweak */
+        letter-spacing: 0;       /* keep aligned */
+        color: #494d64;
+        margin-bottom: 30px;
+      }
+
+    .wrap{
+      width: min(var(--maxw), 100%);
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+    }
+
+    header{
+      text-align: center;
+      user-select: none;
+    }
+    header h1{
+      margin: 0;
+      font-size: clamp(22px, 2.4vw, 32px);
+      letter-spacing: .2px;
+    }
+    header p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--gap);
+      margin-top: 50px;
+    }
+
+a.tile{
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 20px;
+  min-height: 92px;
+
+  display: flex;              /* was grid */
+  align-items: center;
+  gap: 14px;
+
+  /* box-shadow: var(--shadow); */
+  transform: translateY(0);
+  transition: transform .12s ease, background-color .12s ease, border-color .12s ease;
+  outline: none;
+}
+
+a.tile img.icon{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+a.tile .text{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;               /* enables ellipsis properly */
+}
+
+    a.tile:hover{
+      background: var(--card-hover);
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.14);
+    }
+
+    a.tile:focus-visible{
+      box-shadow: 0 0 0 3px rgba(150, 180, 255, .35), var(--shadow);
+      border-color: rgba(150, 180, 255, .55);
+    }
+
+    .title{
+      font-weight: 650;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+
+    .url{
+      color: var(--muted);
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    footer{
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: 4px;
+      user-select: none;
+    }
+
+    /* Optional: make it feel snappier on reduced motion preferences */
+    @media (prefers-reduced-motion: reduce){
+      a.tile{ transition: none; }
+      a.tile:hover{ transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+<h1 class="ascii">
+
+</h1>
+    </header>
+    <br/>
+
+    <section class="grid" aria-label="Quick links">
+        <a class="tile" href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="icons/github.png" alt="GitHub" />
+          <div class="text">
+            <div class="title">GitHub</div>
+            <div class="url">github.com</div>
+          </div>
+        </a>
+
+        <a class="tile" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="icons/gpt.png" alt="GitHub" />
+          <div class="text">
+            <div class="title">ChatGPT</div>
+            <div class="url">chatgpt.com</div>
+          </div>
+        </a>
+
+        <a class="tile" href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="icons/stackoverflow.png" alt="StackOverflow" />
+          <div class="text">
+            <div class="title">StackOverflow</div>
+            <div class="url">stackoverflow.com</div>
+          </div>
+        </a>
+    </section>
+
+    <section class="grid" aria-label="Quick links">
+        <a class="tile" href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="icons/youtube.png" alt="GitHub" />
+          <div class="text">
+            <div class="title">YouTube</div>
+            <div class="url">youtube.com</div>
+          </div>
+        </a>
+
+        <a class="tile" href="https://messenger.com" target="_blank" rel="noopener noreferrer">
+          <img class="icon" src="icons/messenger.webp" alt="GitHub" />
+          <div class="text">
+            <div class="title">Messenger</div>
+            <div class="url">messenger.com</div>
+          </div>
+        </a>
+    </section>
+
+    <footer>
+    </footer>
+  </main>
+</body>
+</html>
