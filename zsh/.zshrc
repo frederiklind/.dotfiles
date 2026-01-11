@@ -20,7 +20,8 @@ export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 export SCREENSHOT_COMMAND="grim full $HOME/Pictures/screenshot_$(date +\%Y-\%m-\%d_\%H-\%M-\%S).png"
 
-# History
+# History ------------------------------------------------------------------------
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -32,6 +33,7 @@ setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 
 # export PATH="$HOME/.pyenv/shims:$PATH"
+
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
@@ -106,13 +108,15 @@ alias c="clear"                                   # clear terminal (primarily fo
 alias tmux="tmux -2"                                        # tmux alias - use 256 colors
 alias ts="~/.dotfiles/scripts/tmux-session.sh"              # tmux session (takes name param)
 alias tmuxsrc="tmux source-file ~/.config/tmux/tmux.conf"   # source tmux config
-alias ta="tmux attach"                                     # attach to tmux session   
+alias ta="tmux attach"                                      # attach to tmux session   
 alias sesh="tmux new -s"                                    # create new tmux session
 
 alias gpt="~/.dotfiles/scripts/chatgpt.sh"            # open native chatgpt
 alias jel="~/.dotfiles/scripts/jellyfin.sh"            # open native jellyfin
 alias ugpt="~/.dotfiles/scripts/update-gpt-native.sh" # update native chatgpt
 alias kbl="~/.dotfiles/scripts/keyboard-layout.sh"    # toggle us/dk layout
+
+alias dck="~/.dotfiles/scripts/docker-toggle.sh"      # toggle docker services
 
 # network -----------------------------------------------------------------------
 
@@ -129,17 +133,18 @@ alias wgd="wg-quick down"
 
 # utilities ---------------------------------------------------------------------
 
-alias cp="cp -i"                                    # prompt before overwrite
-alias fr="ranger"                                   # open ranger file manager  
-alias ft="thunar"                                   # open thunar file manager
-alias zathura="~/.dotfiles/scripts/zathura.sh"      # open zathura
-alias settings="~/.dotfiles/.settings/settings.sh"  # open settings.sh
-alias ff="fastfetch"                                # fastfetch alias (sys info)
+alias cp="cp -i"                                       # prompt before overwrite
+alias fr="ranger"                                      # open ranger file manager  
+alias ft="thunar >/dev/null 2>&1 & disown"             # open thunar file manager
+alias zathura="~/.dotfiles/scripts/zathura.sh"         # open zathura
+alias settings="~/.dotfiles/.settings/settings.sh"     # open settings.sh
+alias ff="fastfetch"                                   # fastfetch alias (sys info)
 
 alias ugrb="sudo grub-mkconfig -o /boot/grub/grub.cfg" # update grub
 alias vpn="nordvpn"                                    # nordvpn alias
 
-alias theme="~/.dotfiles/.settings/change-theme.sh" # switch global theme
+alias cbg="feh --bg-fill"                              # change wallpaper
+alias theme="~/.dotfiles/.settings/change-theme.sh"    # switch global theme
 
 # archived file extraction function easy mode
 # example usage: ex <file>
@@ -164,17 +169,10 @@ ex() {
     fi
 }
 
-# Settings ----------------------------------------------------------------------
-
-alias hypr="~/.dotfiles/hypr/hypr-cli.sh"
-
 # -------------------------------------------------------------------------------
 
-# exam alias!!! remove later
-alias wiseflow-device-manager="${HOME}/Source/wiseflow/usr/bin/wiseflow-device-monitor"
-
-fastfetch                     # run fastfetch
-echo
+# fastfetch                     # run fastfetch
+# echo
 eval "$(starship init zsh)"   # setup starship prompt
 
 # source zsh-syntax-highlighting
@@ -186,5 +184,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
 export PATH=$PATH:/home/flin/.spicetify

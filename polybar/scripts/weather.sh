@@ -14,7 +14,7 @@
 
 set -euo pipefail
 
-API_KEY="eb12a295d37a734826b7c60ee578fd89"
+API_KEY="$(< ~/Source/api-keys/openweather-api.key)"
 
 CITY="Copenhagen"       # city, e.g. "Copenhagen"
 UNITS="metric"
@@ -26,7 +26,7 @@ SEP_COLOR="#8aadf4"
 CITY_ICON_COLOR="#91d7e3"
 
 CLR_SUN="#eed49f"
-CLR_MOON="#b7bdf8"
+CLR_MOON="#f4dbd6"
 CLR_CLOUD_SUN="#eed49f"
 CLR_CLOUD="#cad3f5"
 CLR_RAIN="#7dc4e4"
