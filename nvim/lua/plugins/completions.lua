@@ -4,29 +4,29 @@ return {
     { "roobert/tailwindcss-colorizer-cmp.nvim" },
     { "micangl/cmp-vimtex" },
     { "github/copilot.vim", enabled = false },
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-            "saadparwaiz1/cmp_luasnip",
-            "rafamadriz/friendly-snippets",
-            "andymass/vim-matchup",
-        },
-    },
+    -- {
+    --     "L3MON4D3/LuaSnip",
+    --     dependencies = {
+    --         "saadparwaiz1/cmp_luasnip",
+    --         "rafamadriz/friendly-snippets",
+    --         "andymass/vim-matchup",
+    --     },
+    -- },
     {
         "hrsh7th/nvim-cmp",
         config = function()
             local cmp = require("cmp")
             local lspkind = require("lspkind")
-            require("luasnip.loaders.from_vscode").lazy_load()
+            -- require("luasnip.loaders.from_vscode").lazy_load()
 
             local colors = require("colors.palette")
 
             cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require("luasnip").lsp_expand(args.body)
-                    end,
-                },
+                -- snippet = {
+                --     expand = function(args)
+                --         require("luasnip").lsp_expand(args.body)
+                --     end,
+                -- },
                 window = {
                     -- completion = cmp.config.window.bordered(),
                     -- documentation = cmp.config.window.bordered(),
@@ -48,7 +48,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "luasnip" },
+                    -- { name = "luasnip" },
                 }, {
                     { name = "buffer" },
                 }),
@@ -67,7 +67,7 @@ return {
                             buffer = "",
                             nvim_lsp = "",
                             nvim_lua = "",
-                            luasnip = "",
+                            -- luasnip = "",
                             latex_symbols = "",
 
                         },
