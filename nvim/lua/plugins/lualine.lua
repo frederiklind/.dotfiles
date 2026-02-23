@@ -28,7 +28,7 @@ return {
             c = { fg = colors.lualine_c_fg, bg = colors.lualine_c_bg },
           },
         },
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				component_separators = { left = "\\", right = "/" },
 			},
 		})

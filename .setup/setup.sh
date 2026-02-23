@@ -235,13 +235,13 @@ setup_git() {
 #
 setup_utils() {
     local pkgs=(
-        "polybar"             \     # Status bar
-        "zathura"             \     # PDF viewer
-        "zathura-pdf-poppler" \     # some mumbo jumbo for zathura
-        "feh"                 \     # image viewer, wallpaper engine
-        "thunar"              \     # GUI file manager
-        "ranger"              \     # TUI file manager
-        "btop"                      # System monitoring
+        "polybar"                  # Status bar
+        "zathura"                  # PDF viewer
+        "zathura-pdf-poppler"      # some mumbo jumbo for zathura
+        "feh"                      # image viewer, wallpaper engine
+        "thunar"                   # GUI file manager
+        "ranger"                   # TUI file manager
+        "btop"                     # System monitoring
     )
 
     # Install BTOP theme
@@ -307,17 +307,17 @@ setup_docker() {
 # 
 setup_dev_stuff() {
     local pkgs=(
-        "nvim"            \     # neovim
-        "code"            \     # OSS VSCode
-        "tmux"            \     # Terminal multiplexer (super important)
-        "python-pip"      \     # Python package manager
-        "docker"          \     # Docker - containerization
-        "dotnet-sdk"      \     # .NET sdk
-        "dotnet-runtime"  \     # .NET runtime  
-        "aspnet-runtime"  \     # ASP.NET runtime
-        "cargo"           \     # Rust compiler
-        "node"            \     # JavaScript stuff
-        "github-cli"      \     # Version control
+        "nvim"                 # neovim
+        "code"                 # OSS VSCode
+        "tmux"                 # Terminal multiplexer (super important)
+        "python-pip"           # Python package manager
+        "docker"               # Docker - containerization
+        "dotnet-sdk"           # .NET sdk
+        "dotnet-runtime"       # .NET runtime  
+        "aspnet-runtime"       # ASP.NET runtime
+        "cargo"                # Rust compiler
+        "node"                 # JavaScript stuff
+        "github-cli"           # Version control
     )
 
     # Install TPM (TMUX package manager)
